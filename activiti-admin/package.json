@@ -7,7 +7,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.8.2",
+    "bower": "^1.8.8",
     "grunt": "1.0.1",
     "grunt-autoprefixer": "0.6.4",
     "grunt-bower-install": "1.6.0",
