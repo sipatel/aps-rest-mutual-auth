@@ -1,0 +1,296 @@
+# This a default configuration that only needs a correct database configuration to boot up
+# When changing the database settings, at minimal change the url, driver, credentials and the Hibernate Dialect.
+
+
+#
+# DATABASE
+#
+
+datasource.driver=org.h2.Driver
+datasource.url=jdbc:h2:tcp://localhost:9092/activiti
+datasource.username=alfresco
+datasource.password=alfresco
+
+#datasource.driver=com.mysql.jdbc.Driver
+#datasource.url=jdbc:mysql://127.0.0.1:3306/modeler?characterEncoding=UTF-8
+
+#datasource.driver=org.postgresql.Driver
+#datasource.url=jdbc:postgresql://localhost:5432/activiti
+
+#datasource.driver=oracle.jdbc.driver.OracleDriver
+#datasource.url=jdbc:oracle:thin:@localhost:1521:activiti
+
+#datasource.driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#datasource.url=jdbc:sqlserver://localhost:1433;databaseName=activiti
+
+#datasource.driver=com.ibm.db2.jcc.DB2Driver
+#datasource.url=jdbc:db2://localhost:50000/activiti
+
+
+# JNDI CONFIG
+
+# If uncommented, the datasource will be looked up using the configured JNDI name.
+# This will have preference over any datasource configuration done below that doesn't use JNDI
+#
+# Eg for JBoss: java:jboss/datasources/activitiDS
+#
+#datasource.jndi.name=jdbc/activitiDS
+
+# Set whether the lookup occurs in a J2EE container, i.e. if the prefix "java:comp/env/" needs to be added if the JNDI
+# name doesn't already contain it. Default is "true".
+#datasource.jndi.resourceRef=true
+
+hibernate.dialect=org.hibernate.dialect.H2Dialect
+#hibernate.dialect=org.hibernate.dialect.MySQLDialect
+#hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+#hibernate.dialect=org.hibernate.dialect.SQLServerDialect
+#hibernate.dialect=org.hibernate.dialect.DB2Dialect
+#hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+#hibernate.show_sql=false
+#hibernate.generate_statistics=false
+
+#
+# Connection pool (see http://www.mchange.com/projects/c3p0/#configuration)
+#
+
+#datasource.min-pool-size=5
+#datasource.max-pool-size=100
+#datasource.acquire-increment=5
+# test query for H2, MySQL, PostgreSQL and Microsoft SQL Server
+#datasource.preferred-test-query=select 1
+# test query for Oracle
+#datasource.preferred-test-query=SELECT 1 FROM DUAL
+# test query for DB2
+#datasource.preferred-test-query=SELECT current date FROM sysibm.sysdummy1
+#datasource.test-connection-on-checkin=true
+#datasource.test-connection-on-checkout=true
+#datasource.max-idle-time=1800
+#datasource.max-idle-time-excess-connections=1800
+
+# Change this if running on a different context root
+server.contextroot=/activiti-app
+
+#
+# EMAIL
+#
+
+#email.enabled=true
+#email.host=localhost
+#email.port=1025
+#email.useCredentials=false
+#email.username=
+#email.password=
+
+# The base url that will be used to create urls in emails.
+#email.base.url=http://localhost:8888
+
+#email.from.default=no-reply@activiti.alfresco.com
+#email.from.default.name=Activiti
+#email.feedback.default=activiti@alfresco.com
+
+#
+# ACTIVITI
+#
+
+# Indicates how many process definitions are kept in memory.
+activiti.process-definitions.cache.max=128
+
+# The app sends independelty from the engine data to the admin app
+# By default every 30 seconds. Note that this a cron expression (vs just the seconds in the engine metrics interval config)
+#cluster.config.app.metricsendingcronexpression=0/30 * * * * ?
+
+#
+# ELASTIC SEARCH CONFIGURATION
+#
+
+# Determines how ES deployment looks like.
+#
+# Possible options:
+#
+# * none/uncommented : nothing related to ES will be started or configured
+# * embedded (default): the app itself boots an elastic search node that is capable of storing data.
+#                       Note that the 'elastic-search.data.path' is mandatory when using this setup.
+# * multicast-cluster: an elastic search cluster, external to this app, exists.
+#                      It is discovered through multicast. This app can optionally boot an embedded
+#                      elastic search server, acting as a data node. By default, it is NOT a data node (client only)
+#
+# Note that for analytics to work, you need an elastic search client defined.
+#
+
+# ##################
+# ES General settings
+# ##################
+elastic-search.cluster.name=activiti-elastic-search-cluster
+
+# Must be a unique name in the elastic search cluster
+elastic-search.node.name=activiti
+
+elastic-search.default.index.name=activiti
+elastic-search.tenant.index.prefix=activiti_tenant_
+
+# Enable/disable the REST API of the embedded ES node
+elastic-search.enable.http=false
+
+# ES discovery settings using multicast
+#elastic-search.discovery.type=multicast
+#elastic-search.discovery.multicast.group=224.2.2.4
+#elastic-search.discovery.multicast.port=54328
+#elastic-search.discovery.multicast.ttl=3
+#elastic-search.discovery.multicast.address=
+
+# ES disovery settings using unicast
+#elastic-search.discovery.type=unicast
+#elastic-search.discovery.hosts=
+
+
+# ################
+# Embedded config
+# ################
+
+elastic-search.server.type=embedded
+elastic-search.data.path=$user_home$/activiti-elastic-search-data
+
+# #################################
+# Multicast-cluster setup (example)
+# #################################
+
+#elastic-search.server.type=multicast-cluster
+
+
+#
+# SECURITY
+#
+
+# security configuration, used for authentication (this key should be unique for your application, and kept secret)
+security.rememberme.key=somekey
+
+# Passwords for non-OAuth services (eg. on-premise alfresco) are encrypted using AES/CBC/PKCS5PADDING
+# It needs a 128-bit initialization vector (http://en.wikipedia.org/wiki/Initialization_vector) and a 128-bit secret key
+# represented as 16 ascii characters below
+security.useraccount.credentialsIVSpec=9kje56fqwX8lk1Z0
+security.useraccount.credentialsSecretSpec=wTy53pl09aN4iOkL
+
+security.asposeKey=OMRE0aMxouti2Cb7asnLrbAVkn32WMe3RTbDH44p8hUtjbaFC+V/MedBApNCa+b8
+
+
+#
+# ------------------------------------------------------------------------------------------------
+# ADVANCED: the settings below are advanced settings and only need tweaking
+# for specific use case. Please check the Activiti BPM Suite documentation for more information.
+# ------------------------------------------------------------------------------------------------
+#
+
+
+#
+# Metrics CONFIGURATION
+#
+
+# Console reporter: metrics are written to the console every xx seconds (interval setting)
+metrics.console.reporter.enabled=false
+#metrics.console.reporter.interval=60
+
+
+#
+# EVENT PROCESSING TWEAKING
+# (DB -> Elastic Search)
+#
+
+# Set to false if no Activiti events need to be generated.
+# Do note that the reporting/analytics data is then lost forever.
+event.generation.enabled=true
+
+# Set to false to not to event processing. This could be useful
+# in a clustered setup where only sone nodes do the processing
+event.processing.enabled=true
+
+# The amount of events that are tried to be locked and processed in one go
+event.processing.blocksize=100
+
+# The cron expression that defines how often the events generated by the Activiti process engine are
+# processed (= read from the database and fed into Elastic Search). By default every 5 seconds.
+event.processing.cronExpression=0/5 * * * * ?
+
+# The cron expression that defines how often 'expired' events are processed. These are events
+# that were locked, but never processed (maybe the node processing them went down).
+# By default every 30 minutes.
+event.processing.expired.cronExpression=0 0/30 * * * ?
+
+# The maximum time an event is considered 'locked'. After that it can be taken by another processing thread
+#event.processing.max.locktime=600000
+
+# Possible options:
+# - 'move': the processed events are moved to another db table to keep the event log table small and snappy
+# - 'delete': the processed events are deleted
+#
+# Comment this line out to do nothing: events are kept in the original table as-is
+event.processing.processed.events.action=move
+
+# The cron expression that defines how often the action defined above happens
+# By default every 20 minutes.
+event.processing.processed.action.cronExpression=0 25/45 * * * ?
+
+#
+# DEFAULT ADMINISTRATOR ACCOUNT
+#
+admin.email=admin@app.activiti.com
+admin.passwordHash=25a463679c56c474f20d8f592e899ef4cb3f79177c19e3782ed827b5c0135c466256f1e7b60e576e
+admin.lastname=Administrator
+
+admin.group=Superusers
+
+
+#
+# ALFRESCO CLOUD CONNECTOR
+#
+# Register for a Cloud API key at developer.alfresco.com
+alfresco.cloud.clientId=YourIdHere
+alfresco.cloud.secret=YourSecretHere
+alfresco.cloud.redirectUri=http://localhost:8080/activiti-app/app/rest/integration/alfresco-cloud/confirm-auth-request
+
+#
+# FILE UPLOAD
+#
+
+# The maximum file upload limit. Set to -1 to set to 'no limit'. Expressed in bytes
+file.upload.max.size=104857600
+
+#
+# CONTENT STORAGE
+#
+
+# File system configuration, requires rootFolder. Depth and blockSize are optional and revert to 4 and 1024 respectively,
+# resulting in 1,099,511,627,776 possible content files in the tree (4 levels deep, max 1024 entries/folder)
+
+# For development purposes, data folder is created inside the sources ./data folder
+contentstorage.fs.rootFolder=data/
+contentstorage.fs.createRoot=true
+contentstorage.fs.depth=4
+contentstorage.fs.blockSize=1024
+
+# Google drive OAuth configuration
+googledrive.web.auth_uri=https://accounts.google.com/o/oauth2/auth
+googledrive.web.client_secret=aabbcc
+googledrive.web.token_uri=https://accounts.google.com/o/oauth2/token
+googledrive.web.client_email=bla
+googledrive.web.redirect_uris=http://localhost:8080/activiti-app/app/rest/integration/google-drive/confirm-auth-request
+googledrive.web.client_x509_cert_url=bla
+googledrive.web.client_id=bla
+googledrive.web.auth_provider_x509_cert_url=https://www.googleapis.com/oauth2/v1/certs
+googledrive.web.javascript_origins=http://localhost:8080/activiti-app
+
+#
+# Internal caches
+#
+# Note: age is expressed in seconds
+#
+#cache.forms.max.size=1000
+
+#cache.users.max.size=2048
+#cache.users.max.age=86400
+
+#cache.login-tokes.max.size=2048
+#cache.login-tokens.max.age=10
+
+# Enable on premise functionality. Normally, should be left as it is.
+server.onpremise=true
+server.stencil.custom.allowed=true

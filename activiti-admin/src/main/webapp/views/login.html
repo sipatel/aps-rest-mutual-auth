@@ -1,0 +1,40 @@
+<div class="content-layout">
+    <div id="main" class="content-layout-card container-login">
+        <form>
+            <div class="content-form">
+                <div class="content-form__logo">
+                    <img class="center" src="images/alfresco-logo.svg" alt="Alfresco">
+                </div>
+                <div>
+                    <h3 class="center logo-title">Alfresco Process Services</h3>
+                    <h5 class="logo-subtitle">powered by Activiti</h5>
+                </div>
+                <legend class="hidden" translate="LOGIN.LOGIN-FORM"></legend>
+                <div class="form-fields">
+                    <label class="mdl-textfield__label" for="username">{{'LOGIN.USERNAME' | translate}}</label>
+                    <input type="text" id="username"
+                           placeholder="{{'LOGIN.USERNAME' | translate}}"
+                           ng-model="username">
+                </div>
+                <div class="form-fields">
+                    <label class="mdl-textfield__label" for="password" translate="LOGIN.PASSWORD"></label>
+                    <input type="password" class="" id="password" placeholder="{{'LOGIN.PASSWORD' | translate}}"
+                           ng-model="password">
+                </div>
+                <div class="btn-holder">
+                    <button id="login" type="submit" class="btn btn-signin" ng-click="login()" ng-disabled="!username || !password">
+                        {{'LOGIN.ACTION.CONFIRM' | translate}}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="footer text-center login-rights">
+        <p>
+            <span translate="LOGIN.COPYRIGHT"></span>
+        </p>
+        <div class="login-make-business">
+            <img alt="Make business flow" src="images/alfresco-tagline-white.svg">
+        </div>
+    </footer>
+</div>

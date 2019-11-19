@@ -1,0 +1,11 @@
+<div class="metrics-count-chart"
+     ng-if="model && model['weekday-counts']">
+    <ul class="weekday-count-chart">
+        <li class="weekday-count-chart-entry" ng-repeat="n in [] | range:0:7"
+            ng-style="{'border-top-width' : 100 - model['weekday-counts'][$index + '-percentage'] + 'px'}">
+            <span>
+                {{$index + 1}} : {{model['weekday-counts'][$index]}}
+            </span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="directSalesProcess" name="Direct sales process" isExecutable="true">
+    <startEvent id="start">
+      <extensionElements>
+        <activiti:formProperty id="product" name="Product" type="enum">
+          <activiti:value id="ipad" name="iPad"/>
+          <activiti:value id="iphone" name="iPhone"/>
+          <activiti:value id="macbook" name="Macbook"/>
+          <activiti:value id="macbookRetina" name="Macbook Retina"/>
+        </activiti:formProperty>
+        <activiti:formProperty id="amount" name="Amount" type="long"></activiti:formProperty>
+        <activiti:formProperty id="customerNumber" name="Customer number" type="string"></activiti:formProperty>
+        <activiti:formProperty id="telephone" name="Telephone" type="string"></activiti:formProperty>
+      </extensionElements>
+    </startEvent>
+    <serviceTask id="storeOrder" name="Store order" activiti:expression="#{storeBean.storeOrder(execution)}"></serviceTask>
+    <sequenceFlow id="flow1" sourceRef="start" targetRef="storeOrder"></sequenceFlow>
+    <exclusiveGateway id="validationNeededGateway" default="flowDirectToShipment"></exclusiveGateway>
+    <sequenceFlow id="flow2" sourceRef="storeOrder" targetRef="validationNeededGateway"></sequenceFlow>
+    <sequenceFlow id="flowValidateOrder" sourceRef="validationNeededGateway" targetRef="validateOrder">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[#{amount > 10 || product == 'macbookRetina'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flowDirectToShipment" sourceRef="validationNeededGateway" targetRef="prepareForShipment"></sequenceFlow>
+    <userTask id="validateOrder" name="Validate order" activiti:candidateGroups="sales">
+      <extensionElements>
+        <activiti:formProperty id="product" name="Product" type="string" writeable="false"></activiti:formProperty>
+        <activiti:formProperty id="amount" name="Amount" type="long" writeable="false"></activiti:formProperty>
+        <activiti:formProperty id="customerNumber" name="Customer number" type="string" writeable="false"></activiti:formProperty>
+        <activiti:formProperty id="telephone" name="Telephone" type="string" writeable="false"></activiti:formProperty>
+        <activiti:formProperty id="canProceed" name="Proceed?" type="boolean"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <exclusiveGateway id="canProceedGateway"></exclusiveGateway>
+    <sequenceFlow id="sid-365B9A18-D547-4DCE-9D52-7FD2BAF63361" sourceRef="validateOrder" targetRef="canProceedGateway"></sequenceFlow>
+    <sequenceFlow id="sid-3CCCCA32-6C9B-43B2-9779-474731FA6727" sourceRef="canProceedGateway" targetRef="orderDenied">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[#{canProceed == false}]]></conditionExpression>
+    </sequenceFlow>
+    <endEvent id="endDenied"></endEvent>
+    <sequenceFlow id="sid-3C8936F0-D07D-47DA-9ABC-231791BDECC9" sourceRef="orderDenied" targetRef="endDenied"></sequenceFlow>
+    <serviceTask id="orderDenied" name="Send sms of denial of order" activiti:type="camel"></serviceTask>
+    <sequenceFlow id="sid-9A48487B-8428-4D64-9D9E-C2F2E102DFAD" sourceRef="canProceedGateway" targetRef="prepareForShipment">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[#{canProceed == true}]]></conditionExpression>
+    </sequenceFlow>
+    <serviceTask id="prepareForShipment" name="Prepare order for shipment" activiti:type="camel"></serviceTask>
+    <receiveTask id="readyForShipment" name="Order ready for shipment"></receiveTask>
+    <sequenceFlow id="sid-1A84F614-7236-443A-B030-FEFB52BE0E98" sourceRef="readyForShipment" targetRef="expectedDeliveryDate"></sequenceFlow>
+    <serviceTask id="expectedDeliveryDate" name="Send sms with expected delivery date" activiti:type="camel"></serviceTask>
+    <endEvent id="end"></endEvent>
+    <sequenceFlow id="sid-223A350E-BF1B-484C-91DC-A26483BE6258" sourceRef="expectedDeliveryDate" targetRef="end"></sequenceFlow>
+    <serviceTask id="sendSmsPreparingForShipment" name="Send sms that order is preparing for shipment" activiti:type="camel"></serviceTask>
+    <sequenceFlow id="sid-B5238EB6-2123-423E-9CD0-ADCC960FB37F" sourceRef="prepareForShipment" targetRef="sendSmsPreparingForShipment"></sequenceFlow>
+    <sequenceFlow id="sid-33F79464-B475-40F0-8546-DE2C7339FF96" sourceRef="sendSmsPreparingForShipment" targetRef="readyForShipment"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_process">
+    <bpmndi:BPMNPlane bpmnElement="process" id="BPMNPlane_process">
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="30.0" width="30.0" x="117.0" y="200.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="storeOrder" id="BPMNShape_storeOrder">
+        <omgdc:Bounds height="80.0" width="100.0" x="192.0" y="175.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="validationNeededGateway" id="BPMNShape_validationNeededGateway">
+        <omgdc:Bounds height="40.0" width="40.0" x="337.0" y="195.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="validateOrder" id="BPMNShape_validateOrder">
+        <omgdc:Bounds height="80.0" width="100.0" x="435.0" y="45.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="canProceedGateway" id="BPMNShape_canProceedGateway">
+        <omgdc:Bounds height="40.0" width="40.0" x="580.0" y="65.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endDenied" id="BPMNShape_endDenied">
+        <omgdc:Bounds height="28.0" width="28.0" x="865.0" y="71.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="orderDenied" id="BPMNShape_orderDenied">
+        <omgdc:Bounds height="80.0" width="100.0" x="690.0" y="45.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="prepareForShipment" id="BPMNShape_prepareForShipment">
+        <omgdc:Bounds height="80.0" width="100.0" x="550.0" y="175.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="readyForShipment" id="BPMNShape_readyForShipment">
+        <omgdc:Bounds height="80.0" width="100.0" x="870.0" y="175.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="expectedDeliveryDate" id="BPMNShape_expectedDeliveryDate">
+        <omgdc:Bounds height="89.0" width="104.0" x="1050.0" y="170.5"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+        <omgdc:Bounds height="28.0" width="28.0" x="1230.0" y="201.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sendSmsPreparingForShipment" id="BPMNShape_sendSmsPreparingForShipment">
+        <omgdc:Bounds height="94.0" width="106.0" x="695.0" y="168.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-223A350E-BF1B-484C-91DC-A26483BE6258" id="BPMNEdge_sid-223A350E-BF1B-484C-91DC-A26483BE6258">
+        <omgdi:waypoint x="1154.0" y="215.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1230.0" y="215.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="292.0" y="215.2164502164502"></omgdi:waypoint>
+        <omgdi:waypoint x="337.4130434782609" y="215.41304347826087"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-1A84F614-7236-443A-B030-FEFB52BE0E98" id="BPMNEdge_sid-1A84F614-7236-443A-B030-FEFB52BE0E98">
+        <omgdi:waypoint x="970.0" y="215.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1050.0" y="215.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flowValidateOrder" id="BPMNEdge_flowValidateOrder">
+        <omgdi:waypoint x="357.5" y="195.5"></omgdi:waypoint>
+        <omgdi:waypoint x="357.5" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="435.0" y="85.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-365B9A18-D547-4DCE-9D52-7FD2BAF63361" id="BPMNEdge_sid-365B9A18-D547-4DCE-9D52-7FD2BAF63361">
+        <omgdi:waypoint x="535.0" y="85.21645021645021"></omgdi:waypoint>
+        <omgdi:waypoint x="580.4130434782609" y="85.41304347826087"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-B5238EB6-2123-423E-9CD0-ADCC960FB37F" id="BPMNEdge_sid-B5238EB6-2123-423E-9CD0-ADCC960FB37F">
+        <omgdi:waypoint x="650.0" y="215.0"></omgdi:waypoint>
+        <omgdi:waypoint x="695.0" y="215.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flowDirectToShipment" id="BPMNEdge_flowDirectToShipment">
+        <omgdi:waypoint x="376.5392561983471" y="215.46074380165288"></omgdi:waypoint>
+        <omgdi:waypoint x="550.0" y="215.10309278350516"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-9A48487B-8428-4D64-9D9E-C2F2E102DFAD" id="BPMNEdge_sid-9A48487B-8428-4D64-9D9E-C2F2E102DFAD">
+        <omgdi:waypoint x="600.4263565891473" y="104.57364341085271"></omgdi:waypoint>
+        <omgdi:waypoint x="600.1544401544402" y="175.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="147.0" y="215.0"></omgdi:waypoint>
+        <omgdi:waypoint x="192.0" y="215.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-3CCCCA32-6C9B-43B2-9779-474731FA6727" id="BPMNEdge_sid-3CCCCA32-6C9B-43B2-9779-474731FA6727">
+        <omgdi:waypoint x="619.568345323741" y="85.43165467625899"></omgdi:waypoint>
+        <omgdi:waypoint x="690.0" y="85.17921146953404"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-3C8936F0-D07D-47DA-9ABC-231791BDECC9" id="BPMNEdge_sid-3C8936F0-D07D-47DA-9ABC-231791BDECC9">
+        <omgdi:waypoint x="790.0" y="85.0"></omgdi:waypoint>
+        <omgdi:waypoint x="865.0" y="85.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-33F79464-B475-40F0-8546-DE2C7339FF96" id="BPMNEdge_sid-33F79464-B475-40F0-8546-DE2C7339FF96">
+        <omgdi:waypoint x="801.0" y="215.0"></omgdi:waypoint>
+        <omgdi:waypoint x="870.0" y="215.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

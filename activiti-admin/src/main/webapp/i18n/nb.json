@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "Ja",
+    "NO": "Nei",
+    "ACTION": {
+      "LOGOUT": "Logg ut",
+      "DISMISS-ALERT": "Klikk for å lukke denne meldingen",
+      "RETURN-TO-LIST": "Gå tilbake til liste",
+      "SHOW-RESULTS": "Vis {{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} resultater",
+      "REFRESH-LIST": "Oppdater liste",
+      "SORT-BY": "Sorter etter {{name | translate}}",
+      "CLEAR-FILTERS": "Fjern filtre",
+      "CANCEL-AND-CLOSE": "Avbryt og lukk",
+      "CANCEL": "Avbryt",
+      "NEXT": "Neste",
+      "PREVIOUS": "Forrige",
+      "CLOSE": "Lukk",
+      "SHOWLICENSE": "Lisensinfo"
+    },
+    "TITLE": {
+      "MAIN": "Alfresco Process Services-administrator",
+      "ACTIONS": "Handlinger",
+      "FILTERS": "Filtre",
+      "CLUSTERS": "Klynger"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "Implementeringer",
+      "PROCESS-DEFINITIONS": "Definisjoner",
+      "PROCESS-INSTANCES": "Tilfeller",
+      "TASKS": "Oppgaver",
+      "JOBS": "Jobber",
+      "CONFIGURATION": "Konfigurasjon",
+      "CONFIGURATION-ENGINE": "Motor",
+      "CONFIGURATION-USERS": "Konfigurer brukere",
+      "MONITORING": "Overvåking",
+      "APPS": "Apper"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "alle"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "Endepunktet responderte ikke da du sjekket lisensen sist. Flere sjekker vil bli utført, men inntil videre ser lisensen ut til å være ugyldig.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "Programmet er i skrivebeskyttet modus grunnet en ugyldig lisens på endepunktserveren.",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "Programmet er i skrivebeskyttet modus fordi ingen lisens ble funnet på endepunktserveren.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "Programmet er i skrivebeskyttet modus på grunn av at lisensdatoen på Alfresco Process Services-endepunktserveren ikke er gyldig (Den har enten utgått eller har en startdato som ikke eksisterer enda)."
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID:",
+    "NAME": "Navn:",
+    "VERSION": "Versjon:",
+    "DESCRIPTION": "Beskrivelse:",
+    "KEY": "Nøkkel:",
+    "CATEGORY": "Kategori:",
+    "SUSPENDED": "Deaktivert:",
+    "DEPLOYMENT": "Distribusjon:",
+    "TENANT": "Leietaker:",
+    "START-FORM-DEFINED": "Startskjema definert:",
+    "GRAPHICAL-NOTATION-DEFINED": "Grafikknotasjon definert:",
+    "PROCESS-INSTANCES-SIZE": "Definisjonen har {{total}} prosesstilfeller kjørende",
+    "PROCESS-INSTANCES-SHOWING": ", viser {{size}} nylig startet",
+    "PROCESS-INSTANCES-EMPTY": "Definisjonen har ingen prosesstilfeller kjørende",
+    "JOBS-SIZE": "Definisjonen har {{total}} jobber som kjører",
+    "JOBS-EMPTY": "Definisjonen har ingen jobber som kjører",
+    "DECISION-TABLES-SIZE": "Definisjonen har {{total}} beslutningstabeller.",
+    "DECISION-TABLES-EMPTY": "Definisjonen har ingen beslutningstabeller.",
+    "FORMS-SIZE": "Definisjonen har {{total}} skjemaer.",
+    "FORMS-EMPTY": "Definisjonen har ingen skjemaer.",
+    "TITLE": {
+      "PROCESS-INSTANCES": "Prosesstilfeller",
+      "JOBS": "Jobber",
+      "DECISION-TABLES": "Beslutningstabeller",
+      "FORMS": "Skjemaer"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Rediger kategori",
+      "SHOW-ALL-JOBS": "Vis alle jobber",
+      "SHOW-ALL-PROCESSES": "Vis alle prosesser",
+      "SHOW-DIAGRAM": "Vis prosessdiagram"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Rediger kategori for definisjon",
+        "MESSAGE": "Den opprinnelige kategorien for definisjonen er utfylt fra targetNameSpace-attributten i BPMN 2.0 XML, men kan endres etter distribuering.",
+        "CATEGORY": "Kategori",
+        "CATEGORY-PLACEHOLDER": "Angi en kategori",
+        "CONFIRM": "Oppdater kategori"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Prosessdiagram"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt {{total}} samsvarende definisjoner.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende prosessdefinisjoner.",
+    "FILTER": {
+      "NAME": "Navn (skiller mellom store og små bokstaver)",
+      "KEY": "Nøkkel (skiller mellom store og små bokstaver)",
+      "DEPLOYMENT-ID": "Distribusjons- ID",
+      "TENANT-ID": "Leietaker-ID",
+      "LATEST": "Siste versjon",
+      "LATEST-HELP": "Vis kun siste versjoner"
+    },
+    "TITLE": {
+      "MAIN": "Prosessdefinisjoner"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "VERSION": "Versjon"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "VERSION": "Versjon",
+      "KEY": "Nøkkel",
+      "TENANT": "Leietaker"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "Last opp fra Process-redaktøren"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "Brukernavn",
+        "PASSWORD": "Passord",
+        "ERROR": "Vi kunne ikke kontakte redaktøren",
+        "UNAUTHORIZED": "Ugyldig brukernavn og passord",
+        "UPLOAD-DESCRIPTION": "Prosessmodellen vil nå bli hentet og distribuert til den nåværende prosesstjenesteklyngen. Velg et passende navn for distribusjonspakke."
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID:",
+    "NAME": "Navn:",
+    "DESCRIPTION": "Beskrivelse:",
+    "BUSINESS-KEY": "Forretningsnøkkel:",
+    "TENANT-ID": "Leietaker:",
+    "STATUS": "Status:",
+    "STATUS-ACTIVE": "Aktiv",
+    "STATUS-COMPLETED": "Fullført",
+    "ACTIVITY-ID-STARTED": "Aktivitets-ID startet:",
+    "ACTIVITY-ID-ENDED": "Sluttet i aktivitet:",
+    "DELETE-REASON": "Slett årsak:",
+    "STARTED-BY": "Startet av:",
+    "END-TIME": "Sluttid:",
+    "DURATION": "Varighet:",
+    "SUPER-PROCESS-INSTANCE-ID": "Super prosesstilfelle-ID:",
+    "TASKS-SIZE": "Dette prosesstilfellet har {{total}} oppgaver.",
+    "TASKS-EMPTY": "Dette prosesstilfellet har ingen oppgaver.",
+    "VARIABLES-SIZE": "Dette prosesstilfellet har {{total}} variabler.",
+    "VARIABLES-EMPTY": "Dette prosesstilfellet har ingen variabler.",
+    "JOBS-SIZE": "Dette prosesstilfellet har {{total}} jobber.",
+    "JOBS-EMPTY": "Dette prosesstilfellet har ingen jobber.",
+    "SUBPROCESSES-SIZE": "Dette prosesstilfellet har {{total}} underprosesser.",
+    "SUBPROCESSES-EMPTY": "Dette prosesstilfellet har ingen underprosesser.",
+    "DECISION-TABLES-SIZE": "Dette prosesstilfellet har {{total}} beslutningstabeller.",
+    "DECISION-TABLES-EMPTY": "Dette prosesstilfellet har ingen beslutningstabeller.",
+    "FORMS-SIZE": "Dette prosesstilfellet har {{total}} sendte skjemaer.",
+    "FORMS-EMPTY": "Dette prosesstilfellet har ingen sendte skjemaer.",
+    "TITLE": {
+      "TASKS": "Oppgaver",
+      "VARIABLES": "Variabler",
+      "JOBS": "Jobber",
+      "SUBPROCESSES": "Underprosesser",
+      "DECISION-TABLES": "Beslutningstabeller",
+      "FORMS": "Skjemaer"
+    },
+    "ACTION": {
+      "DELETE": "Slett prosesstilfelle",
+      "TERMINATE": "Avslutt prosesstilfelle",
+      "SHOW-ALL-TASKS": "Vis alle oppgaver",
+      "SHOW-ALL-JOBS": "Vis alle jobber",
+      "SHOW-ALL-SUBPROCESSES": "Vis alle underprosesser",
+      "SHOW-DIAGRAM": "Vis prosessdiagram",
+      "TITLE-VARIABLES": "Handlinger i valgte variabler",
+      "DELETE-VARIABLE": "Slett variabelen",
+      "UPDATE-VALUE": "Oppdater variabel",
+      "ADD-VARIABLE": "Legg til variabel"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "Slett prosesstilfelle",
+        "MESSAGE-DELETE": "Er du sikker på at du vil slette prosesstilfellet",
+        "MESSAGE-TERMINATE": "Er du sikker på at du vil avslutte prosesstilfellet",
+        "DELETE-REASON": "Slett årsak",
+        "DELETE-REASON-HELP": "Angi en valgfri årsak for sletting",
+        "CONFIRM-DELETE": "Slett prosesstilfelle",
+        "CONFIRM-TERMINATE": "Avslutt prosesstilfelle"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Prosessdiagram"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "Opprett variabel",
+        "NAME": "Variabelnavn",
+        "TYPE": "Variabeltype",
+        "VALUE": "Variabelverdi",
+        "CREATE": "Opprett"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "Oppdater variabel '{{name}}'",
+        "NAME": "Variabelnavn",
+        "VALUE": "Verdi",
+        "CHECKED": "sann",
+        "UNCHECKED": "usann",
+        "DATE-HELP": "ISO-8601 format (eksempel: 2016-01-28T23:00:00Z)",
+        "ACTION-UPDATE": "Oppdater"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "Slett variabel '{{name}}",
+        "MESSAGE": "Er du sikker på at du vil slette denne variabelen?",
+        "DELETE": "Slett"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "Prosesstilfeller",
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt {{total}} samsvarende prosesstilfeller.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende prosesstilfeller.",
+    "FILTER": {
+      "NAME": "Navn",
+      "PROCESS-DEFINITION": "Prosessdefinisjon",
+      "ALL-PROCESS-DEFINITIONS": "Alle prosessdefinisjoner",
+      "BUSINESS-KEY": "Forretningsnøkkel",
+      "SUPER-PROCESS-INSTANCE-ID": "Super prosesstilfelle-ID",
+      "STARTED-BEFORE": "Startet før",
+      "STARTED-AFTER": "Startet etter",
+      "ENDED-BEFORE": "Avsluttet før",
+      "ENDED-AFTER": "Avsluttet etter",
+      "VARIABLE": "Variabel",
+      "VARIABLE-NAME": "Variabelnavn",
+      "VARIABLE-VALUE": "Variabelverdi",
+      "VARIABLE-BOOLEAN-VALUE": "Boolsk verdi: {{value}}",
+      "TENANT-ID": "Leietakeridentifikator"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "Tid startet"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "BUSINESS-KEY": "Forretningsnøkkel",
+      "PROCESS-DEFINITION": "Prosessdefinisjon",
+      "CREATE-TIME": "Opprettet",
+      "END-TIME": "Avsluttet",
+      "STATUS": "Status"
+    }
+  },
+  "TASK": {
+    "ID": "ID:",
+    "NAME": "Navn:",
+    "STATUS": "Status:",
+    "STATUS-COMPLETED": "Fullført",
+    "STATUS-ACTIVE": "Aktiv",
+    "DESCRIPTION": "Beskrivelse:",
+    "TASK-DEFINITION-KEY": "Definisjonsnøkkel:",
+    "FORM-KEY": "Skjemanøkkel:",
+    "PRIORITY": "Prioritet:",
+    "DELEGATION-STATE": "Delegeringsstatus:",
+    "CATEGORY": "Kategori:",
+    "TENANT-ID": "Leietaker:",
+    "PARENT": "Overordnet oppgave:",
+    "ASSIGNEE": "Tilordnet:",
+    "OWNER": "Eier:",
+    "START-DATE": "Startdato:",
+    "DUE-DATE": "Forfallsdato:",
+    "END-DATE": "Sluttdato:",
+    "DELETE-REASON": "Slett årsak:",
+    "PROCESS-INSTANCE": "Prosesstilfelle",
+    "PROCESS-DEFINITION": "Prosessdefinisjon",
+    "EXECUTION-ID": "Kjørings-ID:",
+    "SUBTASKS-MESSAGE": "Denne oppgaven har {{total}} deloppgaver, viser {{size}}.",
+    "SUBTASKS-MESSAGE-EMPTY": "Denne oppgaven har ingen deloppgaver.",
+    "VARIABLES-MESSAGE": "Denne oppgaven har {{size}} variabler.",
+    "VARIABLES-MESSAGE-EMPTY": "Denne oppgaven har ingen variabler.",
+    "IDENTITY-LINKS-MESSAGE": "Denne oppgaven har {{size}} identitetslenker.",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "Denne oppgaven har ingen identitetslenker.",
+    "ACTION": {
+      "EDIT": "Rediger oppgave",
+      "ASSIGN-CLAIM": "Tilordne/hent oppgave",
+      "DELEGATE": "Deleger oppgave",
+      "RESOLVE": "Løs oppgave",
+      "COMPLETE": "Fullfør oppgave",
+      "DELETE": "Slett oppgave",
+      "SHOW-ALL-SUBTASKS": "Vis alle deloppgaver",
+      "SHOW-SUBMITTED-FORM": "Vis alle sendte skjemaer"
+    },
+    "TITLE": {
+      "SUBTASKS": "Send skjemaer",
+      "IDENTITY-LINKS": "Identitetslenker",
+      "VARIABLES": "Variabler"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "Tilordne oppgave",
+        "MESSAGE": "Er du sikker på at du vil tilordne oppgave",
+        "NEW-ASSIGNEE": "Ny tilordnet",
+        "NEW-ASSIGNEE-HELP": "La tilordnet-feltet stå tomt om du ikke ønsker å tilordne oppgaven til noen.",
+        "CONFIRM": "Tilordne oppgave"
+      },
+      "COMPLETE": {
+        "TITLE": "Fullfør oppgave",
+        "MESSAGE": "Er du sikker på at du vil fullføre oppgaven",
+        "CONFIRM": "Fullfør oppgave"
+      },
+      "DELEGATE": {
+        "TITLE": "Deleger oppgave",
+        "MESSAGE": "Er du sikker på at du vil delegere oppgaven",
+        "CONFIRM": "Deleger oppgave",
+        "DELEGATE-TO": "Bruker å delegere til"
+      },
+      "RESOLVE": {
+        "TITLE": "Løs oppgave",
+        "MESSAGE": "Er du sikker på at du vil løse oppgave",
+        "CONFIRM": "Løs oppgave"
+      },
+      "DELETE": {
+        "TITLE": "Slett oppgave",
+        "MESSAGE": "Er du sikker på at du vil avslutte oppgave",
+        "CONFIRM": "Slett oppgave"
+      },
+      "EDIT": {
+        "TITLE": "Rediger oppgave",
+        "CONFIRM": "Oppdater oppgave",
+        "NAME": "Navn",
+        "DESCRIPTION": "Beskrivelse",
+        "PRIORITY": "Prioritet",
+        "CATEGORY": "Kategori",
+        "ASSIGNEE": "Tilordnet",
+        "OWNER": "Eier",
+        "DUE-DATE": "Forfallsdato"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "Oppgaver",
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt {{total}} samsvarende oppgaver.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende oppgaver.",
+    "FILTER": {
+      "NAME": "Navn (skiller mellom store og små bokstaver)",
+      "ASSIGNEE": "Tilordnet (skiller mellom store og små bokstaver)",
+      "STATUS": "Status",
+      "STATUS-ANY": "Hvilken som helst status",
+      "STATUS-ACTIVE": "Aktive oppgaver",
+      "STATUS-COMPLETE": "Fullførte oppgaver",
+      "PROCESS-INSTANCE-ID": "Prosesstilfelle-ID",
+      "TENANT-ID": "Leietakeridentifikator",
+      "OWNER": "Eier (skiller mellom store og små bokstaver)",
+      "PARENT-TASK-ID": "Overordnet oppgave-ID",
+      "CREATED-BEFORE": "Opprettet før",
+      "CREATED-AFTER": "Opprettet etter",
+      "ENDED-BEFORE": "Avsluttet før",
+      "ENDED-AFTER": "Avsluttet etter",
+      "DUE-BEFORE": "Forfaller før",
+      "DUE-AFTER": "Forfaller etter",
+      "TASK-VARIABLE": "Oppgave lokal variabel",
+      "PROCESS-VARIABLE": "Prosessvariabel",
+      "VARIABLE-NAME": "Variabelnavn",
+      "VARIABLE-VALUE": "Variabelverdi",
+      "VARIABLE-BOOLEAN-VALUE": "Boolsk verdi: {{value}}"
+    },
+    "SORT": {
+      "NAME": "Navn",
+      "DUE-DATE": "Forfallsdato",
+      "START-TIME": "Tid startet",
+      "END-TIME": "Tid avsluttet",
+      "PRIORITY": "Prioritet"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "ASSIGNEE": "Tilordnet",
+      "OWNER": "Eier",
+      "CREATE-TIME": "Opprettet",
+      "END-TIME": "Avsluttet",
+      "PRIORITY": "Prioritet"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "Implementeringer",
+    "LIST-MESSAGE": "Viser {{size}} resultater fra totalt {{total}} samsvarende implementeringer.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende implementeringer.",
+    "FILTER": {
+      "NAME": "Navn (skiller mellom store og små bokstaver)",
+      "TENANTID": "Leietakeridentifikator (skiller mellom store og små bokstaver)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Navn"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "DEPLOY-TIME": "Distribusjonstid",
+      "CATEGORY": "Kategori",
+      "TENANT": "Leietaker"
+    },
+    "ACTION": {
+      "UPLOAD": "Last opp prosess eller pakke",
+      "DELETE": "Slett distribusjon"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Velg en .bpmn20.xml-prosessfil for å distribuere eller laste opp en prosesspakke (med aktiva) i en .zip- eller .bar-fil.",
+        "WARNING": "Det er kun mulig å laste opp en prosess til en kjernemotor, ikke til et BPM Suite-tilfelle. Prosesser i BPM Suite burde distribueres ved å bruke en app som er delt med enkeltpersoner eller grupper.",
+        "DROPZONE": "Eller slipp en fil her",
+        "NO-DROP": "Slipping av filer støttes ikke av nettleseren din",
+        "CANCEL-UPLOAD": "Avbryt opplasting",
+        "ERROR": "Kunne ikke laste opp denne filen"
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Du er i ferd med å slette distribueringen '{{name}}'. Om den har prosesstilfeller tilknyttet til den, aktive eller fullførte, vil disse også bli slettet. Vil du virkelig slette distribueringen '{{name}}'?"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID:",
+    "NAME": "Navn:",
+    "TIME": "Distribueringstid:",
+    "CATEGORY": "Kategori:",
+    "TENANTID": "Leietakeridentifikator:",
+    "DEFINITIONS-MESSAGE": "Denne distribusjonen har {{total}} prosessdefinisjoner, viser {{size}}.",
+    "DEFINITIONS-MESSAGE-EMPTY": "Denne distribusjonen har ingen prosessdefinisjoner.",
+    "TITLE": {
+      "DEFINITIONS": "Prosessdefinisjoner",
+      "RESOURCES": "Resurser"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "Vis alle definisjoner"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "Jobb {{id}}",
+      "EXCEPTION": "Unntak"
+    },
+    "ACTIONS": {
+      "EXECUTE": "Utfør jobb",
+      "DELETE": "Slett jobb"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "Slett jobb {{id}}",
+        "MESSAGE": "Er du sikker på at du vil slette jobb {{id}}?",
+        "CONFIRM": "Slett jobb"
+      }
+    },
+    "ID": "ID:",
+    "EXECUTION-ID": "Kjørings-ID:",
+    "PROCESS-INSTANCE": "Prosesstilfelle:",
+    "PROCESS-DEFINITION": "Prosessdefinisjon:",
+    "DUEDATE": "Forfallsdato:",
+    "RETRIES-LEFT": "Forsøk igjen:",
+    "TENANT-ID": "Leietaker:"
+  },
+  "JOBS": {
+    "TITLE": "Jobber",
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt av {{total}} samsvarende jobber.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende jobber.",
+    "FILTER": {
+      "PROCESS-DEFINITION": "Prosessdefinisjon",
+      "ALL-PROCESS-DEFINITIONS": "Alle prosessdefinisjoner",
+      "PROCESS-INSTANCE-ID": "Prosesstilfelle-ID",
+      "TENANT-ID": "Leietakeridentifikator",
+      "DUE-BEFORE": "Forfaller før",
+      "DUE-AFTER": "Forfaller etter",
+      "EXCEPTION": "Unntak",
+      "EXCEPTION-HELP": "Vis kun jobber med unntak"
+    },
+    "SORT": {
+      "ID": "Jobb ID",
+      "DUE-DATE": "Forfallsdato",
+      "PROCESS-INSTANCE-ID": "Prosesstilfelle-ID"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "Forfallsdato",
+      "PROCESS-DEFINITION": "Prosessdefinisjon",
+      "RETRIES": "Forsøk",
+      "EXCEPTION": "Unntak"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Logg på",
+    "USERNAME": "Brukernavn",
+    "USERNAME-PLACEHOLDER": "Angi brukernavn",
+    "PASSWORD": "Passord",
+    "PASSWORD-PLACEHOLDER": "Angi passord",
+    "ACTION": {
+      "CONFIRM": "Logg på"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. Med enerett."
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "Oppdater side hver {{name}}",
+    "NUMBER-OF-MEMBERS": "Antall medlemmer:",
+    "NODE-ID": "ID:",
+    "LAST-UPDATED": "Sist oppdatert:",
+    "LAST-METRICS-UPDATE": "Siste måledataoppdatering:",
+    "NOT-ENOUGH-DATA": "Noden er i en ukjent tilstand. Årsaken kan være at noden ikke har sluttet tilknytning til klyngen eller ikke har sent nok data enda til å vises her.",
+    "JOB-EXECUTOR-RUNNING": "Jobbutøver kjører:",
+    "JAVA-VERSION": "Java-versjon:",
+    "SUITE-INFORMATION": "Dette er et Alfresco Process Services-Suite-tilfelle, versjon {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}} (utgave '{{bpmSuiteEdition}}')",
+    "MEMORY-USAGE": "Minnebruk:",
+    "MEMORY-USED": "brukt",
+    "MEMORY-HEAP": "Heap:",
+    "MEMORY-NON-HEAP": "Ikke-heap:",
+    "UPTIME": "Oppetid:",
+    "GARBAGE-COLLECTION": "Kjørte {{['collection.count']}} tider, total tid brukt er {{['collection.time'] | humanTime}}",
+    "MASTER-CONFIGURATION": "Hovedkonfigurasjon:",
+    "MASTER-CONFIGURATION-USED": "Riktig hovedkonfigurasjon brukt",
+    "MASTER-CONFIGURATION-NOT-USED": "Hovedkonfigurasjon er ikke brukt",
+    "MASTER-CONFIGURATION-DISABLED": "Hovedkonfigurasjon er deaktivert",
+    "MASTER-CONFIGURATION-INCORRECT": "Feil hovedkonfigurasjon!",
+    "CLASSES-LOADED": "Gjeldene klasser er lastet:",
+    "CLASSES-UNLOADED": "Totale klasser ikke lastet:",
+    "CLASSES-TOTAL": "Totale klasser som ikke er lastet:",
+    "CACHE-HITS": "Hurtigbuffertreff",
+    "CACHE-MISSES": "Hurtigbufferbom",
+    "CACHE-ADDITIONS": "Hurtigbuffer-tillegg",
+    "CACHE-REMOVALS": "Hurtigbuffer-fjerninger",
+    "JOBS-EXECUTED": "Antall jobber utført",
+    "JOBS-FAILED": "Antall mislykkede jobber",
+    "JOBS-QUEUE-FULL": "Jobbkø full",
+    "PROCESS-INSTANCES": "Prosesstilfelle startet",
+    "HOUR-COUNT-CHART": "Totalt antall / timer",
+    "WEEKDAY-COUNT-CHART": "Totalt antall / ukedag",
+    "TASKS-COMPLETED": "Oppgaver fullført",
+    "MEAN-RATE": "Gjennomsnittlig sats (per sekund):",
+    "TOTAL": "Totalt:",
+    "COUNT": "Antall",
+    "MAX": "Maks",
+    "MIN": "Min",
+    "STDDEV": "Standardavvik",
+    "MINUTE-RATE": "1/5/15 minuttrate:",
+    "REST-REQUEST-TYPE": "Request type (rate unit = hendelser/sekund)",
+    "REST-ENDPOINTS": "REST endpoints timings (duration unit = sekunder, rateenhet = anrop/sekund)",
+    "ELASTIC-SEARCH-VERSION": "Versjon",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "Klyngenavn",
+    "ELASTIC-SEARCH-STATE": "Status",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "en rød status indikerer at den spesifikke delen ikke er tildelt i klyngen, gul betyr at den primære delen er tildelt, men at replikaer ikke er tildelt, og grønn betyr at alle deler er tildelt",
+    "ELASTIC-SEARCH-INDICES": "Indikerer",
+    "ELASTIC-SEARCH-DOCS-COUNT": "Antall dokumenter",
+    "ELASTIC-SEARCH-SHARD-INFO": "Delt info",
+    "TITLE": {
+      "MAIN": "Klyngeovervåking",
+      "NODE": "Node {{ipAddress}}",
+      "MEMORY": "Minne",
+      "GARBAGE-COLLECTION": "Datasanering",
+      "CLASSLOADING": "Lasting av klasse",
+      "PROCESS-DEFINITION-CACHE": "Hurtigbuffer for prosessdefinisjon",
+      "JOB-METRICS": "Jobbmåledata",
+      "RUNTIME-METRICS": "Kjøretid-måledata",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "Måledata for Rest-endepunkt",
+      "BPM-SUITE-ELASTIC-SEARCH": "Elastisk søk"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "Endre passord for '{{login}}'",
+        "OLD-PASSWORD": "Gammelt passord",
+        "NEW-PASSWORD": "Nytt passord",
+        "CONFIRM": "Endre passord"
+      },
+      "DELETE": {
+        "TITLE": "Slett bruker {{login}}",
+        "MESSAGE": "Er du sikker på at du vil slette bruker {{login}}'?",
+        "CONFIRM": "Slett bruker"
+      },
+      "EDIT": {
+        "TITLE": "Rediger bruker {{login}}",
+        "LOGIN": "Logg på",
+        "EMAIL": "E-post",
+        "FIRSTNAME": "Fornavn",
+        "LASTNAME": "Etternavn",
+        "CONFIRM": "Oppdater bruker",
+        "READONLY": "Skrivebeskyttet bruker"
+      },
+      "NEW": {
+        "TITLE": "Opprett ny bruker",
+        "LOGIN": "Logg på",
+        "EMAIL": "E-post",
+        "FIRSTNAME": "Fornavn",
+        "LASTNAME": "Etternavn",
+        "PASSWORD": "Passord",
+        "ADMIN": "Har administratorrettigheter",
+        "CONFIRM": "Opprett bruker",
+        "READONLY": "Skrivebeskyttet bruker"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "Brukere",
+    "ACTION": {
+      "EDIT": "Rediger bruker",
+      "NEW": "Opprett ny bruker",
+      "DELETE": "Slett bruker",
+      "CHANGE-PASSWORD": "Endre passord"
+    },
+    "HEADER": {
+      "LOGIN": "Logg på",
+      "FIRSTNAME": "Fornavn",
+      "LASTNAME": "Etternavn",
+      "EMAIL": "E-post",
+      "CLUSTER_USER": "Klyngebruker"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "Lisensinformasjon",
+      "HOLDER": "Innehaver",
+      "SUBJECT": "Emne",
+      "PRODUCTKEY": "Produkttype",
+      "GOODAFTERDATE": "Lisens gyldig etter",
+      "GOODBEFOREDATE": "Lisens gyldig til",
+      "NUMBER_OF_PROCESSES": "Antall aktive prosesser",
+      "NUMBER_OF_ADMINS": "Antall administratorbrukere",
+      "MULTI_TENANT": "Flere leietakere",
+      "DEFAULT_TENANT": "Standardleietaker"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "Navn:",
+    "USER": "Bruker:",
+    "MASTER-MANDATORY": "Hovedkonfigurasjon er obligatorisk:",
+    "METRICS-SEND-INTERVAL": "Sendingsintervall for mål:",
+    "ENDPOINT-HELP": "Endepunktkonfigurasjonen (hver klynge har kun én) må vise til en REST-installasjon. Denne endepunktkonfigurasjonen vil deretter bli brukt til å hente og administrere data som brukes i andre seksjoner (for eksempel implementeringer, prosessdefinisjoner osv.) i denne applikasjonen.",
+    "ENDPOINT-NAME": "Navn:",
+    "ENDPOINT-DESCRIPTION": "Beskrivelse:",
+    "ENDPOINT-ADDRESS": "Serveradresse:",
+    "ENDPOINT-PORT": "Serverport:",
+    "ENDPOINT-CONTEXT-ROOT": "Kontekstrot:",
+    "ENDPOINT-REST-ROOT": "REST-rot:",
+    "ENDPOINT-USERNAME": "Brukernavn:",
+    "PROCESS-ENGINE-HELP": "Denne seksjonene tillater deg å definere en «hovedkonfigurasjon» for klyngen. Alle tilfeller i klyngen vil bruke denne konfigurasjonen når de starter opp (hvis klyngens konfigurasjonsbeholder er på klassebanen, eller hvis de tilknyttede egenskapene er angitt). Om den ikke blir angitt vil tilfellene bruke de lokale konfigurasjonsfilene sine.",
+    "NO-MASTER-DEFINED": "Ingen hovedkonfigurasjon definert",
+    "ACTION": {
+      "SHOW-PASSWORD": "Vis passord",
+      "EDIT-CLUSTER-CONFIG": "Rediger klyngekonfigurasjon",
+      "CREATE-CLUSTER-CONFIG": "Opprett ny klynge",
+      "DELETE-CLUSTER-CONFIG": "Slett klyngekonfigurasjon",
+      "GENERATE-JAR": "Generer klyngens konfigurasjonsbeholder",
+      "EDIT-ENDPOINT": "Rediger Process Services REST-endepunkt",
+      "CHECK-ENDPOINT": "Sjekk Process Services REST-endepunkt",
+      "SELECT-MASTER": "Velg hovedkonfigurasjon",
+      "ADD-CONFIGURATION": "Legg til hovedkonfigurasjon",
+      "EDIT-CONFIGURATION": "Rediger hovedkonfigurasjon",
+      "DELETE-CONFIGURATION": "Slett hovedkonfigurasjon"
+    },
+    "TITLE": {
+      "MAIN": "Klyngekonfigurasjon",
+      "ACTIVITI": "Innstillinger for tilfelle",
+      "ENDPOINT": "Endepunktkonfigurasjon",
+      "MASTER-CONFIGURATION": "Hovedkonfigurasjon"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "Velg hovedkonfigurasjon",
+        "MESSAGE": "Er du sikker på at du vil velge {{name}} som hovedkonfigurasjon?",
+        "CONFIRM": "Velg hovedkonfigurasjon"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "Slett hovedkonfigurasjon",
+        "MESSAGE": "Er du sikker på at du vil slette denne hovedkonfigurasjonen?",
+        "CONFIRM": "Slett"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "Generer klyngens konfigurasjonsbeholder",
+        "MESSAGE": "Det er viktig at alle medlemmer i samme klynge bruker de samme innstillingene.",
+        "LINK-MESSAGE": "For å forenkle dette kan en Java arkivbeholder (beholder) lastes ned ved å klikke på linken under. Denne beholderen inneholder konfigurasjonen som trengs for at et Process Services-tilfelle kan kommunisere med Admin Application. Beholderen må være på klassebanen og vil bli brukt automatisk.",
+        "ADMIN-APP-URL": "Følgende felt er den primære URL-adressen som vil bli brukt for å sende informasjon tilbake til dette Admin-programmet. Endre denne hvis URL-adressen av en eller annen grunn ikke samsvarer med URL-adressene som brukes til å vise dette webgrensesnittet.",
+        "CONFIRM": "Deaktiver hovedkonfigurasjon",
+        "ACTION-DOWNLOAD": "Last ned {{label}}"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "Rediger endepunktskonfigurasjon",
+        "ENDPOINT-NAME": "Navn",
+        "ENDPOINT-DESCRIPTION": "Beskrivelse",
+        "ENDPOINT-ADDRESS": "Serveradresse",
+        "ENDPOINT-PORT": "Serverport",
+        "ENDPOINT-CONTEXT-ROOT": "Kontekstrot",
+        "ENDPOINT-REST-ROOT": "REST-rot",
+        "ENDPOINT-USERNAME": "Brukernavn",
+        "ENDPOINT-PASSWORD": "Passord",
+        "ENDPOINT-PASSWORD-HELP": "La stå tom for å beholde nåværende passord",
+        "ENDPOINT-URL-PREVIEW": "URL forhåndsvisning",
+        "ACTION-CONFIRM": "Lagre endepunktkonfigurasjon",
+        "ERROR-401": "Feil: Ugyldig legitimasjon",
+        "ERROR-403": "Feil: Ugyldig legitimasjon eller URL",
+        "ERROR-404": "Feil: URL ikke funnet",
+        "ERROR-500": "Feil: serverfeil. Kontroller serverlogger."
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "Slett klyngekonfigurasjon",
+        "WARNING": "Når en klyngekonfigurasjon er slettet, må du være klar over at du også burde fjerne konfigurasjonsbeholderen (eller egenskapsfilen) for denne klyngekonfigurasjonen fra klassebanen i nodene.",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "Kan ikke slette denne klyngekonfigurasjonen. Det må finnes minimum én klyngekonfigurasjon, og dette er den eneste klyngekonfigurasjonen som er definert i systemet.",
+        "ACTION-DELETE": "Bekreft"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "Klyngenavn og passord",
+        "NETWORK-SETTINGS": "Nettverksinnstillinger",
+        "SECURITY-SETTINGS": "Sikkerhetsinnstillinger",
+        "ACTIVITI-SETTINGS": "Innstillinger for tilfelle",
+        "STEPS": "Trinn {{currentStepIndex + 1}} ut i fra {{steps.length}}",
+        "GROUP-HELP": "Hver klynge må ha et unikt navn. Hvert motortilfelle må angi dette klyngenavnet for å delta i klyngen.",
+        "NAME": "Navn",
+        "USERNAME": "Brukernavn",
+        "PASSWORD": "Passord",
+        "SECURITY-HELP": "Hver klynge må ha et unikt navn og passord. Hvert Process Services-motortilfelle som ønsker å utveksle data med Process Services Admin Applikasjonen, trenger å oppgi legitimasjonene i sin kommunikasjon.",
+        "ACTIVITI-HELP": "Når hovedkonfigurasjon aktiveres, starter prosesstilfeller som ikke er medlemmer av denne klyngen, opp ved bruk av hovedkonfigurasjonen.",
+        "REQUIRES-MASTER": "Krever hovedkonfigurasjon",
+        "METRICS-HELP": "Hvert Process Services-tilfelle som er medlem av denne klyngen, sender måledata (JVM-måledata, brukermåledata osv.) tilbake til applikasjonen Process Services-administrator. Følgende innstilling definerer hvor ofte disse måledataene samles og sendes.",
+        "METRICS-INTERVAL": "Send måledataintervaller (i sekunder)",
+        "ERROR-NAME-TAKEN": "Klyngenavn er alt i bruk. Velg en annen.",
+        "ERROR-USER-TAKEN": "Klyngebruker er alt i bruk. Velg en annen.",
+        "CONFIRM": "Lagrer konfigurasjon"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "Opprett ny konfigurasjon",
+        "TITLE-EDIT": "Rediger konfigurasjon",
+        "NAME": "Navn",
+        "DESCRIPTION": "Beskrivelse",
+        "TITLE-DATABASE": "Database",
+        "JDBC-URL": "URL-adresse for JDBC",
+        "JDBC-USERNAME": "JDBC-brukernavn",
+        "JDBC-PASSWORD": "JDBC-passord",
+        "JDBC-DRIVER": "JDBC-driver",
+        "JDBC-JNDI-NAME": "JDBC JNDI-navn",
+        "JDBC-JNDI-HELP": "Fyll ut denne (ignorer innstillingene over) hvis datakilden er konfigurert i en programserver og eksponert gjennom Jndi.",
+        "TITLE-SCHEMA": "Prosess Services-skjema",
+        "SCHEMA-UPDATE": "Databaseskjema-oppdatering",
+        "SCHEMA-UPDATE-HELP": "Det anbefales å la denne innstillingen forbli «usann» og oppgradere databaseskjemaet ved å bruke SQL-skriptene. Om den er satt til «sann», vil den første noden i klyngen som starter opp oppgradere skjemaet automatisk. Dette kan medføre problemer når flere noder starter opp samtidig, siden datadefinisjonen ofte ikke er transaksjonsbasert.",
+        "TITLE-HISTORY": "Historikk",
+        "HISTORY-LEVEL": "Historikk nivå",
+        "TITLE-JOB-EXECUTOR": "Jobbutøver",
+        "NR-OF-JOB-NODES-HELP": "Hvert Process Services-motortilfelle har en Jobbutøver-komponent, som er ansvarlig for å utføre bakgrunnsoppgaver som tidtakere og asynkrone fortsettelser av forretningsprosesser. Det anbefales likevel å ha et mindre antall (én, to eller flere for svært scenarier med svært høy belastning) jobbutøvere aktivert. Verdien for denne innstillingen vil bli brukt til å aktivere eller deaktivere jobbutøvere i klyngen ved behov.",
+        "NR-OF-JOB-NODES": "Antall jobbutøver-noder",
+        "JOB-EXECUTOR-ENABLE": "Aktiver jobbutøver",
+        "TITLE-ADVANCED": "Avansert",
+        "PROCESS-DEF-CACHE-LIMIT": "Prosessdefinisjon buffergrense",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "Antall maksimale (analyserte) prosessdefinisjoner som ligger i minnet. Å analysere en prosessdefinisjon er ressursintensivt så det anbefales å ha en stor nok buffer slik at du ikke bruker for mye minne (standard: ubegrenset).",
+        "ID-BLOCK-SIZE": "ID- blokkstørrelse",
+        "ID-BLOCK-SIZE-HELP": "Antall database ID-numre en Process Services-motor reserverer for å brukes når den oppretter nye enheter (standard:100). Når alle ID-numre er oppbrukt, blir en ny blokk reservert i databasen .",
+        "ENABLE-JOB-TWEAKING": "Aktiver avansert jobbutøver-tilpasning",
+        "ENABLE-JOB-TWEAKING-HELP": "Jobbutøveren er komponenten er ansvarlig for å utføre tidtaking, asynkrone fortsettelser osv. (generelt kalt «jobber») av forretningsprosesser.",
+        "TITLE-JOB-TWEAKING": "Tilpasning av jobbutøver",
+        "MAX-JOBS-PER-ACQUISITION": "Maks. jobb per anskaffelse",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "Jobbutøveren opererer i to faser: I første fase innhentes jobber ved å låse jobber for en viss tid (for å unngå konflikter mellom flere jobbutøvere). I den andre fasen blir de innhentede jobbene utført av et (vanligvis) separert trådutvalg. Denne verdien bestemmer hvor mange jobber som hentes per forespørsel for fase 1. Når mer enn én jobbutøver er aktiv i en klynge anbefales det å stille denne verdien til 1 for å unngå vranglåser. Standardverdi er 1.",
+        "JOB-WAIT-TIME": "Ventetid (ms)",
+        "JOB-WAIT-TIME-HELP": "Ventetiden (i ms) etter at alle jobber har blitt utført eller ingen jobber har blitt funnet. Dette er for å unngå for stor belastning i databasen. Standardverdi er 10000 ms.",
+        "JOB-LOCK-TIME": "Lås tid (ms)",
+        "JOB-LOCK-TIME-HELP": "Tiden (i ms) som en jobb er låst i av en jobbutøverkomponent. Når tiden har utgått, men jobben ennå ikke er utført kan jobben igjen hentes av en annen jobbutøver. Dette er for å unngå at en mislykket jobbutøver vil stanse jobbutøvelsen for alltid. Standardverdi er 5 minutter (300 000 ms)",
+        "JOB-CORE-POOL-SIZE": "Kjernetrådutvalg- størrelse",
+        "JOB-CORE-POOL-SIZE-HELP": "Minimum antall tråder i trådutvalget som holdes aktive for å utføre jobber. Kun aktuell for standard jobbutførelse.",
+        "JOB-QUEUE-SIZE": "Køstørrelse",
+        "JOB-QUEUE-SIZE-HELP": "Standard jobbutøver henter først jobber og setter de i kø før de utføres i et trådutvalg. Denne verdien bestemmer hvor mange jobber som står i denne køen. Kun aktuell for den standard jobbutøveren (gjelder ikke for f.eks. Spring-jobbutøvere eller tilpassede implementeringer).",
+        "JOB-MAX-POOL-SIZE": "Maks. trådutvalg-størrelse",
+        "JOB-MAX-POOL-SIZE-HELP": "Det maksimale antall tråder i trådutvalget som er opprettet for å utføre jobber. Kun aktuell for standard jobbutførelse.",
+        "TITLE-DB-POOL": "Database-tilkoblingsutvalg",
+        "ENABLE-DB-POOL": "Aktiver database tilkoblingsutvalg-konfigurasjon",
+        "ENABLE-DB-POOL-HELP": " Tillater å konfigurerer tilkoblingsutvalget i datakilden opprettet av Alfresco Process Services. Disse innstillingene er kun gjeldene hvis Alfresco Process Services er ansvarlig for oppretting av datakilden (dvs. ikke en jndi-datakilde, ingen Spring satt inn osv.)",
+        "JOB-MAX-IDLE-CONNECTIONS": "Maks. inaktive koblinger",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "Maks. aktive koblinger",
+        "JOB-MAX-CHECKOUT-TIME": "Maks. utsjekkstid (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "Den maksimale tiden en kobling kan brukes før det «kan hende» den blir gitt bort igjen.",
+        "JOB-MAX-WAIT-TIME": "Maks. ventetid (ms)",
+        "JOB-MAX-WAIT-TIME-HELP": "Tiden man må vent før man igjen kan prøve å få en tilkobling.",
+        "TITLE-MAIL-SERVER": "Mail-server",
+        "ENABLE-MAIL-SERVER": "Aktiver mailserverkonfigurasjon",
+        "ENABLE-MAIL-SERVER-INFO": "Dette trengs kun når man bruker e-postfunksjonalitetet i dine forretningsprosesser.",
+        "MAIL-DEFAULT-FROM": "Standard fra e-postadresse",
+        "MAIL-HOST": "Mailserver-vert",
+        "MAIL-PORT": "Mailserver-port",
+        "MAIL-USERNAME": "Mailserver-brukernavn",
+        "MAIL-PASSWORD": "Mailserver-passord",
+        "MAIL-USE-SSL": "Bruk SSL?",
+        "MAIL-USE-TLS": "Bruk TLS?",
+        "MAIL-JNDI-NAME": "Mailserver JNDI-navn",
+        "MAIL-JNDI-NAME-INFO": "Fyll iut denne (ignorer innstillingen over) hvis e-postserveren er konfigurert i en programserver og vises gjennom Jndi.",
+        "ACTION-DELETE-CONFIGURATION": "Slett konfigurasjon",
+        "ACTION-CREATE-CONFIGURATION": "Opprett konfigurasjon",
+        "ACTION-UPDATE-CONFIGURATION": "Oppdater konfigurasjon",
+        "CONFIG-OPTIONS": "Konfigurasjonstype",
+        "OPTION-ENGINE": "Frittstående Process Services-motor",
+        "OPTION-SUITE": "Process Services BPM Suite",
+        "FETCHING-TEMPLATE": "Henter mal fra server ..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "Appimplementeringer",
+    "LIST-MESSAGE": "Viser {{size}} resultater fra en total av {{total}} samsvarende appimplementeringer.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende appimplementeringer.",
+    "FILTER": {
+      "NAME": "Navn",
+      "TENANTID": "Leietakeridentifikator",
+      "LATEST": "Siste versjon",
+      "LATEST-HELP": "Vis kun siste versjoner"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Navn"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "App-ID",
+      "DEPLOYMENT-ID": "Prosess Distribusjon-ID",
+      "DMN-DEPLOYMENT-ID": "DMN-distribusjons-ID",
+      "NAME": "Navn",
+      "DEPLOY-TIME": "Distribusjonstid",
+      "DEPLOYED-BY": "Distribuert av",
+      "TENANT": "Leietaker-ID"
+    },
+    "ACTION": {
+      "UPLOAD": "Last opp og publiser en app",
+      "PUBLISH-APP-MODEL": "Publiser en app-modell"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Velg en .zip app-definisjon for å distribuere.",
+        "WARNING": "Å laste opp en prosess er kun mulig til en BPM Suite-tilfelle.",
+        "DROPZONE": "Eller slipp en fil her",
+        "NO-DROP": "Slipping av filer støttes ikke av nettleseren din",
+        "CANCEL-UPLOAD": "Avbryt opplasting",
+        "ERROR": "Kunne ikke laste opp denne filen"
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "App-ID:",
+    "DEPLOYMENT-ID": "Distribusjons-ID:",
+    "DMN-DEPLOYMENT-ID": "DMN Distribusjons-ID:",
+    "DEPLOYED-BY": "Distribuert av:",
+    "DEPLOYED-ON": "Distribuert på:",
+    "APP-NAME": "App-Navn:",
+    "VERSION": "Versjon:",
+    "DESCRIPTION": "Beskrivelse:",
+    "KEY": "Nøkkel:",
+    "CATEGORY": "Kategori:",
+    "SUSPENDED": "Deaktivert:",
+    "DEPLOYMENT": "Distribusjon:",
+    "TENANT-ID": "Leietaker-ID:",
+    "START-FORM-DEFINED": "Startskjema definert:",
+    "GRAPHICAL-NOTATION-DEFINED": "Grafikknotasjon definert:",
+    "PROCESS-DEFINITIONS-SIZE": "Appdefinisjonen har {{total}} prosessdefinisjoner",
+    "PROCESS-DEFINITIONS-SHOWING": ", viser {{size}} prosessdefinisjoner",
+    "PROCESS-DEFINITIONS-EMPTY": "Appdistribusjonen har ingen prosessdefinisjoner",
+    "DECISION-TABLES-SIZE": "Appdistribusjonen har {{total}} beslutningstabeller",
+    "DECISION-TABLES-SHOWING": ", viser {{size}} beslutningstabeller",
+    "DECISION-TABLES-EMPTY": "Appdistribusjonen har ingen beslutningstabeller",
+    "FORMS-SIZE": "Appdistribusjon har {{total}} skjemaer",
+    "FORMS-SHOWING": ", viser {{size}} skjemaer",
+    "FORMS-EMPTY": "Appdistribusjonen har ingen skjemaer",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "Prosessdefinisjoner",
+      "DECISION-TABLES": "Beslutningstabeller",
+      "FORMS": "Skjemaer"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Rediger kategori",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "Vis alle prosessdefinisjoner",
+      "SHOW-ALL-DECISION-TABLES": "Vis alle beslutningstabeller",
+      "SHOW-ALL-FORMS": "Vis alle skjemaer",
+      "SHOW-DIAGRAM": "Vis prosessdiagram"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Rediger kategori for definisjon",
+        "MESSAGE": "Den opprinnelige kategorien for definisjonen er utfylt fra targetNameSpace-attributten i BPMN 2.0 XML, men kan endres etter distribuering.",
+        "CATEGORY": "Kategori",
+        "CATEGORY-PLACEHOLDER": "Angi en kategori",
+        "CONFIRM": "Oppdater kategori"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Prosessdiagram"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "Navn",
+      "TYPE": "Type",
+      "VALUE": "Verdi"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "Gruppe-ID",
+      "TYPE": "Type",
+      "USER-ID": "Bruker-ID"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "Vi kunne ikke få data fra serveren",
+      "AUTHENTICATION-ERROR": "Du tastet inn ugyldige påloggingsdetaljer"
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "Konfigurasjonen '{{name}}’ ble slettet.",
+      "CONFIG-UPDATED": "Konfigurasjonen '{{name}}’ ble oppdatert.",
+      "CONFIG-CREATED": "Konfigurasjonen '{{name}}' ble opprettet.",
+      "MASTER-CONFIG-DELETE": "Hovedkonfigurasjonen ble slettet.",
+      "MASTER-CONFIG-UPDATE": "Hovedkonfigurasjonen ble oppdatert",
+      "CLUSTER-UPDATED": "Klyngekonfigurasjonen ble oppdatert.",
+      "CLUSTER-CREATED": "Klyngekonfigurasjonen ble opprettet.",
+      "ENDPOINT-UPDATED": "Endepunktet '{{name}}' ble oppdatert.",
+      "ENDPOINT-INVALID": "Endepunktskonfigurasjonen for '{{name}}' er ugyldig.",
+      "ENDPOINT-VALID": "Endepunktet er gyldig. Motor ved endepunkt: {{name}} – {{version}}"
+    },
+    "JOB": {
+      "DELETED": "Jobben '{{id}}' ble slettet.",
+      "EXECUTED": "Jobben '{{id}}’ ble utført."
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "Prosesstilfellet '{{id}}’ ble slettet.",
+      "TERMINATED": "Prosesstilfellet '{{id}}’ ble avslutter."
+    },
+    "TASK": {
+      "DELETED": "Oppgaven '{{id}}’ ble slettet.",
+      "COMPLETED": "Oppgaven '{{id}}’ ble fullført.",
+      "DELEGATED": "Oppgaven '{{id}}’ ble delegert til brukeren {{user}}.",
+      "RESOLVED": "Oppgaven '{{id}}’ ble løst.",
+      "ASSIGNED": "Oppgaven ’{{id}}’ er nå tilordnet til {{user}}.",
+      "UNASSIGNED": "Oppgaven ’{{id}}’ er nå ikke tilordnet.",
+      "UPDATED": "Oppgaven '{{id}}' ble oppdatert."
+    },
+    "USER": {
+      "DELETED": "Brukeren '{{login}}' ble slettet.",
+      "UPDATED": "Brukeren '{{login}}' ble oppdatert.",
+      "CREATED": "Brukeren '{{login}}' ble opprettet.",
+      "PASSWORD-CHANGED": "Passordet for '{{login}}’ ble endret."
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "Prosessdefinisjon-kategorien ble oppdatert"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "Slettet distribusjonen '{{name}}'",
+      "DELETE-ERROR": "Vi kunne ikke slette distribusjonen {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "Slettet app '{{appDefinition.name}}'",
+      "DELETE-ERROR": "Vi kunne ikke slette appen {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "Beslutningstabeller",
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt {{total}} samsvarende beslutningstabeller.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende beslutningstabeller.",
+    "FILTER": {
+      "NAME": "Navn",
+      "KEY": "Nøkkel",
+      "TENANTID": "Leietakeridentifikator"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Navn"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "VERSION": "Versjon",
+      "KEY": "Nøkkel",
+      "DEPLOY-TIME": "Distribusjonstid",
+      "TENANT-ID": "Leietaker-ID"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID:",
+    "NAME": "Navn:",
+    "VERSION": "Versjon:",
+    "KEY": "Nøkkel:",
+    "DEPLOYMENT-ID": "Distribusjons-ID:",
+    "RESOURCE-NAME": "Kildenavn:",
+    "DESCRIPTION": "Beskrivelse:",
+    "TENANT": "Leietaker:",
+    "TITLE": {
+      "DECISION-AUDITS": "Beslutningsendringer"
+    },
+    "DECISION-AUDITS-MESSAGE": "Denne beslutningstabellen har {{total}} endringer, viser {{size}}.",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "Denne beslutningstabellen har ingen endringer",
+    "ACTION": {
+      "EDIT-CATEGORY": "Rediger kategori",
+      "SHOW-ALL-JOBS": "Vis alle jobber",
+      "SHOW-ALL-PROCESSES": "Vis alle prosesser",
+      "SHOW-DIAGRAM": "Vis prosessdiagram",
+      "SHOW-DECISION-TABLE": "Vis beslutningstabell"
+    },
+    "POPUP": {
+      "TITLE": "Beslutningstabell: ",
+      "KEY": "Nøkkel: ",
+      "HIT-POLICY": "Treffregel: ",
+      "HIT-POLICIES": {
+        "FIRST": "Første (én passering)",
+        "ANY": "Alle (én passering)"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "Revisjonsspor for beslutninger",
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt {{total}} samsvarende revisjonsspor for beslutning.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende revisjonsspor for beslutning.",
+    "FILTER": {
+      "NAME": "Navn (skiller mellom store og små bokstaver)",
+      "TENANTID": "Leietakeridentifikator (skiller mellom store og små bokstaver)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Navn"
+    },
+    "POPUP": {
+      "HEADER": "Revisjonsspor for beslutning"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "Prosessdefinisjons-ID",
+      "PROCESS-INSTANCE-ID": "Prosesstilfelle-ID",
+      "CREATED": "Opprettet",
+      "FAILED": "Mislyktes",
+      "EXECUTION-ID": "Kjørings-ID",
+      "ACTIVITY-ID": "Aktivitets-ID",
+      "ACTIVITY-NAME": "Aktivitetsnavn",
+      "DECISION-KEY": "Beslutningsnøkkel",
+      "DECISION-NAME": "Beslutningsnavn",
+      "DMN-DEPLOYMENT-ID": "DMN-distribusjons-ID"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "Vis beslutningsendring"
+    },
+    "TABLE": {
+      "HEADER": "Beslutningstabell \"{{name}}\"",
+      "HIT-POLICY": "Treffregel",
+      "HIT-POLICIES": {
+        "FIRST": "Første (én passering)",
+        "ANY": "Alle (én passering)"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "Det oppstod et unntak under testing av om uttrykket samsvarte med inndataverdien: {{error}}",
+        "INPUT-MATCH": "Inndataverdien samsvarte med uttrykket.",
+        "INPUT-EMPTYEXPRESSION": "Tomme uttrykk behandles som samsvar.",
+        "INPUT-NOMATCH": "Inndataverdien samsvarte ikke med uttrykket.",
+        "INPUT-NOTEXECUTED": "Uttrykket ble aldri testet.",
+        "OUTPUT-EXCEPTION": "Det oppstod et unntak ved valg av verdi med uttrykket: \n {{expression}}.\nError message: {{error}}",
+        "OUTPUT-RESULT": "Verdien ble angitt ved å bruke følgende uttrykk: \n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "Følgende uttrykk ble aldri utført: \n {{expression}}"
+      },
+      "INPUT-VARIABLE": "Betingelse",
+      "OUTPUT-VARIABLE": "Resultat",
+      "INPUT-VARIABLES": "Inndataverdier",
+      "NO-INPUT-VARIABLES": "Det fantes ingen inndataverdier da beslutningstabellen ble utført",
+      "OUTPUT-VARIABLES": "Kalkulerte verdier",
+      "NO-OUTPUT-VARIABLES": "Ingen kalkulerte verdier ble produsert fra beslutningstabellene",
+      "METADATA-NAME": "Navn",
+      "METADATA-VALUE": "Verdi",
+      "LOAD-ERROR": "Noe gikk galt under henting av beslutningstabell og revisjonsspor for utførelse '{{executionId}}' av aktivitet '{{activityId}}'."
+    }
+  },
+  "FORMS": {
+    "TITLE": "Skjemaer",
+    "LIST-MESSAGE": "Viser {{size}} resultater av totalt {{total}} samsvarende skjemaer.",
+    "LIST-MESSAGE-EMPTY": "Ingen matchende skjemaer.",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Navn",
+      "APPID": "App-ID",
+      "TENANTID": "Leietaker-ID"
+    },
+    "FILTER": {
+      "NAME": "Navn",
+      "APPID": "Appdistribusjon-ID",
+      "TENANTID": "Leietakeridentifikator"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Navn"
+    }
+  },
+  "FORM": {
+    "ID": "ID:",
+    "NAME": "Navn:",
+    "APP-ID": "APP-ID:",
+    "DEPLOYMENT-ID": "Distribusjons-ID:",
+    "DESCRIPTION": "Beskrivelse:",
+    "TENANT": "Leietaker:",
+    "MESSAGE-EMPTY": "(Ingen)",
+    "TITLE": {
+      "SUBMITTED-FORMS": "Sendte skjemaer"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "Dette skjemaet har {{total}} sendte skjemaer, viser {{size}}.",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "Dette skjemaet har ingen sendte skjemaer",
+    "ACTION": {
+      "EDIT-CATEGORY": "Rediger kategori",
+      "SHOW-ALL-JOBS": "Vis alle jobber",
+      "SHOW-ALL-PROCESSES": "Vis alle prosesser",
+      "SHOW-DIAGRAM": "Vis prosessdiagram",
+      "SHOW-FORM": "Vis skjema"
+    },
+    "POPUP": {
+      "TITLE": "Skjema: "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "Visningsverdi",
+      "SELECT-FIELD": "(Ingen felter er valgt)",
+      "FIELD-VALUE": "Vis verdien til feltet \"{{name}}\"",
+      "UNKNOWN-TYPE": "Ukjent felttype {{type}}",
+      "TEXT-VALUE": "Tekst",
+      "MULTI-TEXT-VALUE": "Flerlinjetekst",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "Dato",
+      "DATETIME-VALUE": "Dato og tidspunkt",
+      "DROPDOWN-VALUE": "Velg ...",
+      "UPLOAD-VALUE": "Last opp eller importer innhold ...",
+      "RADIOS-OPTION1": "Alternativ 1",
+      "SELECT-PERSON": "Velg en person",
+      "SELECT-GROUP": "Velg en gruppe"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "Oppgave-ID",
+      "PROCESS-ID": "Prosesstilfelle-ID",
+      "SUBMITTED": "Sendt den",
+      "SUBMITTED-BY": "Sendt av",
+      "FORM-ID": "Skjema-ID"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "Vis alle sendte skjemaer"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "Last opp og publiser en app",
+      "DOWNLOAD": "Last ned app",
+      "REDEPLOY": "Distribuer app på nytt til en annen klynge",
+      "DELETE": "Slett app"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Slett app '{{appDefinition.name}}'?"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "Velg en ZIP-filapp som skal implementeres.",
+        "WARNING": "Det er kun mulig å laste opp en app til en BPM Suite, ikke til et kjernemotortilfelle.",
+        "DROPZONE": "Eller slipp en fil her",
+        "NO-DROP": "Slipping av filer støttes ikke av nettleseren din",
+        "CANCEL-UPLOAD": "Avbryt opplasting",
+        "ERROR": "Kunne ikke laste opp denne filen"
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "Publiser appmodell",
+        "PUBLISH": "Publiser",
+        "ERROR": "Kunne ikke publisere app",
+        "DESCRIPTION": "Velg en ZIP-filapp som skal implementeres.",
+        "WARNING": "Det er kun mulig å laste opp en app til en BPM Suite, ikke til et kjernemotortilfelle.",
+        "DROPZONE": "Eller slipp en fil her",
+        "NO-DROP": "Slipping av filer støttes ikke av nettleseren din",
+        "LIST-MESSAGE": "Viser totalt {{total}} samsvarende appmodeller.",
+        "LIST-MESSAGE-EMPTY": "Ingen matchende appmodeller.",
+        "PUBLISH-ERROR": "Kunne ikke publisere app",
+        "EVERYONES-APPS": "Vis alle sine apper",
+        "APP-CONFLICT-ERROR": "App-konflikt med eksisterende app '{{name}}' opprettet av '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "Publiser app i en annen klynge",
+        "SELECT-CLUSTER": "Velg klynge",
+        "PUBLISH-TO-CLUSTER": "Publiser en app til {{name}}",
+        "PUBLISH-AS-NEW-VERSION": "Publiser som en ny appversjon",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "Navn",
+          "LAST-UPDATE": "Siste oppdatering",
+          "CREATED-BY": "Opprettet av"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "Redistribuer app",
+        "DESCRIPTION": "Velg en klynge for å redistribuere '{{name}}’ til",
+        "ERROR": "Kunne ikke redistribuere app",
+        "APP-CONFLICT-ERROR": "App-konflikt med eksisterende app '{{name}}' opprettet av '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "SELECT-CLUSTER": "Velg klynge",
+        "DEPLOY-TO-CLUSTER": "Distribuer app til {{name}}",
+        "DEPLOY": "Distribuer",
+        "DEPLOY-AS-NEW-VERSION": "Distribusjon som en ny appversjon"
+      }
+    }
+  }
+}

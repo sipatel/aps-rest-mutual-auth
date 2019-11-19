@@ -1,0 +1,10 @@
+<div class="metrics-count-chart" ng-if="model && model['hour-counts']">
+    <ul class="hour-count-chart">
+        <li class="hour-count-chart-entry" ng-repeat="n in [] | range:0:24"
+            ng-style="{'border-top-width' : 100 - model['hour-counts'][$index + '-percentage'] + 'px'}">
+            <span>
+                {{$index}}:00 - {{$index + 1}}:00 : {{model['hour-counts'][$index]}}
+            </span>
+        </li>
+    </ul>
+</div>

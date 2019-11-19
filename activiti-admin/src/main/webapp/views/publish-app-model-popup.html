@@ -1,0 +1,76 @@
+<div class="modal-header-wrapper">
+	<div class="modal-header">
+		<div class="pull-right">
+			<a class="action" ng-click="cancel()">&times;
+				{{'GENERAL.ACTION.CANCEL-AND-CLOSE' | translate}}</a>
+		</div>
+		<h2 translate="APPS.POPUP.PUBLISH-MODEL.TITLE"></h2>
+	</div>
+</div>
+<div class="modal-body modal-body-medium publish-pop-body no-overflow">
+	<div class="container-fluid content decision-table" auto-height offset="40">
+		<div class="input-group" style="padding: 5px">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span> 
+			<input type="text" class="form-control" ng-model="filterText" ng-model-options="{ debounce: 400 }" ng-change="filterChanged()">
+		</div>
+		<div class="checkbox" style="margin-left: 10px">
+			<label> <input type="checkbox" ng-model="everyonesApps" ng-change="filterChanged()">
+				{{'APPS.POPUP.PUBLISH-MODEL.EVERYONES-APPS' | translate}}
+			</label>
+		</div>
+		<div class="grid-wrapper" id="apps">
+        	<div class="grid-message" ng-if="appModels.size > 0">
+             	<span>{{'APPS.POPUP.PUBLISH-MODEL.LIST-MESSAGE' | translate:appModels}}</span>
+             </div>
+             <div class="grid-message" ng-if="appModels.size == 0">
+             	<span>{{'APPS.POPUP.PUBLISH-MODEL.LIST-MESSAGE-EMPTY' | translate}}</span>
+              </div>
+              <div ng-grid="gridAppsModels" class="gridStyle" ng-if="gridAppsModels && appModels.data"/>
+        </div>
+        
+        <div class="checkbox" style="margin-left: 10px">
+			<label> <input type="checkbox" ng-model="publishToAnotherServer" ng-change="selectTargetServer()">
+				{{'APPS.POPUP.PUBLISH-MODEL.PUBLISH-TO-ANOTHER-CLUSTER' | translate}}
+			</label>
+		</div>
+		
+		<div ng-if="publishToAnotherServer" style="padding-left: 30%;">
+		<button type="button" class="btn btn-sm dropdown-toggle"
+			style="border-color: #ccc; background-color: #fff" data-toggle="dropdown">
+			<span ng-if="!targetServer" translate="APPS.POPUP.PUBLISH-MODEL.SELECT-CLUSTER"></span> 
+			<span ng-if="targetServer" translate="APPS.POPUP.PUBLISH-MODEL.PUBLISH-TO-CLUSTER" translate-values="{name: targetServer.clusterName}"></span> 
+			<span class="caret"></span>
+		</button>
+
+		<ul class="dropdown-menu"
+			style="top: auto; left: auto; z-index: 1000000;">
+			<li ng-repeat="cluster in availableClusters"
+				ng-if="cluster.id != activeCluster.id"><a
+				ng-click="selectTargetServer(cluster)">{{cluster.clusterName}}</a></li>
+		</ul>
+		
+		</div>
+		
+	<p ng-if="model.isConflict && !model.error" class="text-warning">
+        <i class="glyphicon glyphicon-warning-sign"></i>&nbsp;
+        <span translate="APPS.POPUP.PUBLISH-MODEL.APP-CONFLICT-ERROR" translate-values="{ name: model.conflictingAppName, createdBy: model.conflictingAppCreatedBy }"></span>
+        <span style="display: block; padding-left: 18px;">{{model.conflictMessage}}</span>
+    </p>
+    
+    <p ng-if="model.error" class="modeler-processes-error">
+        <i class="glyphicon glyphicon-remove-circle"></i>
+        <span translate="APPS.POPUP.PUBLISH-MODEL.ERROR"></span>
+        {{model.errorMessage}}
+    </p>
+    
+	</div>
+</div>
+
+<div class="modal-footer-wrapper">
+	<div class="modal-footer">
+		<div class="pull-right">
+			<button ng-if="!model.isConflict" type="button" class="btn btn-sm btn-default" ng-click="publishAppModel()" ng-disabled="status.loading || selectedAppModels.length === 0" translate="APPS.POPUP.PUBLISH-MODEL.PUBLISH"></button>
+			<button ng-if="model.isConflict" type="button" class="btn btn-sm btn-default" ng-click="publishAppAsNewVersion(model.conflictAppId)" ng-disabled="status.loading || !targetServer.id || selectedAppModels.length === 0 || model.error" translate="APPS.POPUP.PUBLISH-MODEL.PUBLISH-AS-NEW-VERSION"></button>
+		</div>
+	</div>
+</div>

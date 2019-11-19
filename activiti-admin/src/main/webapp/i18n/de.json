@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "Ja",
+    "NO": "Nein",
+    "ACTION": {
+      "LOGOUT": "Abmelden",
+      "DISMISS-ALERT": "Klicken, um diese Nachricht zu verwerfen",
+      "RETURN-TO-LIST": "Zur Liste zurückkehren",
+      "SHOW-RESULTS": "{{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} Ergebnisse anzeigen",
+      "REFRESH-LIST": "Liste aktualisieren",
+      "SORT-BY": "Sortieren nach {{name | translate}}",
+      "CLEAR-FILTERS": "Filter löschen",
+      "CANCEL-AND-CLOSE": "Abbrechen und schließen",
+      "CANCEL": "Abbrechen",
+      "NEXT": "Weiter",
+      "PREVIOUS": "Vorherige",
+      "CLOSE": "Schließen",
+      "SHOWLICENSE": "Lizenzinformationen"
+    },
+    "TITLE": {
+      "MAIN": "Process Services Administrator",
+      "ACTIONS": "Aktionen",
+      "FILTERS": "Filter",
+      "CLUSTERS": "Cluster"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "Deployments",
+      "PROCESS-DEFINITIONS": "Definitionen",
+      "PROCESS-INSTANCES": "Instanzen",
+      "TASKS": "Aufgaben",
+      "JOBS": "Aufträge",
+      "CONFIGURATION": "Konfiguration",
+      "CONFIGURATION-ENGINE": "Modul",
+      "CONFIGURATION-USERS": "Benutzer konfigurieren",
+      "MONITORING": "Überwachung",
+      "APPS": "Anwendungen"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "Alle"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "Der Endpunkt reagierte bei der letzten Überprüfung der Lizenz nicht. Es wird weiter versucht, die Lizenz zu überprüfen, doch im Moment wird angenommen, dass die Lizenz ungültig ist.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "Die Anwendung befindet sich im schreibgeschützten Modus, weil die Lizenz auf dem Endpunktserver ungültig ist.",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "Die Anwendung befindet sich im schreibgeschützten Modus, weil auf dem Endpunktserver keine gültige Lizenz gefunden wurde.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "Die Anwendung befindet sich im schreibgeschützten Modus, weil die Datumsangaben der Lizenz auf dem Alfresco Process Services-Endpunktserver ungültig sind (entweder bereits abgelaufen oder Startdatum liegt in der Zukunft)."
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "VERSION": "Version:",
+    "DESCRIPTION": "Beschreibung:",
+    "KEY": "Schlüssel:",
+    "CATEGORY": "Kategorie:",
+    "SUSPENDED": "Angehalten:",
+    "DEPLOYMENT": "Deployment:",
+    "TENANT": "Mandant:",
+    "START-FORM-DEFINED": "Startformular definiert:",
+    "GRAPHICAL-NOTATION-DEFINED": "Grafische Notation definiert:",
+    "PROCESS-INSTANCES-SIZE": "Definition führt {{total}} Prozessinstanzen aus",
+    "PROCESS-INSTANCES-SHOWING": ", {{size}} zuletzt gestartete werden angezeigt",
+    "PROCESS-INSTANCES-EMPTY": "Definition führt keine Prozessinstanzen aus",
+    "JOBS-SIZE": "Definition führt {{total}} Aufträge aus",
+    "JOBS-EMPTY": "Definition führt keine Aufträge aus",
+    "DECISION-TABLES-SIZE": "Definition hat {{total}} Entscheidungstabellen.",
+    "DECISION-TABLES-EMPTY": "Definition hat keine Entscheidungstabellen.",
+    "FORMS-SIZE": "Definition hat {{total}} Formulare.",
+    "FORMS-EMPTY": "Definition hat keine Formulare.",
+    "TITLE": {
+      "PROCESS-INSTANCES": "Prozessinstanzen",
+      "JOBS": "Aufträge",
+      "DECISION-TABLES": "Entscheidungstabellen",
+      "FORMS": "Formulare"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Kategorie bearbeiten",
+      "SHOW-ALL-JOBS": "Alle Aufträge anzeigen",
+      "SHOW-ALL-PROCESSES": "Alle Prozesse anzeigen",
+      "SHOW-DIAGRAM": "Prozessdiagramm anzeigen"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Kategorie für Definition bearbeiten",
+        "MESSAGE": "Die Anfangskategorie für die Definition wird vom targetNameSpace-Attribut im BPMN 2.0 XML ausgefüllt, kann jedoch nach dem Deployment geändert werden.",
+        "CATEGORY": "Kategorie",
+        "CATEGORY-PLACEHOLDER": "Kategorie eingeben",
+        "CONFIRM": "Kategorie aktualisieren"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Prozessdiagramm"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Definitionen werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Prozessdefinitionen.",
+    "FILTER": {
+      "NAME": "Name (Groß-/Kleinschreibung beachten)",
+      "KEY": "Schlüssel (Groß-/Kleinschreibung beachten)",
+      "DEPLOYMENT-ID": "Deployment-ID",
+      "TENANT-ID": "Mandanten-ID",
+      "LATEST": "Aktuellste Version",
+      "LATEST-HELP": "Nur aktuellste Versionen anzeigen"
+    },
+    "TITLE": {
+      "MAIN": "Prozessdefinitionen"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name",
+      "VERSION": "Version"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "VERSION": "Version",
+      "KEY": "Schlüssel",
+      "TENANT": "Mandant"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "Von Process Services Editor hochladen"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "Benutzername",
+        "PASSWORD": "Passwort",
+        "ERROR": "Editor konnte nicht kontaktiert werden",
+        "UNAUTHORIZED": "Ungültige Anmeldeinformationen",
+        "UPLOAD-DESCRIPTION": "Das Prozessmodell wird nun abgerufen und dem derzeit aktiven Process Services Cluster zur Verfügung gestellt. Wählen Sie einen geeigneten Namen für das Deployment-Paket aus."
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "DESCRIPTION": "Beschreibung:",
+    "BUSINESS-KEY": "Geschäftsschlüssel:",
+    "TENANT-ID": "Mandant:",
+    "STATUS": "Status:",
+    "STATUS-ACTIVE": "Aktiv",
+    "STATUS-COMPLETED": "Abgeschlossen",
+    "ACTIVITY-ID-STARTED": "Aktivitäts-ID gestartet:",
+    "ACTIVITY-ID-ENDED": "In Aktivität beendet:",
+    "DELETE-REASON": "Grund für Löschung:",
+    "STARTED-BY": "Gestartet von:",
+    "END-TIME": "Endzeit:",
+    "DURATION": "Dauer:",
+    "SUPER-PROCESS-INSTANCE-ID": "Superprozessinstanz-ID:",
+    "TASKS-SIZE": "Diese Prozessinstanz verfügt über {{total}} Aufgaben.",
+    "TASKS-EMPTY": "Diese Prozessinstanz verfügt über keine Aufgaben.",
+    "VARIABLES-SIZE": "Diese Prozessinstanz verfügt über {{total}} Variablen.",
+    "VARIABLES-EMPTY": "Diese Prozessinstanz verfügt über keine Variablen.",
+    "JOBS-SIZE": "Diese Prozessinstanz verfügt über {{total}} Aufträge.",
+    "JOBS-EMPTY": "Diese Prozessinstanz verfügt über keine Aufträge.",
+    "SUBPROCESSES-SIZE": "Diese Prozessinstanz verfügt über {{total}} Teilprozesse.",
+    "SUBPROCESSES-EMPTY": "Diese Prozessinstanz verfügt über keine Teilprozesse.",
+    "DECISION-TABLES-SIZE": "Diese Prozessinstanz verfügt über {{total}} Entscheidungstabellen.",
+    "DECISION-TABLES-EMPTY": "Diese Prozessinstanz verfügt über keine Entscheidungstabellen.",
+    "FORMS-SIZE": "Diese Prozessinstanz verfügt über {{total}} eingereichte Formulare.",
+    "FORMS-EMPTY": "Diese Prozessinstanz verfügt über keine eingereichten Formulare.",
+    "TITLE": {
+      "TASKS": "Aufgaben",
+      "VARIABLES": "Variablen",
+      "JOBS": "Aufträge",
+      "SUBPROCESSES": "Teilprozesse",
+      "DECISION-TABLES": "Entscheidungstabellen",
+      "FORMS": "Formulare"
+    },
+    "ACTION": {
+      "DELETE": "Prozessinstanz löschen",
+      "TERMINATE": "Prozessinstanz beenden",
+      "SHOW-ALL-TASKS": "Alle Aufgaben anzeigen",
+      "SHOW-ALL-JOBS": "Alle Aufträge anzeigen",
+      "SHOW-ALL-SUBPROCESSES": "Alle Teilprozesse anzeigen",
+      "SHOW-DIAGRAM": "Prozessdiagramm anzeigen",
+      "TITLE-VARIABLES": "Aktionen auf ausgewählter Variable",
+      "DELETE-VARIABLE": "Variable löschen",
+      "UPDATE-VALUE": "Variable aktualisieren",
+      "ADD-VARIABLE": "Variable hinzufügen"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "Prozessinstanz löschen",
+        "MESSAGE-DELETE": "Möchten Sie die Prozessinstanz wirklich löschen?",
+        "MESSAGE-TERMINATE": "Möchten Sie die Prozessinstanz wirklich beenden?",
+        "DELETE-REASON": "Grund für Löschung",
+        "DELETE-REASON-HELP": "Geben Sie einen optionalen Grund für die Löschung ein.",
+        "CONFIRM-DELETE": "Prozessinstanz löschen",
+        "CONFIRM-TERMINATE": "Prozessinstanz beenden"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Prozessdiagramm"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "Variable erstellen",
+        "NAME": "Variablenname",
+        "TYPE": "Variablentyp",
+        "VALUE": "Variablenwert",
+        "CREATE": "Erstellen"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "Variable '{{name}}' aktualisieren",
+        "NAME": "Variablenname",
+        "VALUE": "Wert",
+        "CHECKED": "true",
+        "UNCHECKED": "false",
+        "DATE-HELP": "ISO-8601-Format (Beispiel: 2016-01-28T23:00:00Z)",
+        "ACTION-UPDATE": "Aktualisieren"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "Variable '{{name}}' löschen",
+        "MESSAGE": "Möchten Sie diese Variable wirklich entfernen?",
+        "DELETE": "Löschen"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "Prozessinstanzen",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Prozessinstanzen werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Prozessinstanzen.",
+    "FILTER": {
+      "NAME": "Name",
+      "PROCESS-DEFINITION": "Prozessdefinition",
+      "ALL-PROCESS-DEFINITIONS": "Alle Prozessdefinitionen",
+      "BUSINESS-KEY": "Geschäftsschlüssel",
+      "SUPER-PROCESS-INSTANCE-ID": "Superprozessinstanz-ID",
+      "STARTED-BEFORE": "Gestartet vor",
+      "STARTED-AFTER": "Gestartet nach",
+      "ENDED-BEFORE": "Beendet vor",
+      "ENDED-AFTER": "Beendet nach",
+      "VARIABLE": "Variable",
+      "VARIABLE-NAME": "Variablenname",
+      "VARIABLE-VALUE": "Variablenwert",
+      "VARIABLE-BOOLEAN-VALUE": "Boolescher Wert: {{value}}",
+      "TENANT-ID": "Mandanten-ID"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "Startzeit"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "BUSINESS-KEY": "Geschäftsschlüssel",
+      "PROCESS-DEFINITION": "Prozessdefinition",
+      "CREATE-TIME": "Erstellt",
+      "END-TIME": "Beendet",
+      "STATUS": "Status"
+    }
+  },
+  "TASK": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "STATUS": "Status:",
+    "STATUS-COMPLETED": "Abgeschlossen",
+    "STATUS-ACTIVE": "Aktiv",
+    "DESCRIPTION": "Beschreibung:",
+    "TASK-DEFINITION-KEY": "Definitionsschlüssel:",
+    "FORM-KEY": "Formularschlüssel:",
+    "PRIORITY": "Priorität:",
+    "DELEGATION-STATE": "Delegierungsstatus:",
+    "CATEGORY": "Kategorie:",
+    "TENANT-ID": "Mandant:",
+    "PARENT": "Übergeordnete Aufgabe:",
+    "ASSIGNEE": "Zugewiesener Benutzer:",
+    "OWNER": "Eigentümer:",
+    "START-DATE": "Startdatum:",
+    "DUE-DATE": "Fälligkeitsdatum:",
+    "END-DATE": "Enddatum:",
+    "DELETE-REASON": "Grund für Löschung:",
+    "PROCESS-INSTANCE": "Prozessinstanz",
+    "PROCESS-DEFINITION": "Prozessdefinition",
+    "EXECUTION-ID": "Ausführungs-ID:",
+    "SUBTASKS-MESSAGE": "Diese Aufgabe verfügt über {{total}} Teilaufgaben, {{size}} werden angezeigt.",
+    "SUBTASKS-MESSAGE-EMPTY": "Diese Aufgabe verfügt über keine Teilaufgaben.",
+    "VARIABLES-MESSAGE": "Diese Aufgabe verfügt über {{size}} Variablen.",
+    "VARIABLES-MESSAGE-EMPTY": "Diese Aufgabe verfügt über keine Variablen.",
+    "IDENTITY-LINKS-MESSAGE": "Diese Aufgabe verfügt über {{size}} ID-Links.",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "Diese Aufgabe verfügt über keine ID-Links.",
+    "ACTION": {
+      "EDIT": "Aufgabe bearbeiten",
+      "ASSIGN-CLAIM": "Aufgabe zuordnen/anfordern",
+      "DELEGATE": "Aufgabe delegieren",
+      "RESOLVE": "Aufgabe lösen",
+      "COMPLETE": "Aufgabe abschließen",
+      "DELETE": "Aufgabe löschen",
+      "SHOW-ALL-SUBTASKS": "Alle Teilaufgaben anzeigen",
+      "SHOW-SUBMITTED-FORM": "Eingereichtes Formular anzeigen"
+    },
+    "TITLE": {
+      "SUBTASKS": "Teilaufgaben",
+      "IDENTITY-LINKS": "ID-Links",
+      "VARIABLES": "Variablen"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "Aufgabe zuweisen",
+        "MESSAGE": "Möchten Sie die Aufgabe wirklich zuweisen?",
+        "NEW-ASSIGNEE": "Neuer zugewiesener Benutzer",
+        "NEW-ASSIGNEE-HELP": "Lassen Sie das Feld für den zugewiesenen Benutzer leer, wenn Sie die Aufgabe niemandem zuweisen möchten.",
+        "CONFIRM": "Aufgabe zuweisen"
+      },
+      "COMPLETE": {
+        "TITLE": "Aufgabe abschließen",
+        "MESSAGE": "Möchten Sie die Aufgabe wirklich abschließen?",
+        "CONFIRM": "Aufgabe abschließen"
+      },
+      "DELEGATE": {
+        "TITLE": "Aufgabe delegieren",
+        "MESSAGE": "Möchten Sie die Aufgabe wirklich delegieren?",
+        "CONFIRM": "Aufgabe delegieren",
+        "DELEGATE-TO": "Benutzer, an den delegiert werden soll"
+      },
+      "RESOLVE": {
+        "TITLE": "Aufgabe lösen",
+        "MESSAGE": "Möchten Sie die Aufgabe wirklich lösen?",
+        "CONFIRM": "Aufgabe lösen"
+      },
+      "DELETE": {
+        "TITLE": "Aufgabe löschen",
+        "MESSAGE": "Möchten Sie die Aufgabe wirklich löschen?",
+        "CONFIRM": "Aufgabe löschen"
+      },
+      "EDIT": {
+        "TITLE": "Aufgabe bearbeiten",
+        "CONFIRM": "Aufgabe aktualisieren",
+        "NAME": "Name",
+        "DESCRIPTION": "Beschreibung",
+        "PRIORITY": "Priorität",
+        "CATEGORY": "Kategorie",
+        "ASSIGNEE": "Zugewiesener Benutzer",
+        "OWNER": "Eigentümer",
+        "DUE-DATE": "Fälligkeitsdatum"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "Aufgaben",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Aufgaben werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Aufgaben.",
+    "FILTER": {
+      "NAME": "Name (Groß-/Kleinschreibung beachten)",
+      "ASSIGNEE": "Zugewiesener Benutzer (Groß-/Kleinschreibung beachten)",
+      "STATUS": "Status",
+      "STATUS-ANY": "Beliebiger Status",
+      "STATUS-ACTIVE": "Aktive Aufgaben",
+      "STATUS-COMPLETE": "Abgeschlossene Aufgaben",
+      "PROCESS-INSTANCE-ID": "Prozessinstanz-ID",
+      "TENANT-ID": "Mandanten-ID",
+      "OWNER": "Eigentümer (Groß-/Kleinschreibung beachten)",
+      "PARENT-TASK-ID": "ID der übergeordneten Aufgabe",
+      "CREATED-BEFORE": "Erstellt vor",
+      "CREATED-AFTER": "Erstellt nach",
+      "ENDED-BEFORE": "Beendet vor",
+      "ENDED-AFTER": "Beendet nach",
+      "DUE-BEFORE": "Fällig vor",
+      "DUE-AFTER": "Fällig nach",
+      "TASK-VARIABLE": "Lokale Aufgabenvariable",
+      "PROCESS-VARIABLE": "Prozessvariable",
+      "VARIABLE-NAME": "Variablenname",
+      "VARIABLE-VALUE": "Variablenwert",
+      "VARIABLE-BOOLEAN-VALUE": "Boolescher Wert: {{value}}"
+    },
+    "SORT": {
+      "NAME": "Name",
+      "DUE-DATE": "Fälligkeitsdatum",
+      "START-TIME": "Startzeit",
+      "END-TIME": "Endzeit",
+      "PRIORITY": "Priorität"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "ASSIGNEE": "Zugewiesener Benutzer",
+      "OWNER": "Eigentümer",
+      "CREATE-TIME": "Erstellt",
+      "END-TIME": "Beendet",
+      "PRIORITY": "Priorität"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "Deployments",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Deployments werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Deployments.",
+    "FILTER": {
+      "NAME": "Name (Groß-/Kleinschreibung beachten)",
+      "TENANTID": "Mandanten-ID (Groß-/Kleinschreibung beachten)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "DEPLOY-TIME": "Deployment-Zeit",
+      "CATEGORY": "Kategorie",
+      "TENANT": "Mandant"
+    },
+    "ACTION": {
+      "UPLOAD": "Prozess oder Paket hochladen",
+      "DELETE": "Deployment löschen"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Wählen Sie eine .bpmn-, .bpmn20.xml-Prozessdatei zum Deployment aus oder laden Sie ein Prozesspaket (mit Objekten) als .zip- oder .bar-Datei hoch.",
+        "WARNING": "Ein Prozess kann nur auf ein Kernmodul, nicht auf eine BPM Suite-Instanz hochgeladen werden. Prozesse in der BPM Suite sollten mithilfe einer Anwendung bereitgestellt werden, die für Einzelpersonen oder Gruppen freigegeben ist.",
+        "DROPZONE": "Oder legen Sie eine Datei hier ab",
+        "NO-DROP": "Dateiablage wird von Ihrem Browser nicht unterstützt.",
+        "CANCEL-UPLOAD": "Upload abbrechen",
+        "ERROR": "Diese Datei konnte nicht hochgeladen werden."
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Sie sind im Begriff, das Deployment '{{name}}' zu löschen. Wenn dem Deployment aktive oder abgeschlossene Prozessinstanzen zugewiesen wurden, werden diese ebenfalls gelöscht. Möchten Sie das Deployment '{{name}}' wirklich löschen?"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "TIME": "Deployment-Zeit:",
+    "CATEGORY": "Kategorie:",
+    "TENANTID": "Mandanten-ID:",
+    "DEFINITIONS-MESSAGE": "Dieses Deployment verfügt über {{total}} Prozessdefinitionen, {{size}} werden angezeigt.",
+    "DEFINITIONS-MESSAGE-EMPTY": "Dieses Deployment verfügt über keine Prozessdefinitionen.",
+    "TITLE": {
+      "DEFINITIONS": "Prozessdefinitionen",
+      "RESOURCES": "Ressourcen"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "Alle Definitionen anzeigen"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "Auftrag {{id}}",
+      "EXCEPTION": "Ausnahme"
+    },
+    "ACTIONS": {
+      "EXECUTE": "Auftrag ausführen",
+      "DELETE": "Auftrag löschen"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "Auftrag löschen '{{id}}'",
+        "MESSAGE": "Möchten Sie Aufgabe {{id}} wirklich löschen?",
+        "CONFIRM": "Auftrag löschen"
+      }
+    },
+    "ID": "ID:",
+    "EXECUTION-ID": "Ausführungs-ID:",
+    "PROCESS-INSTANCE": "Prozessinstanz:",
+    "PROCESS-DEFINITION": "Prozessdefinition:",
+    "DUEDATE": "Fälligkeitsdatum:",
+    "RETRIES-LEFT": "Verbleibende Versuche:",
+    "TENANT-ID": "Mandant:"
+  },
+  "JOBS": {
+    "TITLE": "Aufträge",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Aufträgen werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Aufträge.",
+    "FILTER": {
+      "PROCESS-DEFINITION": "Prozessdefinition",
+      "ALL-PROCESS-DEFINITIONS": "Alle Prozessdefinitionen",
+      "PROCESS-INSTANCE-ID": "Prozessinstanz-ID",
+      "TENANT-ID": "Mandanten-ID",
+      "DUE-BEFORE": "Fällig vor",
+      "DUE-AFTER": "Fällig nach",
+      "EXCEPTION": "Ausnahme",
+      "EXCEPTION-HELP": "Nur Aufträge mit einer Ausnahme anzeigen"
+    },
+    "SORT": {
+      "ID": "Auftrags-ID",
+      "DUE-DATE": "Fälligkeitsdatum",
+      "PROCESS-INSTANCE-ID": "Prozessinstanz-ID"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "Fälligkeitsdatum",
+      "PROCESS-DEFINITION": "Prozessdefinition",
+      "RETRIES": "Erneute Versuche",
+      "EXCEPTION": "Ausnahme"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Anmelden",
+    "USERNAME": "Benutzername",
+    "USERNAME-PLACEHOLDER": "Geben Sie Ihren Benutzernamen ein.",
+    "PASSWORD": "Passwort",
+    "PASSWORD-PLACEHOLDER": "Geben Sie Ihr Passwort ein.",
+    "ACTION": {
+      "CONFIRM": "Anmelden"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. Alle Rechte vorbehalten."
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "Seite alle {{name}} aktualisieren",
+    "NUMBER-OF-MEMBERS": "Anzahl der Mitglieder:",
+    "NODE-ID": "ID:",
+    "LAST-UPDATED": "Zuletzt aktualisiert:",
+    "LAST-METRICS-UPDATE": "Letzte Metrikaktualisierung:",
+    "NOT-ENOUGH-DATA": "Der Knoten befindet sich in einem unbekannten Status. Möglicherweise ist der Knoten dem Cluster noch nicht vollständig beigetreten oder er hat nicht genügend Daten gesendet, die hier angezeigt werden können.",
+    "JOB-EXECUTOR-RUNNING": "Ausgeführter Auftragsausführer:",
+    "JAVA-VERSION": "Java-Version:",
+    "SUITE-INFORMATION": "Dies ist eine Process Services Suite-Instanz, Version {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}} ('{{bpmSuiteEdition}}')",
+    "MEMORY-USAGE": "Speicherauslastung:",
+    "MEMORY-USED": "belegt",
+    "MEMORY-HEAP": "Heap:",
+    "MEMORY-NON-HEAP": "Nicht-Heap:",
+    "UPTIME": "Betriebszeit:",
+    "GARBAGE-COLLECTION": "Wurde {{['collection.count']}} Mal ausgeführt, die aufgewendete Gesamtzeit beträgt {{['collection.time'] | humanTime}}.",
+    "MASTER-CONFIGURATION": "Masterkonfiguration:",
+    "MASTER-CONFIGURATION-USED": "Korrekte Masterkonfiguration verwendet",
+    "MASTER-CONFIGURATION-NOT-USED": "Masterkonfiguration wird nicht verwendet.",
+    "MASTER-CONFIGURATION-DISABLED": "Masterkonfiguration ist deaktiviert.",
+    "MASTER-CONFIGURATION-INCORRECT": "Falsche Masterkonfiguration!",
+    "CLASSES-LOADED": "Aktuelle geladene Klassen:",
+    "CLASSES-UNLOADED": "Summe der nicht geladenen Klassen:",
+    "CLASSES-TOTAL": "Summe der geladenen Klassen:",
+    "CACHE-HITS": "Cachetreffer",
+    "CACHE-MISSES": "Cachefehler",
+    "CACHE-ADDITIONS": "Cacheerweiterungen",
+    "CACHE-REMOVALS": "Cachelöschvorgänge",
+    "JOBS-EXECUTED": "Anzahl ausgeführter Aufträge",
+    "JOBS-FAILED": "Anzahl fehlgeschlagener Aufträge",
+    "JOBS-QUEUE-FULL": "Auftragswarteschlange voll",
+    "PROCESS-INSTANCES": "Gestartete Prozessinstanzen",
+    "HOUR-COUNT-CHART": "Gesamtzahl/Stunde",
+    "WEEKDAY-COUNT-CHART": "Gesamtzahl/Wochentag",
+    "TASKS-COMPLETED": "Abgeschlossene Aufträge",
+    "MEAN-RATE": "Mittelsrate (pro Sekunde):",
+    "TOTAL": "Summe:",
+    "COUNT": "Anzahl",
+    "MAX": "Maximum",
+    "MIN": "Minimum",
+    "STDDEV": "Stddev",
+    "MINUTE-RATE": "1-/5-/15-Minutenrate:",
+    "REST-REQUEST-TYPE": "Anforderungstyp (Rateneinheit = Ereignisse/Sekunde)",
+    "REST-ENDPOINTS": "REST-Endpunktzeiten (Dauereinheit = Sekunden, Rateneinheit = Anrufe/Sekunde)",
+    "ELASTIC-SEARCH-VERSION": "Version",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "Clustername",
+    "ELASTIC-SEARCH-STATE": "Status",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "Ein roter Status zeigt an, dass das angegebene Shard nicht in dem Cluster zugeordnet ist, gelb bedeutet, dass das primäre Shard zugeordnet ist, Replikate jedoch nicht, und grün bedeutet, dass alle Shards zugeordnet sind.",
+    "ELASTIC-SEARCH-INDICES": "Indizes",
+    "ELASTIC-SEARCH-DOCS-COUNT": "Dokumentenanzahl",
+    "ELASTIC-SEARCH-SHARD-INFO": "Shard-Informationen",
+    "TITLE": {
+      "MAIN": "Clusterüberwachung",
+      "NODE": "Knoten {{ipAddress}}",
+      "MEMORY": "Speicher",
+      "GARBAGE-COLLECTION": "Speicherbereinigung",
+      "CLASSLOADING": "Classloading",
+      "PROCESS-DEFINITION-CACHE": "Prozessdefinitionscache",
+      "JOB-METRICS": "Auftragsmetriken",
+      "RUNTIME-METRICS": "Laufzeitmetriken",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "Rest-Endpunktmetriken",
+      "BPM-SUITE-ELASTIC-SEARCH": "Elastische Suche"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "Passwort ändern für '{{login}}'",
+        "OLD-PASSWORD": "Altes Passwort",
+        "NEW-PASSWORD": "Neues Passwort",
+        "CONFIRM": "Passwort ändern"
+      },
+      "DELETE": {
+        "TITLE": "Benutzer {{login}} löschen",
+        "MESSAGE": "Möchten Sie den Benutzer '{{login}}' wirklich löschen?",
+        "CONFIRM": "Benutzer löschen"
+      },
+      "EDIT": {
+        "TITLE": "Benutzer {{login}} bearbeiten",
+        "LOGIN": "Anmelden",
+        "EMAIL": "E-Mail",
+        "FIRSTNAME": "Vorname",
+        "LASTNAME": "Nachname",
+        "CONFIRM": "Benutzer aktualisieren",
+        "READONLY": "Schreibgeschützter Benutzer"
+      },
+      "NEW": {
+        "TITLE": "Neuen Benutzer anlegen",
+        "LOGIN": "Anmelden",
+        "EMAIL": "E-Mail",
+        "FIRSTNAME": "Vorname",
+        "LASTNAME": "Nachname",
+        "PASSWORD": "Passwort",
+        "ADMIN": "Besitzt Administratorrechte",
+        "CONFIRM": "Benutzer anlegen",
+        "READONLY": "Schreibgeschützter Benutzer"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "Benutzer",
+    "ACTION": {
+      "EDIT": "Benutzer bearbeiten",
+      "NEW": "Neuen Benutzer anlegen",
+      "DELETE": "Benutzer löschen",
+      "CHANGE-PASSWORD": "Passwort ändern"
+    },
+    "HEADER": {
+      "LOGIN": "Anmelden",
+      "FIRSTNAME": "Vorname",
+      "LASTNAME": "Nachname",
+      "EMAIL": "E-Mail",
+      "CLUSTER_USER": "Clusterbenutzer"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "Lizenzinformation",
+      "HOLDER": "Inhaber",
+      "SUBJECT": "Betreff",
+      "PRODUCTKEY": "Produkttyp",
+      "GOODAFTERDATE": "Lizenz gültig nach",
+      "GOODBEFOREDATE": "Lizenz gültig bis",
+      "NUMBER_OF_PROCESSES": "Anzahl der aktiven Prozesse",
+      "NUMBER_OF_ADMINS": "Anzahl der Administratorbenutzer",
+      "MULTI_TENANT": "Multimandant",
+      "DEFAULT_TENANT": "Standardmandant"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "Name:",
+    "USER": "Benutzer:",
+    "MASTER-MANDATORY": "Verbindliche Masterkonfiguration:",
+    "METRICS-SEND-INTERVAL": "Metrik-Sendeintervall:",
+    "ENDPOINT-HELP": "Die Endpunktkonfiguration (jedes Cluster verfügt über nur eine) muss auf eine REST-Installation zeigen. Dieser Endpunkt wird zum Abrufen und Verwalten der Daten genutzt, die in anderen Bereichen (z. B. Deployments, Prozessdefinitionen usw.) dieser Anwendung verwendet werden.",
+    "ENDPOINT-NAME": "Name:",
+    "ENDPOINT-DESCRIPTION": "Beschreibung:",
+    "ENDPOINT-ADDRESS": "Serveradresse:",
+    "ENDPOINT-PORT": "Serverport:",
+    "ENDPOINT-CONTEXT-ROOT": "Kontextstamm:",
+    "ENDPOINT-REST-ROOT": "REST-Stamm:",
+    "ENDPOINT-USERNAME": "Benutzername:",
+    "PROCESS-ENGINE-HELP": "Dieser Bereich ermöglicht das Definieren einer Masterkonfiguration für das Cluster. Alle Instanzen in dem Cluster verwenden beim Starten diese Konfiguration (wenn sich das Cluster-Konfigurations-Jar auf dem Klassenpfad befindet oder wenn die entsprechenden Eigenschaften eingstellt wurden). Wenn keine Konfiguration bestimmt wurde, verwenden die Instanzen ihre lokalen Konfigurationsdateien.",
+    "NO-MASTER-DEFINED": "Keine Masterkonfiguration definiert",
+    "ACTION": {
+      "SHOW-PASSWORD": "Passwort anzeigen",
+      "EDIT-CLUSTER-CONFIG": "Clusterkonfiguration bearbeiten",
+      "CREATE-CLUSTER-CONFIG": "Neues Cluster erstellen",
+      "DELETE-CLUSTER-CONFIG": "Clusterkonfiguration löschen",
+      "GENERATE-JAR": "Clusterkonfigurations-Jar generieren",
+      "EDIT-ENDPOINT": "Process Services-REST-Endpunkt bearbeiten",
+      "CHECK-ENDPOINT": "Process Services-REST-Endpunkt überprüfen",
+      "SELECT-MASTER": "Masterkonfiguration auswählen",
+      "ADD-CONFIGURATION": "Masterkonfiguration hinzufügen",
+      "EDIT-CONFIGURATION": "Masterkonfiguration bearbeiten",
+      "DELETE-CONFIGURATION": "Masterkonfiguration löschen"
+    },
+    "TITLE": {
+      "MAIN": "Clusterkonfiguration",
+      "ACTIVITI": "Instanzeinstellungen",
+      "ENDPOINT": "Endpunktkonfiguration",
+      "MASTER-CONFIGURATION": "Masterkonfiguration"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "Masterkonfiguration auswählen",
+        "MESSAGE": "Möchten Sie '{{name}}' wirklich als Masterkonfiguration auswählen?",
+        "CONFIRM": "Masterkonfiguration auswählen"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "Masterkonfiguration löschen",
+        "MESSAGE": "Möchten Sie diese Masterkonfiguration wirklich löschen?",
+        "CONFIRM": "Löschen"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "Clusterkonfigurations-Jar generieren",
+        "MESSAGE": "Es ist wichtig, dass alle Mitglieder desselben Clusters dieselben Einstellungen verwenden.",
+        "LINK-MESSAGE": "Hierzu kann durch Klicken auf den unten stehenden Link ein Java Archive (Jar) heruntergeladen werden. Dieses Jar enthält die erforderliche Konfiguration, damit eine Process Services Instanz mit der Administratoranwendung von Process Services kommunizieren kann. Das Jar muss lediglich dem Klassenpfad hinzugefügt werden und wird automatisch verwendet.",
+        "ADMIN-APP-URL": "Das folgende Feld ist die Basis-URL, die verwendet wird, um Informationen zurück an diese Administratoranwendung zu senden. Ändern Sie sie, wenn die URL aus irgendeinem Grund nicht mit der URL übereinstimmt, die zum Anzeigen dieser Web-Benutzeroberfläche verwendet wird.",
+        "CONFIRM": "Masterkonfiguration deaktivieren",
+        "ACTION-DOWNLOAD": "{{label}} herunterladen"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "Endpunktkonfiguration bearbeiten",
+        "ENDPOINT-NAME": "Name",
+        "ENDPOINT-DESCRIPTION": "Beschreibung",
+        "ENDPOINT-ADDRESS": "Serveradresse",
+        "ENDPOINT-PORT": "Serverport",
+        "ENDPOINT-CONTEXT-ROOT": "Kontextstamm",
+        "ENDPOINT-REST-ROOT": "REST-Stamm",
+        "ENDPOINT-USERNAME": "Benutzername",
+        "ENDPOINT-PASSWORD": "Passwort",
+        "ENDPOINT-PASSWORD-HELP": "Leer lassen, um das aktuelle Passwort zu behalten",
+        "ENDPOINT-URL-PREVIEW": "URL-Vorschau",
+        "ACTION-CONFIRM": "Endpunktkonfiguration speichern",
+        "ERROR-401": "Fehler: ungültige Anmeldeinformationen",
+        "ERROR-403": "Fehler: ungültige Anmeldeinformationen oder URL",
+        "ERROR-404": "Fehler: URL nicht gefunden",
+        "ERROR-500": "Fehler: Serverfehler. Überprüfen Sie die Serverprotokolle."
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "Clusterkonfiguration löschen",
+        "WARNING": "Wenn eine Clusterkonfiguration gelöscht wird, beachten Sie, dass Sie auch das Konfigurations-Jar (oder die Eigenschaftendatei) für diese Clusterkonfiguration aus dem Klassenpfad der Knoten entfernen sollten.",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "Diese Clusterkonfiguration kann nicht gelöscht werden: Es muss mindestens eine Clusterkonfiguration vorhanden sein und dies ist die einzige definierte Clusterkonfiguration im System.",
+        "ACTION-DELETE": "Bestätigen"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "Clustername und -passwort",
+        "NETWORK-SETTINGS": "Netzwerkeinstellungen",
+        "SECURITY-SETTINGS": "Sicherheitseinstellungen",
+        "ACTIVITI-SETTINGS": "Instanzeinstellungen",
+        "STEPS": "Schritt {{currentStepIndex + 1}} von {{steps.length}}",
+        "GROUP-HELP": "Jedes Cluster muss über einen eindeutigen Namen verfügen. Jede Modulinstanz muss diesen Clusternamen angeben, um dem Cluster beizutreten.",
+        "NAME": "Name",
+        "USERNAME": "Benutzername",
+        "PASSWORD": "Passwort",
+        "SECURITY-HELP": "Jedes Cluster muss über einen Benutzernamen und ein Passwort verfügen. Alle Process Services-Modulinstanzen, die Daten mit der Administratoranwendung von Process Services austauschen möchten, müssen diese Anmeldeinformationen in ihrer Kommunikation angeben.",
+        "ACTIVITI-HELP": "Wenn die Masterkonfiguration aktiviert wird, starten die Prozessinstanzen, die ein Mitglied dieses Clusterstarts sind, ohne Verwendung der Masterkonfiguration.",
+        "REQUIRES-MASTER": "Erfordert Masterkonfiguration",
+        "METRICS-HELP": "Jede Prozessinstanz, die ein Mitglied dieses Clusters ist, sendet Metriken (z. B. JVM-Metriken, Nutzungsmetriken) an die Administratoranwendung von Process Services zurück. Die folgende Einstellung legt fest, wie oft diese Metriken gesammelt und gesendet werden.",
+        "METRICS-INTERVAL": "Sendeintervall für Metriken (in Sekunden)",
+        "ERROR-NAME-TAKEN": "Clustername wird bereits verwendet. Wählen Sie einen anderen aus.",
+        "ERROR-USER-TAKEN": "Clusterbenutzername wird bereits verwendet. Wählen Sie einen anderen aus.",
+        "CONFIRM": "Konfiguration speichern"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "Neue Konfiguration erstellen",
+        "TITLE-EDIT": "Konfiguration bearbeiten",
+        "NAME": "Name",
+        "DESCRIPTION": "Beschreibung",
+        "TITLE-DATABASE": "Datenbank",
+        "JDBC-URL": "JDBC-URL",
+        "JDBC-USERNAME": "JDBC-Benutzername",
+        "JDBC-PASSWORD": "JDBC-Passwort",
+        "JDBC-DRIVER": "JDBC-Treiber",
+        "JDBC-JNDI-NAME": "JDBC JNDI-Name",
+        "JDBC-JNDI-HELP": "Füllen Sie diese Felder aus (ignorieren Sie dabei die Einstellungen oben), wenn die Datenquelle in einem Anwendungsserver konfiguriert und durch Jndi eingeblendet ist.",
+        "TITLE-SCHEMA": "Process Services Schema",
+        "SCHEMA-UPDATE": "Aktualisierung des Datenbankschemas",
+        "SCHEMA-UPDATE-HELP": "Es empfiehlt sich, diese Einstellung auf 'false' zu belassen, und das Datenbankschema mithilfe der SQL-Skripte zu aktualisieren. Wenn 'true' ausgewählt ist, aktualisiert der erste im Cluster gestartete Knoten das Schema automatisch. Das kann beim Start mehrerer Knoten gleichzeitig zu Problemen führen, da Datendefinitionen oft nicht auf Transaktionen ausgelegt sind.",
+        "TITLE-HISTORY": "Verlauf",
+        "HISTORY-LEVEL": "Verlaufsebene",
+        "TITLE-JOB-EXECUTOR": "Auftragsausführer",
+        "NR-OF-JOB-NODES-HELP": "Jede Process Services-Modulinstanz verfügt über eine Auftragsausführerkomponente, die für die Ausführung von Hintergrundaufgaben, wie Timer und asynchrone Fortsetzungen von Geschäftsprozessen, verantwortlich ist. Es empfiehlt sich jedoch, nur eine kleine Anzahl (einen, zwei oder mehr für Szenarien mit sehr hohen Kapazitäten) von Auftragsausführern zu aktivieren. Der Wert dieser Einstellung wird verwendet, um Auftragsausführer wie in dem Cluster erforderlich zu aktivieren oder zu deaktivieren.",
+        "NR-OF-JOB-NODES": "Anzahl von Auftragsausführerknoten",
+        "JOB-EXECUTOR-ENABLE": "Auftragsausführer aktivieren",
+        "TITLE-ADVANCED": "Erweitert",
+        "PROCESS-DEF-CACHE-LIMIT": "Cachelimit der Prozessdefinition",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "Die maximale Anzahl an (analysierten) Prozessdefinitionen, die im Speicher beibehalten wird. Das Analysieren einer Prozessdefinition ist ressourcenintensiv, daher empfiehlt es sich, über einen ausreichend großen Cache zu verfügen und nicht zu viel Speicher zu verwenden (Standard: unbegrenzt).",
+        "ID-BLOCK-SIZE": "ID-Blockgröße",
+        "ID-BLOCK-SIZE-HELP": "Die Anzahl der Datenbank-IDs, die ein Process Services-Modul beim Erstellen neuer Entitäten zur Verwendung reserviert (Standard: 100). Wenn alle IDs aufgebraucht sind, wird ein neuer Block in der Datenbank reserviert.",
+        "ENABLE-JOB-TWEAKING": "Erweiterte Optimierung des Auftragsausführers aktivieren",
+        "ENABLE-JOB-TWEAKING-HELP": "Der Auftragsausführer ist die Komponente, die unter anderem für die Ausführung von Timern, asynchronen Fortsetzungen (allgemein als 'Aufträge' bezeichnet) von Geschäftsprozessen verantwortlich ist.",
+        "TITLE-JOB-TWEAKING": "Optimierung des Auftragsausführers",
+        "MAX-JOBS-PER-ACQUISITION": "Max. Anzahl der Aufträge pro Erfassung",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "Der Auftragsausführer arbeitet in zwei Phasen: Es werden zunächst Aufträge 'erfasst', indem Aufträge für eine bestimmte Zeit gesperrt werden (um Konflikte zwischen mehreren Auftragsausführern zu vermeiden). In der zweiten Phase werden die erfassten Aufträge (normalerweise) von einem separaten Threadpool ausgeführt. Dieser Wert legt fest, wie viele Aufträge pro Anfrage für Phase 1 erfasst werden. Wenn mehr als ein Auftragsausführer in einem Cluster aktiv ist, empfiehlt es sich, diesen Wert auf 1 zu setzen, um Deadlocks zu vermeiden. Der Standardwert ist 1.",
+        "JOB-WAIT-TIME": "Wartezeit (ms)",
+        "JOB-WAIT-TIME-HELP": "Die Zeit (in ms), die gewartet wird, nachdem alle Aufträge ausgeführt oder keine Aufträge gefunden wurden. So werden zu viele Datenbanktreffer vermieden. Der Standardwert ist 10.000 ms.",
+        "JOB-LOCK-TIME": "Sperrzeit (ms)",
+        "JOB-LOCK-TIME-HELP": "Die Zeit (in ms), in der ein Auftrag von einer Auftragsausführerkomponente gesperrt ist. Wenn die Zeit abgelaufen ist, der Auftrag aber noch nicht ausgeführt wurde, kann der Auftrag wieder von einem anderen Auftragsausführer erfasst werden. Damit wird vermieden, dass ein fehlerhafter Auftragsausführer die Auftragsausführung kontinuierlich anhält. Der Standardwert ist 5 Minuten (300.000 ms).",
+        "JOB-CORE-POOL-SIZE": "Kerngröße des Threadpools",
+        "JOB-CORE-POOL-SIZE-HELP": "Die minimale Anzahl an Threads im Threadpool, die für die Ausführung von Aufträgen aktiv bleibt. Gilt nur für den Standardauftragsausführer",
+        "JOB-QUEUE-SIZE": "Warteschlangengröße",
+        "JOB-QUEUE-SIZE-HELP": "Der Standardauftragsausführer erfasst zunächst Aufträge und stellt sie in die Warteschlange, bevor er sie in einem Threadpool ausführt. Dieser Wert legt fest, wie viele Aufträge in dieser Warteschlange gehalten werden. Gilt nur für den Standardauftragsausführer (gilt z. B. nicht für den Spring Job-Ausführer oder für benutzerdefinierte Implementierungen).",
+        "JOB-MAX-POOL-SIZE": "Max. Threadpoolgröße",
+        "JOB-MAX-POOL-SIZE-HELP": "Die maximale Anzahl an Threads im Threadpool, die zur Ausführung von Aufträgen erstellt wird. Gilt nur für den Standardauftragsausführer",
+        "TITLE-DB-POOL": "Datenbankverbindungspool",
+        "ENABLE-DB-POOL": "Konfiguration des Datenbankverbindungspools aktivieren",
+        "ENABLE-DB-POOL-HELP": " Ermöglicht das Konfigurieren des Verbindungspools der Datenquelle, der von Alfresco Process Services erstellt wurde. Diese Einstellungen gelten nur, wenn Alfresco Process Services für die Erstellung der Datenquelle verantwortlich ist (d. h. keine jndi-Datenquelle, kein eingefügter Spring usw.)",
+        "JOB-MAX-IDLE-CONNECTIONS": "Max. Anzahl im Leerlauf befindlicher Verbindungen",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "Max. Anzahl aktiver Verbindungen",
+        "JOB-MAX-CHECKOUT-TIME": "Max. Auscheckzeit (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "Die maximale Zeit, in der eine Verbindung verwendet werden kann, bevor sie 'möglicherweise' wieder weitergegeben wird.",
+        "JOB-MAX-WAIT-TIME": "Max. Wartezeit (ms)",
+        "JOB-MAX-WAIT-TIME-HELP": "Die Zeit, die gewartet werden muss, bevor ein erneuter Versuch zur Verbindungsherstellung unternommen werden kann.",
+        "TITLE-MAIL-SERVER": "Mailserver",
+        "ENABLE-MAIL-SERVER": "Mailserverkonfiguration aktivieren",
+        "ENABLE-MAIL-SERVER-INFO": "Dies ist nur erforderlich, wenn die E-Mail-Funktion in Ihren Geschäftsprozessen verwendet wird.",
+        "MAIL-DEFAULT-FROM": "Standard von Adresse",
+        "MAIL-HOST": "Mailserverhost",
+        "MAIL-PORT": "Mailserverport",
+        "MAIL-USERNAME": "Mailserver-Benutzername",
+        "MAIL-PASSWORD": "Mailserver-Passwort",
+        "MAIL-USE-SSL": "SSL verwenden?",
+        "MAIL-USE-TLS": "TLS verwenden?",
+        "MAIL-JNDI-NAME": "Mailserver-JNDI-Name",
+        "MAIL-JNDI-NAME-INFO": "Füllen Sie diese Felder aus (ignorieren Sie dabei die Einstellungen oben), wenn der Mailserver in einem Anwendungsserver konfiguriert und durch Jndi eingeblendet ist.",
+        "ACTION-DELETE-CONFIGURATION": "Konfiguration löschen",
+        "ACTION-CREATE-CONFIGURATION": "Konfiguration erstellen",
+        "ACTION-UPDATE-CONFIGURATION": "Konfiguration aktualisieren",
+        "CONFIG-OPTIONS": "Konfigurationstyp",
+        "OPTION-ENGINE": "Process Services-Standalone-Modul",
+        "OPTION-SUITE": "Process Services-BPM Suite",
+        "FETCHING-TEMPLATE": "Vorlage wird vom Server abgerufen..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "Anwendungs-Deployments",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Anwendungs-Deployments werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Anwendungs-Deployments.",
+    "FILTER": {
+      "NAME": "Name",
+      "TENANTID": "Mandanten-ID",
+      "LATEST": "Aktuellste Version",
+      "LATEST-HELP": "Nur aktuellste Versionen anzeigen"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "Anwendungs-ID",
+      "DEPLOYMENT-ID": "Prozess-Deployment-ID",
+      "DMN-DEPLOYMENT-ID": "DMN-Deployment-ID",
+      "NAME": "Name",
+      "DEPLOY-TIME": "Deployment-Zeit",
+      "DEPLOYED-BY": "Deployment durch",
+      "TENANT": "Mandanten-ID"
+    },
+    "ACTION": {
+      "UPLOAD": "Eine Anwendung hochladen und veröffentlichen",
+      "PUBLISH-APP-MODEL": "Ein Anwendungsmodell veröffentlichen"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Wählen Sie eine .zip-Anwendungsdefinition zum Deployment aus.",
+        "WARNING": "Ein Prozess kann nur auf eine BPM Suite-Instanz hochgeladen werden.",
+        "DROPZONE": "Oder legen Sie eine Datei hier ab",
+        "NO-DROP": "Dateiablage wird von Ihrem Browser nicht unterstützt.",
+        "CANCEL-UPLOAD": "Upload abbrechen",
+        "ERROR": "Diese Datei konnte nicht hochgeladen werden."
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "Anwendungs-ID:",
+    "DEPLOYMENT-ID": "Deployment-ID:",
+    "DMN-DEPLOYMENT-ID": "DMN-Deployment-ID:",
+    "DEPLOYED-BY": "Deployment durch:",
+    "DEPLOYED-ON": "Deployment am:",
+    "APP-NAME": "Anwendungsname:",
+    "VERSION": "Version:",
+    "DESCRIPTION": "Beschreibung:",
+    "KEY": "Schlüssel:",
+    "CATEGORY": "Kategorie:",
+    "SUSPENDED": "Angehalten:",
+    "DEPLOYMENT": "Deployment:",
+    "TENANT-ID": "Mandanten-ID:",
+    "START-FORM-DEFINED": "Startformular definiert:",
+    "GRAPHICAL-NOTATION-DEFINED": "Grafische Notation definiert:",
+    "PROCESS-DEFINITIONS-SIZE": "Anwendungsdefinition hat {{total}} Prozessdefinitionen",
+    "PROCESS-DEFINITIONS-SHOWING": ", {{size}} Prozessdefinitionen werden angezeigt",
+    "PROCESS-DEFINITIONS-EMPTY": "Anwendungs-Deployment hat keine Prozessdefinitionen",
+    "DECISION-TABLES-SIZE": "Anwendungs-Deployment hat {{total}} Entscheidungstabellen",
+    "DECISION-TABLES-SHOWING": ", {{size}} Entscheidungstabellen werden angezeigt",
+    "DECISION-TABLES-EMPTY": "Anwendungs-Deployment hat keine Entscheidungstabellen",
+    "FORMS-SIZE": "Anwendungs-Deployment hat {{total}} Formulare",
+    "FORMS-SHOWING": ", {{size}} Formulare werden angezeigt",
+    "FORMS-EMPTY": "Anwendungs-Deployment hat keine Formulare",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "Prozessdefinitionen",
+      "DECISION-TABLES": "Entscheidungstabellen",
+      "FORMS": "Formulare"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Kategorie bearbeiten",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "Alle Prozessdefinitionen anzeigen",
+      "SHOW-ALL-DECISION-TABLES": "Alle Entscheidungstabellen anzeigen",
+      "SHOW-ALL-FORMS": "Alle Formulare anzeigen",
+      "SHOW-DIAGRAM": "Prozessdiagramm anzeigen"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Kategorie für Definition bearbeiten",
+        "MESSAGE": "Die Anfangskategorie für die Definition wird vom targetNameSpace-Attribut im BPMN 2.0 XML ausgefüllt, kann jedoch nach dem Deployment geändert werden.",
+        "CATEGORY": "Kategorie",
+        "CATEGORY-PLACEHOLDER": "Kategorie eingeben",
+        "CONFIRM": "Kategorie aktualisieren"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Prozessdiagramm"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "Name",
+      "TYPE": "Typ",
+      "VALUE": "Wert"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "Gruppen-ID",
+      "TYPE": "Typ",
+      "USER-ID": "Benutzer-ID"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "Daten konnten nicht vom Server abgerufen werden",
+      "AUTHENTICATION-ERROR": "Sie haben ungültige Anmeldeinformationen eingegeben."
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "Konfiguration '{{name}}' gelöscht.",
+      "CONFIG-UPDATED": "Konfiguration '{{name}}' aktualisiert.",
+      "CONFIG-CREATED": "Konfiguration '{{name}}' erstellt.",
+      "MASTER-CONFIG-DELETE": "Masterkonfiguration gelöscht.",
+      "MASTER-CONFIG-UPDATE": "Masterkonfiguration aktualisiert",
+      "CLUSTER-UPDATED": "Clusterkonfiguration aktualisiert.",
+      "CLUSTER-CREATED": "Clusterkonfiguration erstellt.",
+      "ENDPOINT-UPDATED": "Endpunkt '{{name}}' aktualisiert.",
+      "ENDPOINT-INVALID": "Endpunktkonfiguration für '{{name}}' ist ungültig.",
+      "ENDPOINT-VALID": "Endpunkt gültig, Modul am Endpunkt: {{name}} – {{version}}"
+    },
+    "JOB": {
+      "DELETED": "Auftrag '{{id}}' erfolgreich gelöscht.",
+      "EXECUTED": "Auftrag '{{id}}' wurde erfolgreich ausgeführt."
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "Prozessinstanz '{{id}}' erfolgreich gelöscht.",
+      "TERMINATED": "Prozessinstanz '{{id}}' erfolgreich beendet."
+    },
+    "TASK": {
+      "DELETED": "Aufgabe '{{id}}' erfolgreich gelöscht.",
+      "COMPLETED": "Aufgabe '{{id}}' erfolgreich abgeschlossen.",
+      "DELEGATED": "Aufgabe '{{id}}' an Benutzer {{user}} delegiert.",
+      "RESOLVED": "Aufgabe '{{id}}' erfolgreich gelöst.",
+      "ASSIGNED": "Aufgabe '{{id}}' ist nun {{user}} zugewiesen.",
+      "UNASSIGNED": "Zuweisung der Aufgabe '{{id}}' ist nun aufgehoben.",
+      "UPDATED": "Aufgabe '{{id}}' erfolgreich aktualisiert."
+    },
+    "USER": {
+      "DELETED": "Benutzer '{{login}}' erfolgreich gelöscht.",
+      "UPDATED": "Benutzer '{{login}}' erfolgreich aktualisiert.",
+      "CREATED": "Benutzer '{{login}}' erstellt.",
+      "PASSWORD-CHANGED": "Passwort für '{{login}}' wurde erfolgreich geändert."
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "Prozessdefinitionskategorie aktualisiert"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "Deployment '{{name}}' gelöscht",
+      "DELETE-ERROR": "Deployment konnte nicht gelöscht werden. {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "Anwendung '{{appDefinition.name}}' gelöscht",
+      "DELETE-ERROR": "Anwendung konnte nicht gelöscht werden. {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "Entscheidungstabellen",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Entscheidungstabellen werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Entscheidungstabellen.",
+    "FILTER": {
+      "NAME": "Name",
+      "KEY": "Schlüssel",
+      "TENANTID": "Mandanten-ID"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "VERSION": "Version",
+      "KEY": "Schlüssel",
+      "DEPLOY-TIME": "Deployment-Zeit",
+      "TENANT-ID": "Mandanten-ID"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "VERSION": "Version:",
+    "KEY": "Schlüssel:",
+    "DEPLOYMENT-ID": "Deployment-ID:",
+    "RESOURCE-NAME": "Name der Ressource:",
+    "DESCRIPTION": "Beschreibung:",
+    "TENANT": "Mandant:",
+    "TITLE": {
+      "DECISION-AUDITS": "Entscheidungsaudits"
+    },
+    "DECISION-AUDITS-MESSAGE": "Diese Entscheidungstabelle hat {{total}} Audits, {{size}} werden angezeigt.",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "Diese Entscheidungstabelle hat keine Audits",
+    "ACTION": {
+      "EDIT-CATEGORY": "Kategorie bearbeiten",
+      "SHOW-ALL-JOBS": "Alle Aufträge anzeigen",
+      "SHOW-ALL-PROCESSES": "Alle Prozesse anzeigen",
+      "SHOW-DIAGRAM": "Prozessdiagramm anzeigen",
+      "SHOW-DECISION-TABLE": "Entscheidungstabelle anzeigen"
+    },
+    "POPUP": {
+      "TITLE": "Entscheidungstabelle: ",
+      "KEY": "Schlüssel: ",
+      "HIT-POLICY": "Ergebnisregeln: ",
+      "HIT-POLICIES": {
+        "FIRST": "Erstes (Einzeldurchlauf)",
+        "ANY": "Beliebiges (Einzeldurchlauf)"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "Entscheidungs-Audit-Pfade",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Entscheidungs-Audit-Pfaden werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Entscheidungs-Audit-Pfade.",
+    "FILTER": {
+      "NAME": "Name (Groß-/Kleinschreibung beachten)",
+      "TENANTID": "Mandanten-ID (Groß-/Kleinschreibung beachten)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "POPUP": {
+      "HEADER": "Entscheidungs-Audit-Pfad"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "Prozessdefinitions-ID",
+      "PROCESS-INSTANCE-ID": "Prozessinstanz-ID",
+      "CREATED": "Erstellt",
+      "FAILED": "Fehlgeschlagen",
+      "EXECUTION-ID": "Ausführungs-ID",
+      "ACTIVITY-ID": "Aktivitäts-ID",
+      "ACTIVITY-NAME": "Aktivitätsname",
+      "DECISION-KEY": "Entscheidungsschlüssel",
+      "DECISION-NAME": "Entscheidungsname",
+      "DMN-DEPLOYMENT-ID": "DMN-Deployment-ID"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "Entscheidungs-Audit anzeigen"
+    },
+    "TABLE": {
+      "HEADER": "Entscheidungstabelle \"{{name}}\"",
+      "HIT-POLICY": "Ergebnisregeln",
+      "HIT-POLICIES": {
+        "FIRST": "Erstes (Einzeldurchlauf)",
+        "ANY": "Beliebiges (Einzeldurchlauf)"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "Beim Testen, ob der Ausdruck mit dem Eingabewert übereinstimmt, ist ein Ausnahmefehler aufgetreten: {{error}}",
+        "INPUT-MATCH": "Der Eingabewert stimmt mit dem Ausdruck überein.",
+        "INPUT-EMPTYEXPRESSION": "Leere Ausdrücke werden als Übereinstimmung behandelt.",
+        "INPUT-NOMATCH": "Der Eingabewert stimmte nicht mit dem Ausdruck überein.",
+        "INPUT-NOTEXECUTED": "Der Ausdruck wurde nie getestet.",
+        "OUTPUT-EXCEPTION": "Beim Festlegen des Wertes mit dem folgenden Ausdruck ist ein Ausnahmefehler aufgetreten: \n {{expression}}.\nFehlermeldung: {{error}}",
+        "OUTPUT-RESULT": "Der Wert wurde mit dem folgenden Ausdruck festgelegt: \n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "Der folgende Ausdruck wurde nie ausgeführt: \n {{expression}}"
+      },
+      "INPUT-VARIABLE": "Bedingung",
+      "OUTPUT-VARIABLE": "Ergebnis",
+      "INPUT-VARIABLES": "Eingabewerte",
+      "NO-INPUT-VARIABLES": "Bei der Ausführung der Entscheidungstabelle gab es keine Eingabewerte",
+      "OUTPUT-VARIABLES": "Berechnete Werte",
+      "NO-OUTPUT-VARIABLES": "Aus der Entscheidungstabelle gingen keine berechneten Werte hervor",
+      "METADATA-NAME": "Name",
+      "METADATA-VALUE": "Wert",
+      "LOAD-ERROR": "Beim Abrufen der Ergebnistabelle und des Audit-Pfads zur Ausführung '{{executionId}}' der Aktivität '{{activityId}}' ist ein Fehler aufgetreten."
+    }
+  },
+  "FORMS": {
+    "TITLE": "Formulare",
+    "LIST-MESSAGE": "{{size}} Ergebnisse aus insgesamt {{total}} übereinstimmenden Formularen werden angezeigt.",
+    "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Formulare.",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "APPID": "Anwendungs-ID",
+      "TENANTID": "Mandanten-ID"
+    },
+    "FILTER": {
+      "NAME": "Name",
+      "APPID": "Anwendungs-Deployment-ID",
+      "TENANTID": "Mandanten-ID"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    }
+  },
+  "FORM": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "APP-ID": "Anwendungs-ID:",
+    "DEPLOYMENT-ID": "Deployment-ID:",
+    "DESCRIPTION": "Beschreibung:",
+    "TENANT": "Mandant:",
+    "MESSAGE-EMPTY": "(Keine)",
+    "TITLE": {
+      "SUBMITTED-FORMS": "Eingereichte Formulare"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "Dieses Formular verfügt über {{total}} eingereichte Formulare, {{size}} werden angezeigt.",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "Dieses Formular verfügt über keine eingereichten Formulare.",
+    "ACTION": {
+      "EDIT-CATEGORY": "Kategorie bearbeiten",
+      "SHOW-ALL-JOBS": "Alle Aufträge anzeigen",
+      "SHOW-ALL-PROCESSES": "Alle Prozesse anzeigen",
+      "SHOW-DIAGRAM": "Prozessdiagramm anzeigen",
+      "SHOW-FORM": "Formular anzeigen"
+    },
+    "POPUP": {
+      "TITLE": "Formular: "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "Wert anzeigen",
+      "SELECT-FIELD": "(Kein Feld ausgewählt)",
+      "FIELD-VALUE": "Wert von Feld \"{{name}}\" anzeigen",
+      "UNKNOWN-TYPE": "Unbekannter Feldtyp {{type}}",
+      "TEXT-VALUE": "Text",
+      "MULTI-TEXT-VALUE": "Mehrzeiliger Text",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "Datum",
+      "DATETIME-VALUE": "Datum und Uhrzeit",
+      "DROPDOWN-VALUE": "Auswählen...",
+      "UPLOAD-VALUE": "Inhalt hochladen oder importieren...",
+      "RADIOS-OPTION1": "Option 1",
+      "SELECT-PERSON": "Wählen Sie eine Person aus",
+      "SELECT-GROUP": "Wählen Sie eine Gruppe aus"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "Aufgaben-ID",
+      "PROCESS-ID": "Prozessinstanz-ID",
+      "SUBMITTED": "Eingereicht am",
+      "SUBMITTED-BY": "Eingereicht von",
+      "FORM-ID": "Formular-ID"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "Eingereichtes Formular anzeigen"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "Eine Anwendung hochladen und veröffentlichen",
+      "DOWNLOAD": "Anwendung herunterladen",
+      "REDEPLOY": "Anwendung in anderem Cluster neu bereitstellen",
+      "DELETE": "Anwendung löschen"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Anwendung '{{appDefinition.name}}' löschen?"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "Wählen Sie eine .zip-Anwendungsdatei zum Deployment aus.",
+        "WARNING": "Eine Anwendung kann nur auf eine BPM Suite-Instanz, nicht auf eine Kernmodul-Instanz hochgeladen werden.",
+        "DROPZONE": "Oder legen Sie eine Datei hier ab",
+        "NO-DROP": "Dateiablage wird von Ihrem Browser nicht unterstützt.",
+        "CANCEL-UPLOAD": "Upload abbrechen",
+        "ERROR": "Diese Datei konnte nicht hochgeladen werden."
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "Anwendungsmodell veröffentlichen",
+        "PUBLISH": "Veröffentlichen",
+        "ERROR": "Anwendung konnte nicht veröffentlicht werden",
+        "DESCRIPTION": "Wählen Sie eine .zip-Anwendungsdatei zum Deployment aus.",
+        "WARNING": "Eine Anwendung kann nur auf eine BPM Suite-Instanz, nicht auf eine Kernmodul-Instanz hochgeladen werden.",
+        "DROPZONE": "Oder legen Sie eine Datei hier ab",
+        "NO-DROP": "Dateiablage wird von Ihrem Browser nicht unterstützt.",
+        "LIST-MESSAGE": "Alle {{total}} übereinstimmenden Anwendungsmodelle werden angezeigt.",
+        "LIST-MESSAGE-EMPTY": "Keine übereinstimmenden Anwendungsmodelle.",
+        "PUBLISH-ERROR": "Anwendung konnte nicht veröffentlicht werden",
+        "EVERYONES-APPS": "Anwendungen von allen anzeigen",
+        "APP-CONFLICT-ERROR": "Konflikt zwischen der Anwendung und der bereits vorhandenen, von {{createdBy.firstName}} {{createdBy.lastName}} erstellten Anwendung '{{name}}' ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "Anwendung in anderem Cluster veröffentlichen",
+        "SELECT-CLUSTER": "Cluster auswählen",
+        "PUBLISH-TO-CLUSTER": "Anwendung in {{name}} veröffentlichen",
+        "PUBLISH-AS-NEW-VERSION": "Als neue Version der Anwendung veröffentlichen",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "Name",
+          "LAST-UPDATE": "Letzte Aktualisierung",
+          "CREATED-BY": "Erstellt von"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "Anwendung neu bereitstellen",
+        "DESCRIPTION": "Wählen Sie ein Cluster aus, in dem '{{name}}' neu bereitgestellt werden soll",
+        "ERROR": "Anwendung konnte nicht bereitgestellt werden",
+        "APP-CONFLICT-ERROR": "Konflikt zwischen der Anwendung und der bereits vorhandenen, von {{createdBy.firstName}} {{createdBy.lastName}} erstellten Anwendung '{{name}}' ",
+        "SELECT-CLUSTER": "Cluster auswählen",
+        "DEPLOY-TO-CLUSTER": "Anwendung in {{name}} bereitstellen",
+        "DEPLOY": "Bereitstellen",
+        "DEPLOY-AS-NEW-VERSION": "Als neue Version der Anwendung bereitstellen"
+      }
+    }
+  }
+}

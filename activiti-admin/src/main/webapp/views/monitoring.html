@@ -1,0 +1,426 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        	<div class="component component-pack">
+	        	<div class="title">
+					<div class="btn-group btn-group-sm pull-right">
+						<button type="button" class="btn btn-default dropdown-toggle"
+							data-toggle="dropdown">
+							{{'MONITORING.REFRESH-INTERVAL' | translate:model.refreshInterval}}&nbsp;<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li ng-repeat="interval in model.refreshIntervals"><a
+								href="" ng-click="updateRefreshInterval(interval)">{{interval.name}}</a></li>
+						</ul>
+					</div>
+					<div class="pull-right loading" ng-show="model.loading">
+						<i class="glyphicon glyphicon-refresh"></i>
+					</div>
+	        		<h2 translate="MONITORING.TITLE.MAIN"></h2>
+	        	</div>
+	        	<div class="property-wrapper">
+		        	<table>
+						<tr class="property">
+							<td class="property-name" translate="MONITORING.NUMBER-OF-MEMBERS"></td>
+							<td>{{clusterInfo &amp;&amp; clusterInfo.length || '0'}}</td>
+							<td class="property-name" translate="MONITORING.LAST-UPDATED"></td>
+							<td>{{model.lastUpdate | empty}}</td>
+						</tr>
+					</table>
+				</div>
+	        </div>
+        </div>
+
+    	<div class="col-md-12">
+    		<div class="component" ng-show="clusterInfo.length > 0">
+    			<div class="tabs-wrapper">
+		       		<div class="tabs clearfix">
+		       			<div class="tab" ng-repeat="node in clusterInfo" ng-class="{'active': node.nodeId == model.selectedNode.nodeId}">
+		       				<a ng-click="selectNode(node)">
+		       					{{'MONITORING.TITLE.NODE' | translate:node}}
+		    					<span class="label" ng-class="{'label-success' : node.state == 'RUNNING','label-warning' : node.state == 'BOOTING', 'label-danger' : node.state == 'CLOSED' || node.state == 'UNKNOWN'}">{{node.state}}</span>
+		    				</a>
+		       			</div>
+		       		</div>
+		        	<div class="title"></div>
+	        	</div>
+
+                <div ng-show="!model.selectedNode.jvmMetrics.general.uptime" class="property-wrapper">
+                    {{'MONITORING.NOT-ENOUGH-DATA' | translate}}
+                </div>
+	    		<div class="property-wrapper">
+		    		<table ng-if="model.selectedNode.jvmMetrics">
+						<tr class="property">
+
+                            <td class="property-name" translate="MONITORING.NODE-ID"></td>
+                            <td>{{model.selectedNode.nodeId}}</td>
+
+                            <td class="property-name" translate="MONITORING.MASTER-CONFIGURATION"></td>
+                            <td ng-if="!model.selectedNode.usingMasterConfiguration && !model.selectedNode.masterConfigurationId"
+                                translate="MONITORING.MASTER-CONFIGURATION-DISABLED">
+                            </td>
+                            <td ng-if="model.selectedNode.usingMasterConfiguration && model.selectedNode.masterConfigurationId && model.selectedNode.correctMasterConfiguration"
+                                translate="MONITORING.MASTER-CONFIGURATION-USED">
+                            </td>
+                            <td ng-if="model.selectedNode.usingMasterConfiguration && !model.selectedNode.correctMasterConfiguration"
+                                translate="MONITORING.MASTER-CONFIGURATION-INCORRECT" style="color:red;">
+                            </td>
+                            <td ng-if="model.selectedNode.usingMasterConfiguration && model.selectedNode.masterConfigurationId && !model.selectedNode.correctMasterConfiguration"
+                                class="error-text" translate="MONITORING.MASTER-CONFIGURATION-NOT-USED">
+                            </td>
+
+						</tr>
+						<tr class="property">
+
+                            <td class="property-name" translate="MONITORING.UPTIME"></td>
+                            <td>{{model.selectedNode.jvmMetrics.general.uptime | humanTime}}</td>
+
+                            <td class="property-name" translate="MONITORING.JOB-EXECUTOR-RUNNING"></td>
+                            <td>{{model.selectedNode.asyncExecutorRunning}}</td>
+
+                        </tr>
+
+                        <tr class="property">
+
+                            <td class="property-name"  translate="MONITORING.LAST-METRICS-UPDATE"></td>
+                            <td> {{model.selectedNode.lastSeenAlive | dateformat}}</td>
+
+                            <td class="property-name" translate="MONITORING.JAVA-VERSION"></td>
+                            <td>{{model.selectedNode.jvmMetrics.general['vm.vendor']}} {{model.selectedNode.jvmMetrics.general['vm.name']}} - version {{model.selectedNode.jvmMetrics.general['vm.version']}}</td>
+
+                        </tr>
+					</table>
+				</div>
+
+                <div class="title" ng-if="model.selectedNode.bpmSuiteMajorVersion">
+                    <h3 translate="MONITORING.TITLE.BPM-SUITE"> </h3>
+                </div>
+                <div class="property-wrapper text-info" style="font-weight:bold; margin-top: 10px" ng-if="model.selectedNode.bpmSuiteMajorVersion">
+                    {{'MONITORING.SUITE-INFORMATION' | translate:model.selectedNode}}
+                </div>
+
+				<div class="title" ng-if="model.selectedNode.jvmMetrics">
+					<h3 translate="MONITORING.TITLE.MEMORY"> </h3>
+				</div>
+				<div class="property-wrapper clearfix" ng-if="model.selectedNode.jvmMetrics">
+					<div class="property property-float-3" ng-show="model.selectedNode.jvmMetrics.memory['total.used'] > 0 &amp;&amp; model.selectedNode.jvmMetrics.memory['total.max'] > 0">
+						<span class="property-name" translate="MONITORING.MEMORY-USAGE"></span>
+						<div class="graph-wrapper">
+							<div class="graph-bar" style="width:{{model.selectedNode.jvmMetrics.memory['total.percentage']}}%"></div>
+						</div>
+						{{model.selectedNode.jvmMetrics.memory['total.used'] | megabytes}} / {{model.selectedNode.jvmMetrics.memory['total.max'] | megabytes}} {{'MONITORING.MEMORY-USED' | translate}}
+					</div>
+					<div class="property property-float-3" ng-show="model.selectedNode.jvmMetrics.memory['heap.used'] > 0 &amp;&amp; model.selectedNode.jvmMetrics.memory['heap.max'] > 0">
+						<span class="property-name" translate="MONITORING.MEMORY-HEAP"></span>
+						<div class="graph-wrapper">
+							<div class="graph-bar" style="width:{{model.selectedNode.jvmMetrics.memory['heap.percentage']}}%"></div>
+						</div>
+						{{model.selectedNode.jvmMetrics.memory['heap.used'] | megabytes}} / {{model.selectedNode.jvmMetrics.memory['heap.max'] | megabytes}} {{'MONITORING.MEMORY-USED' | translate}}
+					</div>
+					<div class="property property-float-3" ng-show="model.selectedNode.jvmMetrics.memory['nonheap.used'] > 0 &amp;&amp; model.selectedNode.jvmMetrics.memory['nonheap.max'] > 0">
+						<span class="property-name" translate="MONITORING.MEMORY-NON-HEAP"></span>
+						<div class="graph-wrapper">
+							<div class="graph-bar" style="width:{{model.selectedNode.jvmMetrics.memory['nonheap.percentage']}}%"></div>
+						</div>
+						{{model.selectedNode.jvmMetrics.memory['nonheap.used'] | megabytes}} / {{model.selectedNode.jvmMetrics.memory['nonheap.max'] | megabytes}} {{'MONITORING.MEMORY-USED' | translate}}
+					</div>
+				</div>
+
+				<div class="title" ng-if="model.selectedNode.jvmMetrics">
+					<h3 translate="MONITORING.TITLE.GARBAGE-COLLECTION"> </h3>
+				</div>
+
+				<div class="property-wrapper clearfix" ng-if="model.selectedNode.jvmMetrics">
+					<div class="property property-float-2" ng-repeat="gc in model.selectedNode.jvmMetrics.gc">
+						<span class="property-name">{{gc.name}}:</span><br />
+						{{MONITORING.GARBAGE-COLLECTION | translate:gc}}
+					</div>
+				</div>
+
+				<div class="tabs-wrapper" ng-show="model.selectedNode.jvmMetrics">
+		       		<div class="tabs tabs-sm clearfix">
+                        <div class="tab" ng-class="{'active': model.detailTab == 1}" ng-if="model.selectedNode.runtimeMetrics">
+                            <a ng-click="selectDetailTab(1)" translate="MONITORING.TITLE.RUNTIME-METRICS"></a>
+                        </div>
+                        <div class="tab" ng-class="{'active': model.detailTab == 2}" ng-if="model.selectedNode.processDefinitionCacheMetrics">
+                            <a ng-click="selectDetailTab(2)" translate="MONITORING.TITLE.PROCESS-DEFINITION-CACHE"></a>
+                        </div>
+		       			<div class="tab" ng-class="{'active': model.detailTab == 3}" ng-if="model.selectedNode.jobMetrics['job-queue-full'] || model.selectedNode.jobMetrics['failed-jobs'] || model.selectedNode.runtimeMetrics['job-execution']">
+		       				<a ng-click="selectDetailTab(3)" translate="MONITORING.TITLE.JOB-METRICS"></a>
+		       			</div>
+                        <div class="tab" ng-class="{'active': model.detailTab == 4}">
+                            <a ng-click="selectDetailTab(4)" translate="MONITORING.TITLE.CLASSLOADING"></a>
+                        </div>
+                        <div class="tab" ng-class="{'active': model.detailTab == 5}" ng-show="model.selectedNode.bpmSuiteRestMeters">
+                            <a ng-click="selectDetailTab(5)" translate="MONITORING.TITLE.BPM-SUITE-REST-METRICS"></a>
+                        </div>
+                        <div class="tab" ng-class="{'active': model.detailTab == 6}" ng-show="model.selectedNode.bpmSuiteElasticSearchStats">
+                            <a ng-click="selectDetailTab(6)" translate="MONITORING.TITLE.BPM-SUITE-ELASTIC-SEARCH"></a>
+                        </div>
+		       		</div>
+		        	<div class="title"></div>
+	        	</div>
+
+                <div class="property-wrapper clearfix" ng-if="model.detailTab == 1">
+
+                    <table class="property metrics" ng-if="model.selectedNode.runtimeMetrics['processinstance-start']">
+
+
+                        <tr>
+                            <td><div class="metrics-title" translate="MONITORING.PROCESS-INSTANCES"></div></td>
+                            <td><div class="metrics-title" translate="MONITORING.HOUR-COUNT-CHART"></div></td>
+                            <td><div class="metrics-title" translate="MONITORING.WEEKDAY-COUNT-CHART"></div></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <div class="metrics-numbers">
+                                    <ul>
+                                        <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.runtimeMetrics['processinstance-start']['count']}}</li>
+                                        <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.runtimeMetrics['processinstance-start']['mean-rate'] | round}}</li>
+                                        <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.runtimeMetrics['processinstance-start']['one-minute-rate'] | round}} /
+                                            {{model.selectedNode.runtimeMetrics['processinstance-start']['five-minute-rate'] | round}} /
+                                            {{model.selectedNode.runtimeMetrics['processinstance-start']['fifteen-minute-rate'] | round}}</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <hour-chart model="model.selectedNode.runtimeMetrics['processinstance-start']"></hour-chart>
+                            </td>
+                            <td>
+                                <weekday-chart model="model.selectedNode.runtimeMetrics['processinstance-start']"></weekday-chart>
+                            </td>
+                        </tr>
+
+
+                        <tr class="metrics-titles">
+                            <td><div translate="MONITORING.TASKS-COMPLETED"></div></td>
+                            <td><div translate="MONITORING.HOUR-COUNT-CHART"></div></td>
+                            <td><div translate="MONITORING.WEEKDAY-COUNT-CHART"></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="metrics-numbers">
+                                    <ul>
+                                        <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.runtimeMetrics['task-completion']['count']}}</li>
+                                        <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.runtimeMetrics['task-completion']['mean-rate'] | round}}</li>
+                                        <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.runtimeMetrics['task-completion']['one-minute-rate'] | round}} /
+                                            {{model.selectedNode.runtimeMetrics['task-completion']['five-minute-rate'] | round}} /
+                                            {{model.selectedNode.runtimeMetrics['task-completion']['fifteen-minute-rate'] | round}}</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <hour-chart model="model.selectedNode.runtimeMetrics['task-completion']"></hour-chart>
+                            </td>
+                            <td>
+                                <weekday-chart model="model.selectedNode.runtimeMetrics['task-completion']"></weekday-chart>
+                            </td>
+                        </tr>
+
+                        <tr class="metrics-titles">
+                            <td><div translate="MONITORING.JOBS-EXECUTED"></div></td>
+                            <td><div translate="MONITORING.HOUR-COUNT-CHART"></div></td>
+                            <td><div translate="MONITORING.WEEKDAY-COUNT-CHART"></div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="metrics-numbers">
+                                    <ul>
+                                        <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.runtimeMetrics['job-execution']['count']}}</li>
+                                        <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.runtimeMetrics['job-execution']['mean-rate'] | round}}</li>
+                                        <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.runtimeMetrics['job-execution']['one-minute-rate'] | round}} /
+                                            {{model.selectedNode.runtimeMetrics['job-execution']['five-minute-rate'] | round}} /
+                                            {{model.selectedNode.runtimeMetrics['job-execution']['fifteen-minute-rate'] | round}}</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <hour-chart model="model.selectedNode.runtimeMetrics['job-execution']"></hour-chart>
+                            </td>
+                            <td>
+                                <weekday-chart model="model.selectedNode.runtimeMetrics['job-execution']"></weekday-chart>
+                            </td>
+                        </tr>
+
+                    </table>
+
+
+                </div>
+
+				<div class="property-wrapper clearfix" ng-if="model.detailTab == 2 && model.selectedNode.processDefinitionCacheMetrics">
+					<div class="property property-float-2">
+						<span class="property-name" translate="MONITORING.CACHE-HITS"></span>
+						<ul>
+                            <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['cache-hit']['count']}}</li>
+                            <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['cache-hit']['mean-rate'] | round}}</li>
+                            <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['cache-hit']['one-minute-rate'] | round}} /
+                                {{model.selectedNode.processDefinitionCacheMetrics['cache-hit']['five-minute-rate'] | round}} /
+                                {{model.selectedNode.processDefinitionCacheMetrics['cache-hit']['fifteen-minute-rate'] | round}}</li>
+                        </ul>
+					</div>
+					<div class="property property-float-2">
+						<span class="property-name" translate="MONITORING.CACHE-MISSES"></span>
+						<ul>
+                            <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['cache-miss']['count']}}</li>
+                            <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['cache-miss']['mean-rate'] | round}}</li>
+                            <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['cache-miss']['one-minute-rate'] | round}} /
+                                {{model.selectedNode.processDefinitionCacheMetrics['cache-miss']['five-minute-rate'] | round}} /
+                                {{model.selectedNode.processDefinitionCacheMetrics['cache-miss']['fifteen-minute-rate'] | round}}</li>
+                        </ul>
+					</div>
+					<div class="property property-float-2">
+						<span class="property-name" translate="MONITORING.CACHE-ADDITIONS"></span>
+						<ul>
+                            <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['additions']['count']}}</li>
+                            <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['additions']['mean-rate'] | round}}</li>
+                            <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['additions']['one-minute-rate'] | round}} /
+                                {{model.selectedNode.processDefinitionCacheMetrics['additions']['five-minute-rate'] | round}} /
+                                {{model.selectedNode.processDefinitionCacheMetrics['additions']['fifteen-minute-rate'] | round}}</li>
+                        </ul>
+					</div>
+					<div class="property property-float-2">
+						<span class="property-name" translate="MONITORING.CACHE-REMOVALS"></span>
+						<ul>
+                            <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['removals']['count']}}</li>
+                            <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['removals']['mean-rate']| round}}</li>
+                            <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.processDefinitionCacheMetrics['removals']['one-minute-rate']| round}} /
+                               {{model.selectedNode.processDefinitionCacheMetrics['removals']['five-minute-rate']| round}} /
+                               {{model.selectedNode.processDefinitionCacheMetrics['removals']['fifteen-minute-rate']| round}}</li>
+                        </ul>
+					</div>
+				</div>
+
+				<div class="property-wrapper clearfix" ng-if="model.detailTab == 3 && model.selectedNode.jobFailures">
+                    <div class="property property-float-2">
+                        <span class="property-name" translate="MONITORING.JOBS-FAILED"></span>
+                        <ul>
+                            <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.jobFailures['count']}}</li>
+                            <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.jobFailures['mean-rate']| round}}</li>
+                            <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.jobFailures['one-minute-rate']| round}} /
+                                {{model.selectedNode.jobFailures['five-minute-rate']| round}} /
+                                {{model.selectedNode.jobFailures['fifteen-minute-rate']| round}}</li>
+                        </ul>
+                    </div>
+                </div>
+
+				<div class="property-wrapper clearfix" ng-if="model.detailTab == 3 && model.selectedNode.jobMetrics['job-queue-full']">
+					<div class="property property-float-2" ng-if="model.selectedNode.jobMetrics['failed-jobs']">
+						<span class="property-name" translate="MONITORING.JOBS-FAILED"></span>
+						<ul>
+	                           <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.jobMetrics['failed-jobs']['count']}}</li>
+	                           <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.jobMetrics['failed-jobs']['mean-rate']| round}}</li>
+	                           <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.jobMetrics['failed-jobs']['one-minute-rate']| round}} /
+	                               {{model.selectedNode.jobMetrics['failed-jobs']['five-minute-rate']| round}} /
+	                               {{model.selectedNode.jobMetrics['failed-jobs']['fifteen-minute-rate']| round}}</li>
+	                       </ul>
+					</div>
+					<div class="property property-float-2">
+						<span class="property-name" translate="MONITORING.JOBS-QUEUE-FULL"></span>
+						<ul>
+	                           <li>{{'MONITORING.TOTAL' | translate}} {{model.selectedNode.jobMetrics['job-queue-full']['count']}}</li>
+	                           <li>{{'MONITORING.MEAN-RATE' | translate}} {{model.selectedNode.jobMetrics['job-queue-full']['mean-rate']| round}}</li>
+	                           <li>{{'MONITORING.MINUTE-RATE' | translate}} {{model.selectedNode.jobMetrics['job-queue-full']['one-minute-rate']| round}} /
+	                               {{model.selectedNode.jobMetrics['job-queue-full']['five-minute-rate']| round}} /
+	                               {{model.selectedNode.jobMetrics['job-queue-full']['fifteen-minute-rate']| round}}</li>
+	                       </ul>
+					</div>
+				</div>
+
+                <div class="property-wrapper clearfix" ng-if="model.detailTab == 4">
+                    <table ng-if="model.selectedNode.jvmMetrics">
+                        <tr class="property">
+                            <td class="property-name" translate="MONITORING.CLASSES-LOADED"></td>
+                            <td>{{model.selectedNode.jvmMetrics.classLoading['loaded.count']}}</td>
+                        </tr>
+                        <tr class="property">
+                            <td class="property-name" translate="MONITORING.CLASSES-TOTAL"></td>
+                            <td>{{model.selectedNode.jvmMetrics.classLoading['total.count']}}</td>
+                        </tr>
+                        <tr class="property">
+                            <td class="property-name" translate="MONITORING.CLASSES-UNLOADED"></td>
+                            <td>{{model.selectedNode.jvmMetrics.classLoading['unloaded.count']}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="property-wrapper clearfix" ng-if="model.detailTab == 5">
+
+                    <div class="property-name text-info" style="font-weight:bold">{{'MONITORING.REST-REQUEST-TYPE' | translate}}</div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <td></td>
+                            <td>{{'MONITORING.TOTAL' | translate}}</td>
+                            <td>{{'MONITORING.MEAN-RATE' | translate}}</td>
+                            <td>{{'MONITORING.MINUTE-RATE' | translate}}</td>
+                        </thead>
+                        <tr ng-repeat="(key, meterValues) in model.selectedNode.bpmSuiteRestMeters">
+                            <td>{{key}}</td>
+                            <td>{{meterValues.count}}</td>
+                            <td>{{meterValues.mean_rate | number:3}}</td>
+                            <td>{{meterValues.m1_rate | number:3}} / {{meterValues.m5_rate | number:3}} / {{meterValues.m15_rate | number:3}}</td>
+                        </tr>
+                    </table>
+
+                    <div class="property-name text-info" style="font-weight:bold">{{'MONITORING.REST-ENDPOINTS' | translate}}</div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                        <td></td>
+                        <td>{{'MONITORING.COUNT' | translate}}</td>
+                        <td>{{'MONITORING.MIN' | translate}}</td>
+                        <td>{{'MONITORING.MAX' | translate}}</td>
+                        <td>{{'MONITORING.STDDEV' | translate}}</td>
+                        <td>{{'MONITORING.MEAN-RATE' | translate}}</td>
+                        <td>{{'MONITORING.MINUTE-RATE' | translate}}</td>
+                        </thead>
+                        <tr ng-repeat="(key, timerValues) in model.selectedNode.bpmSuiteRestTimers">
+                            <td>{{key}}</td>
+                            <td>{{timerValues.count}}</td>
+                            <td>{{timerValues.min | number:3}}</td>
+                            <td>{{timerValues.max | number:3}}</td>
+                            <td>{{timerValues.stddev | number:3}}</td>
+                            <td>{{timerValues.mean_rate | number:3}}</td>
+                            <td>{{timerValues.m1_rate | number:3}} / {{timerValues.m5_rate | number:3}} / {{timerValues.m15_rate | number:3}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div class="property-wrapper clearfix" ng-if="model.detailTab == 6">
+
+                    <div>
+                        <span class="property-name text-info">{{'MONITORING.ELASTIC-SEARCH-CLUSTER-NAME' | translate}} : </span>
+                        <span>{{model.selectedNode.bpmSuiteElasticSearchStats.cluster_name}}</span>
+                    </div>
+
+                    <div>
+                        <span class="property-name text-info">{{'MONITORING.ELASTIC-SEARCH-STATE' | translate}} : </span>
+                        <span ng-if="model.selectedNode.bpmSuiteElasticSearchStats.status == 'yellow'" style="color:#CCCC00">{{model.selectedNode.bpmSuiteElasticSearchStats.status}}</span>
+                        <span ng-if="model.selectedNode.bpmSuiteElasticSearchStats.status == 'red'" style="color:red">{{model.selectedNode.bpmSuiteElasticSearchStats.status}}</span>
+                        <span ng-if="model.selectedNode.bpmSuiteElasticSearchStats.status == 'green'" style="color:green">{{model.selectedNode.bpmSuiteElasticSearchStats.status}}</span>
+                        <span style="margin: 5px 0 5px 0; font-size:10px;">({{'MONITORING.ELASTIC-SEARCH-STATE-DESCRIPTION' |
+                            translate}})
+                        </span>
+                    </div>
+
+                    <div style="margin-top:10px;">
+                        <span class="property-name text-info">{{'MONITORING.ELASTIC-SEARCH-VERSION' | translate}} : </span>
+                        <span>{{model.selectedNode.bpmSuiteElasticSearchStats.nodes.versions}}</span>
+                    </div>
+
+                    <div style="margin-top:10px;">
+                        <span class="property-name text-info">{{'MONITORING.ELASTIC-SEARCH-INDICES' | translate}}</span>
+                        <div style="margin-left:10px;">
+                            <div>{{'MONITORING.COUNT' | translate}}: {{model.selectedNode.bpmSuiteElasticSearchStats.indices.count}}</div>
+                            <div>{{'MONITORING.ELASTIC-SEARCH-DOCS-COUNT' | translate}}: {{model.selectedNode.bpmSuiteElasticSearchStats.indices.docs.count}}</div>
+                            <div>{{'MONITORING.ELASTIC-SEARCH-SHARD-INFO' | translate}}: {{model.selectedNode.bpmSuiteElasticSearchStats.indices.shards}}</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+    		</div>
+    	</div>
+    </div>
+</div>

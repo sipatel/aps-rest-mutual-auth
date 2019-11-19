@@ -1,0 +1,10 @@
+person=Peter Verhas
+edition=asp
+phone=+36(30)9306805
+email=peter@verhas.com
+company=vvsc
+application=groowiki
+release-version=1.0.0
+valid-date=2009-08-30
+release-date=2009-08-30
+issue-date=2009-07-29

@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "是",
+    "NO": "否",
+    "ACTION": {
+      "LOGOUT": "退出",
+      "DISMISS-ALERT": "单击以消除这个消息",
+      "RETURN-TO-LIST": "返回列表",
+      "SHOW-RESULTS": "显示 {{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} 个结果",
+      "REFRESH-LIST": "刷新列表",
+      "SORT-BY": "排序方式 {{name | translate}}",
+      "CLEAR-FILTERS": "清除筛选器",
+      "CANCEL-AND-CLOSE": "取消并关闭",
+      "CANCEL": "取消",
+      "NEXT": "下一个",
+      "PREVIOUS": "上一个",
+      "CLOSE": "关闭",
+      "SHOWLICENSE": "许可证信息"
+    },
+    "TITLE": {
+      "MAIN": "Process Services 管理员",
+      "ACTIONS": "操作",
+      "FILTERS": "筛选器",
+      "CLUSTERS": "群集"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "部署",
+      "PROCESS-DEFINITIONS": "定义",
+      "PROCESS-INSTANCES": "实例",
+      "TASKS": "任务",
+      "JOBS": "作业",
+      "CONFIGURATION": "配置",
+      "CONFIGURATION-ENGINE": "引擎",
+      "CONFIGURATION-USERS": "配置用户",
+      "MONITORING": "监控",
+      "APPS": "App"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "全部"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "最近检查许可证时端点没有响应，将进行深入检查，但现在许可证被认为无效。",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "应用程序 (App) 处于只读模式，因为端点服务器上的许可证无效。",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "App 处于只读模式，因为在端点服务器上找不到许可证。",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "App 处于只读模式，因为 Alfresco Process Services 端点服务器上的许可证日期无效（过期或起始日期还未到）。"
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID：",
+    "NAME": "名称：",
+    "VERSION": "版本：",
+    "DESCRIPTION": "说明：",
+    "KEY": "Key：",
+    "CATEGORY": "类别：",
+    "SUSPENDED": "已挂起：",
+    "DEPLOYMENT": "部署：",
+    "TENANT": "租户：",
+    "START-FORM-DEFINED": "定义的启动表单：",
+    "GRAPHICAL-NOTATION-DEFINED": "定义的图形符号：",
+    "PROCESS-INSTANCES-SIZE": "定义共有 {{total}} 个流程实例在运行",
+    "PROCESS-INSTANCES-SHOWING": "，显示 {{size}} 最近启动的实例",
+    "PROCESS-INSTANCES-EMPTY": "定义没有流程实例在运行",
+    "JOBS-SIZE": "定义有 {{total}} 个作业在运行",
+    "JOBS-EMPTY": "定义没有作业在运行",
+    "DECISION-TABLES-SIZE": "定义共有 {{total}} 个决策表。",
+    "DECISION-TABLES-EMPTY": "定义没有决策表。",
+    "FORMS-SIZE": "定义共有 {{total}} 个表单。",
+    "FORMS-EMPTY": "定义没有表单。",
+    "TITLE": {
+      "PROCESS-INSTANCES": "流程实例",
+      "JOBS": "作业",
+      "DECISION-TABLES": "决策表",
+      "FORMS": "表单"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "编辑类别",
+      "SHOW-ALL-JOBS": "显示所有作业",
+      "SHOW-ALL-PROCESSES": "显示所有流程",
+      "SHOW-DIAGRAM": "显示流程图"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "编辑类别的定义",
+        "MESSAGE": "初始类别的定义是从 BPMN 2.0 XMLe 中的 targetNameSpace 属性填充的，但可以在部署后更改。",
+        "CATEGORY": "类别",
+        "CATEGORY-PLACEHOLDER": "输入类别",
+        "CONFIRM": "更新类别"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "流程图"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的定义。",
+    "LIST-MESSAGE-EMPTY": "无匹配的流程定义。",
+    "FILTER": {
+      "NAME": "名称（区分大小写）",
+      "KEY": "Key（区分大小写）",
+      "DEPLOYMENT-ID": "部署 ID",
+      "TENANT-ID": "租户 ID",
+      "LATEST": "最新版本",
+      "LATEST-HELP": "仅显示最新版本"
+    },
+    "TITLE": {
+      "MAIN": "流程定义"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "名称",
+      "VERSION": "版本"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "名称",
+      "VERSION": "版本",
+      "KEY": "Key",
+      "TENANT": "租户"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "从 Process 编辑器上传"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "用户名",
+        "PASSWORD": "密码",
+        "ERROR": "我们无法访问编辑器",
+        "UNAUTHORIZED": "凭据无效",
+        "UPLOAD-DESCRIPTION": "现在将提取并部署流程模型到当前处于活动状态的流程服务群集。为部署包选择一个适当的名称。"
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID：",
+    "NAME": "名称：",
+    "DESCRIPTION": "说明：",
+    "BUSINESS-KEY": "商业 Key：",
+    "TENANT-ID": "租户：",
+    "STATUS": "状态：",
+    "STATUS-ACTIVE": "活动",
+    "STATUS-COMPLETED": "已完成",
+    "ACTIVITY-ID-STARTED": "活动 ID 起始于：",
+    "ACTIVITY-ID-ENDED": "在活动中结束：",
+    "DELETE-REASON": "删除原因：",
+    "STARTED-BY": "启动者：",
+    "END-TIME": "结束时间：",
+    "DURATION": "持续时间：",
+    "SUPER-PROCESS-INSTANCE-ID": "超流程实例 ID：",
+    "TASKS-SIZE": "这个流程实例共有 {{total}} 个任务。",
+    "TASKS-EMPTY": "这个流程实例没有任务。",
+    "VARIABLES-SIZE": "这个流程实例共有 {{total}} 个变量。",
+    "VARIABLES-EMPTY": "这个流程实例没有变量。",
+    "JOBS-SIZE": "这个流程实例共有 {{total}} 个作业。",
+    "JOBS-EMPTY": "这个流程实例没有作业。",
+    "SUBPROCESSES-SIZE": "这个流程实例共有 {{total}} 个子流程。",
+    "SUBPROCESSES-EMPTY": "这个流程实例没有子流程。",
+    "DECISION-TABLES-SIZE": "这个流程实例共有 {{total}} 个决策表。",
+    "DECISION-TABLES-EMPTY": "这个流程实例没有决策表。",
+    "FORMS-SIZE": "这个流程实例共有 {{total}} 个提交的表单。",
+    "FORMS-EMPTY": "这个流程实例没有提交的表单。",
+    "TITLE": {
+      "TASKS": "任务",
+      "VARIABLES": "变量",
+      "JOBS": "作业",
+      "SUBPROCESSES": "子流程",
+      "DECISION-TABLES": "决策表",
+      "FORMS": "表单"
+    },
+    "ACTION": {
+      "DELETE": "删除流程实例",
+      "TERMINATE": "终止流程实例",
+      "SHOW-ALL-TASKS": "显示所有任务",
+      "SHOW-ALL-JOBS": "显示所有作业",
+      "SHOW-ALL-SUBPROCESSES": "显示所子流程",
+      "SHOW-DIAGRAM": "显示流程图",
+      "TITLE-VARIABLES": "对所选变量的操作",
+      "DELETE-VARIABLE": "删除变量",
+      "UPDATE-VALUE": "更新变量",
+      "ADD-VARIABLE": "添加变量"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "删除流程实例",
+        "MESSAGE-DELETE": "确定要删除这个流程实例",
+        "MESSAGE-TERMINATE": "确定要终止这个流程实例",
+        "DELETE-REASON": "删除原因",
+        "DELETE-REASON-HELP": "输入可选的删除原因",
+        "CONFIRM-DELETE": "删除流程实例",
+        "CONFIRM-TERMINATE": "终止流程实例"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "流程图"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "创建变量",
+        "NAME": "变量名称",
+        "TYPE": "变量类型",
+        "VALUE": "变量值",
+        "CREATE": "创建"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "更新变量 '{{name}}'",
+        "NAME": "变量名称",
+        "VALUE": "值",
+        "CHECKED": "真",
+        "UNCHECKED": "假",
+        "DATE-HELP": "ISO-8601 格式（例如：2016-01-28T23:00:00Z）",
+        "ACTION-UPDATE": "更新"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "删除变量 '{{name}}'",
+        "MESSAGE": "确定要删除这个变量？",
+        "DELETE": "删除"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "流程实例",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的流程实例。",
+    "LIST-MESSAGE-EMPTY": "无匹配的流程实例。",
+    "FILTER": {
+      "NAME": "名称",
+      "PROCESS-DEFINITION": "流程定义",
+      "ALL-PROCESS-DEFINITIONS": "所有流程定义",
+      "BUSINESS-KEY": "商业 Key",
+      "SUPER-PROCESS-INSTANCE-ID": "超流程实例 ID",
+      "STARTED-BEFORE": "在   之前开始",
+      "STARTED-AFTER": "在   之后开始",
+      "ENDED-BEFORE": "在   之前结束",
+      "ENDED-AFTER": "在   之后结束",
+      "VARIABLE": "变量",
+      "VARIABLE-NAME": "变量名称",
+      "VARIABLE-VALUE": "变量值",
+      "VARIABLE-BOOLEAN-VALUE": "布尔值：{{value}}",
+      "TENANT-ID": "租户标识符"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "开始时间"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "名称",
+      "BUSINESS-KEY": "商业 Key",
+      "PROCESS-DEFINITION": "流程定义",
+      "CREATE-TIME": "已创建",
+      "END-TIME": "已结束",
+      "STATUS": "状态"
+    }
+  },
+  "TASK": {
+    "ID": "ID：",
+    "NAME": "名称：",
+    "STATUS": "状态：",
+    "STATUS-COMPLETED": "已完成",
+    "STATUS-ACTIVE": "活动",
+    "DESCRIPTION": "说明：",
+    "TASK-DEFINITION-KEY": "定义 Key：",
+    "FORM-KEY": "表单 Key：",
+    "PRIORITY": "优先级：",
+    "DELEGATION-STATE": "委派状态：",
+    "CATEGORY": "类别：",
+    "TENANT-ID": "租户：",
+    "PARENT": "父级任务：",
+    "ASSIGNEE": "被指派者：",
+    "OWNER": "所有者：",
+    "START-DATE": "开始日期：",
+    "DUE-DATE": "截止日期：",
+    "END-DATE": "结束日期：",
+    "DELETE-REASON": "删除原因：",
+    "PROCESS-INSTANCE": "流程实例",
+    "PROCESS-DEFINITION": "流程定义",
+    "EXECUTION-ID": "执行 ID：",
+    "SUBTASKS-MESSAGE": "这个任务共有 {{total}} 个子任务，显示 {{size}} 个。",
+    "SUBTASKS-MESSAGE-EMPTY": "这个任务没有子任务。",
+    "VARIABLES-MESSAGE": "这个任务有 {{size}} 个变量。",
+    "VARIABLES-MESSAGE-EMPTY": "这个任务没有变量。",
+    "IDENTITY-LINKS-MESSAGE": "这个任务有 {{size}} 个身份链接。",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "这个任务没有身份链接。",
+    "ACTION": {
+      "EDIT": "编辑任务",
+      "ASSIGN-CLAIM": "指派/申领任务",
+      "DELEGATE": "委派任务",
+      "RESOLVE": "分解任务",
+      "COMPLETE": "完成任务",
+      "DELETE": "删除任务",
+      "SHOW-ALL-SUBTASKS": "显示所有子任务",
+      "SHOW-SUBMITTED-FORM": "显示提交的表单"
+    },
+    "TITLE": {
+      "SUBTASKS": "子任务",
+      "IDENTITY-LINKS": "身份链接",
+      "VARIABLES": "变量"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "指派任务",
+        "MESSAGE": "确定要指派任务",
+        "NEW-ASSIGNEE": "新被指派者",
+        "NEW-ASSIGNEE-HELP": "如果不想将任务指派至任何人，请将被支配者字段留空白。",
+        "CONFIRM": "指派任务"
+      },
+      "COMPLETE": {
+        "TITLE": "完成任务",
+        "MESSAGE": "确定要完成任务",
+        "CONFIRM": "完成任务"
+      },
+      "DELEGATE": {
+        "TITLE": "委派任务",
+        "MESSAGE": "确定要委派任务",
+        "CONFIRM": "委派任务",
+        "DELEGATE-TO": "要委派的用户"
+      },
+      "RESOLVE": {
+        "TITLE": "分解任务",
+        "MESSAGE": "确定要分解任务",
+        "CONFIRM": "分解任务"
+      },
+      "DELETE": {
+        "TITLE": "删除任务",
+        "MESSAGE": "确定要删除任务",
+        "CONFIRM": "删除任务"
+      },
+      "EDIT": {
+        "TITLE": "编辑任务",
+        "CONFIRM": "更新任务",
+        "NAME": "名称",
+        "DESCRIPTION": "说明",
+        "PRIORITY": "优先级",
+        "CATEGORY": "类别",
+        "ASSIGNEE": "被指派者",
+        "OWNER": "所有者",
+        "DUE-DATE": "截止日期"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "任务",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的任务。",
+    "LIST-MESSAGE-EMPTY": "无匹配的任务。",
+    "FILTER": {
+      "NAME": "名称（区分大小写）",
+      "ASSIGNEE": "被指派者（区分大小写）",
+      "STATUS": "状态",
+      "STATUS-ANY": "任何状态",
+      "STATUS-ACTIVE": "活动的任务",
+      "STATUS-COMPLETE": "完成的任务",
+      "PROCESS-INSTANCE-ID": "流程实例 ID",
+      "TENANT-ID": "租户标识符",
+      "OWNER": "所有者（区分大小写）",
+      "PARENT-TASK-ID": "父级任务 ID",
+      "CREATED-BEFORE": "在   之前创建",
+      "CREATED-AFTER": "在   之后创建",
+      "ENDED-BEFORE": "在   之前结束",
+      "ENDED-AFTER": "在   之后结束",
+      "DUE-BEFORE": "在   之前截止",
+      "DUE-AFTER": "在   之后截止",
+      "TASK-VARIABLE": "任务本地变量",
+      "PROCESS-VARIABLE": "流程变量",
+      "VARIABLE-NAME": "变量名称",
+      "VARIABLE-VALUE": "变量值",
+      "VARIABLE-BOOLEAN-VALUE": "布尔值：{{value}}"
+    },
+    "SORT": {
+      "NAME": "名称",
+      "DUE-DATE": "截止日期",
+      "START-TIME": "开始时间",
+      "END-TIME": "结束时间",
+      "PRIORITY": "优先级"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "名称",
+      "ASSIGNEE": "被指派者",
+      "OWNER": "所有者",
+      "CREATE-TIME": "已创建",
+      "END-TIME": "已结束",
+      "PRIORITY": "优先级"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "部署",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的部署。",
+    "LIST-MESSAGE-EMPTY": "无匹配的部署。",
+    "FILTER": {
+      "NAME": "名称（区分大小写）",
+      "TENANTID": "租户标识符（区分大小写）"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "名称"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "名称",
+      "DEPLOY-TIME": "部署时间",
+      "CATEGORY": "类别",
+      "TENANT": "租户"
+    },
+    "ACTION": {
+      "UPLOAD": "上传流程或程序包",
+      "DELETE": "删除部署"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "选择一个 .bpmn、.bpmn20.xml 流程文件，以部署或上传 .zip 或 .bar 文件中包含的流程包（带有资产）。",
+        "WARNING": "上传流程仅适用于核心引擎，不适用于 BPM Suite 实例。BPM Suite 中的流程应使用个人或组共享的 App 部署。",
+        "DROPZONE": "或者将文件拖放到此处",
+        "NO-DROP": "您的浏览器不支持文件拖放",
+        "CANCEL-UPLOAD": "取消上传",
+        "ERROR": "无法上传这个文件"
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "您打算删除部署 '{{name}}'。如果其有任何相关联的活动或已完成的流程实例，这些实例也会被删除。是否真的要删除部署 '{{name}}'？"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID：",
+    "NAME": "名称：",
+    "TIME": "部署时间：",
+    "CATEGORY": "类别：",
+    "TENANTID": "租户标识符：",
+    "DEFINITIONS-MESSAGE": "这个部署共有 {{total}} 个流程定义，显示 {{size}} 个。",
+    "DEFINITIONS-MESSAGE-EMPTY": "这个部署没有流程定义。",
+    "TITLE": {
+      "DEFINITIONS": "流程定义",
+      "RESOURCES": "资源"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "显示所有定义"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "作业 {{id}}",
+      "EXCEPTION": "异常"
+    },
+    "ACTIONS": {
+      "EXECUTE": "执行作业",
+      "DELETE": "删除作业"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "删除作业 '{{id}}'",
+        "MESSAGE": "确定要删除作业 {{id}}？",
+        "CONFIRM": "删除作业"
+      }
+    },
+    "ID": "ID：",
+    "EXECUTION-ID": "执行 ID：",
+    "PROCESS-INSTANCE": "流程实例：",
+    "PROCESS-DEFINITION": "流程定义：",
+    "DUEDATE": "截止日期：",
+    "RETRIES-LEFT": "剩余重试次数：",
+    "TENANT-ID": "租户："
+  },
+  "JOBS": {
+    "TITLE": "作业",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的作业。",
+    "LIST-MESSAGE-EMPTY": "无匹配的作业。",
+    "FILTER": {
+      "PROCESS-DEFINITION": "流程定义",
+      "ALL-PROCESS-DEFINITIONS": "所有流程定义",
+      "PROCESS-INSTANCE-ID": "流程实例 ID",
+      "TENANT-ID": "租户标识符",
+      "DUE-BEFORE": "在   之前截止",
+      "DUE-AFTER": "在   之后截止",
+      "EXCEPTION": "异常",
+      "EXCEPTION-HELP": "仅显示有异常的作业"
+    },
+    "SORT": {
+      "ID": "作业 ID",
+      "DUE-DATE": "截止日期",
+      "PROCESS-INSTANCE-ID": "流程实例 ID"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "截止日期",
+      "PROCESS-DEFINITION": "流程定义",
+      "RETRIES": "重试次数",
+      "EXCEPTION": "异常"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "登录",
+    "USERNAME": "用户名",
+    "USERNAME-PLACEHOLDER": "输入用户名",
+    "PASSWORD": "密码",
+    "PASSWORD-PLACEHOLDER": "输入密码",
+    "ACTION": {
+      "CONFIRM": "登录"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. 保留所有权利。"
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "每隔 {{name}} 刷新一次页面",
+    "NUMBER-OF-MEMBERS": "成员数：",
+    "NODE-ID": "ID：",
+    "LAST-UPDATED": "最近更新时间：",
+    "LAST-METRICS-UPDATE": "最近指标更新：",
+    "NOT-ENOUGH-DATA": "节点处于未知状态。这可能是因为节点没有完成加入群集的操作，或者其没有发送足够要在此处显示的数据。",
+    "JOB-EXECUTOR-RUNNING": "作业执行器运行：",
+    "JAVA-VERSION": "Java 版本：",
+    "SUITE-INFORMATION": "这是一个 Process Services Suite 实例，版本 {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}}（版本 '{{bpmSuiteEdition}}'）",
+    "MEMORY-USAGE": "内存使用情况：",
+    "MEMORY-USED": "已用",
+    "MEMORY-HEAP": "堆：",
+    "MEMORY-NON-HEAP": "无堆：",
+    "UPTIME": "运行时间：",
+    "GARBAGE-COLLECTION": "运行 {{['collection.count']}} 次，花费的总时间为 {{['collection.time'] | humanTime}}",
+    "MASTER-CONFIGURATION": "主配置：",
+    "MASTER-CONFIGURATION-USED": "使用了正确的主配置",
+    "MASTER-CONFIGURATION-NOT-USED": "没有使用主配置",
+    "MASTER-CONFIGURATION-DISABLED": "已禁用主配置",
+    "MASTER-CONFIGURATION-INCORRECT": "错误的主配置！",
+    "CLASSES-LOADED": "当前加载的类：",
+    "CLASSES-UNLOADED": "未加载类总数：",
+    "CLASSES-TOTAL": "已加载类总数：",
+    "CACHE-HITS": "缓存命中数",
+    "CACHE-MISSES": "缓存未命中数",
+    "CACHE-ADDITIONS": "缓存添加数",
+    "CACHE-REMOVALS": "缓存删除数",
+    "JOBS-EXECUTED": "已执行作业数",
+    "JOBS-FAILED": "失败作业数",
+    "JOBS-QUEUE-FULL": "作业队列已满",
+    "PROCESS-INSTANCES": "已启动流程实例",
+    "HOUR-COUNT-CHART": "总数/小时",
+    "WEEKDAY-COUNT-CHART": "总数/工作日",
+    "TASKS-COMPLETED": "已完成任务",
+    "MEAN-RATE": "平均速率（每分钟）：",
+    "TOTAL": "总数：",
+    "COUNT": "计数",
+    "MAX": "最大",
+    "MIN": "最小",
+    "STDDEV": "Stddev",
+    "MINUTE-RATE": "1/5/15 分钟速率：",
+    "REST-REQUEST-TYPE": "Request type (rate unit = 事件/秒）",
+    "REST-ENDPOINTS": "REST endpoints timings (duration unit = 秒，速率单位 = 调用数/秒）",
+    "ELASTIC-SEARCH-VERSION": "版本",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "群集名称",
+    "ELASTIC-SEARCH-STATE": "状态",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "红色状态表示群集中没有分配特定的分区，黄色状态表示分配了主要分区但没有分配副本，绿色状态表示分配了所有分区",
+    "ELASTIC-SEARCH-INDICES": "索引",
+    "ELASTIC-SEARCH-DOCS-COUNT": "文档计数",
+    "ELASTIC-SEARCH-SHARD-INFO": "分区信息",
+    "TITLE": {
+      "MAIN": "群集监控",
+      "NODE": "节点 {{ipAddress}}",
+      "MEMORY": "内存",
+      "GARBAGE-COLLECTION": "垃圾回收",
+      "CLASSLOADING": "类加载",
+      "PROCESS-DEFINITION-CACHE": "流程定义缓存",
+      "JOB-METRICS": "作业指标",
+      "RUNTIME-METRICS": "运行时指标",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "其余 Endpoint 指标",
+      "BPM-SUITE-ELASTIC-SEARCH": "弹性搜索"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "更改 '{{login}}' 密码",
+        "OLD-PASSWORD": "旧密码",
+        "NEW-PASSWORD": "新密码",
+        "CONFIRM": "更改密码"
+      },
+      "DELETE": {
+        "TITLE": "删除用户 {{login}}",
+        "MESSAGE": "确定要删除用户 '{{login}}'？",
+        "CONFIRM": "删除用户"
+      },
+      "EDIT": {
+        "TITLE": "编辑用户 {{login}}",
+        "LOGIN": "登录",
+        "EMAIL": "电子邮件",
+        "FIRSTNAME": "名字",
+        "LASTNAME": "姓氏",
+        "CONFIRM": "更新用户",
+        "READONLY": "只读用户"
+      },
+      "NEW": {
+        "TITLE": "创建新用户",
+        "LOGIN": "登录",
+        "EMAIL": "电子邮件",
+        "FIRSTNAME": "名字",
+        "LASTNAME": "姓氏",
+        "PASSWORD": "密码",
+        "ADMIN": "有管理员权限",
+        "CONFIRM": "创建用户",
+        "READONLY": "只读用户"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "用户",
+    "ACTION": {
+      "EDIT": "编辑用户",
+      "NEW": "创建新用户",
+      "DELETE": "删除用户",
+      "CHANGE-PASSWORD": "更改密码"
+    },
+    "HEADER": {
+      "LOGIN": "登录",
+      "FIRSTNAME": "名字",
+      "LASTNAME": "姓氏",
+      "EMAIL": "电子邮件",
+      "CLUSTER_USER": "群集用户"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "许可证信息",
+      "HOLDER": "持有者",
+      "SUBJECT": "主题",
+      "PRODUCTKEY": "产品类型",
+      "GOODAFTERDATE": "许可证在   之后有效",
+      "GOODBEFOREDATE": "许可证在   之前有效",
+      "NUMBER_OF_PROCESSES": "活动流程的数量",
+      "NUMBER_OF_ADMINS": "管理员用户的数量",
+      "MULTI_TENANT": "多个租户",
+      "DEFAULT_TENANT": "默认租户"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "名称：",
+    "USER": "用户：",
+    "MASTER-MANDATORY": "主配置必选：",
+    "METRICS-SEND-INTERVAL": "指标发送间隔：",
+    "ENDPOINT-HELP": "端点配置（每个群集仅一个）需要指向一个 REST 安装。这个端点将被用于检索和管理这个 App 的其他部分（例如部署、流程定义等）使用的数据。",
+    "ENDPOINT-NAME": "名称：",
+    "ENDPOINT-DESCRIPTION": "说明：",
+    "ENDPOINT-ADDRESS": "服务器地址：",
+    "ENDPOINT-PORT": "服务器端口：",
+    "ENDPOINT-CONTEXT-ROOT": "上下文根：",
+    "ENDPOINT-REST-ROOT": "REST 根：",
+    "ENDPOINT-USERNAME": "用户名：",
+    "PROCESS-ENGINE-HELP": "这个部分允许您定义群集的'主配置'。群集中的所有实例在启动时将使用这个配置（如果群集配置 jar 位于类目录上或已设置相应的属性）。如果没有被设置，实例将使用它们的本地配置文件。",
+    "NO-MASTER-DEFINED": "被有主配置被定义",
+    "ACTION": {
+      "SHOW-PASSWORD": "显示密码",
+      "EDIT-CLUSTER-CONFIG": "编辑群集配置",
+      "CREATE-CLUSTER-CONFIG": "创建新群集",
+      "DELETE-CLUSTER-CONFIG": "删除群集配置",
+      "GENERATE-JAR": "生成群集配置 jar",
+      "EDIT-ENDPOINT": "编辑流程服务 REST 端点",
+      "CHECK-ENDPOINT": "检查流程服务 REST 端点",
+      "SELECT-MASTER": "选择主配置",
+      "ADD-CONFIGURATION": "添加主配置",
+      "EDIT-CONFIGURATION": "编辑主配置",
+      "DELETE-CONFIGURATION": "删除主配置"
+    },
+    "TITLE": {
+      "MAIN": "群集配置",
+      "ACTIVITI": "实例设置",
+      "ENDPOINT": "Endpoint 配置",
+      "MASTER-CONFIGURATION": "主配置"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "选择主配置",
+        "MESSAGE": "确定要选择 '{{name}}' 作为主配置？",
+        "CONFIRM": "选择主配置"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "删除主配置",
+        "MESSAGE": "确定要删除这个主配置？",
+        "CONFIRM": "删除"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "生成群集配置 jar",
+        "MESSAGE": "重要的是同一个群集的所有成员都使用相同的设置。",
+        "LINK-MESSAGE": "为帮助实现这个目的，单击以下链接下载 Java Archive jar 文件 (jar)。这个 jar 文件包含 Process Services 实例与 Process Services Admin App 通信所需的配置。jar 文件仅需要放在类路径上，即会被自动使用。",
+        "ADMIN-APP-URL": "下列字段是基本 URL，用于信息将发送回这个 Admin App。如果出于任何原因更改这个 URL，其将与查看这个 Web UI 的 URL 不匹配。",
+        "CONFIRM": "禁用主配置",
+        "ACTION-DOWNLOAD": "下载 {{label}}"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "编辑端点配置",
+        "ENDPOINT-NAME": "名称",
+        "ENDPOINT-DESCRIPTION": "说明",
+        "ENDPOINT-ADDRESS": "服务器地址",
+        "ENDPOINT-PORT": "服务器端口",
+        "ENDPOINT-CONTEXT-ROOT": "上下文根",
+        "ENDPOINT-REST-ROOT": "REST 根",
+        "ENDPOINT-USERNAME": "用户名",
+        "ENDPOINT-PASSWORD": "密码",
+        "ENDPOINT-PASSWORD-HELP": "保留空白以保持当前密码",
+        "ENDPOINT-URL-PREVIEW": "URL 预览",
+        "ACTION-CONFIRM": "保存 Endpoint 配置",
+        "ERROR-401": "错误：凭据无效",
+        "ERROR-403": "错误：凭据或 URL 无效",
+        "ERROR-404": "错误：找不到 URL",
+        "ERROR-500": "错误：服务器错误。检查服务器日志。"
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "删除群集配置",
+        "WARNING": "删除群集配置后，还需要从该节点的类路径中删除这个群集的配置 jar 文件（或顺序文件）。",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "无法删除这个群集配置：至少需要一个群集配置，并且该配置是系统中定义的唯一群集配置。",
+        "ACTION-DELETE": "确认"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "群集名称和密码",
+        "NETWORK-SETTINGS": "网络设置",
+        "SECURITY-SETTINGS": "安全设置",
+        "ACTIVITI-SETTINGS": "实例设置",
+        "STEPS": "步骤 {{currentStepIndex + 1}}（共 {{steps.length}} 步）",
+        "GROUP-HELP": "每个群集都需要一个唯一的名称。每个 Activiti 引擎实例都需要提供这个群集名称以加入群集。",
+        "NAME": "名称",
+        "USERNAME": "用户名",
+        "PASSWORD": "密码",
+        "SECURITY-HELP": "每个群集都需要用户名和密码。每个要与 Process Services Admin 应用程序交换数据的引擎实例都需要在通信中提供这些凭据。",
+        "ACTIVITI-HELP": "启用主配置时，属于这个群集成员的流程实例使用主配置启动。",
+        "REQUIRES-MASTER": "需要主配置",
+        "METRICS-HELP": "这个群集中的每个 Process Services 实例都会将指标（例如，JVM 指标、使用指标等）发送回 Process Services Admin 应用程序。下列设置定义收集和发送这些指标的频率。",
+        "METRICS-INTERVAL": "发送指标的时间间隔（单位为秒）",
+        "ERROR-NAME-TAKEN": "群集名已被使用。请选择另一个名称。",
+        "ERROR-USER-TAKEN": "群集用户名已被使用。请选择另一个名称。",
+        "CONFIRM": "保存配置"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "创建新配置",
+        "TITLE-EDIT": "编辑配置",
+        "NAME": "名称",
+        "DESCRIPTION": "说明",
+        "TITLE-DATABASE": "数据库",
+        "JDBC-URL": "JDBC URL",
+        "JDBC-USERNAME": "JDBC 用户名",
+        "JDBC-PASSWORD": "CIFS 密码",
+        "JDBC-DRIVER": "JDBC 驱动程序",
+        "JDBC-JNDI-NAME": "JDBC JNDI 名称",
+        "JDBC-JNDI-HELP": "如果数据源已在应用服务器中配置并通过 Jndi 公开，则填充这个字段（忽略上述设置）。",
+        "TITLE-SCHEMA": "Process Services 架构",
+        "SCHEMA-UPDATE": "数据库架构更新",
+        "SCHEMA-UPDATE-HELP": "建议将这个设置为'假'，并使用 SQL 脚本升级数据库架构。如果将这个设置为'真'，群集中要启动的第一个节点将自动升级该架构。如果多个节点同时启动，可能会引起问题，因为数据定义通常不是事务性的。",
+        "TITLE-HISTORY": "历史记录",
+        "HISTORY-LEVEL": "历史记录级别",
+        "TITLE-JOB-EXECUTOR": "作业执行器",
+        "NR-OF-JOB-NODES-HELP": "每个 Process Services 引擎实例有一个作业执行器组件，该组件负责执行后台任务，例如计时器和业务流程的异步连续性。但是，最好是仅激活少量（一个、两个或多个用于非常高负载的情形）的作业执行器。必要时，这个设置的值将在群集中用于激活或取消激活作业执行器。",
+        "NR-OF-JOB-NODES": "作业执行器节点的数量",
+        "JOB-EXECUTOR-ENABLE": "启用作业执行器",
+        "TITLE-ADVANCED": "高级",
+        "PROCESS-DEF-CACHE-LIMIT": "流程定义缓存限制",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "内存中保存的最大数量（已解析）流程定义。解析流程定义需要占用大量资源，因此最好是使用足够大的缓存，同时不要使用太多的内存（默认值：unlimited）。",
+        "ID-BLOCK-SIZE": "ID 区块大小",
+        "ID-BLOCK-SIZE-HELP": "Process Services 引擎将保留大量数据库 ID 在创建新实体时使用（默认值：100）。当所有 ID 用尽时，数据库中将保留一个新的区块。",
+        "ENABLE-JOB-TWEAKING": "启用高级作业执行器调整",
+        "ENABLE-JOB-TWEAKING-HELP": "作业执行器是负责执行业务流程的计时器、异步延续等（通常称为'作业'）的组件。",
+        "TITLE-JOB-TWEAKING": "作业执行器调整",
+        "MAX-JOBS-PER-ACQUISITION": "最大作业采集",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "作业执行器的工作分为两个阶段：第一个阶段中，通过将作业锁定一段特定的时间'采集'作业（避免多个作业执行器之间冲突）。第二个阶段中，采集的作业（通常）由独立的线程池执行。这个值决定第 1 阶段每个查询采集多少作业。当群集中有超过一个作业执行器处于活动状态时，最好是将这个值设置为 1 以避免死锁。默认值为 1。",
+        "JOB-WAIT-TIME": "等待时间 (ms)",
+        "JOB-WAIT-TIME-HELP": "执行完所有作业或没有找到作业后等待的时间（单位为 ms）。这旨在避免命中数据库方式太多。默认值为 10000 ms。",
+        "JOB-LOCK-TIME": "锁定时间 (ms)",
+        "JOB-LOCK-TIME-HELP": "一个作业执行器组件锁定一个作业的时间（单位为 ms）。如果该时间过去之后，作业仍没有被执行，其他作业执行器可能重新采集该作业。这是为了避免一个失败的作业执行器会永远停止作业执行。默认值为 5 分钟 (300000 ms)。",
+        "JOB-CORE-POOL-SIZE": "核心线程池大小",
+        "JOB-CORE-POOL-SIZE-HELP": "线程池中为执行作业保持活动状态的最小数量的线程。仅适用于默认作业执行器。",
+        "JOB-QUEUE-SIZE": "队列大小",
+        "JOB-QUEUE-SIZE-HELP": "默认作业执行器首先采集作业并将它们放入队列，然后再在线程池中执行它们。该值决定了这个队列中保留的作业数量。仅适用于默认作业执行器（例如，不适用于 Spring 作业执行器或自定义实现）。",
+        "JOB-MAX-POOL-SIZE": "最大线程池大小",
+        "JOB-MAX-POOL-SIZE-HELP": "线程池中为执行作业创建的最多的线程数量。仅适用于默认作业执行器。",
+        "TITLE-DB-POOL": "数据库连接池",
+        "ENABLE-DB-POOL": "启用数据库连接池配置",
+        "ENABLE-DB-POOL-HELP": " 允许配置 Alfresco Process Services 创建的数据源连接池。这些设置仅在 Alfresco Process Services 负责创建数据源（即不是 jndi 数据源）并且未注入 Spring 的情况下适用。",
+        "JOB-MAX-IDLE-CONNECTIONS": "最长空闲连接",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "最长活动连接",
+        "JOB-MAX-CHECKOUT-TIME": "最长签出时间 (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "在连接'可以'被重新分发之前可使用它的最长时间。",
+        "JOB-MAX-WAIT-TIME": "最长等待时间 (ms)",
+        "JOB-MAX-WAIT-TIME-HELP": "重新尝试连接之前等待的时间。",
+        "TITLE-MAIL-SERVER": "邮件服务器",
+        "ENABLE-MAIL-SERVER": "启用邮件服务器配置",
+        "ENABLE-MAIL-SERVER-INFO": "这个配置仅在业务流程中使用电子邮件功能时需要。",
+        "MAIL-DEFAULT-FROM": "默认发件人地址",
+        "MAIL-HOST": "邮件服务主机",
+        "MAIL-PORT": "邮件服务器端口",
+        "MAIL-USERNAME": "邮件服务器用户",
+        "MAIL-PASSWORD": "邮件服务器密码",
+        "MAIL-USE-SSL": "使用 SSL？",
+        "MAIL-USE-TLS": "使用 TLS？",
+        "MAIL-JNDI-NAME": "邮件服务 JNDI 名称",
+        "MAIL-JNDI-NAME-INFO": "如果邮件服务器已在应用服务器中配置并通过 Jndi 公开，则填充这个字段（忽略上述设置）。",
+        "ACTION-DELETE-CONFIGURATION": "删除配置",
+        "ACTION-CREATE-CONFIGURATION": "创建配置",
+        "ACTION-UPDATE-CONFIGURATION": "更新配置",
+        "CONFIG-OPTIONS": "配置类型",
+        "OPTION-ENGINE": "Process Services 独立引擎",
+        "OPTION-SUITE": "Process Services BPM Suite",
+        "FETCHING-TEMPLATE": "从服务器中提取模板 ..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "App 部署",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的 App 部署。",
+    "LIST-MESSAGE-EMPTY": "无匹配的 App 部署。",
+    "FILTER": {
+      "NAME": "名称",
+      "TENANTID": "租户标识符",
+      "LATEST": "最新版本",
+      "LATEST-HELP": "仅显示最新版本"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "名称"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "App ID",
+      "DEPLOYMENT-ID": "流程部署 ID",
+      "DMN-DEPLOYMENT-ID": "DMN 部署 ID",
+      "NAME": "名称",
+      "DEPLOY-TIME": "部署时间",
+      "DEPLOYED-BY": "部署者",
+      "TENANT": "租户 ID"
+    },
+    "ACTION": {
+      "UPLOAD": "上传并发布 App",
+      "PUBLISH-APP-MODEL": "发布 App 模型"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "选择 .zip App 定义以部署。",
+        "WARNING": "上传流程仅适用于 BPM Suite 实例。",
+        "DROPZONE": "或者将文件拖放到此处",
+        "NO-DROP": "您的浏览器不支持文件拖放",
+        "CANCEL-UPLOAD": "取消上传",
+        "ERROR": "无法上传这个文件"
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "App ID：",
+    "DEPLOYMENT-ID": "部署 ID：",
+    "DMN-DEPLOYMENT-ID": "DMN 部署 ID：",
+    "DEPLOYED-BY": "部署者：",
+    "DEPLOYED-ON": "部署日期：",
+    "APP-NAME": "App 名称：",
+    "VERSION": "版本：",
+    "DESCRIPTION": "说明：",
+    "KEY": "Key：",
+    "CATEGORY": "类别：",
+    "SUSPENDED": "已挂起：",
+    "DEPLOYMENT": "部署：",
+    "TENANT-ID": "租户 ID：",
+    "START-FORM-DEFINED": "定义的启动表单：",
+    "GRAPHICAL-NOTATION-DEFINED": "定义的图形符号：",
+    "PROCESS-DEFINITIONS-SIZE": "App 定义共有 {{total}} 个流程定义",
+    "PROCESS-DEFINITIONS-SHOWING": "，显示 {{size}} 个流程定义",
+    "PROCESS-DEFINITIONS-EMPTY": "App 部署没有流程定义",
+    "DECISION-TABLES-SIZE": "App 部署共有 {{total}} 个决策表",
+    "DECISION-TABLES-SHOWING": "，显示 {{size}} 个决策表",
+    "DECISION-TABLES-EMPTY": "App 部署没有决策表",
+    "FORMS-SIZE": "App 部署共有 {{total}} 个表单",
+    "FORMS-SHOWING": "，显示 {{size}} 个表单",
+    "FORMS-EMPTY": "App 部署没有表单",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "流程定义",
+      "DECISION-TABLES": "决策表",
+      "FORMS": "表单"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "编辑类别",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "显示所有流程定义",
+      "SHOW-ALL-DECISION-TABLES": "显示所有决策表",
+      "SHOW-ALL-FORMS": "显示所有表单",
+      "SHOW-DIAGRAM": "显示流程图"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "编辑类别的定义",
+        "MESSAGE": "初始类别的定义是从 BPMN 2.0 XMLe 中的 targetNameSpace 属性填充的，但可以在部署后更改。",
+        "CATEGORY": "类别",
+        "CATEGORY-PLACEHOLDER": "输入类别",
+        "CONFIRM": "更新类别"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "流程图"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "名称",
+      "TYPE": "类型",
+      "VALUE": "值"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "组 ID",
+      "TYPE": "类型",
+      "USER-ID": "用户 ID"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "我们无法从服务器获取数据",
+      "AUTHENTICATION-ERROR": "您输入的登录凭据无效"
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "已删除配置 '{{name}}'。",
+      "CONFIG-UPDATED": "已更新配置 '{{name}}'。",
+      "CONFIG-CREATED": "已创建配置 '{{name}}'。",
+      "MASTER-CONFIG-DELETE": "已删除主配置。",
+      "MASTER-CONFIG-UPDATE": "已更新主配置",
+      "CLUSTER-UPDATED": "已更新群集配置。",
+      "CLUSTER-CREATED": "已创建群集配置。",
+      "ENDPOINT-UPDATED": "已更新 Endpoint '{{name}}'。",
+      "ENDPOINT-INVALID": "'{{name}}' 的 Endpoint 配置无效。",
+      "ENDPOINT-VALID": "Endpoint 有效，Endpoint 处的引擎：{{name}} - {{version}}"
+    },
+    "JOB": {
+      "DELETED": "成功删除作业 '{{id}}'。",
+      "EXECUTED": "成功执行作业 '{{id}}'。"
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "成功删除流程实例 '{{id}}'。",
+      "TERMINATED": "成功终止流程实例 '{{id}}'。"
+    },
+    "TASK": {
+      "DELETED": "成功删除任务 '{{id}}'。",
+      "COMPLETED": "成功完成任务 '{{id}}'。",
+      "DELEGATED": "任务 '{{id}}' 已委派至用户 {{user}}。",
+      "RESOLVED": "成功分解任务 '{{id}}'。",
+      "ASSIGNED": "任务 '{{id}}' 现在已指派至 {{user}}。",
+      "UNASSIGNED": "任务 '{{id}}' 现在已取消指派。",
+      "UPDATED": "成功更新任务 '{{id}}'。"
+    },
+    "USER": {
+      "DELETED": "成功删除用户 '{{login}}'。",
+      "UPDATED": "成功更新用户 '{{login}}'。",
+      "CREATED": "已创建用户 '{{login}}'。",
+      "PASSWORD-CHANGED": "成功更改 '{{login}}' 的密码。"
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "已更新流程定义类别"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "删除的部署 '{{name}}'",
+      "DELETE-ERROR": "我们无法删除部署 {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "删除的 App '{{appDefinition.name}}'",
+      "DELETE-ERROR": "我们无法删除 App {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "决策表",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的决策表。",
+    "LIST-MESSAGE-EMPTY": "无匹配的决策表。",
+    "FILTER": {
+      "NAME": "名称",
+      "KEY": "Key",
+      "TENANTID": "租户标识符"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "名称"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "名称",
+      "VERSION": "版本",
+      "KEY": "Key",
+      "DEPLOY-TIME": "部署时间",
+      "TENANT-ID": "租户 ID"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID：",
+    "NAME": "名称：",
+    "VERSION": "版本：",
+    "KEY": "Key：",
+    "DEPLOYMENT-ID": "部署 ID：",
+    "RESOURCE-NAME": "资源名称：",
+    "DESCRIPTION": "说明：",
+    "TENANT": "租户：",
+    "TITLE": {
+      "DECISION-AUDITS": "决策审计"
+    },
+    "DECISION-AUDITS-MESSAGE": "这个决策表共有 {{total}} 个审计，显示 {{size}} 个。",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "这个决策表没有审计",
+    "ACTION": {
+      "EDIT-CATEGORY": "编辑类别",
+      "SHOW-ALL-JOBS": "显示所有作业",
+      "SHOW-ALL-PROCESSES": "显示所有流程",
+      "SHOW-DIAGRAM": "显示流程图",
+      "SHOW-DECISION-TABLE": "显示决策表"
+    },
+    "POPUP": {
+      "TITLE": "决策表： ",
+      "KEY": "Key： ",
+      "HIT-POLICY": "命中策略： ",
+      "HIT-POLICIES": {
+        "FIRST": "首个（单次通过）",
+        "ANY": "任何（单次通过）"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "决策审计跟踪",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配的决策审计跟踪。",
+    "LIST-MESSAGE-EMPTY": "无匹配的决策审计跟踪。",
+    "FILTER": {
+      "NAME": "名称（区分大小写）",
+      "TENANTID": "租户标识符（区分大小写）"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "名称"
+    },
+    "POPUP": {
+      "HEADER": "决策审计跟踪"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "流程定义 ID",
+      "PROCESS-INSTANCE-ID": "流程实例 ID",
+      "CREATED": "已创建",
+      "FAILED": "失败",
+      "EXECUTION-ID": "执行 ID",
+      "ACTIVITY-ID": "活动 ID",
+      "ACTIVITY-NAME": "活动名称",
+      "DECISION-KEY": "决策 Key",
+      "DECISION-NAME": "决策名称",
+      "DMN-DEPLOYMENT-ID": "DMN 部署 ID"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "显示决策审计"
+    },
+    "TABLE": {
+      "HEADER": "决策表 \"{{name}}\"",
+      "HIT-POLICY": "命中策略",
+      "HIT-POLICIES": {
+        "FIRST": "首个（单次通过）",
+        "ANY": "任何（单次通过）"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "如果表达式匹配输入值：{{error}}，测试时出现异常",
+        "INPUT-MATCH": "输入值匹配表达式。",
+        "INPUT-EMPTYEXPRESSION": "空表达式已作为匹配处理。",
+        "INPUT-NOMATCH": "输入值与表达式不匹配。",
+        "INPUT-NOTEXECUTED": "从未测试这个表达式。",
+        "OUTPUT-EXCEPTION": "使用表达式：\n {{expression}} 设置值时出现异常。\n错误消息：{{error}}",
+        "OUTPUT-RESULT": "值已使用以下表达式进行测试：\n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "从未执行以下表达式：\n {{expression}}"
+      },
+      "INPUT-VARIABLE": "条件",
+      "OUTPUT-VARIABLE": "结果",
+      "INPUT-VARIABLES": "输入值",
+      "NO-INPUT-VARIABLES": "执行决策表时没有输入值",
+      "OUTPUT-VARIABLES": "计算的值",
+      "NO-OUTPUT-VARIABLES": "决策表没有生成计算的值",
+      "METADATA-NAME": "名称",
+      "METADATA-VALUE": "值",
+      "LOAD-ERROR": "提取决策表和审计跟踪活动 '{{activityId}}' 的执行 '{{executionId}}' 时出现错误"
+    }
+  },
+  "FORMS": {
+    "TITLE": "表单",
+    "LIST-MESSAGE": "显示 {{size}} 个结果，共 {{total}} 个匹配表单。",
+    "LIST-MESSAGE-EMPTY": "无匹配的表单。",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "名称",
+      "APPID": "App ID",
+      "TENANTID": "租户 ID"
+    },
+    "FILTER": {
+      "NAME": "名称",
+      "APPID": "App 部署 ID",
+      "TENANTID": "租户标识符"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "名称"
+    }
+  },
+  "FORM": {
+    "ID": "ID：",
+    "NAME": "名称：",
+    "APP-ID": "App ID：",
+    "DEPLOYMENT-ID": "部署 ID：",
+    "DESCRIPTION": "说明：",
+    "TENANT": "租户：",
+    "MESSAGE-EMPTY": "（无）",
+    "TITLE": {
+      "SUBMITTED-FORMS": "提交的表单"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "这个表单共有 {{total}} 个提交的表单，显示 {{size}} 个。",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "这个表单没有提交的表单",
+    "ACTION": {
+      "EDIT-CATEGORY": "编辑类别",
+      "SHOW-ALL-JOBS": "显示所有作业",
+      "SHOW-ALL-PROCESSES": "显示所有流程",
+      "SHOW-DIAGRAM": "显示流程图",
+      "SHOW-FORM": "显示表单"
+    },
+    "POPUP": {
+      "TITLE": "表单： "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "显示值",
+      "SELECT-FIELD": "（无选中的字段）",
+      "FIELD-VALUE": "显示字段 \"{{name}}\" 的值",
+      "UNKNOWN-TYPE": "未知字段类型 {{type}}",
+      "TEXT-VALUE": "文本",
+      "MULTI-TEXT-VALUE": "多行文本",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "日期",
+      "DATETIME-VALUE": "日期和时间",
+      "DROPDOWN-VALUE": "选择...",
+      "UPLOAD-VALUE": "上传或导入内容...",
+      "RADIOS-OPTION1": "选项 1",
+      "SELECT-PERSON": "选择一个人员",
+      "SELECT-GROUP": "选择一个组"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "任务 ID",
+      "PROCESS-ID": "流程实例 ID",
+      "SUBMITTED": "提交日期",
+      "SUBMITTED-BY": "提交者",
+      "FORM-ID": "表单 ID"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "显示提交的表单"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "上传并发布 App",
+      "DOWNLOAD": "下载 App",
+      "REDEPLOY": "重新部署 App 到其他群集",
+      "DELETE": "删除 App"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "删除 App '{{appDefinition.name}}'？"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "选择 .zip App 文件以部署。",
+        "WARNING": "上传 App 仅适用于 BPM Suite，不适用于核心引擎实例。",
+        "DROPZONE": "或者将文件拖放到此处",
+        "NO-DROP": "您的浏览器不支持文件拖放",
+        "CANCEL-UPLOAD": "取消上传",
+        "ERROR": "无法上传这个文件"
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "发布 App 模型",
+        "PUBLISH": "发布",
+        "ERROR": "无法发布 App",
+        "DESCRIPTION": "选择 .zip App 文件以部署。",
+        "WARNING": "上传 App 仅适用于 BPM Suite，不适用于核心引擎实例。",
+        "DROPZONE": "或者将文件拖放到此处",
+        "NO-DROP": "您的浏览器不支持文件拖放",
+        "LIST-MESSAGE": "显示共 {{total}} 个匹配的 App 模型。",
+        "LIST-MESSAGE-EMPTY": "无匹配的 App 模型。",
+        "PUBLISH-ERROR": "无法发布 App",
+        "EVERYONES-APPS": "显示每个人的 App",
+        "APP-CONFLICT-ERROR": "App 与 '{{createdBy.firstName}} {{createdBy.lastName}}' 创建的现有 App '{{name}}' 冲突 ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "发布 App 到另一个群集",
+        "SELECT-CLUSTER": "选择群集",
+        "PUBLISH-TO-CLUSTER": "发布 App 到 {{name}}",
+        "PUBLISH-AS-NEW-VERSION": "作为新 App 版本发布",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "名称",
+          "LAST-UPDATE": "最近更新时间",
+          "CREATED-BY": "创建者"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "重新部署 App",
+        "DESCRIPTION": "选择群集以将 '{{name}}' 重新部署到",
+        "ERROR": "无法部署 App",
+        "APP-CONFLICT-ERROR": "App 与 '{{createdBy.firstName}} {{createdBy.lastName}}' 创建的现有 App '{{name}}' 冲突 ",
+        "SELECT-CLUSTER": "选择群集",
+        "DEPLOY-TO-CLUSTER": "部署 App 到 {{name}}",
+        "DEPLOY": "部署",
+        "DEPLOY-AS-NEW-VERSION": "作为新 App 版本部署"
+      }
+    }
+  }
+}

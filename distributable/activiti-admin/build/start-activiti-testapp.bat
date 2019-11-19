@@ -1,0 +1,1 @@
+java -Xms128m -Xmx1024m -XX:MaxPermSize=128m -jar activiti-test-app.jar 

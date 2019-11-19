@@ -1,0 +1,54 @@
+<div class="modal-header-wrapper">
+	<div class="modal-header">
+		<div class="pull-right">
+            <a class="action" ng-click="close()">&times; {{'GENERAL.ACTION.CANCEL-AND-CLOSE' | translate}}</a>
+        </div>
+		<h2>{{'LICENSE.POPUP.TITLE' | translate}}</h2>	
+	</div>
+</div>
+<div class="modal-body">
+	<table class="edit-table">
+		<tr>
+			<td class="edit-label" translate="LICENSE.POPUP.HOLDER"></td>
+			<td>{{model.holder}}</td>
+		</tr>
+		<tr>
+			<td class="edit-label" translate="LICENSE.POPUP.SUBJECT"></td>
+			<td>{{model.subject}}</td>
+		</tr>
+		<tr>
+			<td class="edit-label" translate="LICENSE.POPUP.PRODUCTKEY"></td>
+			<td>{{model.productKey}}</td>
+		</tr>
+		<tr>
+			<td class="edit-label" translate="LICENSE.POPUP.GOODAFTERDATE"></td>
+			<td>{{model.goodAfterDate | date:'longDate'}}</td>
+		</tr>
+		<tr>
+            <td class="edit-label" translate="LICENSE.POPUP.GOODBEFOREDATE"></td>
+            <td>{{model.goodBeforeDate | date:'longDate'}}</td>
+        </tr>
+        <tr>
+            <td class="edit-label" translate="LICENSE.POPUP.NUMBER_OF_PROCESSES"></td>
+            <td>{{model.featureInfo.numberOfProcesses}}</td>
+        </tr>
+        <tr>
+            <td class="edit-label" translate="LICENSE.POPUP.MULTI_TENANT"></td>
+            <td>{{model.featureInfo.multiTenant}}</td>
+        </tr>
+        <tr>
+            <td class="edit-label" translate="LICENSE.POPUP.DEFAULT_TENANT"></td>
+            <td>{{model.featureInfo.defaultTenant}}</td>
+        </tr>
+	</table>
+</div>
+
+<div class="modal-footer-wrapper">
+	<div class="modal-footer">
+		<div class="pull-right">
+	       <button type="button" class="btn btn-sm btn-default" ng-click="close()" ng-disabled="status.loading"
+	       		translate="GENERAL.ACTION.CLOSE">
+	       </button>
+		</div>
+    </div>
+</div>

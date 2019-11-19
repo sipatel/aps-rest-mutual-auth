@@ -1,0 +1,47 @@
+<div class="container" id="list-container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="component">
+                <div class="title">
+                   <h2 translate="USERS.TITLE"></h2>
+                </div>
+                <div class="grid-wrapper" id="users">
+                    <div ng-grid="gridUsers" class="gridStyle" ng-if="gridUsers && usersData"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+			<div class="component tip-left" ng-show="!account.readOnlyUser">
+				<div class="title">
+					<h2 translate="GENERAL.TITLE.ACTIONS"></h2>
+				</div>
+				<ul class="list-group">
+					  <li ng-if="selectedUsers[0]">
+					    <button type="button" class="btn btn-sm btn-default" ng-click="editUser()">
+							<i class="glyphicon glyphicon-pencil action-button__icon"></i>
+                            <div class="action-button__label">{{'USERS.ACTION.EDIT' | translate}}</div>
+					    </button>
+					  </li>
+					  <li ng-if="account.adminUser">
+					    <button type="button" class="btn btn-sm btn-default" ng-click="newUser()">
+							<i class="glyphicon glyphicon-user action-button__icon"></i>
+                            <div class="action-button__label">{{'USERS.ACTION.NEW' | translate}}</div>
+					    </button>
+					  </li>
+					  <li ng-if="selectedUsers[0]">
+					    <button type="button" class="btn btn-sm btn-default" ng-click="changePassword()">
+							<i class="glyphicon glyphicon-pencil action-button__icon"></i>
+                            <div class="action-button__label">{{'USERS.ACTION.CHANGE-PASSWORD' | translate}}</div>
+					    </button>
+					  </li>
+					  <li ng-if="account.adminUser && selectedUsers[0] && !selectedUsers[0].clusterUser && selectedUsers[0].login !== account.login">
+					    <button type="button" class="btn btn-sm btn-default btn-danger"  ng-click="deleteUser()">
+							<i class="glyphicon glyphicon-remove action-button__icon"></i>
+                            <div class="action-button__label">{{'USERS.ACTION.DELETE' | translate}}</div>
+					    </button>
+					  </li>
+			    </ul>
+			</div>
+		</div>
+    </div>
+</div>

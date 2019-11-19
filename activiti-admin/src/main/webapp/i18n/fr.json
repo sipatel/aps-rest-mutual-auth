@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "Oui",
+    "NO": "Non",
+    "ACTION": {
+      "LOGOUT": "Déconnexion",
+      "DISMISS-ALERT": "Cliquer ici pour fermer ce message",
+      "RETURN-TO-LIST": "Retour à la liste",
+      "SHOW-RESULTS": "Afficher {{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} résultats",
+      "REFRESH-LIST": "Actualiser la liste",
+      "SORT-BY": "Trier par {{name | translate}}",
+      "CLEAR-FILTERS": "Effacer les filtres",
+      "CANCEL-AND-CLOSE": "Annuler et fermer",
+      "CANCEL": "Annuler",
+      "NEXT": "Suivant",
+      "PREVIOUS": "Précédent",
+      "CLOSE": "Fermer",
+      "SHOWLICENSE": "Information relative aux licences"
+    },
+    "TITLE": {
+      "MAIN": "Administrateur Process Services",
+      "ACTIONS": "Actions",
+      "FILTERS": "Filtres",
+      "CLUSTERS": "Clusters"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "Déploiements",
+      "PROCESS-DEFINITIONS": "Définitions",
+      "PROCESS-INSTANCES": "Instances",
+      "TASKS": "Tâches",
+      "JOBS": "Travaux",
+      "CONFIGURATION": "Configuration",
+      "CONFIGURATION-ENGINE": "Moteur",
+      "CONFIGURATION-USERS": "Configurer les utilisateurs",
+      "MONITORING": "Surveillance",
+      "APPS": "Applications"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "tout"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "Le point de terminaison n'a pas répondu lors de la dernière vérification de licence. D'autres vérifications interviendront mais la licence est considérée comme non valide pour l'instant.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "L'application est en mode lecture seule car la licence sur le point de terminaison du serveur n'est pas valide.",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "L'application est en mode lecture seule car aucune licence n'a été trouvée sur le point de terminaison du serveur.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "L'application est en mode lecture seule car la date de la licence sur le point de terminaison Alfresco Process Services du serveur n'est pas valide (elle a expiré ou la date de début est postérieure à aujourd'hui)."
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID :",
+    "NAME": "Nom :",
+    "VERSION": "Version :",
+    "DESCRIPTION": "Description :",
+    "KEY": "Clé :",
+    "CATEGORY": "Catégorie :",
+    "SUSPENDED": "Suspendu :",
+    "DEPLOYMENT": "Déploiement :",
+    "TENANT": "Client :",
+    "START-FORM-DEFINED": "Formulaire de démarrage défini :",
+    "GRAPHICAL-NOTATION-DEFINED": "Notation graphique définie :",
+    "PROCESS-INSTANCES-SIZE": "La définition a {{total}} instances de processus en cours d'exécution",
+    "PROCESS-INSTANCES-SHOWING": ", affichage de {{size}} démarré(s) en dernier",
+    "PROCESS-INSTANCES-EMPTY": "La définition n'a aucune instance de processus en cours d'exécution",
+    "JOBS-SIZE": "La définition a {{total}} travaux en cours d'exécution",
+    "JOBS-EMPTY": "La définition n'a aucun travail en cours d'exécution",
+    "DECISION-TABLES-SIZE": "La définition a {{total}} tables de décision.",
+    "DECISION-TABLES-EMPTY": "La définition n'a aucune table de décision.",
+    "FORMS-SIZE": "La définition a {{total}} formulaires.",
+    "FORMS-EMPTY": "La définition n'a aucun formulaire.",
+    "TITLE": {
+      "PROCESS-INSTANCES": "Instances de processus",
+      "JOBS": "Travaux",
+      "DECISION-TABLES": "Tables de décision",
+      "FORMS": "Formulaires"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifier une catégorie",
+      "SHOW-ALL-JOBS": "Afficher tous les travaux",
+      "SHOW-ALL-PROCESSES": "Afficher tous les processus",
+      "SHOW-DIAGRAM": "Afficher le diagramme de processus"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Modifier la catégorie de la définition",
+        "MESSAGE": "La catégorie initiale de la définition est remplie par l'attribut targetNameSpace dans le BPMN 2.0 XML, mais peut être modifiée après le déploiement.",
+        "CATEGORY": "Catégorie",
+        "CATEGORY-PLACEHOLDER": "Entrer une catégorie",
+        "CONFIRM": "Mettre à jour une catégorie"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Diagramme de processus"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} définitions correspondantes.",
+    "LIST-MESSAGE-EMPTY": "Aucune définition de processus correspondante.",
+    "FILTER": {
+      "NAME": "Nom (sensible à la casse)",
+      "KEY": "Clé (sensible à la casse)",
+      "DEPLOYMENT-ID": "ID du déploiement",
+      "TENANT-ID": "ID du client",
+      "LATEST": "Dernière version",
+      "LATEST-HELP": "Afficher uniquement les dernières versions"
+    },
+    "TITLE": {
+      "MAIN": "Définitions de processus"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "VERSION": "Version"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "VERSION": "Version",
+      "KEY": "Clé",
+      "TENANT": "Client"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "Importer à partir de l'Editeur de processus"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "Nom d'utilisateur",
+        "PASSWORD": "Mot de passe",
+        "ERROR": "Impossible de contacter l'Editeur",
+        "UNAUTHORIZED": "Informations d'identification non valides",
+        "UPLOAD-DESCRIPTION": "Le modèle de processus va être récupéré et déployé dans le cluster des services de processus actuellement actif. Sélectionnez un nom approprié pour le package de déploiement."
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID :",
+    "NAME": "Nom :",
+    "DESCRIPTION": "Description :",
+    "BUSINESS-KEY": "Clé de processus métier :",
+    "TENANT-ID": "Client :",
+    "STATUS": "Etat :",
+    "STATUS-ACTIVE": "Actif",
+    "STATUS-COMPLETED": "Terminé",
+    "ACTIVITY-ID-STARTED": "ID de l'activité démarrée :",
+    "ACTIVITY-ID-ENDED": "Activité terminée :",
+    "DELETE-REASON": "Motif de suppression :",
+    "STARTED-BY": "Démarré par :",
+    "END-TIME": "Heure de fin :",
+    "DURATION": "Durée :",
+    "SUPER-PROCESS-INSTANCE-ID": "ID de l'instance de super processus :",
+    "TASKS-SIZE": "Cette instance de processus a {{total}} tâches.",
+    "TASKS-EMPTY": "Cette instance de processus n'a aucune tâche.",
+    "VARIABLES-SIZE": "Cette instance de processus a {{total}} variables.",
+    "VARIABLES-EMPTY": "Cette instance de processus n'a aucune variable.",
+    "JOBS-SIZE": "Cette instance de processus a {{total}} travaux.",
+    "JOBS-EMPTY": "Cette instance de processus n'a aucun travail.",
+    "SUBPROCESSES-SIZE": "Cette instance de processus a {{total}} sous-processus.",
+    "SUBPROCESSES-EMPTY": "Cette instance de processus n'a aucun sous-processus.",
+    "DECISION-TABLES-SIZE": "Cette instance de processus a {{total}} tables de décision.",
+    "DECISION-TABLES-EMPTY": "Cette instance de processus n'a aucune table de décision.",
+    "FORMS-SIZE": "Cette instance de processus a {{total}} formulaires envoyés.",
+    "FORMS-EMPTY": "Cette instance de processus n'a aucun formulaire envoyé.",
+    "TITLE": {
+      "TASKS": "Tâches",
+      "VARIABLES": "Variables",
+      "JOBS": "Travaux",
+      "SUBPROCESSES": "Sous-processus",
+      "DECISION-TABLES": "Tables de décision",
+      "FORMS": "Formulaires"
+    },
+    "ACTION": {
+      "DELETE": "Supprimer l'instance de processus",
+      "TERMINATE": "Arrêter l'instance de processus",
+      "SHOW-ALL-TASKS": "Afficher toutes les tâches",
+      "SHOW-ALL-JOBS": "Afficher tous les travaux",
+      "SHOW-ALL-SUBPROCESSES": "Afficher tous les sous-processus",
+      "SHOW-DIAGRAM": "Afficher le diagramme de processus",
+      "TITLE-VARIABLES": "Actions sur la variable sélectionnée",
+      "DELETE-VARIABLE": "Supprimer la variable",
+      "UPDATE-VALUE": "Mettre à jour la variable",
+      "ADD-VARIABLE": "Ajouter une variable"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "Supprimer l'instance de processus",
+        "MESSAGE-DELETE": "Etes-vous sûr de vouloir supprimer l'instance de processus",
+        "MESSAGE-TERMINATE": "Etes-vous sûr de vouloir arrêter l'instance de processus",
+        "DELETE-REASON": "Motif de suppression",
+        "DELETE-REASON-HELP": "Entrer un motif de suppression (facultatif)",
+        "CONFIRM-DELETE": "Supprimer l'instance de processus",
+        "CONFIRM-TERMINATE": "Arrêter l'instance de processus"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Diagramme de processus"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "Créer une variable",
+        "NAME": "Nom de la variable",
+        "TYPE": "Type de variable",
+        "VALUE": "Valeur de la variable",
+        "CREATE": "Créer"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "Mettre à jour la variable '{{name}}'",
+        "NAME": "Nom de la variable",
+        "VALUE": "Valeur",
+        "CHECKED": "true",
+        "UNCHECKED": "false",
+        "DATE-HELP": "Format ISO-8601 (exemple : 2016-01-28T23:00:00Z)",
+        "ACTION-UPDATE": "Mis à jour"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "Supprimer la variable '{{name}}'",
+        "MESSAGE": "Etes-vous sûr de vouloir supprimer cette variable ?",
+        "DELETE": "Supprimer"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "Instances de processus",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} instances de processus correspondantes.",
+    "LIST-MESSAGE-EMPTY": "Aucune instance de processus correspondante.",
+    "FILTER": {
+      "NAME": "Nom",
+      "PROCESS-DEFINITION": "Définition de processus",
+      "ALL-PROCESS-DEFINITIONS": "Toutes les définitions de processus",
+      "BUSINESS-KEY": "Clé de processus métier",
+      "SUPER-PROCESS-INSTANCE-ID": "ID de l'instance de super processus",
+      "STARTED-BEFORE": "Démarré avant",
+      "STARTED-AFTER": "Démarré après",
+      "ENDED-BEFORE": "Terminé avant",
+      "ENDED-AFTER": "Terminé après",
+      "VARIABLE": "Variable",
+      "VARIABLE-NAME": "Nom de la variable",
+      "VARIABLE-VALUE": "Valeur de la variable",
+      "VARIABLE-BOOLEAN-VALUE": "Valeur booléenne : {{value}}",
+      "TENANT-ID": "Identifiant client"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "Heure de début"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "BUSINESS-KEY": "Clé de processus métier",
+      "PROCESS-DEFINITION": "Définition de processus",
+      "CREATE-TIME": "Créé",
+      "END-TIME": "Terminé",
+      "STATUS": "Statut"
+    }
+  },
+  "TASK": {
+    "ID": "ID :",
+    "NAME": "Nom :",
+    "STATUS": "Etat :",
+    "STATUS-COMPLETED": "Terminé",
+    "STATUS-ACTIVE": "Actif",
+    "DESCRIPTION": "Description :",
+    "TASK-DEFINITION-KEY": "Clé de définition :",
+    "FORM-KEY": "Clé de formulaire :",
+    "PRIORITY": "Priorité :",
+    "DELEGATION-STATE": "Etat de délégation :",
+    "CATEGORY": "Catégorie :",
+    "TENANT-ID": "Client :",
+    "PARENT": "Tâche parente :",
+    "ASSIGNEE": "Personne assignée :",
+    "OWNER": "Propriétaire :",
+    "START-DATE": "Date de début :",
+    "DUE-DATE": "Date d'échéance :",
+    "END-DATE": "Date de fin :",
+    "DELETE-REASON": "Motif de suppression :",
+    "PROCESS-INSTANCE": "Instance de processus",
+    "PROCESS-DEFINITION": "Définition de processus",
+    "EXECUTION-ID": "ID de l'exécution :",
+    "SUBTASKS-MESSAGE": "Cette tâche a {{total}} sous-tâches, affichage de {{size}}.",
+    "SUBTASKS-MESSAGE-EMPTY": "Cette tâche n'a aucune sous-tâche.",
+    "VARIABLES-MESSAGE": "Cette tâche a {{size}} variables.",
+    "VARIABLES-MESSAGE-EMPTY": "Cette tâche n'a aucune variable.",
+    "IDENTITY-LINKS-MESSAGE": "Cette tâche a {{size}} liens d'identité.",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "Cette tâche n'a aucun lien d'identité.",
+    "ACTION": {
+      "EDIT": "Modifier la tâche",
+      "ASSIGN-CLAIM": "Assigner/S'attribuer la tâche",
+      "DELEGATE": "Déléguer la tâche",
+      "RESOLVE": "Résoudre la tâche",
+      "COMPLETE": "Terminer la tâche",
+      "DELETE": "Supprimer la tâche",
+      "SHOW-ALL-SUBTASKS": "Afficher toutes les sous-tâches",
+      "SHOW-SUBMITTED-FORM": "Afficher le formulaire envoyé"
+    },
+    "TITLE": {
+      "SUBTASKS": "Sous-tâches",
+      "IDENTITY-LINKS": "Liens d'identité",
+      "VARIABLES": "Variables"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "Assigner la tâche",
+        "MESSAGE": "Etes-vous sûr de vouloir assigner la tâche",
+        "NEW-ASSIGNEE": "Nouvelle personne assignée",
+        "NEW-ASSIGNEE-HELP": "Laissez le champ Personne assignée vide si vous ne voulez assigner la tâche à personne.",
+        "CONFIRM": "Assigner la tâche"
+      },
+      "COMPLETE": {
+        "TITLE": "Terminer la tâche",
+        "MESSAGE": "Etes-vous sûr de vouloir terminer la tâche",
+        "CONFIRM": "Terminer la tâche"
+      },
+      "DELEGATE": {
+        "TITLE": "Déléguer la tâche",
+        "MESSAGE": "Etes-vous sûr de vouloir déléguer la tâche",
+        "CONFIRM": "Déléguer la tâche",
+        "DELEGATE-TO": "Déléguer la tâche à l'utilisateur"
+      },
+      "RESOLVE": {
+        "TITLE": "Résoudre la tâche",
+        "MESSAGE": "Etes-vous sûr de vouloir résoudre la tâche",
+        "CONFIRM": "Résoudre la tâche"
+      },
+      "DELETE": {
+        "TITLE": "Supprimer la tâche",
+        "MESSAGE": "Etes-vous sûr de vouloir supprimer la tâche",
+        "CONFIRM": "Supprimer la tâche"
+      },
+      "EDIT": {
+        "TITLE": "Modifier la tâche",
+        "CONFIRM": "Mettre à jour la tâche",
+        "NAME": "Nom",
+        "DESCRIPTION": "Description",
+        "PRIORITY": "Priorité",
+        "CATEGORY": "Catégorie",
+        "ASSIGNEE": "Personne assignée",
+        "OWNER": "Propriétaire",
+        "DUE-DATE": "Date d'échéance"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "Tâches",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} tâches correspondantes.",
+    "LIST-MESSAGE-EMPTY": "Aucune tâche correspondante.",
+    "FILTER": {
+      "NAME": "Nom (sensible à la casse)",
+      "ASSIGNEE": "Personne assignée (sensible à la casse)",
+      "STATUS": "Statut",
+      "STATUS-ANY": "Tout état",
+      "STATUS-ACTIVE": "Tâches actives",
+      "STATUS-COMPLETE": "Tâches terminées",
+      "PROCESS-INSTANCE-ID": "ID de l'instance de processus",
+      "TENANT-ID": "Identifiant client",
+      "OWNER": "Propriétaire (sensible à la casse)",
+      "PARENT-TASK-ID": "ID de la tâche parente",
+      "CREATED-BEFORE": "Créé avant",
+      "CREATED-AFTER": "Créé après",
+      "ENDED-BEFORE": "Terminé avant",
+      "ENDED-AFTER": "Terminé après",
+      "DUE-BEFORE": "Echéance avant",
+      "DUE-AFTER": "Echéance après",
+      "TASK-VARIABLE": "Variable locale de tâche",
+      "PROCESS-VARIABLE": "Variable de processus",
+      "VARIABLE-NAME": "Nom de la variable",
+      "VARIABLE-VALUE": "Valeur de la variable",
+      "VARIABLE-BOOLEAN-VALUE": "Valeur booléenne : {{value}}"
+    },
+    "SORT": {
+      "NAME": "Nom",
+      "DUE-DATE": "Date d'échéance",
+      "START-TIME": "Heure de début",
+      "END-TIME": "Heure de fin",
+      "PRIORITY": "Priorité"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "ASSIGNEE": "Personne assignée",
+      "OWNER": "Propriétaire",
+      "CREATE-TIME": "Créé",
+      "END-TIME": "Terminé",
+      "PRIORITY": "Priorité"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "Déploiements",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} déploiements correspondants.",
+    "LIST-MESSAGE-EMPTY": "Aucun déploiement correspondant.",
+    "FILTER": {
+      "NAME": "Nom (sensible à la casse)",
+      "TENANTID": "Identifiant client (sensible à la casse)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nom"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "DEPLOY-TIME": "Heure de déploiement",
+      "CATEGORY": "Catégorie",
+      "TENANT": "Client"
+    },
+    "ACTION": {
+      "UPLOAD": "Importer un processus ou un package",
+      "DELETE": "Supprimer le déploiement"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Sélectionnez un fichier de processus .bpmn, .bpmn20.xml à déployer ou importez un package de processus (avec actifs) contenus dans un fichier .zip ou .bar.",
+        "WARNING": "L'importation d'un processus est uniquement possible dans un moteur principal, et non dans une instance BPM Suite. Les processus dans BPM Suite doivent être déployés à l'aide d'une application partagée avec des individus ou des groupes.",
+        "DROPZONE": "Ou déposez un fichier ici",
+        "NO-DROP": "Le dépôt de fichier n'est pas pris en charge par votre navigateur",
+        "CANCEL-UPLOAD": "Annuler l'importation",
+        "ERROR": "Impossible d'importer ce fichier"
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Vous allez supprimer le déploiement '{{name}}'. Si des instances de processus lui sont associées, soit actives ou terminées, elles seront également supprimées. Voulez-vous vraiment supprimer le déploiement '{{name}}'?"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID :",
+    "NAME": "Nom :",
+    "TIME": "Heure de déploiement :",
+    "CATEGORY": "Catégorie :",
+    "TENANTID": "Identifiant client :",
+    "DEFINITIONS-MESSAGE": "Ce déploiement a {{total}} définitions de processus, affichage de {{size}}.",
+    "DEFINITIONS-MESSAGE-EMPTY": "Ce déploiement n'a aucune définition de processus.",
+    "TITLE": {
+      "DEFINITIONS": "Définitions de processus",
+      "RESOURCES": "Ressources"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "Afficher toutes les définitions"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "Travail {{id}}",
+      "EXCEPTION": "Exception"
+    },
+    "ACTIONS": {
+      "EXECUTE": "Exécuter le travail",
+      "DELETE": "Supprimer le travail"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "Supprimer le travail '{{id}}'",
+        "MESSAGE": "Etes-vous sûr de vouloir supprimer le travail {{id}} ?",
+        "CONFIRM": "Supprimer le travail"
+      }
+    },
+    "ID": "ID :",
+    "EXECUTION-ID": "ID de l'exécution :",
+    "PROCESS-INSTANCE": "Instance de processus :",
+    "PROCESS-DEFINITION": "Définition de processus :",
+    "DUEDATE": "Date d'échéance :",
+    "RETRIES-LEFT": "Tentatives restantes :",
+    "TENANT-ID": "Client :"
+  },
+  "JOBS": {
+    "TITLE": "Travaux",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} travaux correspondants.",
+    "LIST-MESSAGE-EMPTY": "Aucun travail correspondant.",
+    "FILTER": {
+      "PROCESS-DEFINITION": "Définition de processus",
+      "ALL-PROCESS-DEFINITIONS": "Toutes les définitions de processus",
+      "PROCESS-INSTANCE-ID": "ID de l'instance de processus",
+      "TENANT-ID": "Identifiant client",
+      "DUE-BEFORE": "Echéance avant",
+      "DUE-AFTER": "Echéance après",
+      "EXCEPTION": "Exception",
+      "EXCEPTION-HELP": "Afficher uniquement les travaux avec une exception"
+    },
+    "SORT": {
+      "ID": "ID du travail",
+      "DUE-DATE": "Date d'échéance",
+      "PROCESS-INSTANCE-ID": "ID de l'instance de processus"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "Date d'échéance",
+      "PROCESS-DEFINITION": "Définition de processus",
+      "RETRIES": "Tentatives",
+      "EXCEPTION": "Exception"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Connexion",
+    "USERNAME": "Nom d'utilisateur",
+    "USERNAME-PLACEHOLDER": "Entrer votre nom d'utilisateur",
+    "PASSWORD": "Mot de passe",
+    "PASSWORD-PLACEHOLDER": "Entrer votre mot de passe",
+    "ACTION": {
+      "CONFIRM": "Connexion"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. Tous droits réservés."
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "Actualiser la page toutes les {{name}}",
+    "NUMBER-OF-MEMBERS": "Nombre de membres :",
+    "NODE-ID": "ID :",
+    "LAST-UPDATED": "Dernière mise à jour :",
+    "LAST-METRICS-UPDATE": "Dernière mise à jour des indicateurs :",
+    "NOT-ENOUGH-DATA": "Le nœud est dans un état inconnu. Il se peut que le nœud n'ait pas fini de rejoindre le cluster ou qu'il n'ait pas encore envoyé assez de données à afficher ici.",
+    "JOB-EXECUTOR-RUNNING": "Exécuteur de travail en cours :",
+    "JAVA-VERSION": "Version Java :",
+    "SUITE-INFORMATION": "Il s'agit d'une instance Process Services Suite, version {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}} (edition '{{bpmSuiteEdition}}')",
+    "MEMORY-USAGE": "Utilisation de la mémoire :",
+    "MEMORY-USED": "utilisée",
+    "MEMORY-HEAP": "Tas :",
+    "MEMORY-NON-HEAP": "Non-tas:",
+    "UPTIME": "Durée active :",
+    "GARBAGE-COLLECTION": "Exécutée {{['collection.count']}} fois, durée totale d'utilisation de {{['collection.time'] | humanTime}}",
+    "MASTER-CONFIGURATION": "Configuration principale :",
+    "MASTER-CONFIGURATION-USED": "Configuration principale appropriée utilisée",
+    "MASTER-CONFIGURATION-NOT-USED": "Configuration principale non utilisée",
+    "MASTER-CONFIGURATION-DISABLED": "Configuration principale désactivée",
+    "MASTER-CONFIGURATION-INCORRECT": "Configuration principale incorrecte !",
+    "CLASSES-LOADED": "Classes actuelles chargées :",
+    "CLASSES-UNLOADED": "Total de classes déchargées :",
+    "CLASSES-TOTAL": "Total de classes chargées :",
+    "CACHE-HITS": "Correspondances dans le cache",
+    "CACHE-MISSES": "Absences dans le cache",
+    "CACHE-ADDITIONS": "Ajouts dans le cache",
+    "CACHE-REMOVALS": "Suppressions dans le cache",
+    "JOBS-EXECUTED": "Nombre de travaux exécutés",
+    "JOBS-FAILED": "Nombre de travaux échoués",
+    "JOBS-QUEUE-FULL": "Liste d'attente de travaux pleine",
+    "PROCESS-INSTANCES": "Instances de processus démarrées",
+    "HOUR-COUNT-CHART": "Nombre total d'heures",
+    "WEEKDAY-COUNT-CHART": "Nombre total de jours de la semaine",
+    "TASKS-COMPLETED": "Tâches terminées",
+    "MEAN-RATE": "Taux moyen (par seconde) :",
+    "TOTAL": "Total :",
+    "COUNT": "Nombre",
+    "MAX": "Max",
+    "MIN": "Min",
+    "STDDEV": "Ecart-type",
+    "MINUTE-RATE": "Taux de 1/5/15 minutes :",
+    "REST-REQUEST-TYPE": "Type de demande (unité du taux = événements/seconde)",
+    "REST-ENDPOINTS": "Durée des points de terminaison REST (unité de durée = secondes, unité de taux = appels/seconde)",
+    "ELASTIC-SEARCH-VERSION": "Version",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "Nom du cluster",
+    "ELASTIC-SEARCH-STATE": "Statut",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "un état rouge indique que le fragment en question n'est pas assigné dans le cluster, un état jaune indique que le fragment principal est assigné mais que les réplicas ne le sont pas, et un état vert indique que tous les fragments sont assignés",
+    "ELASTIC-SEARCH-INDICES": "Indices",
+    "ELASTIC-SEARCH-DOCS-COUNT": "Nombre de documents",
+    "ELASTIC-SEARCH-SHARD-INFO": "Informations relatives au fragment",
+    "TITLE": {
+      "MAIN": "Surveillance du cluster",
+      "NODE": "Nœud {{ipAddress}}",
+      "MEMORY": "Mémoire",
+      "GARBAGE-COLLECTION": "Nettoyage de la mémoire",
+      "CLASSLOADING": "Chargement des classes",
+      "PROCESS-DEFINITION-CACHE": "Cache de définition du processus",
+      "JOB-METRICS": "Indicateurs de travail",
+      "RUNTIME-METRICS": "Indicateurs d'exécution",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "Indicateurs de point de terminaison REST",
+      "BPM-SUITE-ELASTIC-SEARCH": "Recherche élastique"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "Changer le mot de passe en '{{login}}'",
+        "OLD-PASSWORD": "Ancien mot de passe",
+        "NEW-PASSWORD": "Nouveau mot de passe",
+        "CONFIRM": "Modifier le mot de passe"
+      },
+      "DELETE": {
+        "TITLE": "Supprimer l'utilisateur {{login}}",
+        "MESSAGE": "Etes-vous sûr de vouloir supprimer l'utilisateur '{{login}}' ?",
+        "CONFIRM": "Supprimer un utilisateur"
+      },
+      "EDIT": {
+        "TITLE": "Modifier l'utilisateur {{login}}",
+        "LOGIN": "Connexion",
+        "EMAIL": "E-mail",
+        "FIRSTNAME": "Prénom",
+        "LASTNAME": "Nom",
+        "CONFIRM": "Mettre à jour l'utilisateur",
+        "READONLY": "Utilisateur en lecture seule"
+      },
+      "NEW": {
+        "TITLE": "Créer un nouvel utilisateur",
+        "LOGIN": "Connexion",
+        "EMAIL": "E-mail",
+        "FIRSTNAME": "Prénom",
+        "LASTNAME": "Nom",
+        "PASSWORD": "Mot de passe",
+        "ADMIN": "A des droits d'administrateur",
+        "CONFIRM": "Créer un utilisateur",
+        "READONLY": "Utilisateur en lecture seule"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "Utilisateurs",
+    "ACTION": {
+      "EDIT": "Modifier un utilisateur",
+      "NEW": "Créer un nouvel utilisateur",
+      "DELETE": "Supprimer un utilisateur",
+      "CHANGE-PASSWORD": "Modifier le mot de passe"
+    },
+    "HEADER": {
+      "LOGIN": "Connexion",
+      "FIRSTNAME": "Prénom",
+      "LASTNAME": "Nom",
+      "EMAIL": "E-mail",
+      "CLUSTER_USER": "Utilisateur du cluster"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "Information relative aux licences",
+      "HOLDER": "Titulaire",
+      "SUBJECT": "Objet",
+      "PRODUCTKEY": "Type de produit",
+      "GOODAFTERDATE": "Licence valide après",
+      "GOODBEFOREDATE": "Licence valide jusqu'à",
+      "NUMBER_OF_PROCESSES": "Nombre de processus actifs",
+      "NUMBER_OF_ADMINS": "Nombre d'utilisateurs administrateurs",
+      "MULTI_TENANT": "Multiclient",
+      "DEFAULT_TENANT": "Client par défaut"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "Nom :",
+    "USER": "Utilisateur :",
+    "MASTER-MANDATORY": "Configuration principale obligatoire :",
+    "METRICS-SEND-INTERVAL": "Intervalle d'envoi d'indicateur :",
+    "ENDPOINT-HELP": "La configuration du point de terminaison (une seule par cluster) doit diriger vers une installation REST. Ce point de terminaison sera ensuite utilisé pour récupérer et gérer les données utilisées dans les autres sections (par ex. déploiements, définitions de processus, etc.) de cette application.",
+    "ENDPOINT-NAME": "Nom :",
+    "ENDPOINT-DESCRIPTION": "Description :",
+    "ENDPOINT-ADDRESS": "Adresse du serveur :",
+    "ENDPOINT-PORT": "Port du serveur :",
+    "ENDPOINT-CONTEXT-ROOT": "Racine de contexte :",
+    "ENDPOINT-REST-ROOT": "Racine REST :",
+    "ENDPOINT-USERNAME": "Nom d'utilisateur :",
+    "PROCESS-ENGINE-HELP": "Cette section vous permet de définir une 'configuration principale' pour le cluster. Toutes les instances du cluster utiliseront cette configuration lors de leur démarrage (si le jar de configuration du cluster est sur le chemin de classe ou si les propriétés correspondantes sont définies). Si elles ne sont pas définies, les instances utiliseront les fichiers de configuration locaux.",
+    "NO-MASTER-DEFINED": "Aucune configuration principale définie",
+    "ACTION": {
+      "SHOW-PASSWORD": "Afficher le mot de passe",
+      "EDIT-CLUSTER-CONFIG": "Modifier la configuration du cluster",
+      "CREATE-CLUSTER-CONFIG": "Créer un nouveau cluster",
+      "DELETE-CLUSTER-CONFIG": "Supprimer la configuration du cluster",
+      "GENERATE-JAR": "Générer le jar de la configuration du cluster",
+      "EDIT-ENDPOINT": "Modifier le point de terminaison REST de Process Services",
+      "CHECK-ENDPOINT": "Vérifier le point de terminaison REST de Process Services",
+      "SELECT-MASTER": "Sélectionner une configuration principale",
+      "ADD-CONFIGURATION": "Ajouter une configuration principale",
+      "EDIT-CONFIGURATION": "Modifier la configuration principale",
+      "DELETE-CONFIGURATION": "Supprimer la configuration principale"
+    },
+    "TITLE": {
+      "MAIN": "Configuration du cluster",
+      "ACTIVITI": "Paramètres d'instance",
+      "ENDPOINT": "Configuration du point de terminaison",
+      "MASTER-CONFIGURATION": "Configuration principale"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "Sélectionner une configuration principale",
+        "MESSAGE": "Etes-vous sûr de vouloir sélectionner '{{name}}' comme configuration principale ?",
+        "CONFIRM": "Sélectionner une configuration principale"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "Supprimer la configuration principale",
+        "MESSAGE": "Etes-vous sûr de vouloir supprimer cette configuration principale ?",
+        "CONFIRM": "Supprimer"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "Générer le jar de la configuration du cluster",
+        "MESSAGE": "Il est important que tous les membres d'un même cluster de processus utilisent les mêmes paramètres.",
+        "LINK-MESSAGE": "Pour ce faire, un fichier Java Archive (jar) peut être téléchargé en cliquant sur le lien ci-dessous. Ce jar contient la configuration requise par une instance de Process Services pour communiquer avec l'application d'administration de Process Services. Le jar peut être simplement placé dans le chemin de classe et sera automatiquement utilisé.",
+        "ADMIN-APP-URL": "Le champ suivant est l'URL de base qui sera utilisée pour renvoyer des informations à cette application d'administration. Modifiez-la si l'URL ne correspond pas à celle utilisée pour afficher cette interface Web.",
+        "CONFIRM": "Désactiver la configuration principale",
+        "ACTION-DOWNLOAD": "Télécharger {{label}}"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "Modifier la configuration du point de terminaison",
+        "ENDPOINT-NAME": "Nom",
+        "ENDPOINT-DESCRIPTION": "Description",
+        "ENDPOINT-ADDRESS": "Adresse du serveur",
+        "ENDPOINT-PORT": "Port du serveur",
+        "ENDPOINT-CONTEXT-ROOT": "Racine de contexte",
+        "ENDPOINT-REST-ROOT": "Racine REST",
+        "ENDPOINT-USERNAME": "Nom d'utilisateur",
+        "ENDPOINT-PASSWORD": "Mot de passe",
+        "ENDPOINT-PASSWORD-HELP": "Laisser vide pour garder le mot de passe actuel",
+        "ENDPOINT-URL-PREVIEW": "Aperçu de l'URL",
+        "ACTION-CONFIRM": "Enregistrer la configuration du point de terminaison",
+        "ERROR-401": "Erreur : informations d'identification non valides",
+        "ERROR-403": "Erreur : informations d'identification ou URL non valides",
+        "ERROR-404": "Erreur : URL introuvable",
+        "ERROR-500": "Erreur : erreur serveur. Vérifier les journaux du serveur."
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "Supprimer la configuration du cluster",
+        "WARNING": "Lorsqu'une configuration de cluster est supprimée, notez que vous devez également supprimer le jar de configuration (ou fichier de propriétés) pour cette configuration du chemin de classe des nœuds.",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "Impossible de supprimer cette configuration de cluster : au moins une configuration de cluster est nécessaire et elle doit être la seule configuration définie dans le système.",
+        "ACTION-DELETE": "Confirmer"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "Nom et mot de passe du cluster",
+        "NETWORK-SETTINGS": "Paramètres réseau",
+        "SECURITY-SETTINGS": "Paramètres de sécurité",
+        "ACTIVITI-SETTINGS": "Paramètres d'instance",
+        "STEPS": "Etape {{currentStepIndex + 1}} sur {{steps.length}}",
+        "GROUP-HELP": "Chaque cluster doit avoir un nom unique. Chaque instance de moteur devra fournir ce nom de cluster pour le rejoindre.",
+        "NAME": "Nom",
+        "USERNAME": "Nom d'utilisateur",
+        "PASSWORD": "Mot de passe",
+        "SECURITY-HELP": "Chaque cluster doit avoir un nom d'utilisateur et un mot de passe. Chaque instance du moteur Process Services souhaitant échanger des données avec l'application d'administration de Process Services devra fournir ces informations d'identification dans sa communication.",
+        "ACTIVITI-HELP": "L'activation de la configuration principale va empêcher les instances de processus, membres du cluster, de démarrer sans l'utilisation de cette configuration.",
+        "REQUIRES-MASTER": "Requiert une configuration principale",
+        "METRICS-HELP": "Chaque instance de Process Services, qui est membre de ce cluster, renverra des indicateurs (indicateurs JVM, indicateurs d'utilisation, etc.) à l'application d'administration de Process Services. Le paramètre suivant définit la fréquence de récupération et d'envoi de ces indicateurs.",
+        "METRICS-INTERVAL": "Intervalle d'envoi des indicateurs (en secondes)",
+        "ERROR-NAME-TAKEN": "Nom de cluster déjà utilisé. Choisissez-en un autre.",
+        "ERROR-USER-TAKEN": "Nom d'utilisateur du cluster déjà utilisé. Choisissez-en un autre.",
+        "CONFIRM": "Enregistrer la configuration"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "Créer une nouvelle configuration",
+        "TITLE-EDIT": "Modifier la configuration",
+        "NAME": "Nom",
+        "DESCRIPTION": "Description",
+        "TITLE-DATABASE": "Base de données",
+        "JDBC-URL": "URL JDBC",
+        "JDBC-USERNAME": "Nom d'utilisateur JDBC",
+        "JDBC-PASSWORD": "Mot de passe JDBC",
+        "JDBC-DRIVER": "Pilote JDBC",
+        "JDBC-JNDI-NAME": "Nom JNDI JDBC",
+        "JDBC-JNDI-HELP": "Remplissez-le (ignorez les paramètres ci-dessus) si la source de données est configurée dans un serveur d'application et exposée via JNDI.",
+        "TITLE-SCHEMA": "Schéma Process Services",
+        "SCHEMA-UPDATE": "Mise à jour du schéma de la base de données",
+        "SCHEMA-UPDATE-HELP": "Il est recommandé de laisser ce paramètre défini sur 'false' et de mettre à niveau le schéma de la base de données à l'aide des scripts SQL. S'il est défini sur 'true', le premier nœud à démarrer dans le cluster mettra automatiquement à niveau le schéma. Cela pourrait causer des problèmes lorsque plusieurs nœuds démarrent simultanément étant donné que la définition de données n'est souvent pas transactionnelle.",
+        "TITLE-HISTORY": "Historique",
+        "HISTORY-LEVEL": "Niveau de l'historique",
+        "TITLE-JOB-EXECUTOR": "Exécuteur de travail",
+        "NR-OF-JOB-NODES-HELP": "Chaque instance du moteur Process Services a un composant de l'exécuteur de travail responsable de l'exécution de tâches en arrière-plan telles que des minuteurs et des continuations asynchrones de processus métier. Il est néanmoins recommandé d'avoir seulement un faible nombre (un, deux ou plus pour des scénarios à forte charge) d'exécuteurs de travaux activés. La valeur de ce paramètre sera utilisée pour activer ou désactiver au besoin les exécuteurs de travaux dans le cluster.",
+        "NR-OF-JOB-NODES": "Nombre de nœuds d'exécuteur de travail",
+        "JOB-EXECUTOR-ENABLE": "Activer l'exécuteur de travail",
+        "TITLE-ADVANCED": "Avancé",
+        "PROCESS-DEF-CACHE-LIMIT": "Limite de cache de la définition du processus",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "Le nombre maximal de définitions de processus (analysées) qui sont conservées en mémoire. L'analyse d'une définition de processus nécessite de nombreuses ressources. Par conséquent, il est recommandé de disposer d'un cache suffisant sans utiliser trop de mémoire (par défaut : illimité).",
+        "ID-BLOCK-SIZE": "Taille du bloc d'ID",
+        "ID-BLOCK-SIZE-HELP": "Le nombre de numéros d'ID de la base de données qu'un moteur Process Services peut garder en réserve pour les utiliser lors de la création de nouvelles entités (par défaut : 100). Lorsque tous les numéros d'ID ont été utilisés, un nouveau bloc est réservé dans la base de données.",
+        "ENABLE-JOB-TWEAKING": "Activer l'ajustement avancé de l'exécuteur de travail",
+        "ENABLE-JOB-TWEAKING-HELP": "L'exécuteur de travail est un composant responsable de l'exécution des minuteurs, des continuations asynchrones, etc. (généralement appelé 'travaux') de processus métier.",
+        "TITLE-JOB-TWEAKING": "Ajustement de l'exécuteur de travail",
+        "MAX-JOBS-PER-ACQUISITION": "Maximum de travaux par acquisition",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "L'exécuteur de travail fonctionne en deux phases : tout d'abord, les travaux sont 'acquis' en verrouillant les travaux pour une certaine durée (pour éviter les conflits entre plusieurs exécuteurs de travaux). Lors de la seconde phase, les travaux acquis sont exécutés par (typiquement) un pool de threads distinct. Cette valeur détermine le nombre de travaux qui sont acquis par demande pour la phase 1. Lorsque plus d'un exécuteur de travail est actif dans un cluster, il est recommandé de définir cette valeur sur 1 pour éviter des blocages. La valeur par défaut est 1.",
+        "JOB-WAIT-TIME": "Durée d'attente (ms)",
+        "JOB-WAIT-TIME-HELP": "La durée d'attente (en ms) après que toutes les travaux ont été exécutés ou qu'aucun travail n'a été trouvé. Cela permet d'éviter de trop accéder à la base de données. La valeur par défaut est 10000 ms.",
+        "JOB-LOCK-TIME": "Durée de verrouillage (ms)",
+        "JOB-LOCK-TIME-HELP": "La durée (in ms) pendant laquelle un travail est verrouillé par un composant de l'exécuteur de travail. Après cette durée, si le travail n'a toujours pas été exécuté, il peut être encore acquis par un autre exécuteur de travail. Cela permet d'éviter qu'un exécuteur de travail en état d'échec ne suspende l'exécution d'un travail de manière définitive. La valeur par défaut est 5 minutes (300 000 ms)",
+        "JOB-CORE-POOL-SIZE": "Taille du pool de threads principal",
+        "JOB-CORE-POOL-SIZE-HELP": "La quantité minimale de threads dans un pool de threads qui sont maintenus actifs pour l'exécution de travaux. Seulement applicable pour l'exécuteur de travail par défaut.",
+        "JOB-QUEUE-SIZE": "Taille de la file d'attente",
+        "JOB-QUEUE-SIZE-HELP": "L'exécuteur de travail par défaut acquiert d'abord les travaux, puis les met en file d'attente avant de les exécuter dans un pool de threads. Cette valeur détermine combien de travaux sont conservés dans cette file d'attente. Seulement applicable pour l'exécuteur de travail par défaut (ne s'applique pas à l'exécuteur de travail Spring par exemple ou pour les implémentations personnalisées).",
+        "JOB-MAX-POOL-SIZE": "Maximum Taille maximale du pool de threads",
+        "JOB-MAX-POOL-SIZE-HELP": "La quantité maximale de threads dans le pool de threads qui sont créés pour l'exécution des travaux. Seulement applicable pour l'exécuteur de travail par défaut.",
+        "TITLE-DB-POOL": "Pool de connexions de la base de données",
+        "ENABLE-DB-POOL": "Activer la configuration du pool de connexions de la base de données",
+        "ENABLE-DB-POOL-HELP": " Permet de configurer le pool de connexions de la source de données créée par Alfresco Process Services. Ces paramètres sont applicables seulement si Alfresco Process Services est responsable de la création de la source de données (c'est-à-dire pas de source de données JNDI, par ex.) et n'a pas reçu d'injections Spring.",
+        "JOB-MAX-IDLE-CONNECTIONS": "Maximum de connexions inactives",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "Maximum de connexions actives",
+        "JOB-MAX-CHECKOUT-TIME": "Maximum Durée maximale pour terminer la tâche (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "La durée maximale d'utilisation d'une connexion avant qu'elle ne puisse être libérée.",
+        "JOB-MAX-WAIT-TIME": "Maximum Durée d'attente (ms) maximale",
+        "JOB-MAX-WAIT-TIME-HELP": "La durée d'attente avant de retenter d'obtenir une connexion.",
+        "TITLE-MAIL-SERVER": "Serveur de messagerie",
+        "ENABLE-MAIL-SERVER": "Activer la configuration du serveur de messagerie",
+        "ENABLE-MAIL-SERVER-INFO": "Cela est uniquement nécessaire lors de l'utilisation de la fonctionnalité de messagerie dans vos processus métier.",
+        "MAIL-DEFAULT-FROM": "Par défaut à partir de l'adresse",
+        "MAIL-HOST": "Hôte du serveur de messagerie",
+        "MAIL-PORT": "Port du serveur de messagerie",
+        "MAIL-USERNAME": "Nom d'utilisateur du serveur de messagerie",
+        "MAIL-PASSWORD": "Mot de passe du serveur de messagerie",
+        "MAIL-USE-SSL": "Utiliser SSL ?",
+        "MAIL-USE-TLS": "Utiliser TLS ?",
+        "MAIL-JNDI-NAME": "Nom JNDI du serveur de messagerie",
+        "MAIL-JNDI-NAME-INFO": "Remplissez-le (ignorer les paramètres ci-dessus) si le serveur de messagerie est configuré dans un serveur d'application et exposé via JNDI.",
+        "ACTION-DELETE-CONFIGURATION": "Supprimer la configuration",
+        "ACTION-CREATE-CONFIGURATION": "Créer une configuration",
+        "ACTION-UPDATE-CONFIGURATION": "Mettre à jour la configuration",
+        "CONFIG-OPTIONS": "Type de configuration",
+        "OPTION-ENGINE": "Moteur Process Services autonome",
+        "OPTION-SUITE": "Process Services BPM Suite",
+        "FETCHING-TEMPLATE": "Récupération du modèle sur le serveur..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "Déploiements d'application",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} déploiements d'application correspondants.",
+    "LIST-MESSAGE-EMPTY": "Aucun déploiement d'application correspondant.",
+    "FILTER": {
+      "NAME": "Nom",
+      "TENANTID": "Identifiant client",
+      "LATEST": "Dernière version",
+      "LATEST-HELP": "Afficher uniquement les dernières versions"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nom"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "ID de l'application",
+      "DEPLOYMENT-ID": "ID du déploiement de processus",
+      "DMN-DEPLOYMENT-ID": "ID du déploiement DMN",
+      "NAME": "Nom",
+      "DEPLOY-TIME": "Heure de déploiement",
+      "DEPLOYED-BY": "Déployé par",
+      "TENANT": "ID du client"
+    },
+    "ACTION": {
+      "UPLOAD": "Importer et publier une application",
+      "PUBLISH-APP-MODEL": "Publier un modèle d'application"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Sélectionner une définition d'application avec une extension .zip à déployer.",
+        "WARNING": "L'importation d'un processus est uniquement possible dans une instance BPM Suite.",
+        "DROPZONE": "Ou déposez un fichier ici",
+        "NO-DROP": "Le dépôt de fichier n'est pas pris en charge par votre navigateur",
+        "CANCEL-UPLOAD": "Annuler l'importation",
+        "ERROR": "Impossible d'importer ce fichier"
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "ID de l'application :",
+    "DEPLOYMENT-ID": "ID du déploiement :",
+    "DMN-DEPLOYMENT-ID": "ID du déploiement DMN :",
+    "DEPLOYED-BY": "Déployé par :",
+    "DEPLOYED-ON": "Déployé le :",
+    "APP-NAME": "Nom de l'application :",
+    "VERSION": "Version :",
+    "DESCRIPTION": "Description :",
+    "KEY": "Clé :",
+    "CATEGORY": "Catégorie :",
+    "SUSPENDED": "Suspendu :",
+    "DEPLOYMENT": "Déploiement :",
+    "TENANT-ID": "ID du client :",
+    "START-FORM-DEFINED": "Formulaire de démarrage défini :",
+    "GRAPHICAL-NOTATION-DEFINED": "Notation graphique définie :",
+    "PROCESS-DEFINITIONS-SIZE": "Cette définition d'application a {{total}} définitions de processus",
+    "PROCESS-DEFINITIONS-SHOWING": ", affichage de {{size}} définitions de processus",
+    "PROCESS-DEFINITIONS-EMPTY": "Ce déploiement d'application n'a aucune définition de processus",
+    "DECISION-TABLES-SIZE": "Ce déploiement d'application a {{total}} tables de décision",
+    "DECISION-TABLES-SHOWING": ", affichage de {{size}} tables de décision",
+    "DECISION-TABLES-EMPTY": "Ce déploiement d'application n'a aucune table de décision",
+    "FORMS-SIZE": "Ce déploiement d'application a {{total}} formulaires",
+    "FORMS-SHOWING": ", affichage de {{size}} formulaires",
+    "FORMS-EMPTY": "Ce déploiement d'application n'a aucun formulaire",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "Définitions de processus",
+      "DECISION-TABLES": "Tables de décision",
+      "FORMS": "Formulaires"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifier une catégorie",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "Afficher toutes les définitions de processus",
+      "SHOW-ALL-DECISION-TABLES": "Afficher toutes les tables de décision",
+      "SHOW-ALL-FORMS": "Afficher tous les formulaires",
+      "SHOW-DIAGRAM": "Afficher le diagramme de processus"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Modifier la catégorie de la définition",
+        "MESSAGE": "La catégorie initiale de la définition est remplie par l'attribut targetNameSpace dans le BPMN 2.0 XML, mais peut être modifiée après le déploiement.",
+        "CATEGORY": "Catégorie",
+        "CATEGORY-PLACEHOLDER": "Entrer une catégorie",
+        "CONFIRM": "Mettre à jour une catégorie"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Diagramme de processus"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "Nom",
+      "TYPE": "Type",
+      "VALUE": "Valeur"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "ID du groupe",
+      "TYPE": "Type",
+      "USER-ID": "ID de l'utilisateur"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "Impossible d'obtenir les données du serveur",
+      "AUTHENTICATION-ERROR": "Vous avez entré des informations d'identification non valides"
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "Configuration '{{name}}' supprimée.",
+      "CONFIG-UPDATED": "Configuration '{{name}}' mise à jour.",
+      "CONFIG-CREATED": "Configuration '{{name}}' créée.",
+      "MASTER-CONFIG-DELETE": "Configuration principale supprimée.",
+      "MASTER-CONFIG-UPDATE": "Configuration principale mise à jour",
+      "CLUSTER-UPDATED": "La configuration du cluster a été mise à jour.",
+      "CLUSTER-CREATED": "La configuration du cluster a été créée.",
+      "ENDPOINT-UPDATED": "Le point de terminaison '{{name}}' a été mis à jour.",
+      "ENDPOINT-INVALID": "La configuration du point de terminaison de '{{name}}' n'est pas valide.",
+      "ENDPOINT-VALID": "Point de terminaison non valide, moteur au point de terminaison : {{name}} - {{version}}"
+    },
+    "JOB": {
+      "DELETED": "Le travail '{{id}}' a été supprimé.",
+      "EXECUTED": "Le travail '{{id}}' a été exécuté."
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "L'instance de processus '{{id}}' a été supprimée.",
+      "TERMINATED": "L'instance de processus '{{id}}' a été arrêtée."
+    },
+    "TASK": {
+      "DELETED": "La tâche '{{id}}' a été supprimée.",
+      "COMPLETED": "La tâche '{{id}}' s'est terminée.",
+      "DELEGATED": "La tâche '{{id}}' a été déléguée à {{user}}.",
+      "RESOLVED": "La tâche '{{id}}' s'est résolue.",
+      "ASSIGNED": "La tâche '{{id}}' est maintenant assignée à {{user}}.",
+      "UNASSIGNED": "La tâche '{{id}}' est maintenant non assignée.",
+      "UPDATED": "La tâche '{{id}}' a été mise à jour."
+    },
+    "USER": {
+      "DELETED": "L'utilisateur '{{login}}' a été supprimé.",
+      "UPDATED": "L'utilisateur '{{login}}' a été mis à jour.",
+      "CREATED": "L'utilisateur '{{login}}' a été créé.",
+      "PASSWORD-CHANGED": "Le mot de passe de '{{login}}' a été modifié."
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "Catégorie de la définition de processus mise à jour"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "Déploiement '{{name}}' supprimé",
+      "DELETE-ERROR": "Impossible de supprimer le déploiement. {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "Application '{{appDefinition.name}}' supprimée",
+      "DELETE-ERROR": "Impossible de supprimer l'application. {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "Tables de décision",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} tables de décision correspondantes.",
+    "LIST-MESSAGE-EMPTY": "Aucune table de décision correspondante.",
+    "FILTER": {
+      "NAME": "Nom",
+      "KEY": "Clé",
+      "TENANTID": "Identifiant client"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nom"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "VERSION": "Version",
+      "KEY": "Clé",
+      "DEPLOY-TIME": "Heure de déploiement",
+      "TENANT-ID": "ID du client"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID :",
+    "NAME": "Nom :",
+    "VERSION": "Version :",
+    "KEY": "Clé :",
+    "DEPLOYMENT-ID": "ID du déploiement :",
+    "RESOURCE-NAME": "Nom de la ressource :",
+    "DESCRIPTION": "Description :",
+    "TENANT": "Client :",
+    "TITLE": {
+      "DECISION-AUDITS": "Audits de décision"
+    },
+    "DECISION-AUDITS-MESSAGE": "Cette table de décision a {{total}} audits, affichage de {{size}}.",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "Cette table de décision n'a aucun audit",
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifier une catégorie",
+      "SHOW-ALL-JOBS": "Afficher tous les travaux",
+      "SHOW-ALL-PROCESSES": "Afficher tous les processus",
+      "SHOW-DIAGRAM": "Afficher le diagramme de processus",
+      "SHOW-DECISION-TABLE": "Afficher la table de décision"
+    },
+    "POPUP": {
+      "TITLE": "Table de décision : ",
+      "KEY": "Clé : ",
+      "HIT-POLICY": "Politique de résultats : ",
+      "HIT-POLICIES": {
+        "FIRST": "Premier (passage unique)",
+        "ANY": "Tout (passage unique)"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "Pistes d'audits de décision",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} pistes d'audits de décision correspondantes.",
+    "LIST-MESSAGE-EMPTY": "Aucune piste d'audit de décision correspondante.",
+    "FILTER": {
+      "NAME": "Nom (sensible à la casse)",
+      "TENANTID": "Identifiant client (sensible à la casse)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nom"
+    },
+    "POPUP": {
+      "HEADER": "Piste d'audit de décision"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "ID de la définition de processus",
+      "PROCESS-INSTANCE-ID": "ID de l'instance de processus",
+      "CREATED": "Créé",
+      "FAILED": "Echec",
+      "EXECUTION-ID": "ID de l'exécution",
+      "ACTIVITY-ID": "ID de l'activité",
+      "ACTIVITY-NAME": "Nom de l'activité",
+      "DECISION-KEY": "Clé de décision",
+      "DECISION-NAME": "Nom de la décision",
+      "DMN-DEPLOYMENT-ID": "ID du déploiement DMN"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "Afficher l'audit de décision"
+    },
+    "TABLE": {
+      "HEADER": "Table de décision \"{{name}}\"",
+      "HIT-POLICY": "Politique de résultats",
+      "HIT-POLICIES": {
+        "FIRST": "Premier (passage unique)",
+        "ANY": "Tout (passage unique)"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "Une exception est survenue lors du test de correspondance de l'expression avec la valeur d'entrée : {{error}}",
+        "INPUT-MATCH": "La valeur d'entrée correspondait à l'expression.",
+        "INPUT-EMPTYEXPRESSION": "Les expressions vides sont considérées comme des correspondances.",
+        "INPUT-NOMATCH": "La valeur d'entrée ne correspondait pas à l'expression.",
+        "INPUT-NOTEXECUTED": "L'expression n'a jamais été testée.",
+        "OUTPUT-EXCEPTION": "Une exception est survenue lors de la définition de la valeur à l'aide de l'expression : \n {{expression}}.\nMessage d'erreur : {{error}}",
+        "OUTPUT-RESULT": "La valeur a été définie à l'aide de l'expression suivante : \n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "L'expression suivante n'a jamais été exécutée : \n {{expression}}"
+      },
+      "INPUT-VARIABLE": "Condition",
+      "OUTPUT-VARIABLE": "Sortie",
+      "INPUT-VARIABLES": "Valeurs d'entrée",
+      "NO-INPUT-VARIABLES": "Aucune valeur d'entrée trouvée lorsque la table de décision a été exécutée",
+      "OUTPUT-VARIABLES": "Valeurs calculées",
+      "NO-OUTPUT-VARIABLES": "Aucune valeur calculée produite à partir des tables de décision",
+      "METADATA-NAME": "Nom",
+      "METADATA-VALUE": "Valeur",
+      "LOAD-ERROR": "Une erreur est survenue lors de la récupération de la table de décision et de la piste d'audit pour l'exécution '{{executionId}}' de l'activité '{{activityId}}'."
+    }
+  },
+  "FORMS": {
+    "TITLE": "Formulaires",
+    "LIST-MESSAGE": "Affichage de {{size}} résultats sur un total de {{total}} formulaires correspondants.",
+    "LIST-MESSAGE-EMPTY": "Aucun formulaire correspondant.",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nom",
+      "APPID": "ID de l'application",
+      "TENANTID": "ID du client"
+    },
+    "FILTER": {
+      "NAME": "Nom",
+      "APPID": "ID du déploiement d'application",
+      "TENANTID": "Identifiant client"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nom"
+    }
+  },
+  "FORM": {
+    "ID": "ID :",
+    "NAME": "Nom :",
+    "APP-ID": "ID de l'application :",
+    "DEPLOYMENT-ID": "ID du déploiement :",
+    "DESCRIPTION": "Description :",
+    "TENANT": "Client :",
+    "MESSAGE-EMPTY": "(Aucun)",
+    "TITLE": {
+      "SUBMITTED-FORMS": "Formulaires envoyés"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "Ce formulaire a {{total}} formulaires envoyés, affichage de {{size}}.",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "Ce formulaire n'a aucun formulaire envoyé",
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifier une catégorie",
+      "SHOW-ALL-JOBS": "Afficher tous les travaux",
+      "SHOW-ALL-PROCESSES": "Afficher tous les processus",
+      "SHOW-DIAGRAM": "Afficher le diagramme de processus",
+      "SHOW-FORM": "Afficher le formulaire"
+    },
+    "POPUP": {
+      "TITLE": "Formulaire : "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "Afficher la valeur",
+      "SELECT-FIELD": "(Aucun champ sélectionné)",
+      "FIELD-VALUE": "Afficher la valeur du champ \"{{name}}\"",
+      "UNKNOWN-TYPE": "Type de champ {{type}} inconnu",
+      "TEXT-VALUE": "Texte",
+      "MULTI-TEXT-VALUE": "Texte multiligne",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "Date",
+      "DATETIME-VALUE": "Date et heure",
+      "DROPDOWN-VALUE": "Sélectionner...",
+      "UPLOAD-VALUE": "Importer du contenu...",
+      "RADIOS-OPTION1": "Option 1",
+      "SELECT-PERSON": "Sélectionner une personne",
+      "SELECT-GROUP": "Sélectionner un groupe"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "ID de la tâche",
+      "PROCESS-ID": "ID de l'instance de processus",
+      "SUBMITTED": "Envoyé(e) le",
+      "SUBMITTED-BY": "Envoyé(e) par",
+      "FORM-ID": "ID du formulaire"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "Afficher le formulaire envoyé"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "Importer et publier une application",
+      "DOWNLOAD": "Télécharger l'application",
+      "REDEPLOY": "Redéployer l'application dans un autre cluster",
+      "DELETE": "Supprimer l'application"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Supprimer l'application '{{appDefinition.name}}' ?"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "Sélectionner un fichier d'application avec une extension .zip à déployer.",
+        "WARNING": "Le téléchargement d'une application est uniquement possible dans une instance BPM Suite, pas dans une instance de moteur principal.",
+        "DROPZONE": "Ou déposez un fichier ici",
+        "NO-DROP": "Le dépôt de fichier n'est pas pris en charge par votre navigateur",
+        "CANCEL-UPLOAD": "Annuler l'importation",
+        "ERROR": "Impossible d'importer ce fichier"
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "Publier un modèle d'application",
+        "PUBLISH": "Publier",
+        "ERROR": "L'application n'a pas pu être publiée",
+        "DESCRIPTION": "Sélectionner un fichier d'application avec une extension .zip à déployer.",
+        "WARNING": "Le téléchargement d'une application est uniquement possible dans une instance BPM Suite, pas dans une instance de moteur principal.",
+        "DROPZONE": "Ou déposez un fichier ici",
+        "NO-DROP": "Le dépôt de fichier n'est pas pris en charge par votre navigateur",
+        "LIST-MESSAGE": "Affichage de {{total}} modèles d'application correspondants.",
+        "LIST-MESSAGE-EMPTY": "Aucun modèle d'application correspondant.",
+        "PUBLISH-ERROR": "L'application n'a pas pu être publiée",
+        "EVERYONES-APPS": "Afficher les applications de tout le monde",
+        "APP-CONFLICT-ERROR": "Conflits d'application avec l'application existante '{{name}}' créée par '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "Publier l'application dans un autre cluster",
+        "SELECT-CLUSTER": "Sélectionner un cluster",
+        "PUBLISH-TO-CLUSTER": "Publier l'application dans {{name}}",
+        "PUBLISH-AS-NEW-VERSION": "Publier comme nouvelle version d'application",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "Nom",
+          "LAST-UPDATE": "Dernière mise à jour",
+          "CREATED-BY": "Créé par"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "Redéployer l'application",
+        "DESCRIPTION": "Sélectionner un cluster pour redéployer '{{name}}' dans",
+        "ERROR": "L'application n'a pas pu être déployée",
+        "APP-CONFLICT-ERROR": "Conflits d'application avec l'application existante '{{name}}' créée par '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "SELECT-CLUSTER": "Sélectionner un cluster",
+        "DEPLOY-TO-CLUSTER": "Déployer l'application dans {{name}}",
+        "DEPLOY": "Déployer",
+        "DEPLOY-AS-NEW-VERSION": "Déployer comme nouvelle version d'application"
+      }
+    }
+  }
+}

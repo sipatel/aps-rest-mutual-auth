@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "Ja",
+    "NO": "Nee",
+    "ACTION": {
+      "LOGOUT": "Afmelden",
+      "DISMISS-ALERT": "Klikken om dit bericht te sluiten",
+      "RETURN-TO-LIST": "Terugkeren naar lijst",
+      "SHOW-RESULTS": "{{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} resultaten weergeven",
+      "REFRESH-LIST": "Lijst vernieuwen",
+      "SORT-BY": "Sorteren op {{name | translate}}",
+      "CLEAR-FILTERS": "Filters wissen",
+      "CANCEL-AND-CLOSE": "Annuleren en sluiten",
+      "CANCEL": "Annuleren",
+      "NEXT": "Volgende",
+      "PREVIOUS": "Vorige",
+      "CLOSE": "Sluiten",
+      "SHOWLICENSE": "Licentie-informatie"
+    },
+    "TITLE": {
+      "MAIN": "Process Services Administrator",
+      "ACTIONS": "Acties",
+      "FILTERS": "Filters",
+      "CLUSTERS": "Clusters"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "Deployments",
+      "PROCESS-DEFINITIONS": "Definities",
+      "PROCESS-INSTANCES": "Instances",
+      "TASKS": "Taken",
+      "JOBS": "Jobs",
+      "CONFIGURATION": "Configuratie",
+      "CONFIGURATION-ENGINE": "Engine",
+      "CONFIGURATION-USERS": "Gebruikers configureren",
+      "MONITORING": "Bewaking",
+      "APPS": "Apps"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "alle"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "Het eindpunt reageerde niet toen de licentie de laatste keer werd gecontroleerd. Er worden verdere controles uitgevoerd, maar voorlopig wordt aangenomen dat de licentie ongeldig is.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "De toepassing bevindt zich in de modus Alleen-lezen vanwege een ongeldige licentie op de eindpuntserver.",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "De toepassing bevindt zich in de modus Alleen-lezen omdat er geen licentie is gevonden op de eindpuntserver.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "De toepassing bevindt zich in de modus Alleen-lezen omdat de datum van de licentie op de Alfresco Process Services-eindpuntserver niet geldig is. (De datum is verlopen of de startdatum ligt in de toekomst.)"
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID:",
+    "NAME": "Naam:",
+    "VERSION": "Versie:",
+    "DESCRIPTION": "Beschrijving:",
+    "KEY": "Key:",
+    "CATEGORY": "Categorie:",
+    "SUSPENDED": "Uitgesteld:",
+    "DEPLOYMENT": "Deployment:",
+    "TENANT": "Tenant:",
+    "START-FORM-DEFINED": "Beginformulier gedefinieerd:",
+    "GRAPHICAL-NOTATION-DEFINED": "Grafische notatie gedefinieerd:",
+    "PROCESS-INSTANCES-SIZE": "Definitie voert {{total}} procesinstanties uit",
+    "PROCESS-INSTANCES-SHOWING": ", {{size}} laatst gestarte worden weergegeven",
+    "PROCESS-INSTANCES-EMPTY": "Definitie voert geen procesinstanties uit",
+    "JOBS-SIZE": "Definitie voert {{total}} jobs uit",
+    "JOBS-EMPTY": "Definitie voert geen jobs uit",
+    "DECISION-TABLES-SIZE": "Definitie heeft {{total}} beslissingstabellen.",
+    "DECISION-TABLES-EMPTY": "Definitie heeft geen beslissingstabellen.",
+    "FORMS-SIZE": "Definitie heeft {{total}} formulieren.",
+    "FORMS-EMPTY": "Definitie heeft geen formulieren.",
+    "TITLE": {
+      "PROCESS-INSTANCES": "Procesinstanties",
+      "JOBS": "Jobs",
+      "DECISION-TABLES": "Beslissingstabellen",
+      "FORMS": "Formulieren"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Categorie bewerken",
+      "SHOW-ALL-JOBS": "Alle jobs weergeven",
+      "SHOW-ALL-PROCESSES": "Alle processen weergeven",
+      "SHOW-DIAGRAM": "Procesdiagram weergeven"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Categorie voor definitie bewerken",
+        "MESSAGE": "De begincategorie voor de definitie wordt ingevuld op basis van het targetNameSpace-kenmerk in BPMN 2.0 XML, maar kan na de deployment worden gewijzigd.",
+        "CATEGORY": "Categorie",
+        "CATEGORY-PLACEHOLDER": "Categorie invoeren",
+        "CONFIRM": "Categorie bijwerken"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Procesdiagram"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende definities worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenstemmende procesdefinities.",
+    "FILTER": {
+      "NAME": "Naam (hoofdlettergevoelig)",
+      "KEY": "Key (hoofdlettergevoelig)",
+      "DEPLOYMENT-ID": "Deployment-ID",
+      "TENANT-ID": "Tenant-ID",
+      "LATEST": "Nieuwste versie",
+      "LATEST-HELP": "Alleen nieuwste versies weergeven"
+    },
+    "TITLE": {
+      "MAIN": "Procesdefinities"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "VERSION": "Versie"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "VERSION": "Versie",
+      "KEY": "Key",
+      "TENANT": "Tenant"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "Uploaden uit Process Editor"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "Gebruikersnaam",
+        "PASSWORD": "Wachtwoord",
+        "ERROR": "Kan geen contact maken met de Editor",
+        "UNAUTHORIZED": "Ongeldige referenties",
+        "UPLOAD-DESCRIPTION": "Het procesmodel wordt nu opgehaald en toegepast op de momenteel actieve processervices-cluster. Selecteer een geschikte naam voor het deploymentpakket."
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID:",
+    "NAME": "Naam:",
+    "DESCRIPTION": "Beschrijving:",
+    "BUSINESS-KEY": "Business key:",
+    "TENANT-ID": "Tenant:",
+    "STATUS": "Status:",
+    "STATUS-ACTIVE": "Actief",
+    "STATUS-COMPLETED": "Voltooid",
+    "ACTIVITY-ID-STARTED": "Activiteits-ID gestart:",
+    "ACTIVITY-ID-ENDED": "Beëindigd in activiteit:",
+    "DELETE-REASON": "Reden voor verwijderen:",
+    "STARTED-BY": "Gestart door:",
+    "END-TIME": "Eindtijd:",
+    "DURATION": "Duur:",
+    "SUPER-PROCESS-INSTANCE-ID": "Superprocesinstantie-ID:",
+    "TASKS-SIZE": "Deze procesinstantie heeft {{total}} taken.",
+    "TASKS-EMPTY": "Deze procesinstantie heeft geen taken.",
+    "VARIABLES-SIZE": "Deze procesinstantie heeft {{total}} variabelen.",
+    "VARIABLES-EMPTY": "Deze procesinstantie heeft geen variabelen.",
+    "JOBS-SIZE": "Deze procesinstantie heeft {{total}} jobs.",
+    "JOBS-EMPTY": "Deze procesinstantie heeft geen jobs.",
+    "SUBPROCESSES-SIZE": "Deze procesinstantie heeft {{total}} subprocessen.",
+    "SUBPROCESSES-EMPTY": "Deze procesinstantie heeft geen subprocessen.",
+    "DECISION-TABLES-SIZE": "Deze procesinstantie heeft {{total}} beslissingstabellen.",
+    "DECISION-TABLES-EMPTY": "Deze procesinstantie heeft geen beslissingstabellen.",
+    "FORMS-SIZE": "Deze procesinstantie heeft {{total}} ingediende formulieren.",
+    "FORMS-EMPTY": "Deze procesinstantie heeft geen ingediende formulieren.",
+    "TITLE": {
+      "TASKS": "Taken",
+      "VARIABLES": "Variabelen",
+      "JOBS": "Jobs",
+      "SUBPROCESSES": "Subprocessen",
+      "DECISION-TABLES": "Beslissingstabellen",
+      "FORMS": "Formulieren"
+    },
+    "ACTION": {
+      "DELETE": "Procesinstantie verwijderen",
+      "TERMINATE": "Procesinstantie beëindigen",
+      "SHOW-ALL-TASKS": "Alle taken weergeven",
+      "SHOW-ALL-JOBS": "Alle jobs weergeven",
+      "SHOW-ALL-SUBPROCESSES": "Alle subprocessen weergeven",
+      "SHOW-DIAGRAM": "Procesdiagram weergeven",
+      "TITLE-VARIABLES": "Acties op geselecteerde variabele",
+      "DELETE-VARIABLE": "Variabele verwijderen",
+      "UPDATE-VALUE": "Variabele bijwerken",
+      "ADD-VARIABLE": "Variabele toevoegen"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "Procesinstantie verwijderen",
+        "MESSAGE-DELETE": "Weet u zeker dat u de procesinstantie wilt verwijderen?",
+        "MESSAGE-TERMINATE": "Weet u zeker dat u de procesinstantie wilt beëindigen?",
+        "DELETE-REASON": "Reden voor verwijderen",
+        "DELETE-REASON-HELP": "Voer een optionele reden voor het verwijderen in.",
+        "CONFIRM-DELETE": "Procesinstantie verwijderen",
+        "CONFIRM-TERMINATE": "Procesinstantie beëindigen"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Procesdiagram"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "Variabele maken",
+        "NAME": "Variabelenaam",
+        "TYPE": "Variabele-type",
+        "VALUE": "Variabelewaarde",
+        "CREATE": "Maken"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "Variabele '{{name}}’ bijwerken",
+        "NAME": "Variabelenaam",
+        "VALUE": "Waarde",
+        "CHECKED": "true",
+        "UNCHECKED": "false",
+        "DATE-HELP": "ISO-8601-notatie (bijvoorbeeld: 2016-01-28T23:00:00Z)",
+        "ACTION-UPDATE": "Bijwerken"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "Variabele '{{name}} verwijderen",
+        "MESSAGE": "Weet u zeker dat u deze variabele wilt verwijderen?",
+        "DELETE": "Verwijderen"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "Procesinstanties",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende procesinstanties worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende procesinstanties.",
+    "FILTER": {
+      "NAME": "Naam",
+      "PROCESS-DEFINITION": "Procesdefinitie",
+      "ALL-PROCESS-DEFINITIONS": "Alle procesdefinities",
+      "BUSINESS-KEY": "Business key",
+      "SUPER-PROCESS-INSTANCE-ID": "Superprocesinstantie-ID",
+      "STARTED-BEFORE": "Gestart voor",
+      "STARTED-AFTER": "Gestart na",
+      "ENDED-BEFORE": "Beëindigd voor",
+      "ENDED-AFTER": "Beëindigd na",
+      "VARIABLE": "Variabele",
+      "VARIABLE-NAME": "Variabelenaam",
+      "VARIABLE-VALUE": "Variabelewaarde",
+      "VARIABLE-BOOLEAN-VALUE": "Booleaanse waarde: {{value}}",
+      "TENANT-ID": "Tenant-ID"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "Starttijd"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "BUSINESS-KEY": "Business key",
+      "PROCESS-DEFINITION": "Procesdefinitie",
+      "CREATE-TIME": "Gemaakt",
+      "END-TIME": "Beëindigd",
+      "STATUS": "Status"
+    }
+  },
+  "TASK": {
+    "ID": "ID:",
+    "NAME": "Naam:",
+    "STATUS": "Status:",
+    "STATUS-COMPLETED": "Voltooid",
+    "STATUS-ACTIVE": "Actief",
+    "DESCRIPTION": "Beschrijving:",
+    "TASK-DEFINITION-KEY": "Definitie-key:",
+    "FORM-KEY": "Formulier-key:",
+    "PRIORITY": "Prioriteit:",
+    "DELEGATION-STATE": "Delegatiestatus:",
+    "CATEGORY": "Categorie:",
+    "TENANT-ID": "Tenant:",
+    "PARENT": "Bovenliggende taak:",
+    "ASSIGNEE": "Toegewezen persoon:",
+    "OWNER": "Eigenaar:",
+    "START-DATE": "Startdatum:",
+    "DUE-DATE": "Vervaldatum",
+    "END-DATE": "Einddatum:",
+    "DELETE-REASON": "Reden voor verwijderen:",
+    "PROCESS-INSTANCE": "Procesinstantie",
+    "PROCESS-DEFINITION": "Procesdefinitie",
+    "EXECUTION-ID": "Uitvoerings-ID:",
+    "SUBTASKS-MESSAGE": "Deze taak heeft {{total}} subtaken, {{size}} worden weergegeven.",
+    "SUBTASKS-MESSAGE-EMPTY": "Deze taak heeft geen subtaken.",
+    "VARIABLES-MESSAGE": "Deze taak heeft {{size}} variabelen.",
+    "VARIABLES-MESSAGE-EMPTY": "Deze taak heeft geen variabelen.",
+    "IDENTITY-LINKS-MESSAGE": "Deze taak heeft {{size}} identity links.",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "Deze taak heeft geen identity links.",
+    "ACTION": {
+      "EDIT": "Taak bewerken",
+      "ASSIGN-CLAIM": "Taak toewijzen/claimen",
+      "DELEGATE": "Taak delegeren",
+      "RESOLVE": "Taak oplossen",
+      "COMPLETE": "Taak voltooien",
+      "DELETE": "Taak verwijderen",
+      "SHOW-ALL-SUBTASKS": "Alle subtaken weergeven",
+      "SHOW-SUBMITTED-FORM": "Ingediend formulier weergeven"
+    },
+    "TITLE": {
+      "SUBTASKS": "Subtaken",
+      "IDENTITY-LINKS": "Identity links",
+      "VARIABLES": "Variabelen"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "Taak toewijzen",
+        "MESSAGE": "Weet u zeker dat u de taak wilt toewijzen?",
+        "NEW-ASSIGNEE": "Nieuwe toegewezen persoon",
+        "NEW-ASSIGNEE-HELP": "Laat het veld voor de toegewezen persoon leeg als u de taak aan niemand wilt toewijzen.",
+        "CONFIRM": "Taak toewijzen"
+      },
+      "COMPLETE": {
+        "TITLE": "Taak voltooien",
+        "MESSAGE": "Weet u zeker dat u de taak wilt voltooien?",
+        "CONFIRM": "Taak voltooien"
+      },
+      "DELEGATE": {
+        "TITLE": "Taak delegeren",
+        "MESSAGE": "Weet u zeker dat u de taak wilt delegeren?",
+        "CONFIRM": "Taak delegeren",
+        "DELEGATE-TO": "Gebruiker aan wie moet worden gedelegeerd"
+      },
+      "RESOLVE": {
+        "TITLE": "Taak oplossen",
+        "MESSAGE": "Weet u zeker dat u de taak wilt oplossen?",
+        "CONFIRM": "Taak oplossen"
+      },
+      "DELETE": {
+        "TITLE": "Taak verwijderen",
+        "MESSAGE": "Weet u zeker dat u de taak wilt verwijderen?",
+        "CONFIRM": "Taak verwijderen"
+      },
+      "EDIT": {
+        "TITLE": "Taak bewerken",
+        "CONFIRM": "Taak bijwerken",
+        "NAME": "Naam",
+        "DESCRIPTION": "Beschrijving",
+        "PRIORITY": "Prioriteit",
+        "CATEGORY": "Categorie",
+        "ASSIGNEE": "Toegewezen persoon",
+        "OWNER": "Eigenaar",
+        "DUE-DATE": "Vervaldatum"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "Taken",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende taken worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende taken.",
+    "FILTER": {
+      "NAME": "Naam (hoofdlettergevoelig)",
+      "ASSIGNEE": "Toegewezen persoon (hoofdlettergevoelig)",
+      "STATUS": "Status",
+      "STATUS-ANY": "Willekeurige status",
+      "STATUS-ACTIVE": "Actieve taken",
+      "STATUS-COMPLETE": "Voltooide taken",
+      "PROCESS-INSTANCE-ID": "Procesinstantie-ID",
+      "TENANT-ID": "Tenant-ID",
+      "OWNER": "Eigenaar (hoofdlettergevoelig)",
+      "PARENT-TASK-ID": "ID bovenliggende taak",
+      "CREATED-BEFORE": "Gemaakt voor",
+      "CREATED-AFTER": "Gemaakt na",
+      "ENDED-BEFORE": "Beëindigd voor",
+      "ENDED-AFTER": "Beëindigd na",
+      "DUE-BEFORE": "Vervalt voor",
+      "DUE-AFTER": "Vervalt na",
+      "TASK-VARIABLE": "Lokale taakvariabele",
+      "PROCESS-VARIABLE": "Procesvariabele",
+      "VARIABLE-NAME": "Variabelenaam",
+      "VARIABLE-VALUE": "Variabelewaarde",
+      "VARIABLE-BOOLEAN-VALUE": "Booleaanse waarde: {{value}}"
+    },
+    "SORT": {
+      "NAME": "Naam",
+      "DUE-DATE": "Vervaldatum",
+      "START-TIME": "Starttijd",
+      "END-TIME": "Eindtijd",
+      "PRIORITY": "Prioriteit"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "ASSIGNEE": "Toegewezen persoon",
+      "OWNER": "Eigenaar",
+      "CREATE-TIME": "Gemaakt",
+      "END-TIME": "Beëindigd",
+      "PRIORITY": "Prioriteit"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "Deployments",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende deployments worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende deployments.",
+    "FILTER": {
+      "NAME": "Naam (hoofdlettergevoelig)",
+      "TENANTID": "Tenant-ID (hoofdlettergevoelig)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Naam"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "DEPLOY-TIME": "Deployment-tijd",
+      "CATEGORY": "Categorie",
+      "TENANT": "Tenant"
+    },
+    "ACTION": {
+      "UPLOAD": "Proces of pakket uploaden",
+      "DELETE": "Deployment verwijderen"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Selecteer een .bpmn-, .bpmn20.xml-procesbestand voor deployment. U kunt ook een procespakket (met objecten) als .zip- of .bar-bestand uploaden.",
+        "WARNING": "Een proces kan alleen worden geüpload naar een Core Engine, niet naar een BPM Suite instance. Deployment van processen in de BPM Suite moet plaatsvinden met behulp van een app die wordt gedeeld met individuele personen of groepen.",
+        "DROPZONE": "U kunt ook hier een bestand neerzetten.",
+        "NO-DROP": "Uw browser biedt geen ondersteuning voor het neerzetten van bestanden.",
+        "CANCEL-UPLOAD": "Uploaden annuleren",
+        "ERROR": "Kan dit bestand niet uploaden."
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "U staat op het punt de deployment '{{name}}' te verwijderen. Als hieraan (actieve of voltooide) procesinstanties zijn gekoppeld, worden deze ook verwijderd. Wilt u deployment '{{name}}' echt verwijderen?"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID:",
+    "NAME": "Naam:",
+    "TIME": "Deployment-tijd:",
+    "CATEGORY": "Categorie:",
+    "TENANTID": "Tenant-ID",
+    "DEFINITIONS-MESSAGE": "Deze deployment heeft {{total}} procesdefinities, {{size}} worden weergegeven.",
+    "DEFINITIONS-MESSAGE-EMPTY": "Deze deployment heeft geen procesdefinities.",
+    "TITLE": {
+      "DEFINITIONS": "Procesdefinities",
+      "RESOURCES": "Resources"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "Alle definities weergeven"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "Job {{id}}",
+      "EXCEPTION": "Uitzondering"
+    },
+    "ACTIONS": {
+      "EXECUTE": "Job uitvoeren",
+      "DELETE": "Job verwijderen"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "Job '{{id}}’ verwijderen",
+        "MESSAGE": "Weet u zeker dat u job {{id}} wilt verwijderen?",
+        "CONFIRM": "Job verwijderen"
+      }
+    },
+    "ID": "ID:",
+    "EXECUTION-ID": "Uitvoerings-ID:",
+    "PROCESS-INSTANCE": "Procesinstantie:",
+    "PROCESS-DEFINITION": "Procesdefinitie:",
+    "DUEDATE": "Vervaldatum",
+    "RETRIES-LEFT": "Resterende pogingen:",
+    "TENANT-ID": "Tenant:"
+  },
+  "JOBS": {
+    "TITLE": "Jobs",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende jobs worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende jobs.",
+    "FILTER": {
+      "PROCESS-DEFINITION": "Procesdefinitie",
+      "ALL-PROCESS-DEFINITIONS": "Alle procesdefinities",
+      "PROCESS-INSTANCE-ID": "Procesinstantie-ID",
+      "TENANT-ID": "Tenant-ID",
+      "DUE-BEFORE": "Vervalt voor",
+      "DUE-AFTER": "Vervalt na",
+      "EXCEPTION": "Uitzondering",
+      "EXCEPTION-HELP": "Alleen jobs met een uitzondering weergeven"
+    },
+    "SORT": {
+      "ID": "Job-ID",
+      "DUE-DATE": "Vervaldatum",
+      "PROCESS-INSTANCE-ID": "Procesinstantie-ID"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "Vervaldatum",
+      "PROCESS-DEFINITION": "Procesdefinitie",
+      "RETRIES": "Nieuwe pogingen",
+      "EXCEPTION": "Uitzondering"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Aanmelden",
+    "USERNAME": "Gebruikersnaam",
+    "USERNAME-PLACEHOLDER": "Uw gebruikersnaam invoeren",
+    "PASSWORD": "Wachtwoord",
+    "PASSWORD-PLACEHOLDER": "Voer uw wachtwoord in",
+    "ACTION": {
+      "CONFIRM": "Aanmelden"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. Alle rechten voorbehouden."
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "Pagina vernieuwen om de {{name}}",
+    "NUMBER-OF-MEMBERS": "Aantal leden:",
+    "NODE-ID": "ID:",
+    "LAST-UPDATED": "Laatst bijgewerkt:",
+    "LAST-METRICS-UPDATE": "Laatste bijwerking metrieken:",
+    "NOT-ENOUGH-DATA": "De node bevindt zich in een onbekende staat. Mogelijk is de node nog niet volledig in de cluster opgenomen of de node heeft nog niet genoeg gegevens verzonden die hier kunnen worden weergegeven.",
+    "JOB-EXECUTOR-RUNNING": "Uitgevoerde job executor:",
+    "JAVA-VERSION": "Java-versie",
+    "SUITE-INFORMATION": "Dit is een Process Services Suite instance, de versie is {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}} (editie '{{bpmSuiteEdition}}')",
+    "MEMORY-USAGE": "Geheugengebruik:",
+    "MEMORY-USED": "gebruikt",
+    "MEMORY-HEAP": "Heap:",
+    "MEMORY-NON-HEAP": "Niet-heap:",
+    "UPTIME": "Bedrijfstijd:",
+    "GARBAGE-COLLECTION": "Is {{['collection.count']}} keer uitgevoerd, de totaal bestede tijd is {{['collection.time'] | humanTime}}",
+    "MASTER-CONFIGURATION": "Masterconfiguratie:",
+    "MASTER-CONFIGURATION-USED": "Juiste masterconfiguratie gebruikt",
+    "MASTER-CONFIGURATION-NOT-USED": "Masterconfiguratie is niet gebruikt",
+    "MASTER-CONFIGURATION-DISABLED": "Masterconfiguratie is uitgeschakeld",
+    "MASTER-CONFIGURATION-INCORRECT": "Onjuiste masterconfiguratie!",
+    "CLASSES-LOADED": "Huidige geladen klassen:",
+    "CLASSES-UNLOADED": "Totaal aan niet-geladen klassen:",
+    "CLASSES-TOTAL": "Totaal aantal geladen klassen:",
+    "CACHE-HITS": "Cachetreffers",
+    "CACHE-MISSES": "Cachemissers",
+    "CACHE-ADDITIONS": "Cache-aanvullingen",
+    "CACHE-REMOVALS": "Cache-verwijderingen",
+    "JOBS-EXECUTED": "Aantal uitgevoerde jobs",
+    "JOBS-FAILED": "Aantal mislukte jobs",
+    "JOBS-QUEUE-FULL": "Jobwachtrij vol",
+    "PROCESS-INSTANCES": "Gestarte procesinstanties",
+    "HOUR-COUNT-CHART": "Totaal aantal/uur",
+    "WEEKDAY-COUNT-CHART": "Totaal aantal/weekdag",
+    "TASKS-COMPLETED": "Voltooide taken",
+    "MEAN-RATE": "Gemiddelde frequentie (per second):",
+    "TOTAL": "Totaal:",
+    "COUNT": "Aantal",
+    "MAX": "Max.",
+    "MIN": "Min.",
+    "STDDEV": "Stddev",
+    "MINUTE-RATE": "1-/5-/15-minutenfrequentie:",
+    "REST-REQUEST-TYPE": "Aanvraagtype (frequentie-eenheid = events/seconde)",
+    "REST-ENDPOINTS": "REST-eindpunttijden (duureenheid = seconden, frequentie-eenheid = aanroepen/seconde)",
+    "ELASTIC-SEARCH-VERSION": "Versie",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "Clusternaam",
+    "ELASTIC-SEARCH-STATE": "Status",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "Een rode status geeft aan dat de opgegeven shard niet is toegewezen in de cluster, geel betekent dat de primaire shard is toegewezen, maar replica’s niet, en groen betekent dat alle shards zijn toegewezen.",
+    "ELASTIC-SEARCH-INDICES": "Indexen",
+    "ELASTIC-SEARCH-DOCS-COUNT": "Aantal documenten",
+    "ELASTIC-SEARCH-SHARD-INFO": "Shard-informatie",
+    "TITLE": {
+      "MAIN": "Clusterbewaking",
+      "NODE": "Node {{ipAddress}}",
+      "MEMORY": "Geheugen",
+      "GARBAGE-COLLECTION": "Garbagecollection",
+      "CLASSLOADING": "Classloading",
+      "PROCESS-DEFINITION-CACHE": "Procesdefinitiecache",
+      "JOB-METRICS": "Jobmetrieken",
+      "RUNTIME-METRICS": "Runtime-metrieken",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "Rest-eindpuntmetrieken",
+      "BPM-SUITE-ELASTIC-SEARCH": "Elastische zoekopdracht"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "Wachtwoord wijzigen voor '{{login}}'",
+        "OLD-PASSWORD": "Oud wachtwoord",
+        "NEW-PASSWORD": "Nieuw wachtwoord",
+        "CONFIRM": "Wachtwoord wijzigen"
+      },
+      "DELETE": {
+        "TITLE": "Gebruiker {{login}} verwijderen",
+        "MESSAGE": "Weet u zeker dat u de gebruiker '{{login}}' wilt verwijderen?",
+        "CONFIRM": "Gebruiker verwijderen"
+      },
+      "EDIT": {
+        "TITLE": "Gebruiker {{login}} bewerken",
+        "LOGIN": "Aanmelden",
+        "EMAIL": "E-mail",
+        "FIRSTNAME": "Voornaam",
+        "LASTNAME": "Achternaam",
+        "CONFIRM": "Gebruiker bijwerken",
+        "READONLY": "Alleen-lezengebruiker"
+      },
+      "NEW": {
+        "TITLE": "Nieuwe gebruiker maken",
+        "LOGIN": "Aanmelden",
+        "EMAIL": "E-mail",
+        "FIRSTNAME": "Voornaam",
+        "LASTNAME": "Achternaam",
+        "PASSWORD": "Wachtwoord",
+        "ADMIN": "Heeft beheerrechten",
+        "CONFIRM": "Gebruiker maken",
+        "READONLY": "Alleen-lezengebruiker"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "Gebruikers",
+    "ACTION": {
+      "EDIT": "Gebruiker bewerken",
+      "NEW": "Nieuwe gebruiker maken",
+      "DELETE": "Gebruiker verwijderen",
+      "CHANGE-PASSWORD": "Wachtwoord wijzigen"
+    },
+    "HEADER": {
+      "LOGIN": "Aanmelden",
+      "FIRSTNAME": "Voornaam",
+      "LASTNAME": "Achternaam",
+      "EMAIL": "E-mail",
+      "CLUSTER_USER": "Clustergebruiker"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "Licentie-informatie",
+      "HOLDER": "Houder",
+      "SUBJECT": "Onderwerp",
+      "PRODUCTKEY": "Producttype",
+      "GOODAFTERDATE": "Licentie is geldig na",
+      "GOODBEFOREDATE": "Licentie is geldig tot",
+      "NUMBER_OF_PROCESSES": "Aantal actieve processen",
+      "NUMBER_OF_ADMINS": "Aantal gebruikers met administrator-rechten",
+      "MULTI_TENANT": "Multi-tenant",
+      "DEFAULT_TENANT": "Standaardtenant"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "Naam:",
+    "USER": "Gebruiker:",
+    "MASTER-MANDATORY": "Masterconfiguratie verplicht:",
+    "METRICS-SEND-INTERVAL": "Verzendinterval voor metrieken:",
+    "ENDPOINT-HELP": "De eindpuntconfiguratie (elke cluster heeft er slechts één) moet wijzen naar een REST-installatie. Dit eindpunt wordt gebruikt om de gegevens die in de andere gebieden van deze toepassing worden gebruikt (bijvoorbeeld deployments, procesdefinities enz.) op te halen en te beheren.",
+    "ENDPOINT-NAME": "Naam:",
+    "ENDPOINT-DESCRIPTION": "Beschrijving:",
+    "ENDPOINT-ADDRESS": "Serveradres:",
+    "ENDPOINT-PORT": "Serverpoort:",
+    "ENDPOINT-CONTEXT-ROOT": "Context-root:",
+    "ENDPOINT-REST-ROOT": "REST-root:",
+    "ENDPOINT-USERNAME": "Gebruikersnaam:",
+    "PROCESS-ENGINE-HELP": "In dit gebied kunt u een 'masterconfiguratie' voor de cluster definiëren. Alle instances in de cluster gebruiken deze configuratie bij het opstarten (als de clusterconfiguratie-jar zich op het klassepad bevindt of als de corresponderende eigenschappen zijn ingesteld). Als geen configuratie is ingesteld, gebruiken de instances hun lokale configuratiebestanden.",
+    "NO-MASTER-DEFINED": "Geen masterconfiguratie gedefinieerd",
+    "ACTION": {
+      "SHOW-PASSWORD": "Wachtwoord weergeven",
+      "EDIT-CLUSTER-CONFIG": "Clusterconfiguratie bewerken",
+      "CREATE-CLUSTER-CONFIG": "Nieuwe cluster maken",
+      "DELETE-CLUSTER-CONFIG": "Clusterconfiguratie verwijderen",
+      "GENERATE-JAR": "Clusterconfiguratie-jar genereren",
+      "EDIT-ENDPOINT": "REST-eindpunt Process Services bewerken",
+      "CHECK-ENDPOINT": "REST-eindpunt Process Services controleren",
+      "SELECT-MASTER": "Masterconfiguratie selecteren",
+      "ADD-CONFIGURATION": "Masterconfiguratie toevoegen",
+      "EDIT-CONFIGURATION": "Masterconfiguratie bewerken",
+      "DELETE-CONFIGURATION": "Masterconfiguratie verwijderen"
+    },
+    "TITLE": {
+      "MAIN": "Clusterconfiguratie",
+      "ACTIVITI": "Instance-instellingen",
+      "ENDPOINT": "Eindpuntconfiguratie",
+      "MASTER-CONFIGURATION": "Masterconfiguratie"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "Masterconfiguratie selecteren",
+        "MESSAGE": "Weet u zeker dat u '{{name}}' wilt selecteren als masterconfiguratie?",
+        "CONFIRM": "Masterconfiguratie selecteren"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "Masterconfiguratie verwijderen",
+        "MESSAGE": "Weet u zeker dat u deze masterconfiguratie wilt verwijderen?",
+        "CONFIRM": "Verwijderen"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "Clusterconfiguratie-jar genereren",
+        "MESSAGE": "Het is belangrijk dat alle leden van dezelfde cluster dezelfde instellingen gebruiken.",
+        "LINK-MESSAGE": "Om dit gemakkelijker te maken, kan een Java Archive (jar) worden gedownload via de onderstaande koppeling. Deze jar bevat de benodigde configuratie waarmee een Process Services-instantie kan communiceren met de Process Services Beheer App. De jar hoeft alleen aan het klassepad te worden toegevoegd en wordt automatisch gebruikt.",
+        "ADMIN-APP-URL": "Het volgende veld is de basis-URL die wordt gebruikt om informatie terug te sturen naar deze Beheer App. Wijzig deze als de URL om een bepaalde reden niet overeenkomt met de URL die wordt gebruikt om deze webgebruikersinterface weer te geven.",
+        "CONFIRM": "Masterconfiguratie uitschakelen",
+        "ACTION-DOWNLOAD": "{{label}} downloaden"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "Eindpuntconfiguratie bewerken",
+        "ENDPOINT-NAME": "Naam",
+        "ENDPOINT-DESCRIPTION": "Beschrijving",
+        "ENDPOINT-ADDRESS": "Serveradres",
+        "ENDPOINT-PORT": "Serverpoort",
+        "ENDPOINT-CONTEXT-ROOT": "Context-root",
+        "ENDPOINT-REST-ROOT": "REST-root",
+        "ENDPOINT-USERNAME": "Gebruikersnaam",
+        "ENDPOINT-PASSWORD": "Wachtwoord",
+        "ENDPOINT-PASSWORD-HELP": "Leeg laten om het huidige wachtwoord te behouden",
+        "ENDPOINT-URL-PREVIEW": "URL-preview",
+        "ACTION-CONFIRM": "Eindpuntconfiguratie opslaan",
+        "ERROR-401": "Fout: ongeldige referenties",
+        "ERROR-403": "Fout: ongeldige referenties of URL",
+        "ERROR-404": "Fout: URL niet gevonden",
+        "ERROR-500": "Fout: serverfout. Controleer de serverlogboeken."
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "Clusterconfiguratie verwijderen",
+        "WARNING": "Als een clusterconfiguratie wordt verwijderd, houd er dan rekening mee dat u ook de configuratie-jar (of het eigenschappenbestand) voor deze clusterconfiguratie moet verwijderen uit het klassepad van de nodes.",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "Kan deze clusterconfiguratie niet verwijderen: er moet minstens één clusterconfiguratie aanwezig zijn en dit is de enige gedefinieerde clusterconfiguratie in het systeem.",
+        "ACTION-DELETE": "Bevestigen"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "Clusternaam en -wachtwoord",
+        "NETWORK-SETTINGS": "Netwerkinstellingen",
+        "SECURITY-SETTINGS": "Beveiligingsinstellingen",
+        "ACTIVITI-SETTINGS": "Instance-instellingen",
+        "STEPS": "Stap {{currentStepIndex + 1}} van {{steps.length}}",
+        "GROUP-HELP": "Elke cluster moet een unieke naam hebben. Elke engine instance moet deze clusternaam opgeven om aan de cluster te worden toegevoegd.",
+        "NAME": "Naam",
+        "USERNAME": "Gebruikersnaam",
+        "PASSWORD": "Wachtwoord",
+        "SECURITY-HELP": "Elke cluster moet een gebruikersnaam en een wachtwoord hebben. Alle Process Services-instanties die gegevens willen uitwisselen met de Process Services Beheer App moeten deze referenties in hun communicatie opgeven.",
+        "ACTIVITI-HELP": "Door activering van de masterconfiguratie worden procesinstanties die lid zijn van deze cluster met gebruik van de masterconfiguratie opgestart.",
+        "REQUIRES-MASTER": "Vereist masterconfiguratie",
+        "METRICS-HELP": "Elke Process Services-instantie die lid is van deze cluster, stuurt metrieken (bijvoorbeeld JVM-metrieken en gebruiksmetrieken) terug naar de Process Services Beheer App. De volgende instelling bepaalt hoe vaak deze metrieken worden verzameld en verzonden.",
+        "METRICS-INTERVAL": "Verzendinterval voor metrieken (in seconden)",
+        "ERROR-NAME-TAKEN": "Clusternaam wordt al gebruikt. Selecteer een andere naam.",
+        "ERROR-USER-TAKEN": "Clustergebruikersnaam wordt al gebruikt. Selecteer een andere naam.",
+        "CONFIRM": "Configuratie opslaan"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "Nieuwe configuratie maken",
+        "TITLE-EDIT": "Configuratie bewerken",
+        "NAME": "Naam",
+        "DESCRIPTION": "Beschrijving",
+        "TITLE-DATABASE": "Database",
+        "JDBC-URL": "JDBC-URL",
+        "JDBC-USERNAME": "JDBC-gebruikersnaam",
+        "JDBC-PASSWORD": "JDBC-wachtwoord",
+        "JDBC-DRIVER": "JDBC-stuurprogramma",
+        "JDBC-JNDI-NAME": "JDBC JNDI-naam",
+        "JDBC-JNDI-HELP": "Vul deze velden in (negeer daarbij de bovenstaande instellingen) als de gegevensbron is geconfigureerd in een toepassingsserver en via Jndi wordt weergegeven.",
+        "TITLE-SCHEMA": "Process Services-schema",
+        "SCHEMA-UPDATE": "Bijwerken van databaseschema",
+        "SCHEMA-UPDATE-HELP": "Het is raadzaam deze instelling op 'false’ te laten staan en het databaseschema bij te werken met behulp van de SQL-scripts. Als 'true' wordt ingesteld, werkt de eerste node in de opgestarte cluster het schema automatisch bij. Dit kan leiden tot problemen bij het opstarten van meerdere nodes tegelijk, omdat gegevensdefinities vaak niet transactioneel zijn.",
+        "TITLE-HISTORY": "Historie",
+        "HISTORY-LEVEL": "Historieniveau",
+        "TITLE-JOB-EXECUTOR": "Job executor",
+        "NR-OF-JOB-NODES-HELP": "Elke Process Services-engine-instantie beschikt over een job executor-component die verantwoordelijk is voor het uitvoeren van achtergrondtaken, zoals timers en asynchrone voortzettingen van bedrijfsprocessen. Het is echter raadzaam om slechts een klein aantal (een, twee of meer bij scenario’s met zeer hoge belasting) job executors te activeren. De waarde van deze instelling wordt gebruikt om job executors waar nodig in de cluster te activeren of te deactiveren.",
+        "NR-OF-JOB-NODES": "Aantal job executor nodes",
+        "JOB-EXECUTOR-ENABLE": "Job executor inschakelen",
+        "TITLE-ADVANCED": "Geavanceerd",
+        "PROCESS-DEF-CACHE-LIMIT": "Cachelimiet van procesdefinitie",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "Het maximale aantal (geanalyseerde) procesdefinities dat in het geheugen wordt opgeslagen. Het analyseren van een procesdefinitie is resource-intensief, dus het is verstandig om te beschikken over een cache dat groot genoeg is en om niet te veel geheugen te gebruiken (standaardinstelling: onbeperkt).",
+        "ID-BLOCK-SIZE": "ID-blokgrootte",
+        "ID-BLOCK-SIZE-HELP": "Het aantal database-ID's dat een Process Services-engine voor gebruik reserveert bij het maken van nieuwe entiteiten (standaardinstelling: 100). Als alle ID's zijn gebruikt, wordt een nieuw blok gereserveerd in de database.",
+        "ENABLE-JOB-TWEAKING": "Geavanceerde optimalisering van job executor inschakelen",
+        "ENABLE-JOB-TWEAKING-HELP": "De job executor is de component die o.a. verantwoordelijk is voor het uitvoeren van timers en asynchrone voortzettingen (ofwel 'jobs’) van bedrijfsprocessen.",
+        "TITLE-JOB-TWEAKING": "Optimalisering van job executor",
+        "MAX-JOBS-PER-ACQUISITION": "Max. jobs per verkrijging",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "De job executor werkt in twee fasen: eerst worden jobs 'verkregen' door jobs een bepaalde tijd te vergrendelen (om conflicten tussen meerdere job executors te voorkomen). In de tweede fase worden de verkregen jobs (doorgaans) uitgevoerd door een afzonderlijke threadpool. De waarde bepaalt hoeveel jobs worden verkregen per query voor fase 1. Als er meer dan één job executor actief is in een cluster, wordt aanbevolen deze waarde in te stellen op 1 om deadlocks te voorkomen. De standaardwaarde is 1.",
+        "JOB-WAIT-TIME": "Wachttijd (ms)",
+        "JOB-WAIT-TIME-HELP": "De tijd (in ms) die wordt gewacht nadat alle jobs zijn uitgevoerd en geen jobs zijn gevonden. Hiermee worden te veel databasetreffers voorkomen. De standaardwaarde is 10000 ms.",
+        "JOB-LOCK-TIME": "Vergrendelingstijd (ms)",
+        "JOB-LOCK-TIME-HELP": "De tijd (in ms) dat een job is vergrendeld door één job executor-component. Als de tijd verstreken is, maar de job nog niet is uitgevoerd, kan de job weer door een andere job executor worden verkregen. Hiermee wordt voorkomen dat een niet goed werkende job executor de uitvoering van de job permanent stopt. De standaardwaarde is 5 minuten (300000 ms)",
+        "JOB-CORE-POOL-SIZE": "Kerngrootte van threadpool",
+        "JOB-CORE-POOL-SIZE-HELP": "Het minimale aantal threads in de threadpool dat actief blijft voor het uitvoeren van jobs. Alleen van toepassing op de standaard job executor.",
+        "JOB-QUEUE-SIZE": "Wachtrijgrootte",
+        "JOB-QUEUE-SIZE-HELP": "De standaard job executor verkrijgt eerst jobs en plaatst deze in de wachtrij alvorens ze in een threadpool uit te voeren. Deze waarde bepaalt hoeveel jobs in deze wachtrij worden gehouden. Alleen van toepassing op de standaard job executor (geldt bijv. niet voor de Spring job executor of voor aangepaste implementaties).",
+        "JOB-MAX-POOL-SIZE": "Max. threadpoolgrootte",
+        "JOB-MAX-POOL-SIZE-HELP": "Het maximale aantal threads in de threadpool dat wordt gemaakt voor het uitvoeren van jobs. Alleen van toepassing op de standaard job executor.",
+        "TITLE-DB-POOL": "Databaseverbindingspool",
+        "ENABLE-DB-POOL": "Configuratie van databaseverbindingspool inschakelen",
+        "ENABLE-DB-POOL-HELP": " Maakt de configuratie mogelijk van de verbindingspool van de gegevensbron die is gemaakt door Alfresco Process Services. Deze instellingen zijn alleen van toepassing als Alfresco Process Services verantwoordelijk is voor het maken van de gegevensbron (in tegenstelling tot jndi) en geen Spring-invoegingen heeft ontvangen.",
+        "JOB-MAX-IDLE-CONNECTIONS": "Max. niet-actieve verbindingen",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "Max. actieve verbindingen",
+        "JOB-MAX-CHECKOUT-TIME": "Max. uitchecktijd (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "De maximale tijd dat een verbinding kan worden gebruikt voordat deze weer ‘mag’ worden weggegeven.",
+        "JOB-MAX-WAIT-TIME": "Max. wachttijd (ms)",
+        "JOB-MAX-WAIT-TIME-HELP": "De tijd dat gewacht moet worden voordat een nieuwe poging voor het maken van verbinding kan worden gedaan.",
+        "TITLE-MAIL-SERVER": "E-mailserver",
+        "ENABLE-MAIL-SERVER": "Configuratie van e-mailserver inschakelen",
+        "ENABLE-MAIL-SERVER-INFO": "Dit is alleen nodig als de e-mailfunctie in uw bedrijfsprocessen wordt gebruikt.",
+        "MAIL-DEFAULT-FROM": "Standaard van adres",
+        "MAIL-HOST": "Host e-mailserver",
+        "MAIL-PORT": "Poort e-mailserver",
+        "MAIL-USERNAME": "Gebruikersnaam e-mailserver",
+        "MAIL-PASSWORD": "Wachtwoord e-mailserver",
+        "MAIL-USE-SSL": "SSL gebruiken?",
+        "MAIL-USE-TLS": "TLS gebruiken?",
+        "MAIL-JNDI-NAME": "JNDI-naam e-mailserver",
+        "MAIL-JNDI-NAME-INFO": "Vul deze velden in (negeer daarbij de bovenstaande instellingen) als de e-mailserver is geconfigureerd in een toepassingsserver en via Jndi wordt weergegeven.",
+        "ACTION-DELETE-CONFIGURATION": "Configuratie verwijderen",
+        "ACTION-CREATE-CONFIGURATION": "Configuratie maken",
+        "ACTION-UPDATE-CONFIGURATION": "Configuratie bijwerken",
+        "CONFIG-OPTIONS": "Configuratietype",
+        "OPTION-ENGINE": "Standalone engine Process Services",
+        "OPTION-SUITE": "BPM Suite Process Services",
+        "FETCHING-TEMPLATE": "Sjabloon ophalen van server..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "App-deployments",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende app-deployments worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende app-deployments.",
+    "FILTER": {
+      "NAME": "Naam",
+      "TENANTID": "Tenant-ID",
+      "LATEST": "Nieuwste versie",
+      "LATEST-HELP": "Alleen nieuwste versies weergeven"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Naam"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "App-ID",
+      "DEPLOYMENT-ID": "Procesdeployment-ID",
+      "DMN-DEPLOYMENT-ID": "DMN-deployment-ID",
+      "NAME": "Naam",
+      "DEPLOY-TIME": "Deployment-tijd",
+      "DEPLOYED-BY": "Deployment door",
+      "TENANT": "Tenant-ID"
+    },
+    "ACTION": {
+      "UPLOAD": "Een app uploaden en publiceren",
+      "PUBLISH-APP-MODEL": "Een app-model publiceren"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Selecteer een .zip-app-definitiebestand voor deployment.",
+        "WARNING": "Een proces kan alleen worden geüpload naar een BPM Suite instance.",
+        "DROPZONE": "U kunt ook hier een bestand neerzetten.",
+        "NO-DROP": "Uw browser biedt geen ondersteuning voor het neerzetten van bestanden.",
+        "CANCEL-UPLOAD": "Uploaden annuleren",
+        "ERROR": "Kan dit bestand niet uploaden."
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "App-ID:",
+    "DEPLOYMENT-ID": "Deployment-ID:",
+    "DMN-DEPLOYMENT-ID": "DMN-deployment-ID:",
+    "DEPLOYED-BY": "Deployment door:",
+    "DEPLOYED-ON": "Deployment op:",
+    "APP-NAME": "App-naam:",
+    "VERSION": "Versie:",
+    "DESCRIPTION": "Beschrijving:",
+    "KEY": "Key:",
+    "CATEGORY": "Categorie:",
+    "SUSPENDED": "Uitgesteld:",
+    "DEPLOYMENT": "Deployment:",
+    "TENANT-ID": "Tenant-ID:",
+    "START-FORM-DEFINED": "Beginformulier gedefinieerd:",
+    "GRAPHICAL-NOTATION-DEFINED": "Grafische notatie gedefinieerd:",
+    "PROCESS-DEFINITIONS-SIZE": "App-definitie heeft {{total}} procesdefinities",
+    "PROCESS-DEFINITIONS-SHOWING": ", {{size}} procesdefinities worden weergegeven",
+    "PROCESS-DEFINITIONS-EMPTY": "App-deployment heeft geen procesdefinities.",
+    "DECISION-TABLES-SIZE": "App-deployment heeft {{total}} beslissingstabellen",
+    "DECISION-TABLES-SHOWING": ", {{size}} beslissingstabellen worden weergegeven",
+    "DECISION-TABLES-EMPTY": "App-deployment heeft geen beslissingstabellen",
+    "FORMS-SIZE": "App-deployment heeft {{total}} formulieren",
+    "FORMS-SHOWING": ", {{size}} formulieren worden weergegeven",
+    "FORMS-EMPTY": "App-deployment heeft geen formulieren",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "Procesdefinities",
+      "DECISION-TABLES": "Beslissingstabellen",
+      "FORMS": "Formulieren"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Categorie bewerken",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "Alle procesdefinities weergeven",
+      "SHOW-ALL-DECISION-TABLES": "Alle beslissingstabellen weergegeven",
+      "SHOW-ALL-FORMS": "Alle formulieren weergeven",
+      "SHOW-DIAGRAM": "Procesdiagram weergeven"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Categorie voor definitie bewerken",
+        "MESSAGE": "De begincategorie voor de definitie wordt ingevuld op basis van het targetNameSpace-kenmerk in BPMN 2.0 XML, maar kan na de deployment worden gewijzigd.",
+        "CATEGORY": "Categorie",
+        "CATEGORY-PLACEHOLDER": "Categorie invoeren",
+        "CONFIRM": "Categorie bijwerken"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Procesdiagram"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "Naam",
+      "TYPE": "Type",
+      "VALUE": "Waarde"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "Groeps-ID",
+      "TYPE": "Type",
+      "USER-ID": "Gebruikers-ID"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "Kan geen gegevens ophalen van de server",
+      "AUTHENTICATION-ERROR": "U hebt ongeldige aanmeldingsreferenties ingevoerd."
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "Configuratie '{{name}}' verwijderd.",
+      "CONFIG-UPDATED": "Configuratie '{{name}}' bijgewerkt.",
+      "CONFIG-CREATED": "Configuratie '{{name}}' gemaakt.",
+      "MASTER-CONFIG-DELETE": "Masterconfiguratie verwijderd.",
+      "MASTER-CONFIG-UPDATE": "Masterconfiguratie bijgewerkt",
+      "CLUSTER-UPDATED": "Clusterconfiguratie bijgewerkt.",
+      "CLUSTER-CREATED": "Clusterconfiguratie gemaakt.",
+      "ENDPOINT-UPDATED": "Eindpunt '{{name}}' bijgewerkt.",
+      "ENDPOINT-INVALID": "Eindpuntconfiguratie voor '{{name}}' is ongeldig.",
+      "ENDPOINT-VALID": "Eindpunt geldig, Engine bij eindpunt: {{name}} - {{version}}"
+    },
+    "JOB": {
+      "DELETED": "Job '{{id}}' is verwijderd.",
+      "EXECUTED": "Job '{{id}}' is uitgevoerd."
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "Procesinstantie '{{id}}' is verwijderd.",
+      "TERMINATED": "Procesinstantie '{{id}}' is beëindigd."
+    },
+    "TASK": {
+      "DELETED": "Taak '{{id}}' is verwijderd.",
+      "COMPLETED": "Taak '{{id}}' is voltooid.",
+      "DELEGATED": "Taak '{{id}}' gedelegeerd aan gebruiker {{user}}.",
+      "RESOLVED": "Taak '{{id}}' is opgelost.",
+      "ASSIGNED": "Taak '{{id}}' is nu toegewezen aan {{user}}.",
+      "UNASSIGNED": "Toewijzing van taak '{{id}}' is nu opgeheven.",
+      "UPDATED": "Taak '{{id}}' is bijgewerkt."
+    },
+    "USER": {
+      "DELETED": "Gebruiker '{{login}}' is verwijderd.",
+      "UPDATED": "Gebruiker '{{login}}' is bijgewerkt.",
+      "CREATED": "Gebruiker '{{login}}' is gemaakt.",
+      "PASSWORD-CHANGED": "Wachtwoord voor '{{login}}' is gewijzigd."
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "Procesdefinitiecategorie bijgewerkt"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "Deployment '{{name}}' verwijderd",
+      "DELETE-ERROR": "Kan deployment niet verwijderen. {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "App '{{appDefinition.name}}' verwijderd",
+      "DELETE-ERROR": "Kan app niet verwijderen. {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "Beslissingstabellen",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende beslissingstabellen worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende beslissingstabellen.",
+    "FILTER": {
+      "NAME": "Naam",
+      "KEY": "Key",
+      "TENANTID": "Tenant-ID"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Naam"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "VERSION": "Versie",
+      "KEY": "Key",
+      "DEPLOY-TIME": "Deployment-tijd",
+      "TENANT-ID": "Tenant-ID"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID:",
+    "NAME": "Naam:",
+    "VERSION": "Versie:",
+    "KEY": "Key:",
+    "DEPLOYMENT-ID": "Deployment-ID:",
+    "RESOURCE-NAME": "Resourcenaam:",
+    "DESCRIPTION": "Beschrijving:",
+    "TENANT": "Tenant:",
+    "TITLE": {
+      "DECISION-AUDITS": "Beslissings-audits"
+    },
+    "DECISION-AUDITS-MESSAGE": "Deze beslissingstabel heeft {{total}} audits, {{size}} worden weergegeven.",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "Deze beslissingstabel heeft geen audits",
+    "ACTION": {
+      "EDIT-CATEGORY": "Categorie bewerken",
+      "SHOW-ALL-JOBS": "Alle jobs weergeven",
+      "SHOW-ALL-PROCESSES": "Alle processen weergeven",
+      "SHOW-DIAGRAM": "Procesdiagram weergeven",
+      "SHOW-DECISION-TABLE": "Beslissingstabel weergeven"
+    },
+    "POPUP": {
+      "TITLE": "Beslissingstabel: ",
+      "KEY": "Key: ",
+      "HIT-POLICY": "Resultaatregels: ",
+      "HIT-POLICIES": {
+        "FIRST": "Eerste (single pass)",
+        "ANY": "Willekeurige (single pass)"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "Beslissings-audittrails",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende beslissings-audittrails worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende beslissings-audittrails.",
+    "FILTER": {
+      "NAME": "Naam (hoofdlettergevoelig)",
+      "TENANTID": "Tenant-ID (hoofdlettergevoelig)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Naam"
+    },
+    "POPUP": {
+      "HEADER": "Beslissings-audittrail"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "Procesdefinitie-ID",
+      "PROCESS-INSTANCE-ID": "Procesinstantie-ID",
+      "CREATED": "Gemaakt",
+      "FAILED": "Mislukt",
+      "EXECUTION-ID": "Uitvoerings-ID",
+      "ACTIVITY-ID": "Activiteits-ID",
+      "ACTIVITY-NAME": "Activiteitsnaam",
+      "DECISION-KEY": "Beslissingskey",
+      "DECISION-NAME": "Beslissingsnaam",
+      "DMN-DEPLOYMENT-ID": "DMN-deployment-ID"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "Beslissingsaudit weergeven"
+    },
+    "TABLE": {
+      "HEADER": "Beslissingstabel \"{{name}}\"",
+      "HIT-POLICY": "Resultaatbeleid",
+      "HIT-POLICIES": {
+        "FIRST": "Eerste (single pass)",
+        "ANY": "Willekeurige (single pass)"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "Er is een uitzondering opgetreden bij het testen of de expressie overeenkomt met de invoerwaarde: {{error}}",
+        "INPUT-MATCH": "De invoerwaarde komt overeen met de expressie.",
+        "INPUT-EMPTYEXPRESSION": "Lege expressies worden behandeld als een overeenkomst.",
+        "INPUT-NOMATCH": "De invoerwaarde komt niet overeen met de expressie.",
+        "INPUT-NOTEXECUTED": "De expressie is nooit getest.",
+        "OUTPUT-EXCEPTION": "Er is een uitzondering opgetreden bij het instellen van de waarde met de volgende expressie: \n {{expression}}.\nFoutbericht: {{error}}",
+        "OUTPUT-RESULT": "De waarde is ingesteld met de volgende expressie: \n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "De volgende expressie is nooit uitgevoerd: \n {{expression}}"
+      },
+      "INPUT-VARIABLE": "Voorwaarde",
+      "OUTPUT-VARIABLE": "Resultaat",
+      "INPUT-VARIABLES": "Invoerwaarden",
+      "NO-INPUT-VARIABLES": "Er waren geen invoerwaarden bij het uitvoeren van de beslissingstabel",
+      "OUTPUT-VARIABLES": "Berekende waarden",
+      "NO-OUTPUT-VARIABLES": "Er zijn geen berekende waarden geproduceerd op basis van de beslissingstabellen",
+      "METADATA-NAME": "Naam",
+      "METADATA-VALUE": "Waarde",
+      "LOAD-ERROR": "Er is een fout opgetreden bij het ophalen van de beslissingstabel en audittrail voor uitvoering '{{executionId}}' van de activiteit '{{activityId}}'."
+    }
+  },
+  "FORMS": {
+    "TITLE": "Formulieren",
+    "LIST-MESSAGE": "{{size}} resultaten uit in totaal {{total}} overeenkomende formulieren worden weergegeven.",
+    "LIST-MESSAGE-EMPTY": "Geen overeenkomende formulieren.",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Naam",
+      "APPID": "App-ID",
+      "TENANTID": "Tenant-ID"
+    },
+    "FILTER": {
+      "NAME": "Naam",
+      "APPID": "App-deployment-ID",
+      "TENANTID": "Tenant-ID"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Naam"
+    }
+  },
+  "FORM": {
+    "ID": "ID:",
+    "NAME": "Naam:",
+    "APP-ID": "App-ID:",
+    "DEPLOYMENT-ID": "Deployment-ID:",
+    "DESCRIPTION": "Beschrijving:",
+    "TENANT": "Tenant:",
+    "MESSAGE-EMPTY": "(Geen)",
+    "TITLE": {
+      "SUBMITTED-FORMS": "Ingediende formulieren"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "Dit formulier heeft {{total}} ingediende formulieren, {{size}} worden weergegeven.",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "Dit formulier heeft geen ingediende formulieren.",
+    "ACTION": {
+      "EDIT-CATEGORY": "Categorie bewerken",
+      "SHOW-ALL-JOBS": "Alle jobs weergeven",
+      "SHOW-ALL-PROCESSES": "Alle processen weergeven",
+      "SHOW-DIAGRAM": "Procesdiagram weergeven",
+      "SHOW-FORM": "Formulier weergeven"
+    },
+    "POPUP": {
+      "TITLE": "Formulier: "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "Waarde weergeven",
+      "SELECT-FIELD": "(Geen veld geselecteerd)",
+      "FIELD-VALUE": "Waarde van veld \"{{name}}\" weergeven",
+      "UNKNOWN-TYPE": "Onbekend veldtype {{type}}",
+      "TEXT-VALUE": "Tekst",
+      "MULTI-TEXT-VALUE": "Meerregelige tekst",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "Datum",
+      "DATETIME-VALUE": "Datum en tijd",
+      "DROPDOWN-VALUE": "Selecteren...",
+      "UPLOAD-VALUE": "Content uploaden of importeren...",
+      "RADIOS-OPTION1": "Optie 1",
+      "SELECT-PERSON": "Een persoon selecteren",
+      "SELECT-GROUP": "Een groep selecteren"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "Taak-ID",
+      "PROCESS-ID": "Procesinstantie-ID",
+      "SUBMITTED": "Ingediend op",
+      "SUBMITTED-BY": "Ingediend door",
+      "FORM-ID": "Formulier-ID"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "Ingediend formulier weergeven"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "Een app uploaden en publiceren",
+      "DOWNLOAD": "App downloaden",
+      "REDEPLOY": "App opnieuw implementeren op een andere cluster",
+      "DELETE": "App verwijderen"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "App '{{appDefinition.name}}' verwijderen?"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "Selecteer een .zip-app-bestand voor deployment.",
+        "WARNING": "Een app kan alleen worden geüpload naar een BPM Suite, niet naar een core engine instance.",
+        "DROPZONE": "U kunt ook hier een bestand neerzetten.",
+        "NO-DROP": "Uw browser biedt geen ondersteuning voor het neerzetten van bestanden.",
+        "CANCEL-UPLOAD": "Uploaden annuleren",
+        "ERROR": "Kan dit bestand niet uploaden."
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "App-model publiceren",
+        "PUBLISH": "Publiceren",
+        "ERROR": "Kan app niet publiceren",
+        "DESCRIPTION": "Selecteer een .zip-app-bestand voor deployment.",
+        "WARNING": "Een app kan alleen worden geüpload naar een BPM Suite, niet naar een core engine instance.",
+        "DROPZONE": "U kunt ook hier een bestand neerzetten.",
+        "NO-DROP": "Uw browser biedt geen ondersteuning voor het neerzetten van bestanden.",
+        "LIST-MESSAGE": "In totaal {{total}} overeenkomende app-modellen worden weergegeven.",
+        "LIST-MESSAGE-EMPTY": "Geen overeenkomende app-modellen.",
+        "PUBLISH-ERROR": "Kan app niet publiceren",
+        "EVERYONES-APPS": "De apps van iedereen weergeven",
+        "APP-CONFLICT-ERROR": "App veroorzaakt conflict met de bestaande app '{{name}}' die is gemaakt door '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "App publiceren naar een andere cluster",
+        "SELECT-CLUSTER": "Cluster selecteren",
+        "PUBLISH-TO-CLUSTER": "App publiceren naar {{name}}",
+        "PUBLISH-AS-NEW-VERSION": "Publiceren als een nieuwe app-versie",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "Naam",
+          "LAST-UPDATE": "Laatst bijgewerkt",
+          "CREATED-BY": "Gemaakt door"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "App opnieuw implementeren",
+        "DESCRIPTION": "Selecteer een cluster waarop u '{{name}}' opnieuw wilt implementeren",
+        "ERROR": "Kan app niet implementeren",
+        "APP-CONFLICT-ERROR": "App veroorzaakt conflict met de bestaande app '{{name}}' die is gemaakt door '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "SELECT-CLUSTER": "Cluster selecteren",
+        "DEPLOY-TO-CLUSTER": "App implementeren op {{name}}",
+        "DEPLOY": "Implementeren",
+        "DEPLOY-AS-NEW-VERSION": "Implementeren als een nieuwe app-versie"
+      }
+    }
+  }
+}

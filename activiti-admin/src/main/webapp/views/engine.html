@@ -1,0 +1,158 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 component">
+            <div>
+                <div class="title">
+                    <h2 translate="CLUSTER.TITLE.MAIN"></h2>
+                </div>
+                <div class="property-wrapper">
+                    <table>
+                        <tr class="property">
+                            <td class="property-name" translate="CLUSTER.NAME"></td>
+                            <td>{{activeCluster.clusterName | empty}}</td>
+                        </tr>
+                        <tr class="property">
+                            <td class="property-name" translate="CLUSTER.USER"></td>
+                            <td>{{activeCluster.user.login}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="title">
+                <h2 translate="CLUSTER.TITLE.ACTIVITI"></h2>
+            </div>
+            <div class="property-wrapper">
+                <table>
+                    <tr class="property">
+                        <td class="property-name" translate="CLUSTER.MASTER-MANDATORY"></td>
+                        <td>{{activeCluster.requiresMasterConfig}}</td>
+                        <td class="property-name" translate="CLUSTER.METRICS-SEND-INTERVAL"></td>
+                        <td>{{activeCluster.metricSendingInterval | empty}}</td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+            <div class="title">
+                <h2 translate="CLUSTER.TITLE.ENDPOINT"></h2>
+            </div>
+            <p class="message"><i class="glyphicon glyphicon-info-sign"></i>
+                {{'CLUSTER.ENDPOINT-HELP' | translate}}
+            </p>
+
+            <div class="property-wrapper">
+                <table>
+                    <tr class="property">
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-NAME"></td>
+                        <td>{{activeServer.name | empty}}</td>
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-DESCRIPTION"></td>
+                        <td>{{activeServer.description | empty}}</td>
+                    </tr>
+                    <tr class="property">
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-ADDRESS"></td>
+                        <td>{{activeServer.serverAddress | empty}}</td>
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-PORT"></td>
+                        <td>{{activeServer.serverPort | empty}}</td>
+                    </tr>
+                    <tr class="property">
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-CONTEXT-ROOT"></td>
+                        <td>{{activeServer.contextRoot | empty}}</td>
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-REST-ROOT"></td>
+                        <td>{{activeServer.restRoot | empty}}</td>
+                    </tr>
+                    <tr class="property">
+                        <td class="property-name" translate="CLUSTER.ENDPOINT-USERNAME"></td>
+                        <td>{{activeServer.userName | empty}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="title"><h2 translate="CLUSTER.TITLE.MASTER-CONFIGURATION"></h2></div>
+            <p class="message"><i class="glyphicon glyphicon-info-sign"></i>
+                {{'CLUSTER.PROCESS-ENGINE-HELP' | translate}}
+            </p>
+
+            <div class="grid-wrapper">
+                <div class="grid-message" ng-if="model.masterConfig == null || model.masterConfig == undefined">
+                    <span class="highlight">{{'CLUSTER.NO-MASTER-DEFINED' | translate}}</span>
+                </div>
+                <div class="grid-message" ng-if="model.masterConfig != null && model.masterConfig != undefined && model.masterConfig.type == 'bpmSuite'">
+                    <pre>{{model.masterConfig.propertiesText}}</pre>
+                </div>
+                <div class="grid-message" ng-if="model.masterConfig != null && model.masterConfig != undefined && model.masterConfig.type == 'engine'">
+                    <ul>
+                        <li ng-repeat="(key, value) in model.masterConfig" ng-if="key !== 'type' && key !== 'configId' && value">
+                            {{key}} : {{value}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="component tip-left">
+                <div class="title">
+                    <h2 translate="GENERAL.TITLE.ACTIONS"></h2>
+                </div>
+                <div class="seperator"></div>
+                <ul class="list-group" ng-show="!account.readOnlyUser">
+                    <!--<li>-->
+                        <!--<button type="button" class="btn btn-sm btn-default" ng-click="editClusterConfiguration()">-->
+                            <!--<i class="glyphicon glyphicon-cog"></i>{{'CLUSTER.ACTION.EDIT-CLUSTER-CONFIG' | translate}}-->
+                        <!--</button>-->
+                    <!--</li>-->
+                    <li>
+                        <button type="button" class="btn btn-sm btn-default" ng-click="downloadClusterConfigJar()">
+                            <i class="glyphicon glyphicon-download action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.GENERATE-JAR' | translate}}</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-sm btn-default" ng-click="deleteClusterConfiguration()">
+                            <i class="glyphicon glyphicon-remove action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.DELETE-CLUSTER-CONFIG' | translate}}</div>
+                        </button>
+                    </li>
+                </ul>
+                <div class="seperator"></div>
+                <ul class="list-group">
+                    <li ng-show="((account.multiTenant) || (!account.readOnlyUser))">
+                        <button type="button" class="btn btn-sm btn-default" ng-click="editEndpointConfig()">
+                            <i class="glyphicon glyphicon-pencil action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.EDIT-ENDPOINT' | translate}}</div>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-sm btn-default" ng-click="checkEndpointConfig()">
+                            <i class="glyphicon glyphicon-ok action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.CHECK-ENDPOINT' | translate}}</div>
+                        </button>
+                    </li>
+                </ul>
+                <div class="seperator"></div>
+                <ul class="list-group" ng-show="!account.readOnlyUser">
+                    <li ng-if="model.masterConfig == null || model.masterConfig == undefined">
+                        <button type="button" class="btn btn-sm btn-default " ng-click="addMasterConfiguration()">
+                            <i class="glyphicon glyphicon-plus action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.ADD-CONFIGURATION' | translate}}</div>
+                        </button>
+                    </li>
+                    <li ng-if="model.masterConfig != null && model.masterConfig != undefined">
+                        <button type="button" class="btn btn-sm btn-default btn-default" ng-click="editMasterConfiguration()">
+                            <i class="glyphicon glyphicon-pencil action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.EDIT-CONFIGURATION' | translate}}</div>
+                        </button>
+                    </li>
+                    <li ng-if="model.masterConfig != null && model.masterConfig != undefined">
+                        <button type="button" class="btn btn-sm btn-default btn-danger" ng-click="deleteMasterConfiguration()">
+                            <i class="glyphicon glyphicon-remove action-button__icon"></i>
+                            <div class="action-button__label">{{'CLUSTER.ACTION.DELETE-CONFIGURATION' | translate}}</div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

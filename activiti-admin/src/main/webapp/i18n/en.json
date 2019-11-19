@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "Yes",
+    "NO": "No",
+    "ACTION": {
+      "LOGOUT": "Sign out",
+      "DISMISS-ALERT": "Click to dismiss this message",
+      "RETURN-TO-LIST": "Return to list",
+      "SHOW-RESULTS": "Show {{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} results",
+      "REFRESH-LIST": "Refresh list",
+      "SORT-BY": "Sort by {{name | translate}}",
+      "CLEAR-FILTERS": "Clear filters",
+      "CANCEL-AND-CLOSE": "Cancel and Close",
+      "CANCEL": "Cancel",
+      "NEXT": "Next",
+      "PREVIOUS": "Previous",
+      "CLOSE": "Close",
+      "SHOWLICENSE": "License info"
+    },
+    "TITLE": {
+      "MAIN": "Process Services Administrator",
+      "ACTIONS": "Actions",
+      "FILTERS": "Filters",
+      "CLUSTERS": "Clusters"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "Deployments",
+      "PROCESS-DEFINITIONS": "Definitions",
+      "PROCESS-INSTANCES": "Instances",
+      "TASKS": "Tasks",
+      "JOBS": "Jobs",
+      "CONFIGURATION": "Configuration",
+      "CONFIGURATION-ENGINE": "Engine",
+      "CONFIGURATION-USERS": "Configure users",
+      "MONITORING": "Monitoring",
+      "APPS": "Apps"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "all"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "The endpoint did not respond when checking the license last time. Further checks will be performed, but for now the license is assumed to be invalid.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "Application is in read-only mode due to an invalid license on the endpoint server.",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "Application is in read-only mode since no license could be found on the endpoint server.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "Application is in read-only mode since the license date on the Alfresco Process Services endpoint server isn't valid (either expired or has a start date that hasn't yet occurred)."
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "VERSION": "Version:",
+    "DESCRIPTION": "Description:",
+    "KEY": "Key:",
+    "CATEGORY": "Category:",
+    "SUSPENDED": "Suspended:",
+    "DEPLOYMENT": "Deployment:",
+    "TENANT": "Tenant:",
+    "START-FORM-DEFINED": "Start form defined:",
+    "GRAPHICAL-NOTATION-DEFINED": "Graphical notation defined:",
+    "PROCESS-INSTANCES-SIZE": "Definition has {{total}} process instances running",
+    "PROCESS-INSTANCES-SHOWING": ", showing {{size}} most recently started",
+    "PROCESS-INSTANCES-EMPTY": "Definition has no process instances running",
+    "JOBS-SIZE": "Definition has {{total}} jobs running",
+    "JOBS-EMPTY": "Definition has no jobs running",
+    "DECISION-TABLES-SIZE": "Definition has {{total}} decision tables.",
+    "DECISION-TABLES-EMPTY": "Definition has no decision tables.",
+    "FORMS-SIZE": "Definition has {{total}} forms.",
+    "FORMS-EMPTY": "Definition has no forms.",
+    "TITLE": {
+      "PROCESS-INSTANCES": "Process instances",
+      "JOBS": "Jobs",
+      "DECISION-TABLES": "Decision Tables",
+      "FORMS": "Forms"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Edit category",
+      "SHOW-ALL-JOBS": "Show all jobs",
+      "SHOW-ALL-PROCESSES": "Show all processes",
+      "SHOW-DIAGRAM": "Show process diagram"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Edit category for definition",
+        "MESSAGE": "The initial category for the definition is populated from the targetNameSpace attribute in the BPMN 2.0 XML, but can be altered after deployment.",
+        "CATEGORY": "Category",
+        "CATEGORY-PLACEHOLDER": "Enter a category",
+        "CONFIRM": "Update category"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Process diagram"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching definitions.",
+    "LIST-MESSAGE-EMPTY": "No matching process definitions.",
+    "FILTER": {
+      "NAME": "Name (case sensitive)",
+      "KEY": "Key (case sensitive)",
+      "DEPLOYMENT-ID": "Deployment ID",
+      "TENANT-ID": "Tenant ID",
+      "LATEST": "Latest version",
+      "LATEST-HELP": "Only show latest versions"
+    },
+    "TITLE": {
+      "MAIN": "Process Definitions"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name",
+      "VERSION": "Version"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "VERSION": "Version",
+      "KEY": "Key",
+      "TENANT": "Tenant"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "Upload from Process Editor"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "User name",
+        "PASSWORD": "Password",
+        "ERROR": "We couldn't contact the Editor",
+        "UNAUTHORIZED": "Invalid credentials",
+        "UPLOAD-DESCRIPTION": "The process model will now be fetched and deployed to the currently active process services cluster. Select an appropriate name for deployment package."
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "DESCRIPTION": "Description:",
+    "BUSINESS-KEY": "Business key:",
+    "TENANT-ID": "Tenant:",
+    "STATUS": "Status:",
+    "STATUS-ACTIVE": "Active",
+    "STATUS-COMPLETED": "Completed",
+    "ACTIVITY-ID-STARTED": "Activity ID started:",
+    "ACTIVITY-ID-ENDED": "Ended in activity:",
+    "DELETE-REASON": "Delete reason:",
+    "STARTED-BY": "Started by:",
+    "END-TIME": "End time:",
+    "DURATION": "Duration:",
+    "SUPER-PROCESS-INSTANCE-ID": "Super process instance ID:",
+    "TASKS-SIZE": "This process instance has {{total}} tasks.",
+    "TASKS-EMPTY": "This process instance has no tasks.",
+    "VARIABLES-SIZE": "This process instance has {{total}} variables.",
+    "VARIABLES-EMPTY": "This process instance has no variables.",
+    "JOBS-SIZE": "This process instance has {{total}} jobs.",
+    "JOBS-EMPTY": "This process instance has no jobs.",
+    "SUBPROCESSES-SIZE": "This process instance has {{total}} subprocesses.",
+    "SUBPROCESSES-EMPTY": "This process instance has no subprocesses.",
+    "DECISION-TABLES-SIZE": "This process instance has {{total}} decision tables.",
+    "DECISION-TABLES-EMPTY": "This process instance has no decision tables.",
+    "FORMS-SIZE": "This process instance has {{total}} submitted forms.",
+    "FORMS-EMPTY": "This process instance has no submitted forms.",
+    "TITLE": {
+      "TASKS": "Tasks",
+      "VARIABLES": "Variables",
+      "JOBS": "Jobs",
+      "SUBPROCESSES": "Subprocesses",
+      "DECISION-TABLES": "Decision Tables",
+      "FORMS": "Forms"
+    },
+    "ACTION": {
+      "DELETE": "Delete process instance",
+      "TERMINATE": "Terminate process instance",
+      "SHOW-ALL-TASKS": "Show all tasks",
+      "SHOW-ALL-JOBS": "Show all jobs",
+      "SHOW-ALL-SUBPROCESSES": "Show all subprocesses",
+      "SHOW-DIAGRAM": "Show process diagram",
+      "TITLE-VARIABLES": "Actions on selected variable",
+      "DELETE-VARIABLE": "Delete the variable",
+      "UPDATE-VALUE": "Update variable",
+      "ADD-VARIABLE": "Add variable"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "Delete process instance",
+        "MESSAGE-DELETE": "Are you sure you want to delete the process instance",
+        "MESSAGE-TERMINATE": "Are you sure you want to terminate the process instance",
+        "DELETE-REASON": "Delete reason",
+        "DELETE-REASON-HELP": "Enter an optional delete reason",
+        "CONFIRM-DELETE": "Delete process instance",
+        "CONFIRM-TERMINATE": "Terminate process instance"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Process diagram"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "Create Variable",
+        "NAME": "Variable name",
+        "TYPE": "Variable type",
+        "VALUE": "Variable value",
+        "CREATE": "Create"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "Update variable '{{name}}'",
+        "NAME": "Variable name",
+        "VALUE": "Value",
+        "CHECKED": "true",
+        "UNCHECKED": "false",
+        "DATE-HELP": "ISO-8601 format (example : 2016-01-28T23:00:00Z)",
+        "ACTION-UPDATE": "Update"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "Delete variable '{{name}}",
+        "MESSAGE": "Are you sure you want to remove this variable?",
+        "DELETE": "Delete"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "Process instances",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching process instances.",
+    "LIST-MESSAGE-EMPTY": "No matching process instances.",
+    "FILTER": {
+      "NAME": "Name",
+      "PROCESS-DEFINITION": "Process definition",
+      "ALL-PROCESS-DEFINITIONS": "All process definitions",
+      "BUSINESS-KEY": "Business key",
+      "SUPER-PROCESS-INSTANCE-ID": "Super process instance ID",
+      "STARTED-BEFORE": "Started before",
+      "STARTED-AFTER": "Started after",
+      "ENDED-BEFORE": "Ended before",
+      "ENDED-AFTER": "Ended after",
+      "VARIABLE": "Variable",
+      "VARIABLE-NAME": "Variable name",
+      "VARIABLE-VALUE": "Variable value",
+      "VARIABLE-BOOLEAN-VALUE": "Boolean value: {{value}}",
+      "TENANT-ID": "Tenant identifier"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "Time started"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "BUSINESS-KEY": "Business key",
+      "PROCESS-DEFINITION": "Process definition",
+      "CREATE-TIME": "Created",
+      "END-TIME": "Ended",
+      "STATUS": "Status"
+    }
+  },
+  "TASK": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "STATUS": "Status:",
+    "STATUS-COMPLETED": "Completed",
+    "STATUS-ACTIVE": "Active",
+    "DESCRIPTION": "Description:",
+    "TASK-DEFINITION-KEY": "Definition key:",
+    "FORM-KEY": "Form key:",
+    "PRIORITY": "Priority:",
+    "DELEGATION-STATE": "Delegation state:",
+    "CATEGORY": "Category:",
+    "TENANT-ID": "Tenant:",
+    "PARENT": "Parent task:",
+    "ASSIGNEE": "Assignee:",
+    "OWNER": "Owner:",
+    "START-DATE": "Start date:",
+    "DUE-DATE": "Due date:",
+    "END-DATE": "End date:",
+    "DELETE-REASON": "Delete reason:",
+    "PROCESS-INSTANCE": "Process Instance",
+    "PROCESS-DEFINITION": "Process definition",
+    "EXECUTION-ID": "Execution ID:",
+    "SUBTASKS-MESSAGE": "This task has {{total}} subtasks, showing {{size}}.",
+    "SUBTASKS-MESSAGE-EMPTY": "This task has no subtasks.",
+    "VARIABLES-MESSAGE": "This task has {{size}} variables.",
+    "VARIABLES-MESSAGE-EMPTY": "This task has no variables.",
+    "IDENTITY-LINKS-MESSAGE": "This task has {{size}} identity links.",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "This task has no identity links.",
+    "ACTION": {
+      "EDIT": "Edit task",
+      "ASSIGN-CLAIM": "Assign/Claim task",
+      "DELEGATE": "Delegate task",
+      "RESOLVE": "Resolve task",
+      "COMPLETE": "Complete task",
+      "DELETE": "Delete task",
+      "SHOW-ALL-SUBTASKS": "Show all subtasks",
+      "SHOW-SUBMITTED-FORM": "Show submitted form"
+    },
+    "TITLE": {
+      "SUBTASKS": "Sub tasks",
+      "IDENTITY-LINKS": "Identity links",
+      "VARIABLES": "Variables"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "Assign task",
+        "MESSAGE": "Are you sure you want to assign task",
+        "NEW-ASSIGNEE": "New assignee",
+        "NEW-ASSIGNEE-HELP": "Leave the assignee field empty if you want to assign the task to nobody.",
+        "CONFIRM": "Assign task"
+      },
+      "COMPLETE": {
+        "TITLE": "Complete task",
+        "MESSAGE": "Are you sure you want to complete task",
+        "CONFIRM": "Complete task"
+      },
+      "DELEGATE": {
+        "TITLE": "Delegate task",
+        "MESSAGE": "Are you sure you want to delegate task",
+        "CONFIRM": "Delegate task",
+        "DELEGATE-TO": "User to delegate to"
+      },
+      "RESOLVE": {
+        "TITLE": "Resolve task",
+        "MESSAGE": "Are you sure you want to resolve task",
+        "CONFIRM": "Resolve task"
+      },
+      "DELETE": {
+        "TITLE": "Delete task",
+        "MESSAGE": "Are you sure you want to delete task",
+        "CONFIRM": "Delete task"
+      },
+      "EDIT": {
+        "TITLE": "Edit task",
+        "CONFIRM": "Update task",
+        "NAME": "Name",
+        "DESCRIPTION": "Description",
+        "PRIORITY": "Priority",
+        "CATEGORY": "Category",
+        "ASSIGNEE": "Assignee",
+        "OWNER": "Owner",
+        "DUE-DATE": "Due date"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "Tasks",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching tasks.",
+    "LIST-MESSAGE-EMPTY": "No matching tasks.",
+    "FILTER": {
+      "NAME": "Name (case sensitive)",
+      "ASSIGNEE": "Assignee (case sensitive)",
+      "STATUS": "Status",
+      "STATUS-ANY": "Any status",
+      "STATUS-ACTIVE": "Active tasks",
+      "STATUS-COMPLETE": "Completed tasks",
+      "PROCESS-INSTANCE-ID": "Process instance ID",
+      "TENANT-ID": "Tenant identifier",
+      "OWNER": "Owner (case sensitive)",
+      "PARENT-TASK-ID": "Parent task ID",
+      "CREATED-BEFORE": "Created before",
+      "CREATED-AFTER": "Created after",
+      "ENDED-BEFORE": "Ended before",
+      "ENDED-AFTER": "Ended after",
+      "DUE-BEFORE": "Due before",
+      "DUE-AFTER": "Due after",
+      "TASK-VARIABLE": "Task local variable",
+      "PROCESS-VARIABLE": "Process variable",
+      "VARIABLE-NAME": "Variable name",
+      "VARIABLE-VALUE": "Variable value",
+      "VARIABLE-BOOLEAN-VALUE": "Boolean value: {{value}}"
+    },
+    "SORT": {
+      "NAME": "Name",
+      "DUE-DATE": "Due date",
+      "START-TIME": "Time started",
+      "END-TIME": "Time ended",
+      "PRIORITY": "Priority"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "ASSIGNEE": "Assignee",
+      "OWNER": "Owner",
+      "CREATE-TIME": "Created",
+      "END-TIME": "Ended",
+      "PRIORITY": "Priority"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "Deployments",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching deployments.",
+    "LIST-MESSAGE-EMPTY": "No matching deployments.",
+    "FILTER": {
+      "NAME": "Name (case sensitive)",
+      "TENANTID": "Tenant identifier (case sensitive)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "DEPLOY-TIME": "Deploy time",
+      "CATEGORY": "Category",
+      "TENANT": "Tenant"
+    },
+    "ACTION": {
+      "UPLOAD": "Upload process or package",
+      "DELETE": "Delete deployment"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Select a .bpmn, .bpmn20.xml process file to deploy or upload a package of processes (with assets) contained in .zip or .bar file.",
+        "WARNING": "Uploading a process is only possible to a core engine, not to a BPM Suite instance. Processes in the BPM Suite should be deployed using an app that is shared with individuals or groups.",
+        "DROPZONE": "Or drop a file here",
+        "NO-DROP": "File drop is not supported by your browser",
+        "CANCEL-UPLOAD": "Cancel upload",
+        "ERROR": "Could not upload this file"
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "You are about to delete the deployment '{{name}}'. Any associated process instances (active or completed) will also be deleted. Do you really want to delete the deployment '{{name}}'?"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "TIME": "Deployment time:",
+    "CATEGORY": "Category:",
+    "TENANTID": "Tenant identifier:",
+    "DEFINITIONS-MESSAGE": "This deployment has {{total}} process definitions, showing {{size}}.",
+    "DEFINITIONS-MESSAGE-EMPTY": "This deployment has no process definitions.",
+    "TITLE": {
+      "DEFINITIONS": "Process Definitions",
+      "RESOURCES": "Resources"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "Show all definitions"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "Job {{id}}",
+      "EXCEPTION": "Exception"
+    },
+    "ACTIONS": {
+      "EXECUTE": "Execute job",
+      "DELETE": "Delete job"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "Delete job '{{id}}'",
+        "MESSAGE": "Are you sure you want to delete job {{id}}?",
+        "CONFIRM": "Delete job"
+      }
+    },
+    "ID": "ID:",
+    "EXECUTION-ID": "Execution ID:",
+    "PROCESS-INSTANCE": "Process instance:",
+    "PROCESS-DEFINITION": "Process definition:",
+    "DUEDATE": "Due date:",
+    "RETRIES-LEFT": "Retries left:",
+    "TENANT-ID": "Tenant:"
+  },
+  "JOBS": {
+    "TITLE": "Jobs",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching jobs.",
+    "LIST-MESSAGE-EMPTY": "No matching jobs.",
+    "FILTER": {
+      "PROCESS-DEFINITION": "Process definition",
+      "ALL-PROCESS-DEFINITIONS": "All process definitions",
+      "PROCESS-INSTANCE-ID": "Process instance ID",
+      "TENANT-ID": "Tenant identifier",
+      "DUE-BEFORE": "Due before",
+      "DUE-AFTER": "Due after",
+      "EXCEPTION": "Exception",
+      "EXCEPTION-HELP": "Only show jobs with an exception"
+    },
+    "SORT": {
+      "ID": "Job ID",
+      "DUE-DATE": "Due date",
+      "PROCESS-INSTANCE-ID": "Process instance ID"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "Due date",
+      "PROCESS-DEFINITION": "Process definition",
+      "RETRIES": "Retries",
+      "EXCEPTION": "Exception"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Sign in",
+    "USERNAME": "Username",
+    "USERNAME-PLACEHOLDER": "Enter your username",
+    "PASSWORD": "Password",
+    "PASSWORD-PLACEHOLDER": "Enter your password",
+    "ACTION": {
+      "CONFIRM": "Sign in"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. All rights reserved."
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "Refresh page every {{name}}",
+    "NUMBER-OF-MEMBERS": "Number of members:",
+    "NODE-ID": "ID:",
+    "LAST-UPDATED": "Last updated:",
+    "LAST-METRICS-UPDATE": "Last metrics update:",
+    "NOT-ENOUGH-DATA": "The node is in an unknown state. This could be because the node hasn't finished joining the cluster or it hasn't sent enough data yet to display here.",
+    "JOB-EXECUTOR-RUNNING": "Job executor running:",
+    "JAVA-VERSION": "Java version:",
+    "SUITE-INFORMATION": "This is an instance of the Process Services Suite, version {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}} (edition '{{bpmSuiteEdition}}')",
+    "MEMORY-USAGE": "Memory usage:",
+    "MEMORY-USED": "used",
+    "MEMORY-HEAP": "Heap:",
+    "MEMORY-NON-HEAP": "Non-heap:",
+    "UPTIME": "Uptime:",
+    "GARBAGE-COLLECTION": "Ran {{['collection.count']}} times, total time spent is {{['collection.time'] | humanTime}}",
+    "MASTER-CONFIGURATION": "Master configuration:",
+    "MASTER-CONFIGURATION-USED": "Correct master configuration used",
+    "MASTER-CONFIGURATION-NOT-USED": "Master configuration is not used",
+    "MASTER-CONFIGURATION-DISABLED": "Master configuration is disabled",
+    "MASTER-CONFIGURATION-INCORRECT": "Incorrect master configuration!",
+    "CLASSES-LOADED": "Current classes loaded:",
+    "CLASSES-UNLOADED": "Total classes unloaded:",
+    "CLASSES-TOTAL": "Total classes loaded:",
+    "CACHE-HITS": "Cache hits",
+    "CACHE-MISSES": "Cache misses",
+    "CACHE-ADDITIONS": "Cache additions",
+    "CACHE-REMOVALS": "Cache removals",
+    "JOBS-EXECUTED": "Number of jobs executed",
+    "JOBS-FAILED": "Number of jobs failed",
+    "JOBS-QUEUE-FULL": "Job queue full",
+    "PROCESS-INSTANCES": "Process instances started",
+    "HOUR-COUNT-CHART": "Total number / hour",
+    "WEEKDAY-COUNT-CHART": "Total number / weekday",
+    "TASKS-COMPLETED": "Tasks completed",
+    "MEAN-RATE": "Mean rate (per second):",
+    "TOTAL": "Total:",
+    "COUNT": "Count",
+    "MAX": "Max",
+    "MIN": "Min",
+    "STDDEV": "Stddev",
+    "MINUTE-RATE": "1/5/15 minute rate:",
+    "REST-REQUEST-TYPE": "Request type (rate unit = events/second)",
+    "REST-ENDPOINTS": "REST endpoints timings (duration unit = seconds, rate unit = calls/second)",
+    "ELASTIC-SEARCH-VERSION": "Version",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "Cluster name",
+    "ELASTIC-SEARCH-STATE": "Status",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "a red status indicates that the specific shard is not allocated in the cluster, yellow means that the primary shard is allocated but replicas are not, and green means that all shards are allocated",
+    "ELASTIC-SEARCH-INDICES": "Indices",
+    "ELASTIC-SEARCH-DOCS-COUNT": "Doc count",
+    "ELASTIC-SEARCH-SHARD-INFO": "Shard info",
+    "TITLE": {
+      "MAIN": "Cluster monitoring",
+      "NODE": "Node {{ipAddress}}",
+      "MEMORY": "Memory",
+      "GARBAGE-COLLECTION": "Garbage collection",
+      "CLASSLOADING": "Classloading",
+      "PROCESS-DEFINITION-CACHE": "Process definition cache",
+      "JOB-METRICS": "Job metrics",
+      "RUNTIME-METRICS": "Runtime metrics",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "Rest endpoint metrics",
+      "BPM-SUITE-ELASTIC-SEARCH": "Elastic Search"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "Change password for '{{login}}'",
+        "OLD-PASSWORD": "Old password",
+        "NEW-PASSWORD": "New password",
+        "CONFIRM": "Change password"
+      },
+      "DELETE": {
+        "TITLE": "Delete user {{login}}",
+        "MESSAGE": "Are you sure you want to delete user '{{login}}'?",
+        "CONFIRM": "Delete user"
+      },
+      "EDIT": {
+        "TITLE": "Edit user {{login}}",
+        "LOGIN": "Login",
+        "EMAIL": "Email",
+        "FIRSTNAME": "Firstname",
+        "LASTNAME": "Lastname",
+        "CONFIRM": "Update user",
+        "READONLY":  "Read-only user"
+      },
+      "NEW": {
+        "TITLE": "Create new user",
+        "LOGIN": "Login",
+        "EMAIL": "Email",
+        "FIRSTNAME": "Firstname",
+        "LASTNAME": "Lastname",
+        "PASSWORD": "Password",
+        "ADMIN": "Has admin rights",
+        "CONFIRM": "Create user",
+        "READONLY":  "Read-only user"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "Users",
+    "ACTION": {
+      "EDIT": "Edit user",
+      "NEW": "Create new user",
+      "DELETE": "Delete user",
+      "CHANGE-PASSWORD": "Change password"
+    },
+    "HEADER": {
+      "LOGIN": "Login",
+      "FIRSTNAME": "Firstname",
+      "LASTNAME": "Lastname",
+      "EMAIL": "Email",
+      "CLUSTER_USER": "Cluster user"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "License information",
+      "HOLDER": "Holder",
+      "SUBJECT": "Subject",
+      "PRODUCTKEY": "Product type",
+      "GOODAFTERDATE": "License valid after",
+      "GOODBEFOREDATE": "License valid until",
+      "NUMBER_OF_PROCESSES": "Number of active processes",
+      "NUMBER_OF_ADMINS": "Number of administrator users",
+      "MULTI_TENANT": "Multi tenant",
+      "DEFAULT_TENANT": "Default tenant"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "Name:",
+    "USER": "User:",
+    "MASTER-MANDATORY": "Master configuration mandatory:",
+    "METRICS-SEND-INTERVAL": "Metric send interval:",
+    "ENDPOINT-HELP": "The endpoint configuration (each cluster has only one) needs to point to a REST installation. This endpoint retrieves and manages the data used in the other sections (for example deployments, process definitions, and so on) of this application.",
+    "ENDPOINT-NAME": "Name:",
+    "ENDPOINT-DESCRIPTION": "Description:",
+    "ENDPOINT-ADDRESS": "Server address:",
+    "ENDPOINT-PORT": "Server port:",
+    "ENDPOINT-CONTEXT-ROOT": "Context root:",
+    "ENDPOINT-REST-ROOT": "REST root:",
+    "ENDPOINT-USERNAME": "Username:",
+    "PROCESS-ENGINE-HELP": "This section allows you to define a 'master configuration' for the cluster. All instances in the cluster will use this configuration when they boot up (if the cluster config jar is on the classpath or if the corresponding properties are set). If not set, the instances will use their local configuration files.",
+    "NO-MASTER-DEFINED": "No master configuration defined",
+    "ACTION": {
+      "SHOW-PASSWORD": "Show password",
+      "EDIT-CLUSTER-CONFIG": "Edit cluster configuration",
+      "CREATE-CLUSTER-CONFIG": "Create new cluster",
+      "DELETE-CLUSTER-CONFIG": "Delete cluster configuration",
+      "GENERATE-JAR": "Generate cluster config jar",
+      "EDIT-ENDPOINT": "Edit Process Services REST endpoint",
+      "CHECK-ENDPOINT": "Check Process Services REST endpoint",
+      "SELECT-MASTER": "Select master configuration",
+      "ADD-CONFIGURATION": "Add master configuration",
+      "EDIT-CONFIGURATION": "Edit master configuration",
+      "DELETE-CONFIGURATION": "Delete master configuration"
+    },
+    "TITLE": {
+      "MAIN": "Cluster Configuration",
+      "ACTIVITI": "Instance settings",
+      "ENDPOINT": "Endpoint configuration",
+      "MASTER-CONFIGURATION": "Master configuration"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "Select master configuration",
+        "MESSAGE": "Are you sure you want to select '{{name}}' as master configuration?",
+        "CONFIRM": "Select master configuration"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "Delete master configuration",
+        "MESSAGE": "Are you sure you want to delete this master configuration?",
+        "CONFIRM": "Delete"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "Generate Cluster Configuration jar",
+        "MESSAGE": "It is important that all members of the same cluster use the same settings.",
+        "LINK-MESSAGE": "To facilitate this, a Java Archive jar (jar) can be downloaded by following the link below. This jar contains the configuration needed for a Process Services instance to communicate with the Process Services Admin Application.The jar simply needs to be put on the classpath and will be automatically used.",
+        "ADMIN-APP-URL": "The following field is the base URL which will be used to send information back to this Admin Application. Change it if, for some reason, the URL does not match the URL used to view this web UI.",
+        "CONFIRM": "Disable master configuration",
+        "ACTION-DOWNLOAD": "Download {{label}}"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "Edit endpoint configuration",
+        "ENDPOINT-NAME": "Name",
+        "ENDPOINT-DESCRIPTION": "Description",
+        "ENDPOINT-ADDRESS": "Server address",
+        "ENDPOINT-PORT": "Server port",
+        "ENDPOINT-CONTEXT-ROOT": "Context root",
+        "ENDPOINT-REST-ROOT": "REST root",
+        "ENDPOINT-USERNAME": "Username",
+        "ENDPOINT-PASSWORD": "Password",
+        "ENDPOINT-PASSWORD-HELP": "Leave blank to keep current password",
+        "ENDPOINT-URL-PREVIEW": "URL preview",
+        "ACTION-CONFIRM": "Save endpoint configuration",
+        "ERROR-401": "Error: invalid credentials",
+        "ERROR-403": "Error: invalid credentials or URL",
+        "ERROR-404": "Error: URL not found",
+        "ERROR-500": "Error: server error. Check server logs."
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "Delete cluster configuration",
+        "WARNING": "When a cluster configuration is deleted, note that you also should remove the configuration jar (or properties file) for this cluster configuration from the classpath of the nodes.",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "Cannot delete this cluster configuration: there needs to be one cluster configuration at minimum and this is the only cluster configuration defined in the system.",
+        "ACTION-DELETE": "Confirm"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "Cluster Name and Password",
+        "NETWORK-SETTINGS": "Network Settings",
+        "SECURITY-SETTINGS": "Security Settings",
+        "ACTIVITI-SETTINGS": "Instance Settings",
+        "STEPS": "Step {{currentStepIndex + 1}} out of {{steps.length}}",
+        "GROUP-HELP": "Each cluster needs to have a unique name. Each of the engine instances will need to provide this cluster name to join the cluster.",
+        "NAME": "Name",
+        "USERNAME": "User name",
+        "PASSWORD": "Password",
+        "SECURITY-HELP": "Each cluster needs to have a user name and password. Each of the Process Services engine instances that want to interchange data with the Process Services Admin Application will need to provide these credentials in their communication.",
+        "ACTIVITI-HELP": "When you enable master configuration, process instances that are members of this cluster boot up using the master configuration.",
+        "REQUIRES-MASTER": "Requires master configuration",
+        "METRICS-HELP": "Each Process Services instance which is a member of this cluster will send metrics (for example JVM and usage metrics) back to the Process Services Admin App. The following setting defines how frequent these metrics are gathered and sent.",
+        "METRICS-INTERVAL": "Send metrics interval (in seconds)",
+        "ERROR-NAME-TAKEN": "Cluster name already used. Choose another one.",
+        "ERROR-USER-TAKEN": "Cluster user name already used. Choose another one.",
+        "CONFIRM": "Save configuration"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "Create new configuration",
+        "TITLE-EDIT": "Edit configuration",
+        "NAME": "Name",
+        "DESCRIPTION": "Description",
+        "TITLE-DATABASE": "Database",
+        "JDBC-URL": "JDBC URL",
+        "JDBC-USERNAME": "JDBC username",
+        "JDBC-PASSWORD": "JDBC password",
+        "JDBC-DRIVER": "JDBC Driver",
+        "JDBC-JNDI-NAME": "JDBC JNDI name",
+        "JDBC-JNDI-HELP": "Fill this in (ignoring the settings above) if the datasource is configured in an application server and exposed through Jndi.",
+        "TITLE-SCHEMA": "Process Services Schema",
+        "SCHEMA-UPDATE": "Database schema update",
+        "SCHEMA-UPDATE-HELP": "It is advisable to leave this set to 'false', and upgrade the database schema using the SQL scripts. If set to 'true' the first node in the cluster to boot up will auto-upgrade the schema. This could cause issues when multiple nodes boot up at the same time since data definition is often not transactional.",
+        "TITLE-HISTORY": "History",
+        "HISTORY-LEVEL": "History level",
+        "TITLE-JOB-EXECUTOR": "Job executor",
+        "NR-OF-JOB-NODES-HELP": "Each Process Services engine instance has a job executor component, which is responsible for executing background tasks such as timers and async continuations of business processes. It is advisable, however, to only have a small number (one, two or more for very high load scenarios) of jobexecutors activated. The value of this setting will be used to activate or deactivate job executors as necessary in the cluster.",
+        "NR-OF-JOB-NODES": "Number of job executor nodes",
+        "JOB-EXECUTOR-ENABLE": "Enable job executor",
+        "TITLE-ADVANCED": "Advanced",
+        "PROCESS-DEF-CACHE-LIMIT": "Process definition cache limit",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "The maximum number of (parsed) process definitions that is kept in memory. Parsing a process definition is resource-intensive, so it is advisable to have a large enough cache while not using too much memory (default: unlimited).",
+        "ID-BLOCK-SIZE": "ID block size",
+        "ID-BLOCK-SIZE-HELP": "The number of database ID’s that a Process Services engine reserves for use when creating new entities (default: 100). When all ID’s have been used, a new block is reserved in the database.",
+        "ENABLE-JOB-TWEAKING": "Enable advanced job executor tweaking",
+        "ENABLE-JOB-TWEAKING-HELP": "The job executor is the component responsible for, amongst other things, executing timers and asynchronous continuations (referred to as 'jobs') of business processes.",
+        "TITLE-JOB-TWEAKING": "Job Executor Tweaking",
+        "MAX-JOBS-PER-ACQUISITION": "Max. job per acquisition",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "The job executor works in two phases: first, jobs are 'acquired' by locking jobs for a certain amount of time (to avoid conflicts between multiple job executors). In the second phase, the acquired jobs are executed by (typically) a separate threadpool. This value determines how many job are acquired per query for phase 1. When more than one job executor is active in a cluster, it is advised to set this value to 1 to avoid deadlocks. Default value is 1.",
+        "JOB-WAIT-TIME": "Wait time (ms)",
+        "JOB-WAIT-TIME-HELP": "The time (in ms) that is waited after all jobs have been executed or no jobs have been found. This is to avoid hitting the database way too much. Default value is 10000 ms.",
+        "JOB-LOCK-TIME": "Lock time (ms)",
+        "JOB-LOCK-TIME-HELP": "The time (in ms) that a job is locked by one job executor component. When the time is passed, but the job is not yet executed, the job can again be acquired by other job executor. This is to avoid that one failing job executor would halt job execution forever. Default value is 5 minutes (300000 ms)",
+        "JOB-CORE-POOL-SIZE": "Core thread pool size",
+        "JOB-CORE-POOL-SIZE-HELP": "The minimum amount of threads in the thread pool that are kept active for executing jobs. Only applicable for the default job executor.",
+        "JOB-QUEUE-SIZE": "Queue size",
+        "JOB-QUEUE-SIZE-HELP": "The default job executor first acquires jobs and puts them on queue before executing them in a thread pool. This value determines how many jobs are kept on this queue. Only applicable for the default job executor (does not apply for Spring job executor for example or custom implementations).",
+        "JOB-MAX-POOL-SIZE": "Max. thread pool size",
+        "JOB-MAX-POOL-SIZE-HELP": "The maximum amount of threads in the thread pool that are created for executing jobs. Only applicable for the default job executor.",
+        "TITLE-DB-POOL": "Database connection pool",
+        "ENABLE-DB-POOL": "Enable database connection pool configuration",
+        "ENABLE-DB-POOL-HELP": " Allows configuration of the connection pool of the datasource created by Alfresco Process Services. These settings are only applicable if Alfresco Process Services is responsible for creating the datasource (as opposed to jndi, for example) and has not received any Spring injections.",
+        "JOB-MAX-IDLE-CONNECTIONS": "Max. idle connections",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "Max. active connections",
+        "JOB-MAX-CHECKOUT-TIME": "Max. checkout time (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "The maximum time a connection can be used before it 'may' be given away again.",
+        "JOB-MAX-WAIT-TIME": "Max. wait time (ms)",
+        "JOB-MAX-WAIT-TIME-HELP": "The time to wait before retrying to get a connection.",
+        "TITLE-MAIL-SERVER": "Mail Server",
+        "ENABLE-MAIL-SERVER": "Enable mail server configuration",
+        "ENABLE-MAIL-SERVER-INFO": "This is only needed when using the email functionality in your business processes.",
+        "MAIL-DEFAULT-FROM": "Default from address",
+        "MAIL-HOST": "Mail server host",
+        "MAIL-PORT": "Mail server port",
+        "MAIL-USERNAME": "Mail server username",
+        "MAIL-PASSWORD": "Mail server password",
+        "MAIL-USE-SSL": "Use SSL?",
+        "MAIL-USE-TLS": "Use TLS?",
+        "MAIL-JNDI-NAME": "Mail server JNDI-name",
+        "MAIL-JNDI-NAME-INFO": "Fill this in (ignoring the settings above) if the mailserver is configured in an application server and exposed through Jndi.",
+        "ACTION-DELETE-CONFIGURATION": "Delete configuration",
+        "ACTION-CREATE-CONFIGURATION": "Create configuration",
+        "ACTION-UPDATE-CONFIGURATION": "Update configuration",
+        "CONFIG-OPTIONS": "Configuration type",
+        "OPTION-ENGINE": "Process Services Standalone Engine",
+        "OPTION-SUITE": "Process Services BPM Suite",
+        "FETCHING-TEMPLATE": "Fetching template from server ..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "App Deployments",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching app deployments.",
+    "LIST-MESSAGE-EMPTY": "No matching app deployments.",
+    "FILTER": {
+      "NAME": "Name",
+      "TENANTID": "Tenant identifier",
+      "LATEST": "Latest version",
+      "LATEST-HELP": "Only show latest versions"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "App ID",
+      "DEPLOYMENT-ID": "Process Deployment ID",
+      "DMN-DEPLOYMENT-ID": "DMN Deployment ID",
+      "NAME": "Name",
+      "DEPLOY-TIME": "Deploy time",
+      "DEPLOYED-BY": "Deployed by",
+      "TENANT": "Tenant ID"
+    },
+    "ACTION": {
+      "UPLOAD": "Upload and publish an app",
+      "PUBLISH-APP-MODEL": "Publish an app model"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Select a .zip app definition to deploy.",
+        "WARNING": "Uploading a process is only possible to a BPM Suite instance.",
+        "DROPZONE": "Or drop a file here",
+        "NO-DROP": "File drop is not supported by your browser",
+        "CANCEL-UPLOAD": "Cancel upload",
+        "ERROR": "Could not upload this file"
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "App ID:",
+    "DEPLOYMENT-ID": "Deployment ID:",
+    "DMN-DEPLOYMENT-ID": "DMN Deployment ID:",
+    "DEPLOYED-BY": "Deployed by:",
+    "DEPLOYED-ON": "Deployed on:",
+    "APP-NAME": "App Name:",
+    "VERSION": "Version:",
+    "DESCRIPTION": "Description:",
+    "KEY": "Key:",
+    "CATEGORY": "Category:",
+    "SUSPENDED": "Suspended:",
+    "DEPLOYMENT": "Deployment:",
+    "TENANT-ID": "Tenant ID:",
+    "START-FORM-DEFINED": "Start form defined:",
+    "GRAPHICAL-NOTATION-DEFINED": "Graphical notation defined:",
+    "PROCESS-DEFINITIONS-SIZE": "App definition has {{total}} process definitions",
+    "PROCESS-DEFINITIONS-SHOWING": ", showing {{size}} process definitions",
+    "PROCESS-DEFINITIONS-EMPTY": "App deployment has no process definitions",
+    "DECISION-TABLES-SIZE": "App deployment has {{total}} decision tables",
+    "DECISION-TABLES-SHOWING": ", showing {{size}} decision tables",
+    "DECISION-TABLES-EMPTY": "App deployment has no decision tables",
+    "FORMS-SIZE": "App deployment has {{total}} forms",
+    "FORMS-SHOWING": ", showing {{size}} forms",
+    "FORMS-EMPTY": "App deployment has no forms",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "Process definitions",
+      "DECISION-TABLES": "Decision tables",
+      "FORMS": "Forms"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Edit category",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "Show all process definitions",
+      "SHOW-ALL-DECISION-TABLES": "Show all decision tables",
+      "SHOW-ALL-FORMS": "Show all forms",
+      "SHOW-DIAGRAM": "Show process diagram"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Edit category for definition",
+        "MESSAGE": "The initial category for the definition is populated from the targetNameSpace attribute in the BPMN 2.0 XML, but can be altered after deployment.",
+        "CATEGORY": "Category",
+        "CATEGORY-PLACEHOLDER": "Enter a category",
+        "CONFIRM": "Update category"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Process diagram"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "Name",
+      "TYPE": "Type",
+      "VALUE": "Value"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "Group ID",
+      "TYPE": "Type",
+      "USER-ID": "User ID"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "We couldn't get data from the server",
+      "AUTHENTICATION-ERROR": "You entered invalid login credentials"
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "Configuration '{{name}}' deleted.",
+      "CONFIG-UPDATED": "Configuration '{{name}}' updated.",
+      "CONFIG-CREATED": "Configuration '{{name}}' created.",
+      "MASTER-CONFIG-DELETE": "Master configuration deleted.",
+      "MASTER-CONFIG-UPDATE": "Master configuration updated",
+      "CLUSTER-UPDATED": "Cluster configuration updated.",
+      "CLUSTER-CREATED": "Cluster configuration created.",
+      "ENDPOINT-UPDATED": "Endpoint '{{name}}' updated.",
+      "ENDPOINT-INVALID": "Endpoint configuration for '{{name}}' is invalid.",
+      "ENDPOINT-VALID": "Endpoint valid, Engine at endpoint: {{name}} - {{version}}"
+    },
+    "JOB": {
+      "DELETED": "Job '{{id}}' deleted successfully.",
+      "EXECUTED": "Job '{{id}}' was executed successfully."
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "Process instance '{{id}}' deleted successfully.",
+      "TERMINATED": "Process instance '{{id}}' terminated successfully."
+    },
+    "TASK": {
+      "DELETED": "Task '{{id}}' deleted successfully.",
+      "COMPLETED": "Task '{{id}}' completed successfully.",
+      "DELEGATED": "Task '{{id}}' delegated to user {{user}}.",
+      "RESOLVED": "Task '{{id}}' successfully resolved.",
+      "ASSIGNED": "Task '{{id}}' is now assigned to {{user}}.",
+      "UNASSIGNED": "Task '{{id}}' is now unassigned.",
+      "UPDATED": "Task '{{id}}' updated successfully."
+    },
+    "USER": {
+      "DELETED": "User '{{login}}' deleted successfully.",
+      "UPDATED": "User '{{login}}' updated successfully.",
+      "CREATED": "User '{{login}}' created.",
+      "PASSWORD-CHANGED": "Password for '{{login}}' is changed successfully."
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "Process definition category updated"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "Deleted deployment '{{name}}'",
+      "DELETE-ERROR": "We couldn't delete the deployment {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "Deleted app '{{appDefinition.name}}'",
+      "DELETE-ERROR": "We couldn't delete the app {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "Decision tables",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching decision tables.",
+    "LIST-MESSAGE-EMPTY": "No matching decision tables.",
+    "FILTER": {
+      "NAME": "Name",
+      "KEY": "Key",
+      "TENANTID": "Tenant identifier"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "VERSION": "Version",
+      "KEY": "Key",
+      "DEPLOY-TIME": "Deploy time",
+      "TENANT-ID": "Tenant ID"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "VERSION": "Version:",
+    "KEY": "Key:",
+    "DEPLOYMENT-ID": "Deployment ID:",
+    "RESOURCE-NAME": "Resource name:",
+    "DESCRIPTION": "Description:",
+    "TENANT": "Tenant:",
+    "TITLE": {
+      "DECISION-AUDITS": "Decision audits"
+    },
+    "DECISION-AUDITS-MESSAGE": "This decision table has {{total}} audits, showing {{size}}.",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "This decision table has no audits",
+    "ACTION": {
+      "EDIT-CATEGORY": "Edit category",
+      "SHOW-ALL-JOBS": "Show all jobs",
+      "SHOW-ALL-PROCESSES": "Show all processes",
+      "SHOW-DIAGRAM": "Show process diagram",
+      "SHOW-DECISION-TABLE": "Show decision table"
+    },
+    "POPUP": {
+      "TITLE": "Decision Table: ",
+      "KEY": "Key: ",
+      "HIT-POLICY": "Hit Policy: ",
+      "HIT-POLICIES": {
+        "FIRST": "First (Single pass)",
+        "ANY": "Any (Single pass)"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "Decision audit trails",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching decision audit trails.",
+    "LIST-MESSAGE-EMPTY": "No matching decision audit trails.",
+    "FILTER": {
+      "NAME": "Name (case sensitive)",
+      "TENANTID": "Tenant identifier (case sensitive)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    },
+    "POPUP": {
+      "HEADER": "Decision audit trail"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "Process Definition ID",
+      "PROCESS-INSTANCE-ID": "Process Instance ID",
+      "CREATED": "Created",
+      "FAILED": "Failed",
+      "EXECUTION-ID": "Execution ID",
+      "ACTIVITY-ID": "Activity ID",
+      "ACTIVITY-NAME": "Activity Name",
+      "DECISION-KEY": "Decision Key",
+      "DECISION-NAME": "Decision Name",
+      "DMN-DEPLOYMENT-ID": "DMN Deployment ID"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "Show Decision Audit"
+    },
+    "TABLE": {
+      "HEADER": "Decision table \"{{name}}\"",
+      "HIT-POLICY": "Hit policy",
+      "HIT-POLICIES": {
+        "FIRST": "First (Single pass)",
+        "ANY": "Any (Single pass)"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "An exception occurred when testing if the expression matched the input value: {{error}}",
+        "INPUT-MATCH": "The input value matched the expression.",
+        "INPUT-EMPTYEXPRESSION": "Empty expressions are treated as a match.",
+        "INPUT-NOMATCH": "The input value did not match the expression.",
+        "INPUT-NOTEXECUTED": "The expression was never tested.",
+        "OUTPUT-EXCEPTION": "An exception occurred when setting value using expression: \n {{expression}}.\nError message: {{error}}",
+        "OUTPUT-RESULT": "The value was set using the following expression: \n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "The following expression was never executed: \n {{expression}}"
+      },
+      "INPUT-VARIABLE": "Condition",
+      "OUTPUT-VARIABLE": "Outcome",
+      "INPUT-VARIABLES": "Input values",
+      "NO-INPUT-VARIABLES": "There were no input values when the decision table was executed",
+      "OUTPUT-VARIABLES": "Calculated values",
+      "NO-OUTPUT-VARIABLES": "No calculated values were produced from the decision tables",
+      "METADATA-NAME": "Name",
+      "METADATA-VALUE": "Value",
+      "LOAD-ERROR": "Something went wrong fetching the decision table and audit trail for execution '{{executionId}}' of activity '{{activityId}}'."
+    }
+  },
+  "FORMS": {
+    "TITLE": "Forms",
+    "LIST-MESSAGE": "Showing {{size}} results, from a total of {{total}} matching forms.",
+    "LIST-MESSAGE-EMPTY": "No matching forms.",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Name",
+      "APPID": "App ID",
+      "TENANTID": "Tenant ID"
+    },
+    "FILTER": {
+      "NAME": "Name",
+      "APPID": "App deployment ID",
+      "TENANTID": "Tenant identifier"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Name"
+    }
+  },
+  "FORM": {
+    "ID": "ID:",
+    "NAME": "Name:",
+    "APP-ID": "APP ID:",
+    "DEPLOYMENT-ID": "Deployment ID:",
+    "DESCRIPTION": "Description:",
+    "TENANT": "Tenant:",
+    "MESSAGE-EMPTY": "(None)",
+    "TITLE": {
+      "SUBMITTED-FORMS": "Submitted forms"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "This form has {{total}} submitted forms, showing {{size}}.",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "This form has no submitted forms",
+    "ACTION": {
+      "EDIT-CATEGORY": "Edit category",
+      "SHOW-ALL-JOBS": "Show all jobs",
+      "SHOW-ALL-PROCESSES": "Show all processes",
+      "SHOW-DIAGRAM": "Show process diagram",
+      "SHOW-FORM": "Show form"
+    },
+    "POPUP": {
+      "TITLE": "Form: "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "Display value",
+      "SELECT-FIELD": "(No field selected)",
+      "FIELD-VALUE": "Show value of field \"{{name}}\"",
+      "UNKNOWN-TYPE": "Unknown field type {{type}}",
+      "TEXT-VALUE": "Text",
+      "MULTI-TEXT-VALUE": "Multi-line text",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "Date",
+      "DATETIME-VALUE": "Date and time",
+      "DROPDOWN-VALUE": "Select ...",
+      "UPLOAD-VALUE": "Upload or import content...",
+      "RADIOS-OPTION1": "Option 1",
+      "SELECT-PERSON": "Select a person",
+      "SELECT-GROUP": "Select a group"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "Task ID",
+      "PROCESS-ID": "Process Instance ID",
+      "SUBMITTED": "Submitted on",
+      "SUBMITTED-BY": "Submitted by",
+      "FORM-ID": "Form ID"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "Show submitted form"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "Upload and publish an app",
+      "DOWNLOAD": "Download app",
+      "REDEPLOY": "Redeploy app to another cluster",
+      "DELETE": "Delete app"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Delete app '{{appDefinition.name}}'?"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "Select a .zip app file to deploy.",
+        "WARNING": "Uploading an app is only possible to a BPM Suite, not to a core engine instance.",
+        "DROPZONE": "Or drop a file here",
+        "NO-DROP": "File drop is not supported by your browser",
+        "CANCEL-UPLOAD": "Cancel upload",
+        "ERROR": "Could not upload this file"
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "Publish app model",
+        "PUBLISH": "Publish",
+        "ERROR": "Could not publish app",
+        "DESCRIPTION": "Select a .zip app file to deploy.",
+        "WARNING": "Uploading an app is only possible to a BPM Suite, not to a core engine instance.",
+        "DROPZONE": "Or drop a file here",
+        "NO-DROP": "File drop is not supported by your browser",
+        "LIST-MESSAGE": "Showing total of {{total}} matching app models.",
+        "LIST-MESSAGE-EMPTY": "No matching app models.",
+        "PUBLISH-ERROR": "Could not publish app",
+        "EVERYONES-APPS": "Show everyone's apps",
+        "APP-CONFLICT-ERROR": "App conflicts with existing app '{{name}}' created by '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "Publish app to another cluster",
+        "SELECT-CLUSTER": "Select cluster",
+        "PUBLISH-TO-CLUSTER": "Publish app to {{name}}",
+        "PUBLISH-AS-NEW-VERSION": "Publish as a new app version",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "Name",
+          "LAST-UPDATE": "Last update",
+          "CREATED-BY": "Created by"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "Redeploy app",
+        "DESCRIPTION": "Select a cluster to redeploy '{{name}}' to",
+        "ERROR": "Could not deploy app",
+        "APP-CONFLICT-ERROR": "App conflicts with existing app '{{name}}' created by '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "SELECT-CLUSTER": "Select cluster",
+        "DEPLOY-TO-CLUSTER": "Deploy app to {{name}}",
+        "DEPLOY": "Deploy",
+        "DEPLOY-AS-NEW-VERSION": "Deploy as a new app version"
+      }
+    }
+  }
+}

@@ -1,0 +1,1193 @@
+{
+  "GENERAL": {
+    "YES": "Sì",
+    "NO": "No",
+    "ACTION": {
+      "LOGOUT": "Disconnetti",
+      "DISMISS-ALERT": "Fare clic per chiudere questo messaggio",
+      "RETURN-TO-LIST": "Torna all'elenco",
+      "SHOW-RESULTS": "Visualizza {{'GENERAL.RESULT-SIZES.' + resultSize.toString() | translate}} risultati",
+      "REFRESH-LIST": "Aggiorna elenco",
+      "SORT-BY": "Ordina per {{name | translate}}",
+      "CLEAR-FILTERS": "Cancella filtri",
+      "CANCEL-AND-CLOSE": "Annulla e chiudi",
+      "CANCEL": "Annulla",
+      "NEXT": "Successivo",
+      "PREVIOUS": "Precedente",
+      "CLOSE": "Chiudi",
+      "SHOWLICENSE": "Informazioni licenza"
+    },
+    "TITLE": {
+      "MAIN": "Amministratore di Process Services",
+      "ACTIONS": "Azioni",
+      "FILTERS": "Filtri",
+      "CLUSTERS": "Cluster"
+    },
+    "MENU": {
+      "DEPLOYMENTS": "Dispiegamenti",
+      "PROCESS-DEFINITIONS": "Definizioni",
+      "PROCESS-INSTANCES": "Istanze",
+      "TASKS": "Compiti",
+      "JOBS": "Job",
+      "CONFIGURATION": "Configurazione",
+      "CONFIGURATION-ENGINE": "Motore",
+      "CONFIGURATION-USERS": "Configura utenti",
+      "MONITORING": "Monitoraggio",
+      "APPS": "Applicazioni"
+    },
+    "RESULT-SIZES": {
+      "10": "10",
+      "25": "25",
+      "50": "50",
+      "100": "100",
+      "100000000": "tutti"
+    },
+    "WARNING": {
+      "SERVER-LICENSE-ISSUE-ENDPOINT-ERROR": "L'endpoint non ha risposto durante l'ultima verifica della licenza. Verranno eseguite ulteriori verifiche, ma per ora si presume che la licenza non sia valida.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID": "L'applicazione è in modalità di sola lettura a causa di una licenza non valida sul server endpoint.",
+      "SERVER-LICENSE-ISSUE-LICENSE-NOT-FOUND": "L'applicazione è in modalità di sola lettura in quanto non è stata trovata una licenza valida sul server endpoint.",
+      "SERVER-LICENSE-ISSUE-LICENSE-INVALID-DATE": "L'applicazione è in modalità di sola lettura in quanto la data della licenza sul server endpoint di Alfresco Process Services non è valida (è scaduta o con una data di inizio non ancora raggiunta)."
+    }
+  },
+  "PROCESS-DEFINITION": {
+    "ID": "ID:",
+    "NAME": "Nome:",
+    "VERSION": "Versione:",
+    "DESCRIPTION": "Descrizione:",
+    "KEY": "Chiave:",
+    "CATEGORY": "Categoria:",
+    "SUSPENDED": "Sospeso:",
+    "DEPLOYMENT": "Dispiegamento:",
+    "TENANT": "Tenant:",
+    "START-FORM-DEFINED": "Modulo di avvio definito:",
+    "GRAPHICAL-NOTATION-DEFINED": "Notazione grafica definita:",
+    "PROCESS-INSTANCES-SIZE": "Nella definizione sono presenti {{total}} istanze di processo in esecuzione",
+    "PROCESS-INSTANCES-SHOWING": ", visualizzazione di {{size}} completate più di recente",
+    "PROCESS-INSTANCES-EMPTY": "Nella definizione non sono presenti istanze di processo in esecuzione",
+    "JOBS-SIZE": "Nella definizione sono presenti {{total}} job in esecuzione",
+    "JOBS-EMPTY": "Nella definizione non sono presenti job in esecuzione",
+    "DECISION-TABLES-SIZE": "Nella definizione sono presenti {{total}} tabelle decisioni.",
+    "DECISION-TABLES-EMPTY": "Nella definizione non sono presenti tabelle decisioni.",
+    "FORMS-SIZE": "Nella definizione sono presenti {{total}} moduli.",
+    "FORMS-EMPTY": "Nella definizione non sono presenti moduli.",
+    "TITLE": {
+      "PROCESS-INSTANCES": "Istanze di processo",
+      "JOBS": "Job",
+      "DECISION-TABLES": "Tabelle decisioni",
+      "FORMS": "Moduli"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifica categoria",
+      "SHOW-ALL-JOBS": "Visualizza tutti i job",
+      "SHOW-ALL-PROCESSES": "Visualizza tutti i processi",
+      "SHOW-DIAGRAM": "Visualizza diagramma del processo"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Modifica categoria per definizione",
+        "MESSAGE": "La categoria iniziale per la definizione è popolata dall'attributo targetNameSpace in BPMN 2.0 XML, ma può essere modificata dopo il dispiegamento.",
+        "CATEGORY": "Categoria",
+        "CATEGORY-PLACEHOLDER": "Immettere una categoria",
+        "CONFIRM": "Aggiorna categoria"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Diagramma del processo"
+      }
+    }
+  },
+  "PROCESS-DEFINITIONS": {
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} definizioni corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessuna definizione di processo corrispondente.",
+    "FILTER": {
+      "NAME": "Nome (distinzione tra maiuscole e minuscole)",
+      "KEY": "Chiave (distinzione tra maiuscole e minuscole)",
+      "DEPLOYMENT-ID": "ID dispiegamento",
+      "TENANT-ID": "ID tenant",
+      "LATEST": "Versione più recente",
+      "LATEST-HELP": "Visualizza solo le versioni più recenti"
+    },
+    "TITLE": {
+      "MAIN": "Definizioni di processo"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "VERSION": "Versione"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "VERSION": "Versione",
+      "KEY": "Chiave",
+      "TENANT": "Tenant"
+    },
+    "ACTIONS": {
+      "UPLOAD-FROM-MODELER": "Carica da editor di processi"
+    },
+    "POPUP": {
+      "UPLOAD-FROM-MODELER": {
+        "NAME": "Nome utente",
+        "PASSWORD": "Password",
+        "ERROR": "Impossibile contattare l'editor",
+        "UNAUTHORIZED": "Credenziali non valide",
+        "UPLOAD-DESCRIPTION": "Il modello di processo verrà recuperato e dispiegato sul cluster dei servizi di processo attualmente attivo. Selezionare un nome appropriato per il pacchetto di dispiegamento."
+      }
+    }
+  },
+  "PROCESS-INSTANCE": {
+    "ID": "ID:",
+    "NAME": "Nome:",
+    "DESCRIPTION": "Descrizione:",
+    "BUSINESS-KEY": "Chiave di business:",
+    "TENANT-ID": "Tenant:",
+    "STATUS": "Stato:",
+    "STATUS-ACTIVE": "Attivo",
+    "STATUS-COMPLETED": "Completato",
+    "ACTIVITY-ID-STARTED": "ID attività avviata:",
+    "ACTIVITY-ID-ENDED": "ID attività terminata:",
+    "DELETE-REASON": "Motivo eliminazione:",
+    "STARTED-BY": "Avviato da:",
+    "END-TIME": "Ora fine:",
+    "DURATION": "Durata:",
+    "SUPER-PROCESS-INSTANCE-ID": "ID super istanza di processo:",
+    "TASKS-SIZE": "In questa istanza di processo sono presenti {{total}} compiti.",
+    "TASKS-EMPTY": "In questa istanza di processo non sono presenti compiti.",
+    "VARIABLES-SIZE": "In questa istanza di processo sono presenti {{total}} variabili.",
+    "VARIABLES-EMPTY": "In questa istanza di processo non sono presenti variabili.",
+    "JOBS-SIZE": "In questa istanza di processo sono presenti {{total}} job.",
+    "JOBS-EMPTY": "In questa istanza di processo non sono presenti job.",
+    "SUBPROCESSES-SIZE": "In questa istanza di processo sono presenti {{total}} sottoprocessi.",
+    "SUBPROCESSES-EMPTY": "In questa istanza di processo non sono presenti sottoprocessi.",
+    "DECISION-TABLES-SIZE": "In questa istanza di processo sono presenti {{total}} tabelle decisioni.",
+    "DECISION-TABLES-EMPTY": "In questa istanza di processo non sono presenti tabelle decisioni.",
+    "FORMS-SIZE": "In questa istanza di processo sono presenti {{total}} moduli inviati.",
+    "FORMS-EMPTY": "In questa istanza di processo non sono presenti moduli inviati.",
+    "TITLE": {
+      "TASKS": "Compiti",
+      "VARIABLES": "Variabili",
+      "JOBS": "Job",
+      "SUBPROCESSES": "Sottoprocessi",
+      "DECISION-TABLES": "Tabelle decisioni",
+      "FORMS": "Moduli"
+    },
+    "ACTION": {
+      "DELETE": "Elimina istanza di processo",
+      "TERMINATE": "Termina istanza di processo",
+      "SHOW-ALL-TASKS": "Visualizza tutti i compiti",
+      "SHOW-ALL-JOBS": "Visualizza tutti i job",
+      "SHOW-ALL-SUBPROCESSES": "Visualizza tutti i sottoprocessi",
+      "SHOW-DIAGRAM": "Visualizza diagramma del processo",
+      "TITLE-VARIABLES": "Azioni su variabile selezionata",
+      "DELETE-VARIABLE": "Elimina variabile",
+      "UPDATE-VALUE": "Aggiorna variabile",
+      "ADD-VARIABLE": "Aggiungi variabile"
+    },
+    "POPUP": {
+      "DELETE": {
+        "TITLE": "Elimina istanza di processo",
+        "MESSAGE-DELETE": "Eliminare l'istanza di processo?",
+        "MESSAGE-TERMINATE": "Terminare l'istanza di processo?",
+        "DELETE-REASON": "Motivo eliminazione",
+        "DELETE-REASON-HELP": "Immettere un motivo di eliminazione opzionale",
+        "CONFIRM-DELETE": "Elimina istanza di processo",
+        "CONFIRM-TERMINATE": "Termina istanza di processo"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Diagramma del processo"
+      },
+      "CREATE-VARIABLE": {
+        "TITLE": "Crea variabile",
+        "NAME": "Nome variabile",
+        "TYPE": "Tipo di variabile",
+        "VALUE": "Valore variabile",
+        "CREATE": "Crea"
+      },
+      "UPDATE-VARIABLE": {
+        "TITLE": "Aggiorna variabile '{{name}}'",
+        "NAME": "Nome variabile",
+        "VALUE": "Valore",
+        "CHECKED": "true",
+        "UNCHECKED": "false",
+        "DATE-HELP": "Formato ISO-8601 (ad esempio: 2016-01-28T23:00:00Z)",
+        "ACTION-UPDATE": "Aggiorna"
+      },
+      "DELETE-VARIABLE": {
+        "TITLE": "Elimina variabile '{{name}}'",
+        "MESSAGE": "Rimuovere questa variabile?",
+        "DELETE": "Elimina"
+      }
+    }
+  },
+  "PROCESS-INSTANCES": {
+    "TITLE": "Istanze di processo",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} istanze di processo corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessuna istanza di processo corrispondente.",
+    "FILTER": {
+      "NAME": "Nome",
+      "PROCESS-DEFINITION": "Definizione di processo",
+      "ALL-PROCESS-DEFINITIONS": "Tutte le definizioni di processo",
+      "BUSINESS-KEY": "Chiave di business",
+      "SUPER-PROCESS-INSTANCE-ID": "ID super istanza di processo",
+      "STARTED-BEFORE": "Avviato prima della data",
+      "STARTED-AFTER": "Avviato dopo la data",
+      "ENDED-BEFORE": "Terminato prima della data",
+      "ENDED-AFTER": "Terminato dopo la data",
+      "VARIABLE": "Variabile",
+      "VARIABLE-NAME": "Nome variabile",
+      "VARIABLE-VALUE": "Valore variabile",
+      "VARIABLE-BOOLEAN-VALUE": "Valore booleano: {{value}}",
+      "TENANT-ID": "Identificativo tenant"
+    },
+    "SORT": {
+      "ID": "ID",
+      "START-TIME": "Ora avvio"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "BUSINESS-KEY": "Chiave di business",
+      "PROCESS-DEFINITION": "Definizione di processo",
+      "CREATE-TIME": "Creato",
+      "END-TIME": "Terminato",
+      "STATUS": "Stato"
+    }
+  },
+  "TASK": {
+    "ID": "ID:",
+    "NAME": "Nome:",
+    "STATUS": "Stato:",
+    "STATUS-COMPLETED": "Completato",
+    "STATUS-ACTIVE": "Attivo",
+    "DESCRIPTION": "Descrizione:",
+    "TASK-DEFINITION-KEY": "Chiave definizione:",
+    "FORM-KEY": "Chiave modulo:",
+    "PRIORITY": "Priorità:",
+    "DELEGATION-STATE": "Stato di delega:",
+    "CATEGORY": "Categoria:",
+    "TENANT-ID": "Tenant:",
+    "PARENT": "Compito principale:",
+    "ASSIGNEE": "Assegnatario:",
+    "OWNER": "Proprietario:",
+    "START-DATE": "Data di inizio:",
+    "DUE-DATE": "Scadenza:",
+    "END-DATE": "Data di fine:",
+    "DELETE-REASON": "Motivo eliminazione:",
+    "PROCESS-INSTANCE": "Istanza di processo",
+    "PROCESS-DEFINITION": "Definizione di processo",
+    "EXECUTION-ID": "ID esecuzione:",
+    "SUBTASKS-MESSAGE": "In questo compito sono presenti {{total}} sottocompiti, visualizzazione di {{size}} di essi.",
+    "SUBTASKS-MESSAGE-EMPTY": "In questo compito non sono presenti sottocompiti.",
+    "VARIABLES-MESSAGE": "In questo compito sono presenti {{size}} variabili.",
+    "VARIABLES-MESSAGE-EMPTY": "In questo compito non sono presenti variabili.",
+    "IDENTITY-LINKS-MESSAGE": "In questo compito sono presenti {{size}} link di identità.",
+    "IDENTITY-LINKS-MESSAGE-EMPTY": "In questo compito non sono presenti link di identità.",
+    "ACTION": {
+      "EDIT": "Modifica compito",
+      "ASSIGN-CLAIM": "Assegna/Richiedi compito",
+      "DELEGATE": "Delega compito",
+      "RESOLVE": "Risolvi compito",
+      "COMPLETE": "Completa compito",
+      "DELETE": "Elimina compito",
+      "SHOW-ALL-SUBTASKS": "Visualizza tutti i sottocompiti",
+      "SHOW-SUBMITTED-FORM": "Visualizza modulo inviato"
+    },
+    "TITLE": {
+      "SUBTASKS": "Sottocompiti",
+      "IDENTITY-LINKS": "Link di identità",
+      "VARIABLES": "Variabili"
+    },
+    "POPUP": {
+      "ASSIGN": {
+        "TITLE": "Assegna compito",
+        "MESSAGE": "Assegnare il compito?",
+        "NEW-ASSIGNEE": "Nuovo assegnatario",
+        "NEW-ASSIGNEE-HELP": "Lasciare il campo assegnatario vuoto per non assegnare il compito ad altri utenti.",
+        "CONFIRM": "Assegna compito"
+      },
+      "COMPLETE": {
+        "TITLE": "Completa compito",
+        "MESSAGE": "Completare il compito?",
+        "CONFIRM": "Completa compito"
+      },
+      "DELEGATE": {
+        "TITLE": "Delega compito",
+        "MESSAGE": "Delegare il compito?",
+        "CONFIRM": "Delega compito",
+        "DELEGATE-TO": "Utente delegato"
+      },
+      "RESOLVE": {
+        "TITLE": "Risolvi compito",
+        "MESSAGE": "Risolvere il compito?",
+        "CONFIRM": "Risolvi compito"
+      },
+      "DELETE": {
+        "TITLE": "Elimina compito",
+        "MESSAGE": "Eliminare il compito?",
+        "CONFIRM": "Elimina compito"
+      },
+      "EDIT": {
+        "TITLE": "Modifica compito",
+        "CONFIRM": "Aggiorna compito",
+        "NAME": "Nome",
+        "DESCRIPTION": "Descrizione",
+        "PRIORITY": "Priorità",
+        "CATEGORY": "Categoria",
+        "ASSIGNEE": "Assegnatario",
+        "OWNER": "Proprietario",
+        "DUE-DATE": "Scadenza"
+      }
+    }
+  },
+  "TASKS": {
+    "TITLE": "Compiti",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} compiti corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessun compito corrispondente.",
+    "FILTER": {
+      "NAME": "Nome (distinzione tra maiuscole e minuscole)",
+      "ASSIGNEE": "Assegnatario (distinzione tra maiuscole e minuscole)",
+      "STATUS": "Stato",
+      "STATUS-ANY": "Qualsiasi stato",
+      "STATUS-ACTIVE": "Compiti attivi",
+      "STATUS-COMPLETE": "Compiti completati",
+      "PROCESS-INSTANCE-ID": "ID istanza di processo",
+      "TENANT-ID": "Identificativo tenant",
+      "OWNER": "Proprietario (distinzione tra maiuscole e minuscole)",
+      "PARENT-TASK-ID": "ID compito principale",
+      "CREATED-BEFORE": "Creato prima della data",
+      "CREATED-AFTER": "Creato dopo la data",
+      "ENDED-BEFORE": "Terminato prima della data",
+      "ENDED-AFTER": "Terminato dopo la data",
+      "DUE-BEFORE": "Scadenza entro la data",
+      "DUE-AFTER": "Scadenza dopo la data",
+      "TASK-VARIABLE": "Variabile locale del compito",
+      "PROCESS-VARIABLE": "Variabile del processo",
+      "VARIABLE-NAME": "Nome variabile",
+      "VARIABLE-VALUE": "Valore variabile",
+      "VARIABLE-BOOLEAN-VALUE": "Valore booleano: {{value}}"
+    },
+    "SORT": {
+      "NAME": "Nome",
+      "DUE-DATE": "Scadenza",
+      "START-TIME": "Ora avvio",
+      "END-TIME": "Ora fine",
+      "PRIORITY": "Priorità"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "ASSIGNEE": "Assegnatario",
+      "OWNER": "Proprietario",
+      "CREATE-TIME": "Creato",
+      "END-TIME": "Terminato",
+      "PRIORITY": "Priorità"
+    }
+  },
+  "DEPLOYMENTS": {
+    "TITLE": "Dispiegamenti",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} dispiegamenti corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessun dispiegamento corrispondente.",
+    "FILTER": {
+      "NAME": "Nome (distinzione tra maiuscole e minuscole)",
+      "TENANTID": "Identificativo tenant (distinzione tra maiuscole e minuscole)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nome"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "DEPLOY-TIME": "Ora di dispiegamento",
+      "CATEGORY": "Categoria",
+      "TENANT": "Tenant"
+    },
+    "ACTION": {
+      "UPLOAD": "Carica processo o pacchetto",
+      "DELETE": "Elimina dispiegamento"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Selezionare un file di processo .bpmn o .bpmn20.xml da dispiegare oppure caricare un pacchetto di processi (con asset) contenuto in un file con estensione .zip o .bar.",
+        "WARNING": "È possibile caricare un processo soltanto nel motore principale non in un'istanza di BPM Suite. I processi all'interno di BPM Suite devono essere dispiegati utilizzando un'applicazione condivisa con individui o gruppi.",
+        "DROPZONE": "Oppure rilasciare un file qui",
+        "NO-DROP": "L'operazione di rilascio non è supportata dal browser in uso",
+        "CANCEL-UPLOAD": "Annulla caricamento",
+        "ERROR": "Impossibile caricare il file"
+      },
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Si sta per eliminare il dispiegamento \"{{name}}\". In caso di istanze di processo a esso associate, attive o completate, anch'esse verranno eliminate. Eliminare il dispiegamento '{{name}}'?"
+      }
+    }
+  },
+  "DEPLOYMENT": {
+    "ID": "ID:",
+    "NAME": "Nome:",
+    "TIME": "Ora di dispiegamento:",
+    "CATEGORY": "Categoria:",
+    "TENANTID": "Identificativo tenant:",
+    "DEFINITIONS-MESSAGE": "In questo dispiegamento sono presenti {{total}} definizioni di processo, visualizzazione di {{size}} di esse.",
+    "DEFINITIONS-MESSAGE-EMPTY": "In questo dispiegamento non sono presenti definizioni di processo.",
+    "TITLE": {
+      "DEFINITIONS": "Definizioni di processo",
+      "RESOURCES": "Risorse"
+    },
+    "ACTION": {
+      "SHOW-ALL-DEFINITIONS": "Visualizza tutte le definizioni"
+    }
+  },
+  "JOB": {
+    "TITLE": {
+      "MAIN": "Job {{id}}",
+      "EXCEPTION": "Eccezione"
+    },
+    "ACTIONS": {
+      "EXECUTE": "Esegui job",
+      "DELETE": "Elimina job"
+    },
+    "POPUP": {
+      "DELETE-JOB": {
+        "TITLE": "Elimina job '{{id}}'",
+        "MESSAGE": "Eliminare il job {{id}}?",
+        "CONFIRM": "Elimina job"
+      }
+    },
+    "ID": "ID:",
+    "EXECUTION-ID": "ID esecuzione:",
+    "PROCESS-INSTANCE": "Istanza di processo:",
+    "PROCESS-DEFINITION": "Definizione di processo:",
+    "DUEDATE": "Scadenza:",
+    "RETRIES-LEFT": "Tentativi rimasti:",
+    "TENANT-ID": "Tenant:"
+  },
+  "JOBS": {
+    "TITLE": "Job",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} job corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessun job corrispondente.",
+    "FILTER": {
+      "PROCESS-DEFINITION": "Definizione di processo",
+      "ALL-PROCESS-DEFINITIONS": "Tutte le definizioni di processo",
+      "PROCESS-INSTANCE-ID": "ID istanza di processo",
+      "TENANT-ID": "Identificativo tenant",
+      "DUE-BEFORE": "Scadenza entro la data",
+      "DUE-AFTER": "Scadenza dopo la data",
+      "EXCEPTION": "Eccezione",
+      "EXCEPTION-HELP": "Visualizza solo job con un'eccezione"
+    },
+    "SORT": {
+      "ID": "ID job",
+      "DUE-DATE": "Scadenza",
+      "PROCESS-INSTANCE-ID": "ID istanza di processo"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "DUE-DATE": "Scadenza",
+      "PROCESS-DEFINITION": "Definizione di processo",
+      "RETRIES": "Tentativi",
+      "EXCEPTION": "Eccezione"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Accedi",
+    "USERNAME": "Nome utente",
+    "USERNAME-PLACEHOLDER": "Immettere il nome utente",
+    "PASSWORD": "Password",
+    "PASSWORD-PLACEHOLDER": "Immettere la password",
+    "ACTION": {
+      "CONFIRM": "Accedi"
+    },
+    "COPYRIGHT": "© 2005-2018 Alfresco Software Inc. Tutti i diritti riservati."
+  },
+  "MONITORING": {
+    "REFRESH-INTERVAL": "Aggiorna pagina ogni {{name}} secondi",
+    "NUMBER-OF-MEMBERS": "Numero di membri:",
+    "NODE-ID": "ID:",
+    "LAST-UPDATED": "Ultimo aggiornamento:",
+    "LAST-METRICS-UPDATE": "Ultimo aggiornamento di metrica:",
+    "NOT-ENOUGH-DATA": "il nodo si trova in uno stato sconosciuto. Questo perché il nodo non ha ancora completato l'unione al cluster o non ha ancora inviato una quantità di dati sufficiente da essere visualizzata qui.",
+    "JOB-EXECUTOR-RUNNING": "Job executor in esecuzione:",
+    "JAVA-VERSION": "Versione Java:",
+    "SUITE-INFORMATION": "Questa è un'istanza di Process Services Suite, versione {{bpmSuiteMajorVersion}}.{{bpmSuiteMinorVersion}}.{{bpmSuiteRevisionVersion}} (edizione '{{bpmSuiteEdition}}')",
+    "MEMORY-USAGE": "Utilizzo memoria:",
+    "MEMORY-USED": "utilizzati",
+    "MEMORY-HEAP": "Heap:",
+    "MEMORY-NON-HEAP": "Non-heap:",
+    "UPTIME": "Tempo di attività:",
+    "GARBAGE-COLLECTION": "Eseguito {{['collection.count']}} volte, tempo totale impiegato {{['collection.time'] | humanTime}}",
+    "MASTER-CONFIGURATION": "Configurazione principale:",
+    "MASTER-CONFIGURATION-USED": "Configurazione principale corretta utilizzata",
+    "MASTER-CONFIGURATION-NOT-USED": "Configurazione principale non utilizzata",
+    "MASTER-CONFIGURATION-DISABLED": "Configurazione principale disabilitata",
+    "MASTER-CONFIGURATION-INCORRECT": "Configurazione principale errata",
+    "CLASSES-LOADED": "Classi attualmente caricate:",
+    "CLASSES-UNLOADED": "Totale classi non caricate:",
+    "CLASSES-TOTAL": "Totale classi caricate:",
+    "CACHE-HITS": "Riscontri cache",
+    "CACHE-MISSES": "Mancati riscontri cache",
+    "CACHE-ADDITIONS": "Aggiunte cache",
+    "CACHE-REMOVALS": "Rimozioni cache",
+    "JOBS-EXECUTED": "Numero di job eseguiti",
+    "JOBS-FAILED": "Numero di job non riusciti",
+    "JOBS-QUEUE-FULL": "Coda job piena",
+    "PROCESS-INSTANCES": "Istanze di processo avviate",
+    "HOUR-COUNT-CHART": "Numero totale/Ora",
+    "WEEKDAY-COUNT-CHART": "Numero totale/Giorno feriale",
+    "TASKS-COMPLETED": "Compiti completati",
+    "MEAN-RATE": "Velocità media (al secondo):",
+    "TOTAL": "Totale:",
+    "COUNT": "Numero",
+    "MAX": "Max.",
+    "MIN": "Min.",
+    "STDDEV": "Stddev",
+    "MINUTE-RATE": "Velocità minuto 1/5/15:",
+    "REST-REQUEST-TYPE": "Tipo di richiesta (unità di velocità = eventi/secondo)",
+    "REST-ENDPOINTS": "Intervalli endpoint REST (unità di durata = secondi, unità di velocità = chiamate/secondo)",
+    "ELASTIC-SEARCH-VERSION": "Versione",
+    "ELASTIC-SEARCH-CLUSTER-NAME": "Nome del cluster",
+    "ELASTIC-SEARCH-STATE": "Stato",
+    "ELASTIC-SEARCH-STATE-DESCRIPTION": "lo stato rosso indica che la partizione specifica non è allocata nel cluster, giallo indica che la partizione primaria è stata allocata mentre le repliche non sono state ancora assegnate, infine lo stato verde indica che tutte le partizioni sono state allocate",
+    "ELASTIC-SEARCH-INDICES": "Indici",
+    "ELASTIC-SEARCH-DOCS-COUNT": "Conteggio documenti",
+    "ELASTIC-SEARCH-SHARD-INFO": "Informazioni sulla partizione",
+    "TITLE": {
+      "MAIN": "Monitoraggio cluster",
+      "NODE": "Nodo {{ipAddress}}",
+      "MEMORY": "Memoria",
+      "GARBAGE-COLLECTION": "Garbage collection",
+      "CLASSLOADING": "Caricamento di classe",
+      "PROCESS-DEFINITION-CACHE": "Cache definizioni di processo",
+      "JOB-METRICS": "Metrica job",
+      "RUNTIME-METRICS": "Metrica runtime",
+      "BPM-SUITE": "BPM Suite",
+      "BPM-SUITE-REST-METRICS": "Metrica endpoint REST",
+      "BPM-SUITE-ELASTIC-SEARCH": "Ricerca flessibile"
+    }
+  },
+  "USER": {
+    "POPUP": {
+      "CHANGE-PASSWORD": {
+        "TITLE": "Cambia password per '{{login}}'",
+        "OLD-PASSWORD": "Vecchia password",
+        "NEW-PASSWORD": "Nuova password",
+        "CONFIRM": "Cambia password"
+      },
+      "DELETE": {
+        "TITLE": "Elimina utente {{login}}",
+        "MESSAGE": "Eliminare utente '{{login}}'?",
+        "CONFIRM": "Elimina utente"
+      },
+      "EDIT": {
+        "TITLE": "Modifica utente {{login}}",
+        "LOGIN": "Login",
+        "EMAIL": "E-mail",
+        "FIRSTNAME": "Nome",
+        "LASTNAME": "Cognome",
+        "CONFIRM": "Aggiorna utente",
+        "READONLY": "Utente di sola lettura"
+      },
+      "NEW": {
+        "TITLE": "Crea nuovo utente",
+        "LOGIN": "Login",
+        "EMAIL": "E-mail",
+        "FIRSTNAME": "Nome",
+        "LASTNAME": "Cognome",
+        "PASSWORD": "Password",
+        "ADMIN": "Dispone dei diritti di amministratore",
+        "CONFIRM": "Crea utente",
+        "READONLY": "Utente di sola lettura"
+      }
+    }
+  },
+  "USERS": {
+    "TITLE": "Utenti",
+    "ACTION": {
+      "EDIT": "Modifica utente",
+      "NEW": "Crea nuovo utente",
+      "DELETE": "Elimina utente",
+      "CHANGE-PASSWORD": "Cambia password"
+    },
+    "HEADER": {
+      "LOGIN": "Login",
+      "FIRSTNAME": "Nome",
+      "LASTNAME": "Cognome",
+      "EMAIL": "E-mail",
+      "CLUSTER_USER": "Utente cluster"
+    }
+  },
+  "LICENSE": {
+    "POPUP": {
+      "TITLE": "Informazioni sulla licenza",
+      "HOLDER": "Titolare",
+      "SUBJECT": "Oggetto",
+      "PRODUCTKEY": "Tipo di prodotto",
+      "GOODAFTERDATE": "Licenza valida a partire da",
+      "GOODBEFOREDATE": "Licenza valida fino a",
+      "NUMBER_OF_PROCESSES": "Numero di processi attivi",
+      "NUMBER_OF_ADMINS": "Numero di utenti amministratori",
+      "MULTI_TENANT": "Multi-tenant",
+      "DEFAULT_TENANT": "Tenant predefinito"
+    }
+  },
+  "CLUSTER": {
+    "NAME": "Nome:",
+    "USER": "Utente:",
+    "MASTER-MANDATORY": "Configurazione principale obbligatoria:",
+    "METRICS-SEND-INTERVAL": "Intervallo invio metrica:",
+    "ENDPOINT-HELP": "La configurazione dell'endpoint (una per ogni cluster) deve puntare a un'installazione REST. Tale endpoint viene utilizzato per recuperare e gestire i dati utilizzati nelle altre sezioni (ad esempio dispiegamenti, definizioni di processo, ecc.) di questa applicazione.",
+    "ENDPOINT-NAME": "Nome:",
+    "ENDPOINT-DESCRIPTION": "Descrizione:",
+    "ENDPOINT-ADDRESS": "Indirizzo server:",
+    "ENDPOINT-PORT": "Porta server:",
+    "ENDPOINT-CONTEXT-ROOT": "Context root:",
+    "ENDPOINT-REST-ROOT": "REST root:",
+    "ENDPOINT-USERNAME": "Nome utente:",
+    "PROCESS-ENGINE-HELP": "Questa sezione consente di definire una 'configurazione principale' per il cluster. Tutte le istanze presenti nel cluster utilizzeranno questa configurazione all'avvio (se il jar di configurazione del cluster è sul classpath o se le proprietà corrispondenti sono impostate). In caso contrario, le istanze utilizzeranno i file di configurazione locale.",
+    "NO-MASTER-DEFINED": "Configurazione principale non definita",
+    "ACTION": {
+      "SHOW-PASSWORD": "Visualizza password",
+      "EDIT-CLUSTER-CONFIG": "Modifica configurazione cluster",
+      "CREATE-CLUSTER-CONFIG": "Crea nuovo cluster",
+      "DELETE-CLUSTER-CONFIG": "Elimina configurazione cluster",
+      "GENERATE-JAR": "Genera jar di configurazione cluster",
+      "EDIT-ENDPOINT": "Modifica endpoint Process Services REST",
+      "CHECK-ENDPOINT": "Verifica endpoint Process Services REST",
+      "SELECT-MASTER": "Seleziona configurazione principale",
+      "ADD-CONFIGURATION": "Aggiungi configurazione principale",
+      "EDIT-CONFIGURATION": "Modifica configurazione principale",
+      "DELETE-CONFIGURATION": "Elimina configurazione principale"
+    },
+    "TITLE": {
+      "MAIN": "Configurazione cluster",
+      "ACTIVITI": "Impostazioni istanza",
+      "ENDPOINT": "Configurazione endpoint",
+      "MASTER-CONFIGURATION": "Configurazione principale"
+    },
+    "POPUP": {
+      "SELECT-MASTER": {
+        "TITLE": "Seleziona configurazione principale",
+        "MESSAGE": "Selezionare '{{name}}' come configurazione principale?",
+        "CONFIRM": "Seleziona configurazione principale"
+      },
+      "DELETE-MASTER": {
+        "TITLE": "Elimina configurazione principale",
+        "MESSAGE": "Eliminare questa configurazione principale?",
+        "CONFIRM": "Elimina"
+      },
+      "GENERATE-JAR": {
+        "TITLE": "Genera jar di configurazione cluster",
+        "MESSAGE": "È importante che tutti i membri appartenenti allo stesso cluster utilizzino le stesse impostazioni.",
+        "LINK-MESSAGE": "Per semplificare questa operazione, è possibile scaricare un jar Java Archive (jar) facendo clic sul link sottostante. Questo jar contiene la configurazione necessaria affinché un'istanza di Process Services comunichi con l'applicazione di amministrazione di Process Services. È sufficiente collocare il jar sul classpath e verrà automaticamente utilizzato.",
+        "ADMIN-APP-URL": "Il seguente campo rappresenta l'URL di base che sarà utilizzato per inviare di nuovo le informazioni all'applicazione di amministrazione. Sarà necessario modificarlo nel caso in cui, per qualche motivo, l'URL non corrisponda a quello utilizzato per visualizzare questa interfaccia Web.",
+        "CONFIRM": "Disabilita configurazione principale",
+        "ACTION-DOWNLOAD": "Scarica {{label}}"
+      },
+      "EDIT-ENDPOINT": {
+        "TITLE": "Modifica configurazione endpoint",
+        "ENDPOINT-NAME": "Nome",
+        "ENDPOINT-DESCRIPTION": "Descrizione",
+        "ENDPOINT-ADDRESS": "Indirizzo server",
+        "ENDPOINT-PORT": "Porta server",
+        "ENDPOINT-CONTEXT-ROOT": "Context root",
+        "ENDPOINT-REST-ROOT": "REST root",
+        "ENDPOINT-USERNAME": "Nome utente",
+        "ENDPOINT-PASSWORD": "Password",
+        "ENDPOINT-PASSWORD-HELP": "Lasciare vuoto per mantenere la password corrente",
+        "ENDPOINT-URL-PREVIEW": "Anteprima URL",
+        "ACTION-CONFIRM": "Salva configurazione endpoint",
+        "ERROR-401": "Errore: credenziali non valide",
+        "ERROR-403": "Errore: credenziali o URL non validi",
+        "ERROR-404": "Errore: impossibile trovare l'URL",
+        "ERROR-500": "Errore: errore del server. Verificare i registri del server."
+      },
+      "DELETE-CLUSTER-CONFIG": {
+        "TITLE": "Elimina configurazione cluster",
+        "WARNING": "Quando viene eliminata una configurazione cluster, è necessario rimuovere da essa anche il jar di configurazione (o file delle proprietà) dal classpath dei nodi.",
+        "ERROR-ONLY-ONE-CLUSTER-CONFIG": "Impossibile eliminare questa configurazione cluster: è necessaria la presenza di almeno una configurazione cluster e questa è l'unica configurazione cluster definita nel sistema.",
+        "ACTION-DELETE": "Conferma"
+      },
+      "EDIT-CLUSTER-CONFIG": {
+        "GROUP-SETTINGS": "Nome e password cluster",
+        "NETWORK-SETTINGS": "Impostazioni di rete",
+        "SECURITY-SETTINGS": "Impostazioni di sicurezza",
+        "ACTIVITI-SETTINGS": "Impostazioni istanza",
+        "STEPS": "Passaggio {{currentStepIndex + 1}} di {{steps.length}}",
+        "GROUP-HELP": "Ogni cluster deve avere un nome univoco. Ogni istanza del motore dovrà fornire questo nome del cluster per potersi unire a esso.",
+        "NAME": "Nome",
+        "USERNAME": "Nome utente",
+        "PASSWORD": "Password",
+        "SECURITY-HELP": "Ogni cluster deve avere un nome utente e una password. Ogni istanza del motore di Process Services che desidera scambiare dati con l'applicazione di amministrazione di Process Services dovrà fornire queste credenziali durante la comunicazione.",
+        "ACTIVITI-HELP": "Abilitando la configurazione principale, sarà possibile avviare istanze di processo che sono membri di questo cluster utilizzando la configurazione principale.",
+        "REQUIRES-MASTER": "Richiede configurazione principale",
+        "METRICS-HELP": "Ogni istanza di Process Services membro di questo cluster restituirà metriche (ad esempio metrica JVM e di utilizzo) all'applicazione di amministrazione di Process Services. Le seguenti impostazioni definiscono la frequenza con cui tali metriche vengono raggruppate e inviate.",
+        "METRICS-INTERVAL": "Invia intervallo metrica (in secondi)",
+        "ERROR-NAME-TAKEN": "Nome del cluster già in uso. Sceglierne uno diverso.",
+        "ERROR-USER-TAKEN": "Nome dell'utente del cluster già in uso. Sceglierne uno diverso.",
+        "CONFIRM": "Salva configurazione"
+      },
+      "EDIT-CONFIG": {
+        "TITLE-NEW": "Crea nuova configurazione",
+        "TITLE-EDIT": "Modifica configurazione",
+        "NAME": "Nome",
+        "DESCRIPTION": "Descrizione",
+        "TITLE-DATABASE": "Database",
+        "JDBC-URL": "URL JDBC",
+        "JDBC-USERNAME": "Nome utente JDBC",
+        "JDBC-PASSWORD": "Password JDBC",
+        "JDBC-DRIVER": "Driver JDBC",
+        "JDBC-JNDI-NAME": "Nome JNDI JDBC",
+        "JDBC-JNDI-HELP": "Da compilare (ignorando le impostazioni sopraindicate) se l'origine dati è configurata in un server applicazioni ed esposta attraverso Jndi.",
+        "TITLE-SCHEMA": "Schema Process Services",
+        "SCHEMA-UPDATE": "Aggiornamento dello schema del database",
+        "SCHEMA-UPDATE-HELP": "È consigliabile mantenere l'impostazione su 'false' e aggiornare lo schema del database utilizzando gli script SQL. Se si sceglie 'true', il primo nodo ad avviarsi nel cluster aggiornerà automaticamente lo schema. Questa operazione può causare problemi quando più nodi si avviano contemporaneamente poiché la definizione dei dati spesso non è transazionale.",
+        "TITLE-HISTORY": "Cronologia",
+        "HISTORY-LEVEL": "Livello cronologia",
+        "TITLE-JOB-EXECUTOR": "Job executor",
+        "NR-OF-JOB-NODES-HELP": "Ogni istanza del motore di Process Services dispone di un componente job executor per eseguire le attività in background, come i timer e le continuazioni asincrone dei processi di business. È tuttavia consigliabile avere soltanto un numero limitato di job executor attivati (uno, due o più di due per scenari ad alto carico). Il valore di questa impostazione verrà utilizzato per attivare o disattivare i job executor nel cluster, se necessario.",
+        "NR-OF-JOB-NODES": "Numero di nodi del job executor",
+        "JOB-EXECUTOR-ENABLE": "Abilita job executor",
+        "TITLE-ADVANCED": "Avanzato",
+        "PROCESS-DEF-CACHE-LIMIT": "Limite cache definizioni di processo",
+        "PROCESS-DEF-CACHE-LIMIT-HELP": "Il numero massimo di definizioni di processo (analizzate) che rimane in memoria. L'analisi di una definizione di processo è un'operazione a elevato utilizzo di risorse, perciò è consigliabile avere una cache di dimensioni sufficienti ma che non utilizzi troppa memoria (valore predefinito: illimitato).",
+        "ID-BLOCK-SIZE": "Dimensione del blocco ID",
+        "ID-BLOCK-SIZE-HELP": "Il numero di ID database che un motore di Process Services riserva per l'utilizzo quando crea nuove entità (valore predefinito: 100). Quando tutti gli ID sono esauriti, viene riservato un nuovo blocco nel database.",
+        "ENABLE-JOB-TWEAKING": "Abilita regolazione avanzata del job executor",
+        "ENABLE-JOB-TWEAKING-HELP": "Il job executor è il componente responsabile dell'esecuzione dei timer, delle continuazioni asincrone e di altre operazioni (chiamate genericamente \"job\") per i processi di business.",
+        "TITLE-JOB-TWEAKING": "Regolazione job executor",
+        "MAX-JOBS-PER-ACQUISITION": "Numero max. di job per acquisizione",
+        "MAX-JOBS-PER-ACQUISITION-HELP": "Il job executor opera seguendo due fasi: durante la prima fase, i job vengono \"acquisiti\" bloccando i processi per un determinato periodo di tempo (per evitare conflitti tra più job executor). Durante la seconda fase, i job acquisiti vengono eseguiti (generalmente) da un pool di thread distinto. Questo valore determina il numero di job acquisiti per query durante la fase 1. Quando in un cluster è attivo più di un job executor, è consigliabile impostare tale valore su 1 per evitare blocchi critici. Valore predefinito: 1.",
+        "JOB-WAIT-TIME": "Tempo di attesa (ms)",
+        "JOB-WAIT-TIME-HELP": "Il tempo di attesa (in ms) dopo che tutti i job sono stati eseguiti o dopo che non sono stati trovati job. Tutto ciò è per evitare di accedere eccessivamente al database. Valore predefinito: 10000 ms.",
+        "JOB-LOCK-TIME": "Tempo di blocco (ms)",
+        "JOB-LOCK-TIME-HELP": "Il tempo (in ms) durante il quale un job è bloccato da un componente job executor. Quando il tempo è trascorso, ma il job non è ancora stato eseguito, il job può essere acquisito nuovamente da altri job executor. In questo modo si evita che un job executor con problemi interrompa definitivamente l'esecuzione del job. Valore predefinito: 5 minuti (300.000 ms)",
+        "JOB-CORE-POOL-SIZE": "Dimensione pool di thread core",
+        "JOB-CORE-POOL-SIZE-HELP": "Il numero minimo di thread che sono mantenuti attivi nel pool di thread per eseguire i job. È valido solo per il job executor predefinito.",
+        "JOB-QUEUE-SIZE": "Dimensioni coda",
+        "JOB-QUEUE-SIZE-HELP": "Il job executor predefinito prima acquisisce i job, quindi li mette in coda prima di eseguirli in un pool di thread. Questo valore determina il numero di job che rimangono in coda. È valido solo per il job executor predefinito (non valido per Spring job executor, ad esempio, o per le implementazioni personalizzate).",
+        "JOB-MAX-POOL-SIZE": "Dimensione massima pool di thread",
+        "JOB-MAX-POOL-SIZE-HELP": "Il numero massimo di thread creati nel pool di thread per eseguire i job. È valido solo per il job executor predefinito.",
+        "TITLE-DB-POOL": "Pool di connessioni al database",
+        "ENABLE-DB-POOL": "Abilita configurazione del pool di connessioni al database",
+        "ENABLE-DB-POOL-HELP": " Consente di configurare il pool di connessioni dell'origine dati creato da Alfresco Process Services. Queste impostazioni sono valide soltanto se Alfresco Process Services è responsabile della creazione dell'origine dati (ad es.opposto a jndi) e non ha ricevuto alcuna iniezione Spring.",
+        "JOB-MAX-IDLE-CONNECTIONS": "Numero max. di connessioni inattive",
+        "JOB-MAX-ACTIVE-CONNECTIONS": "Numero max. di connessioni attive",
+        "JOB-MAX-CHECKOUT-TIME": "Tempo massimo di completamento della transazione (ms)",
+        "JOB-MAX-CHECKOUT-TIME-HELP": "Il limite di tempo massimo in cui è possibile utilizzare una connessione prima che 'possa' essere ceduta nuovamente.",
+        "JOB-MAX-WAIT-TIME": "Tempo massimo di attesa (ms)",
+        "JOB-MAX-WAIT-TIME-HELP": "Il tempo di attesa necessario prima di riprovare a ottenere una connessione.",
+        "TITLE-MAIL-SERVER": "Server di posta",
+        "ENABLE-MAIL-SERVER": "Abilita configurazione del server di posta",
+        "ENABLE-MAIL-SERVER-INFO": "Questa funzione è necessaria durante l'utilizzo delle funzionalità di posta elettronica nei processi di business.",
+        "MAIL-DEFAULT-FROM": "Indirizzo mittente predefinito",
+        "MAIL-HOST": "Host del server di posta",
+        "MAIL-PORT": "Porta del server di posta",
+        "MAIL-USERNAME": "Nome utente del server di posta",
+        "MAIL-PASSWORD": "Password del server di posta",
+        "MAIL-USE-SSL": "Utilizzare SSL?",
+        "MAIL-USE-TLS": "Utilizzare TLS?",
+        "MAIL-JNDI-NAME": "Nome JNDI del server di posta",
+        "MAIL-JNDI-NAME-INFO": "Da compilare (ignorando le impostazioni sopraindicate) se il server di posta è configurato in un server applicazioni ed esposto attraverso Jndi.",
+        "ACTION-DELETE-CONFIGURATION": "Elimina configurazione",
+        "ACTION-CREATE-CONFIGURATION": "Crea configurazione",
+        "ACTION-UPDATE-CONFIGURATION": "Aggiorna configurazione",
+        "CONFIG-OPTIONS": "Tipo di configurazione",
+        "OPTION-ENGINE": "Motore autonomo di Process Services",
+        "OPTION-SUITE": "Suite BPM di Process Services",
+        "FETCHING-TEMPLATE": "Recupero del modello dal server in corso..."
+      }
+    }
+  },
+  "APP-DEPLOYMENTS": {
+    "TITLE": "Dispiegamenti di applicazioni",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} dispiegamenti di applicazioni corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessun dispiegamento di applicazione corrispondente.",
+    "FILTER": {
+      "NAME": "Nome",
+      "TENANTID": "Identificativo tenant",
+      "LATEST": "Versione più recente",
+      "LATEST-HELP": "Visualizza solo le versioni più recenti"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nome"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "APP-DEFINITION-ID": "ID applicazione",
+      "DEPLOYMENT-ID": "ID dispiegamento processo",
+      "DMN-DEPLOYMENT-ID": "ID dispiegamento DMN",
+      "NAME": "Nome",
+      "DEPLOY-TIME": "Ora di dispiegamento",
+      "DEPLOYED-BY": "Dispiegato da",
+      "TENANT": "ID tenant"
+    },
+    "ACTION": {
+      "UPLOAD": "Carica e pubblica un'applicazione",
+      "PUBLISH-APP-MODEL": "Pubblica un modello di applicazione"
+    },
+    "POPUP": {
+      "UPLOAD": {
+        "DESCRIPTION": "Selezionare una definizione di applicazione con estensione .zip da dispiegare.",
+        "WARNING": "È possibile caricare un processo soltanto in un'istanza di BPM Suite.",
+        "DROPZONE": "Oppure rilasciare un file qui",
+        "NO-DROP": "L'operazione di rilascio non è supportata dal browser in uso",
+        "CANCEL-UPLOAD": "Annulla caricamento",
+        "ERROR": "Impossibile caricare il file"
+      }
+    }
+  },
+  "APP-DEPLOYMENT": {
+    "APP-ID": "ID applicazione:",
+    "DEPLOYMENT-ID": "ID dispiegamento:",
+    "DMN-DEPLOYMENT-ID": "ID dispiegamento DMN:",
+    "DEPLOYED-BY": "Dispiegato da:",
+    "DEPLOYED-ON": "Dispiegato il:",
+    "APP-NAME": "Nome applicazione:",
+    "VERSION": "Versione:",
+    "DESCRIPTION": "Descrizione:",
+    "KEY": "Chiave:",
+    "CATEGORY": "Categoria:",
+    "SUSPENDED": "Sospeso:",
+    "DEPLOYMENT": "Dispiegamento:",
+    "TENANT-ID": "ID tenant:",
+    "START-FORM-DEFINED": "Modulo di avvio definito:",
+    "GRAPHICAL-NOTATION-DEFINED": "Notazione grafica definita:",
+    "PROCESS-DEFINITIONS-SIZE": "Nella definizione di applicazione sono presenti {{total}} definizioni di processo",
+    "PROCESS-DEFINITIONS-SHOWING": ", visualizzazione di {{size}} definizioni di processo",
+    "PROCESS-DEFINITIONS-EMPTY": "Nel dispiegamento di applicazione non sono presenti definizioni di processo",
+    "DECISION-TABLES-SIZE": "Nel dispiegamento di applicazione sono presenti {{total}} tabelle decisioni",
+    "DECISION-TABLES-SHOWING": ", visualizzazione di {{size}} tabelle decisioni",
+    "DECISION-TABLES-EMPTY": "Nel dispiegamento di applicazione non sono presenti tabelle decisioni",
+    "FORMS-SIZE": "Nel dispiegamento di applicazione sono presenti {{total}} moduli",
+    "FORMS-SHOWING": ", visualizzazione di {{size}} moduli",
+    "FORMS-EMPTY": "Nel dispiegamento di applicazione non sono presenti moduli",
+    "TITLE": {
+      "PROCESS-DEFINITIONS": "Definizioni di processo",
+      "DECISION-TABLES": "Tabelle decisioni",
+      "FORMS": "Moduli"
+    },
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifica categoria",
+      "SHOW-ALL-PROCESS-DEFINITIONS": "Visualizza tutte le definizioni di processo",
+      "SHOW-ALL-DECISION-TABLES": "Visualizza tutte le tabelle decisioni",
+      "SHOW-ALL-FORMS": "Visualizza tutti i moduli",
+      "SHOW-DIAGRAM": "Visualizza diagramma del processo"
+    },
+    "POPUP": {
+      "EDIT-CATEGORY": {
+        "TITLE": "Modifica categoria per definizione",
+        "MESSAGE": "La categoria iniziale per la definizione è popolata dall'attributo targetNameSpace in BPMN 2.0 XML, ma può essere modificata dopo il dispiegamento.",
+        "CATEGORY": "Categoria",
+        "CATEGORY-PLACEHOLDER": "Immettere una categoria",
+        "CONFIRM": "Aggiorna categoria"
+      },
+      "SHOW-PROCESS-MODEL": {
+        "TITLE": "Diagramma del processo"
+      }
+    }
+  },
+  "VARIABLES": {
+    "HEADER": {
+      "NAME": "Nome",
+      "TYPE": "Tipo",
+      "VALUE": "Valore"
+    }
+  },
+  "IDENTITY-LINKS": {
+    "HEADER": {
+      "GROUP-ID": "ID gruppo",
+      "TYPE": "Tipo",
+      "USER-ID": "ID utente"
+    }
+  },
+  "ALERT": {
+    "GENERAL": {
+      "HTTP-ERROR": "Impossibile ottenere i dati dal server",
+      "AUTHENTICATION-ERROR": "Credenziali di accesso immesse non valide"
+    },
+    "ENGINE": {
+      "CONFIG-DELETED": "Configurazione '{{name}}' eliminata.",
+      "CONFIG-UPDATED": "Configurazione '{{name}}' aggiornata.",
+      "CONFIG-CREATED": "Configurazione '{{name}}' creata.",
+      "MASTER-CONFIG-DELETE": "Configurazione principale eliminata.",
+      "MASTER-CONFIG-UPDATE": "Configurazione cluster aggiornata",
+      "CLUSTER-UPDATED": "Configurazione cluster aggiornata.",
+      "CLUSTER-CREATED": "Configurazione cluster creata.",
+      "ENDPOINT-UPDATED": "Endpoint '{{name}}' aggiornato.",
+      "ENDPOINT-INVALID": "La configurazione dell'endpoint per '{{name}}' non è valida.",
+      "ENDPOINT-VALID": "Endpoint valido, motore nell'endpoint: {{name}} - {{version}}"
+    },
+    "JOB": {
+      "DELETED": "Job '{{id}}' eliminato correttamente.",
+      "EXECUTED": "Job '{{id}}' eseguito correttamente."
+    },
+    "PROCESS-INSTANCE": {
+      "DELETED": "Istanza di processo '{{id}}' eliminata correttamente.",
+      "TERMINATED": "Istanza di processo '{{id}}' terminata correttamente."
+    },
+    "TASK": {
+      "DELETED": "Compito '{{id}}' eliminato correttamente.",
+      "COMPLETED": "Compito '{{id}}' completato correttamente.",
+      "DELEGATED": "Compito '{{id}}' delegato all'utente {{user}}.",
+      "RESOLVED": "Compito '{{id}}' risolto correttamente.",
+      "ASSIGNED": "Il compito '{{id}}' è ora assegnato a {{user}}.",
+      "UNASSIGNED": "Il compito '{{id}}' al momento non è assegnato.",
+      "UPDATED": "Compito '{{id}}' aggiornato correttamente."
+    },
+    "USER": {
+      "DELETED": "Utente '{{login}}' eliminato correttamente.",
+      "UPDATED": "Utente '{{login}}' aggiornato correttamente.",
+      "CREATED": "Utente '{{login}}' creato.",
+      "PASSWORD-CHANGED": "Password per '{{login}}' modificata correttamente."
+    },
+    "PROCESS-DEFINITION": {
+      "CATEGORY-UPDATED": "Categoria della definizione di processo aggiornata"
+    },
+    "DEPLOYMENT": {
+      "DELETED-DEPLOYMENT": "Dispiegamento '{{name}}' eliminato",
+      "DELETE-ERROR": "Impossibile eliminare il dispiegamento. {{exception || ''}}"
+    },
+    "APP-DEPLOYMENT": {
+      "DELETED-APP": "Applicazione '{{appDefinition.name}}' eliminata",
+      "DELETE-ERROR": "Impossibile eliminare l'applicazione {{message || ''}}"
+    }
+  },
+  "DECISION-TABLES": {
+    "TITLE": "Tabelle decisioni",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} tabelle decisioni corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessuna tabella decisioni corrispondente.",
+    "FILTER": {
+      "NAME": "Nome",
+      "KEY": "Chiave",
+      "TENANTID": "Identificativo tenant"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nome"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "VERSION": "Versione",
+      "KEY": "Chiave",
+      "DEPLOY-TIME": "Ora di dispiegamento",
+      "TENANT-ID": "ID tenant"
+    }
+  },
+  "DECISION-TABLE": {
+    "ID": "ID:",
+    "NAME": "Nome:",
+    "VERSION": "Versione:",
+    "KEY": "Chiave:",
+    "DEPLOYMENT-ID": "ID dispiegamento:",
+    "RESOURCE-NAME": "Nome risorsa:",
+    "DESCRIPTION": "Descrizione:",
+    "TENANT": "Tenant:",
+    "TITLE": {
+      "DECISION-AUDITS": "Audit decisioni"
+    },
+    "DECISION-AUDITS-MESSAGE": "Nella tabella decisioni sono presenti {{total}} audit, visualizzazione di {{size}} di essi.",
+    "DECISION-AUDITS-MESSAGE-EMPTY": "Nella tabella decisioni non sono presenti audit",
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifica categoria",
+      "SHOW-ALL-JOBS": "Visualizza tutti i job",
+      "SHOW-ALL-PROCESSES": "Visualizza tutti i processi",
+      "SHOW-DIAGRAM": "Visualizza diagramma del processo",
+      "SHOW-DECISION-TABLE": "Visualizza tabella decisioni"
+    },
+    "POPUP": {
+      "TITLE": "Tabella decisioni: ",
+      "KEY": "Chiave: ",
+      "HIT-POLICY": "Criteri di riscontro: ",
+      "HIT-POLICIES": {
+        "FIRST": "Primo (passaggio singolo)",
+        "ANY": "Qualsiasi (passaggio singolo)"
+      }
+    }
+  },
+  "DECISION-AUDIT": {
+    "TITLE": "Audit trail decisioni",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} audit trail corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessun audit trail corrispondente.",
+    "FILTER": {
+      "NAME": "Nome (distinzione tra maiuscole e minuscole)",
+      "TENANTID": "Identificativo tenant (distinzione tra maiuscole e minuscole)"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nome"
+    },
+    "POPUP": {
+      "HEADER": "Audit trail decisioni"
+    },
+    "HEADER": {
+      "ID": "ID",
+      "PROCESS-DEFINITION-ID": "ID definizione di processo",
+      "PROCESS-INSTANCE-ID": "ID istanza di processo",
+      "CREATED": "Creato",
+      "FAILED": "Non riusicto",
+      "EXECUTION-ID": "ID esecuzione",
+      "ACTIVITY-ID": "ID attività",
+      "ACTIVITY-NAME": "Nome attività",
+      "DECISION-KEY": "Chiave decisione",
+      "DECISION-NAME": "Nome decisione",
+      "DMN-DEPLOYMENT-ID": "ID dispiegamento DMN"
+    },
+    "ACTION": {
+      "SHOW-DECISION-AUDIT": "Visualizza audit decisioni"
+    },
+    "TABLE": {
+      "HEADER": "Tabella decisioni \"{{name}}\"",
+      "HIT-POLICY": "Criteri di riscontro",
+      "HIT-POLICIES": {
+        "FIRST": "Primo (passaggio singolo)",
+        "ANY": "Qualsiasi (passaggio singolo)"
+      },
+      "TOOLTIP": {
+        "INPUT-EXCEPTION": "Si è verificata un'eccezione durante il test di controllo della corrispondenza tra l'espressione e il valore di input: {{error}}",
+        "INPUT-MATCH": "Il valore di input corrisponde all'espressione.",
+        "INPUT-EMPTYEXPRESSION": "Le espressioni vuote sono considerate corrispondenze.",
+        "INPUT-NOMATCH": "Il valore di input non corrisponde all'espressione.",
+        "INPUT-NOTEXECUTED": "L'espressione non è mai stata testata.",
+        "OUTPUT-EXCEPTION": "Si è verificata un'eccezione durante l'impostazione del valore tramite l'espressione: \n {{expression}}.\nMessaggio di errore: {{error}}",
+        "OUTPUT-RESULT": "Il valore è stato impostato utilizzando l'espressione seguente: \n {{expression}}",
+        "OUTPUT-NOTEXECUTED": "L'espressione seguente non è mai stata eseguita: \n {{expression}}"
+      },
+      "INPUT-VARIABLE": "Condizione",
+      "OUTPUT-VARIABLE": "Risultato",
+      "INPUT-VARIABLES": "Valori di input",
+      "NO-INPUT-VARIABLES": "Non erano disponibili valori di input al momento dell'esecuzione della tabella decisioni",
+      "OUTPUT-VARIABLES": "Valori calcolati",
+      "NO-OUTPUT-VARIABLES": "Non sono stati generati valori calcolati dalle tabelle decisioni",
+      "METADATA-NAME": "Nome",
+      "METADATA-VALUE": "Valore",
+      "LOAD-ERROR": "Si è verificato un errore durante il recupero della tabella decisioni e dell'audit trail per l'esecuzione '{{executionId}}' di Activity '{{activityId}}'."
+    }
+  },
+  "FORMS": {
+    "TITLE": "Moduli",
+    "LIST-MESSAGE": "Visualizzazione di {{size}} risultati su un totale di {{total}} moduli corrispondenti.",
+    "LIST-MESSAGE-EMPTY": "Nessun modulo corrispondente.",
+    "HEADER": {
+      "ID": "ID",
+      "NAME": "Nome",
+      "APPID": "ID applicazione",
+      "TENANTID": "ID tenant"
+    },
+    "FILTER": {
+      "NAME": "Nome",
+      "APPID": "ID dispiegamento di applicazione",
+      "TENANTID": "Identificativo tenant"
+    },
+    "SORT": {
+      "ID": "ID",
+      "NAME": "Nome"
+    }
+  },
+  "FORM": {
+    "ID": "ID:",
+    "NAME": "Nome:",
+    "APP-ID": "ID APPLICAZIONE:",
+    "DEPLOYMENT-ID": "ID dispiegamento:",
+    "DESCRIPTION": "Descrizione:",
+    "TENANT": "Tenant:",
+    "MESSAGE-EMPTY": "(Nessuno)",
+    "TITLE": {
+      "SUBMITTED-FORMS": "Moduli inviati"
+    },
+    "SUBMITTED-FORMS-MESSAGE": "In questo modulo sono presenti {{total}} moduli inviati, visualizzazione di {{size}} di essi.",
+    "SUBMITTED-FORMS-MESSAGE-EMPTY": "In questo modulo non sono presenti moduli inviati",
+    "ACTION": {
+      "EDIT-CATEGORY": "Modifica categoria",
+      "SHOW-ALL-JOBS": "Visualizza tutti i job",
+      "SHOW-ALL-PROCESSES": "Visualizza tutti i processi",
+      "SHOW-DIAGRAM": "Visualizza diagramma del processo",
+      "SHOW-FORM": "Visualizza modulo"
+    },
+    "POPUP": {
+      "TITLE": "Modulo: "
+    },
+    "FIELD-PREVIEW": {
+      "DISPLAY-REF": "Visualizza valore",
+      "SELECT-FIELD": "(Nessun campo selezionato)",
+      "FIELD-VALUE": "Visualizza valore del campo \"{{name}}\"",
+      "UNKNOWN-TYPE": "Tipo di campo sconosciuto: {{type}}",
+      "TEXT-VALUE": "Testo",
+      "MULTI-TEXT-VALUE": "Testo su più righe",
+      "NUMBER-VALUE": "123",
+      "DATE-VALUE": "Data",
+      "DATETIME-VALUE": "Data e ora",
+      "DROPDOWN-VALUE": "Seleziona...",
+      "UPLOAD-VALUE": "Carica o importa contenuto...",
+      "RADIOS-OPTION1": "Opzione 1",
+      "SELECT-PERSON": "Seleziona una persona",
+      "SELECT-GROUP": "Seleziona un gruppo"
+    }
+  },
+  "SUBMITTED-FORM": {
+    "HEADER": {
+      "ID": "ID",
+      "TASK-ID": "ID compito",
+      "PROCESS-ID": "ID istanza di processo",
+      "SUBMITTED": "Inviato il",
+      "SUBMITTED-BY": "Inviato da",
+      "FORM-ID": "ID modulo"
+    },
+    "ACTION": {
+      "SHOW-SUBMITTED-FORM": "Visualizza modulo inviato"
+    }
+  },
+  "APPS": {
+    "ACTION": {
+      "UPLOAD": "Carica e pubblica un'applicazione",
+      "DOWNLOAD": "Scarica applicazione",
+      "REDEPLOY": "Ridispiega applicazione su un altro cluster",
+      "DELETE": "Elimina applicazione"
+    },
+    "POPUP": {
+      "DELETE": {
+        "CONFIRM-MESSAGE": "Eliminare l'applicazione '{{appDefinition.name}}'?"
+      },
+      "UPLOAD": {
+        "DESCRIPTION": "Selezionare un file dell'applicazione con estensione .zip da dispiegare.",
+        "WARNING": "È possibile caricare un'applicazione soltanto in un'istanza di BPM Suite, non in un'istanza del motore principale.",
+        "DROPZONE": "Oppure rilasciare un file qui",
+        "NO-DROP": "L'operazione di rilascio non è supportata dal browser in uso",
+        "CANCEL-UPLOAD": "Annulla caricamento",
+        "ERROR": "Impossibile caricare il file"
+      },
+      "PUBLISH-MODEL": {
+        "TITLE": "Pubblica modello di applicazione",
+        "PUBLISH": "Pubblica",
+        "ERROR": "Impossibile pubblicare l'applicazione.",
+        "DESCRIPTION": "Selezionare un file dell'applicazione con estensione .zip da dispiegare.",
+        "WARNING": "È possibile caricare un'applicazione soltanto in un'istanza di BPM Suite, non in un'istanza del motore principale.",
+        "DROPZONE": "Oppure rilasciare un file qui",
+        "NO-DROP": "L'operazione di rilascio non è supportata dal browser in uso",
+        "LIST-MESSAGE": "Visualizzazione di tutti i modelli di applicazione corrispondenti ({{total}}).",
+        "LIST-MESSAGE-EMPTY": "Nessun modello di applicazione corrispondente.",
+        "PUBLISH-ERROR": "Impossibile pubblicare l'applicazione.",
+        "EVERYONES-APPS": "Visualizza le applicazioni di tutti",
+        "APP-CONFLICT-ERROR": "L'applicazione è in conflitto con l'applicazione esistente '{{name}}' creata da '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "PUBLISH-TO-ANOTHER-CLUSTER": "Pubblica applicazione su un altro cluster",
+        "SELECT-CLUSTER": "Seleziona cluster",
+        "PUBLISH-TO-CLUSTER": "Pubblica applicazione su {{name}}",
+        "PUBLISH-AS-NEW-VERSION": "Pubblica come nuova versione dell'applicazione",
+        "HEADER": {
+          "ID": "ID",
+          "NAME": "Nome",
+          "LAST-UPDATE": "Ultimo aggiornamento",
+          "CREATED-BY": "Creato da"
+        }
+      },
+      "REDEPLOY": {
+        "TITLE": "Ridispiega applicazione",
+        "DESCRIPTION": "Selezionare un cluster in cui ridispiegare '{{name}}'",
+        "ERROR": "Impossibile dispiegare l'applicazione",
+        "APP-CONFLICT-ERROR": "L'applicazione è in conflitto con l'applicazione esistente '{{name}}' creata da '{{createdBy.firstName}} {{createdBy.lastName}}' ",
+        "SELECT-CLUSTER": "Seleziona cluster",
+        "DEPLOY-TO-CLUSTER": "Dispiega applicazione su {{name}}",
+        "DEPLOY": "Dispiega",
+        "DEPLOY-AS-NEW-VERSION": "Dispiega come nuova versione dell'applicazione"
+      }
+    }
+  }
+}

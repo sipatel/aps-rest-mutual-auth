@@ -1,0 +1,36 @@
+<div class="modal-header-wrapper">
+    <div class="modal-header">
+        <div class="pull-right">
+            <a class="action" ng-click="cancel()">&times; {{'GENERAL.ACTION.CANCEL-AND-CLOSE' | translate}}</a>
+        </div>
+        <h2>{{'CLUSTER.POPUP.DELETE-CLUSTER-CONFIG.TITLE' | translate}}</h2>
+    </div>
+</div>
+<div class="modal-body">
+    <div ng-show="!status.loading">
+
+        <p ng-if="model.numberOfClusterConfigs <= 1">
+            {{'CLUSTER.POPUP.DELETE-CLUSTER-CONFIG.ERROR-ONLY-ONE-CLUSTER-CONFIG' | translate}}
+        </p>
+
+        <p ng-if="model.numberOfClusterConfigs > 1">
+            {{'CLUSTER.POPUP.DELETE-CLUSTER-CONFIG.WARNING' | translate}}
+        </p>
+
+    </div>
+</div>
+
+<div class="modal-footer-wrapper">
+    <div class="modal-footer">
+        <div class="pull-right">
+            <button type="button" class="btn btn-sm btn-default" ng-click="cancel()" ng-disabled="status.loading"
+                    translate="GENERAL.ACTION.CANCEL">
+            </button>
+            <button type="button" class="btn btn-sm btn-default btn-danger" ng-click="confirmClusterConfigDelete()"
+                    ng-disabled="!enableDeleteButton()"
+                    translate="CLUSTER.POPUP.DELETE-CLUSTER-CONFIG.ACTION-DELETE">
+            </button>
+            <loading-indicator></loading-indicator>
+        </div>
+    </div>
+</div>

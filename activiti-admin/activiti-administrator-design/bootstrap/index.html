@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Activiti Administrator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+   <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+      	 <!-- Profile/user -->
+        <div class="btn-group btn-group-sm pull-right">
+		    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		      Tijs Rademakers
+		      <span class="caret"></span>
+		    </button>
+		    <ul class="dropdown-menu">
+		      <li><a href="#">Activity id</a></li>
+		      <li><a href="#">Process definition</a></li>
+		      <li><a href="#">State</a></li>
+		    </ul>
+		</div>
+		
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" title="home"><span class="hidden">Activiti</span></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">Process Definitions</a></li>
+            <li class="active"><a href="#">Process Instances</a></li>
+            <li><a href="#about">Tasks</a></li>
+            <li><a href="#contact">Jobs</a></li>
+            <li><a href="#contact">Users and groups</a></li>
+            <li><a href="#contact">Engine</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    
+    
+    <!-- LIST PAGE -->
+    <div class="container" id="list-container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="component">
+					<div class="title">
+						<!-- div class="pull-right">
+							<a href="#" class="navigation">Return to list</a>
+						</div> -->
+						<div class="btn-group btn-group-sm pull-right">
+						  <div class="btn-group btn-group-sm">
+						    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						      Sort by date created
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">Activity id</a></li>
+						      <li><a href="#">Process definition</a></li>
+						      <li><a href="#">State</a></li>
+						    </ul>
+						  </div>
+						  <button type="button" class="btn btn-default btn-icon"><span>a</span></button>
+						</div>
+						<h2>Process Instances</h2>
+					</div>
+					
+					<div class="grid-wrapper" id="process-instances">
+						<div class="grid-message">
+							<span>Showing results 51 to 100, from a total of 235 matching process instances.</span>
+						</div>
+						<table class="grid">
+							<tr>
+								<th>ID</th>
+								<th>Process Definition</th>
+								<th>State</th>
+								<th>Date started</th>
+								<th class="last">Current Activity</th>
+							</tr>
+							<tr class="odd"><td>123</td><td>Employee hire process</td><td>Active</td><td>Today, 15:30</td><td class="last">managerApproval</td></tr>
+							<tr><td>456</td><td>Employee hire process</td><td>Active</td><td>Today, 12:00</td><td class="last">reviewByHr</td></tr>
+							<tr class="odd"><td>789</td><td>Employee hire process</td><td>Active</td><td>Yesterday, 20:30</td><td class="last">reviewByHr</td></tr>
+							<tr><td>112</td><td>Employee hire process</td><td>Active</td><td>Yesterday, 19:55</td><td class="last"><i>(none)</i></td></tr>
+							<tr class="odd"><td>789</td><td>Employee hire process</td><td>Active</td><td>Yesterday, 12:30</td><td class="last">reviewByHr</td></tr>
+							<tr><td>456</td><td>Employee hire process</td><td>Active</td><td>Yesterday, 12:20</td><td class="last"><i>(none)</i></td></tr>
+							<tr class="odd"><td>123</td><td>Employee hire process</td><td>Active</td><td>Yesterday, 12:10</td><td class="last"><i>(none)</i></td></tr>
+						</table>
+						</div>
+						<div class="seperator"></div>
+						<div class="text-center">
+							<ul class="pagination pagination-sm">
+							  <li><a href="#">&larr;</a></li>
+							  <li><a href="#">1</a></li>
+							  <li class="active"><a href="#">2</a></li>
+							  <li><a href="#">3</a></li>
+							  <li><a href="#">4</a></li>
+							  <li><a href="#">5</a></li>
+							  <li><a href="#">&rarr;</a></li>
+							</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="component tip-left">
+					<div class="title">
+						 <div class="btn-group btn-group-sm pull-right">
+						    <button type="button" class="btn btn-default" data-toggle="dropdown">
+						    	<i class="glyphicon glyphicon-plus"></i>
+						    </button>
+						</div>
+						<div class="pull-right">
+							<a class="action" href="#">Clear filters</a>
+						</div>
+						<h2>Filter</h2>
+					</div>
+					<div class="section">
+						<div class="subtitle"><label for="filter-processdefinition">Process Definition</label> </div>
+						 <div class="btn-group btn-group-sm">
+						    <button type="button" id="filter-processdefinition" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+						      Employee hire process
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#">Activity id</a></li>
+						      <li><a href="#">Process definition</a></li>
+						      <li><a href="#">State</a></li>
+						    </ul>
+						  </div>
+					</div>
+					<div class="section">
+						<div class="subtitle"><label for="filter-state">State</label> </div>
+						<div id="filter-state" class="btn-group btn-group-sm" data-toggle="buttons">
+							<label class="btn btn-default active">
+								<input type="radio" name="state" value="active" checked="CHECKED">Active
+							</label>
+							<label class="btn btn-default">
+								<input type="radio" name="state" value="suspended">Suspended
+							</label>
+				      </div>
+					</div>
+					<div class="section">
+						<div class="subtitle"><label for="filter-startdate">Date started</label> </div>
+						<div class="input-group input-group-sm" id="filter-startdate">
+						  <input type="text" class="form-control" value="After: Yesterday, 12:00">
+						  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						</div>
+					</div>
+					<div class="seperator"></div>
+					<p><i class="glyphicon glyphicon-info-sign"></i> This is some text, used as additional information that applies to the section above.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<!-- DETAIL PAGE -->
+	 <div class="container hidden" id="detail-container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="component">
+					<div class="title">
+						<div class="pull-right">
+							<a href="#" class="action" id="to-process-instances">&larr; Return to list</a>
+						</div>
+						<h2>Employee hire process - 123</h2>
+					</div>
+					<div class="property-wrapper">
+						<table>
+							<tr class="property">
+								<td class="property-name">ID:</td><td>1234</td>
+								<td class="property-name">State:</td><td>Active</td>
+							</tr>
+							<tr class="property">
+								<td class="property-name">Started by:</td><td>Tijs Rademakers</td>
+								<td class="property-name" title="Started 20/01/2014 12:30:26">Started:</td><td>Yesterday, 12:30</td>
+							</tr>
+							<tr class="property">
+								<td class="property-name">Definition:</td><td><a href="#"><i class="glyphicon glyphicon-zoom-in"></i> Employee Hire Process (v4)</a></td>
+								<td class="property-name">Process diagram:</td><td><a href="#"><i class="glyphicon glyphicon-zoom-in"></i> Show process diagram</a></td>
+							</tr>
+						</table>
+					</div>
+					
+						<div class="title">
+							<h2>Child executions</h2>
+						</div>
+					<div class="grid-wrapper">
+						<table class="grid">
+							<tr>
+								<th>ID</th>
+								<th class="last">Current Activity</th>
+							</tr>
+							<tr class="odd"><td>456</td><td class="last">waitingForManager</td></tr>
+							<tr><td>789</td><td class="last">approveRequest</td></tr>
+						</table>
+						</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="component tip-left">
+					<div class="title">
+						<h2>Actions</h2>
+					</div>
+					<ul class="list-group">
+					  <li>
+					  	 <div class="btn-group btn-group-sm">
+						    <button type="button" class="btn btn-default" data-toggle="dropdown">
+								<i class="glyphicon glyphicon-time"></i> Suspend process instance
+						    </button>
+						  </div>
+					  </li>
+					  <li>
+					  	 <div class="btn-group btn-group-sm">
+						    <button type="button" class="btn btn-default" data-toggle="dropdown">
+								<i class="glyphicon glyphicon-remove"></i> Delete process instance
+						    </button>
+						  </div>
+					  </li>
+					</ul>
+					<div class="seperator"></div>
+					<p><i class="glyphicon glyphicon-info-sign"></i> This is some text, used as additional information that applies to the section above.</p>
+				</div>
+			</div>
+			
+			<!-- Tasks -->
+			<div class="col-md-4">
+				<div class="component">
+					<div class="title">
+						<h2>Jobs</h2>
+					</div>
+					<p class="no-results"><i class="glyphicon glyphicon-info-sign"></i> No jobs are currently active for this Process Instance.</p>
+					
+					
+					<i class="glyphicon glyphicon-random" style="font-size: 100px;"></i>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="component">
+					<div class="title">
+						<h2>Tasks</h2>
+					</div>
+					<div class="grid-wrapper">
+						<div class="grid-message">
+							<span>Showing all tasks in this Process Instance, including tasks in child executions.</span>
+						</div>
+						<table class="grid">
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th class="last">Assignee</th>
+							</tr>
+							<tr class="odd"><td>456</td><td>Review hire</td><td class="last">Tijs rademakers</td></tr>
+							<tr><td>789</td><td>Background check</td><td class="last">Joram Barrez</td></tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+    	// Remove this, for testing purposes only
+    	$(function() {
+    		
+    		$('#process-instances').click( function() {
+    			$("#list-container").addClass('hidden');
+    			$("#detail-container").removeClass('hidden');
+	    	});
+    		
+    		$('#to-process-instances').click( function() {
+    			$("#list-container").removeClass('hidden');
+    			$("#detail-container").addClass('hidden');
+	    	});
+    	});
+    </script>
+  </body>
+</html>

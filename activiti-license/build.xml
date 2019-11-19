@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project activiti-license with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="./license.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="com.activiti.license.LicenseGenerator"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ license3j-1.0.4.jar bcpg-jdk16-1.46.jar bcprov-jdk16-1.46.jar commons-lang3-3.1.jar commons-io-2.4.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="./target/classes"/>
+            <zipfileset dir="./lib" includes="license3j-1.0.4.jar"/>
+            <zipfileset dir="./lib" includes="bcpg-jdk16-1.46.jar"/>
+            <zipfileset dir="./lib" includes="bcprov-jdk16-1.46.jar"/>
+            <zipfileset dir="./lib" includes="commons-lang3-3.1.jar"/>
+            <zipfileset dir="./lib" includes="commons-io-2.4.jar"/>
+        </jar>
+    </target>
+</project>

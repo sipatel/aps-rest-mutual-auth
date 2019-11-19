@@ -1,0 +1,37 @@
+<div class="modal-header-wrapper">
+    <div class="modal-header">
+        <div class="pull-right">
+            <a class="action" ng-click="cancel()" ng-show="!status.loading">&times; {{'GENERAL.ACTION.CANCEL-AND-CLOSE' | translate}}</a>
+        </div>
+        <h2 translate="CLUSTER.POPUP.GENERATE-JAR.TITLE"></h2>
+    </div>
+</div>
+
+<div class="modal-body">
+
+    <div>
+        <p translate="CLUSTER.POPUP.GENERATE-JAR.MESSAGE"></p>
+    </div>
+
+    <div>
+        <p translate="CLUSTER.POPUP.GENERATE-JAR.LINK-MESSAGE"></p>
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <p translate="CLUSTER.POPUP.GENERATE-JAR.ADMIN-APP-URL"></p>
+        <input type="text" class="form-control" ng-model="model.adminAppUrl" ng-change="adminAppUrlChanged()">
+    </div>
+
+
+</div>
+
+<div class="modal-footer-wrapper">
+    <div class="modal-footer">
+        <div class="text-center">
+            <a class="btn btn-primary" role="button" href="{{model.download.url}}" ng-click="closePopup()">
+                <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
+                {{'CLUSTER.POPUP.GENERATE-JAR.ACTION-DOWNLOAD' | translate:model.download}}
+            </a>
+        </div>
+    </div>
+</div>

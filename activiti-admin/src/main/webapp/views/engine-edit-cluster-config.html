@@ -1,0 +1,112 @@
+<div class="modal-header-wrapper">
+    <div class="modal-header">
+        <div ng-class="determineStepIcon()">
+
+            <div class="pull-right">
+                <a ng-if="!closable" class="action" ng-click="cancel()" ng-show="!status.loading">&times; {{'GENERAL.ACTION.CANCEL-AND-CLOSE' | translate}}</a>
+                <a ng-if="closable" href="#logout" ng-click="cancel()" class="action" ng-show="!status.loading">&times; {{'GENERAL.ACTION.LOGOUT' | translate}}</a>
+            </div>
+
+            <div>
+                <h2 ng-if="wizard.currentStep.type == 'groupSettings'" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.GROUP-SETTINGS"></h2>
+                <h2 ng-if="wizard.currentStep.type == 'securitySettings'" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.SECURITY-SETTINGS"></h2>
+                <h2 ng-if="wizard.currentStep.type == 'activitiInstanceSettings'" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.ACTIVITI-SETTINGS"></h2>
+                <span>{{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.STEPS' | translate:wizard}}</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-body">
+
+    <!-- Group name, username and password -->
+    <div ng-if="wizard.currentStep.type == 'groupSettings'">
+        <p class="message"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+            {{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.GROUP-HELP' | translate}}
+        </p>
+        <form role="form">
+            <div class="form-group">
+                <label for="clusterName" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.NAME"></label>
+                <input type="text" class="form-control" id="clusterName"
+                       ng-class="{'error-text': wizard.error.clusterNameTaken}"
+                       ng-model="wizard.currentStep.clusterName" autofocus>
+            </div>
+        </form>
+    </div>
+
+    <!-- Security settings -->
+    <div ng-if="wizard.currentStep.type == 'securitySettings'">
+        <p class="message"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+            {{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.SECURITY-HELP' | translate}}
+        </p>
+        <form role="form">
+            <div class="form-group">
+                <label for="username" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.USERNAME"></label>
+                <input type="text" class="form-control" id="username"
+                       ng-class="{'error-text': wizard.error.clusterUserTaken}"
+                       ng-model="wizard.currentStep.clusterUserName">
+            </div>
+            <div class="form-group">
+                <label for="clusterPassword" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.PASSWORD"></label>
+                <input type="text" class="form-control" id="clusterPassword" ng-model="wizard.currentStep.clusterPassword">
+            </div>
+        </form>
+    </div>
+
+    <!-- Activiti instance settings -->
+    <div ng-if="wizard.currentStep.type == 'activitiInstanceSettings'">
+
+        <p class="message"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+            {{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.ACTIVITI-HELP' | translate}}
+        </p>
+        <div>
+            <input type="checkbox"
+                   ng-model="wizard.currentStep.requiresMasterConfiguration">
+            <span translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.REQUIRES-MASTER"></span>
+        </div>
+        <hr/>
+        <p class="message"><i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+            {{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.METRICS-HELP' | translate}}
+        </p>
+        <div class="form-group">
+            <label for="metricSendingInterval" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.METRICS-INTERVAL"></label>
+            <input type="number" class="form-control" id="metricSendingInterval"
+                   ng-model="wizard.currentStep.metricSendingInterval">
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal-footer-wrapper">
+    <div class="modal-footer">
+        <div class="pull-left">
+            <span ng-if="wizard.error.clusterNameTaken" class="error-text">
+                {{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.ERROR-NAME-TAKEN' | translate}}
+            </span>
+            <span ng-if="!wizard.error.clusterNameTaken && wizard.error.clusterUserTaken" class="error-text">
+                {{'CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.ERROR-USER-TAKEN' | translate}}
+            </span>
+        </div>
+        <div class="pull-right">
+            <button type="button" class="btn btn-sm btn-default"
+                    ng-click="previous()"
+                    ng-disabled="status.loading"
+                    ng-if="wizard.currentStepIndex > 0" translate="GENERAL.ACTION.PREVIOUS">
+            </button>
+            <button type="button" class="btn btn-sm btn-default"
+                    ng-click="next()"
+                    ng-if="wizard.currentStepIndex < wizard.steps.length - 1"
+                    ng-disabled="isNextButtonDisabled()" translate="GENERAL.ACTION.NEXT">
+            </button>
+            <button type="button" class="btn btn-sm btn-success"
+                    ng-click="save()"
+                    ng-disabled="status.loading"
+                    ng-if="wizard.currentStepIndex == wizard.steps.length - 1" translate="CLUSTER.POPUP.EDIT-CLUSTER-CONFIG.CONFIRM">
+            </button>
+        </div>
+        <loading-indicator></loading-indicator>
+    </div>
+</div>
